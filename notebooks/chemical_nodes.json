@@ -1,0 +1,111 @@
+[
+  {
+    "label": "Global chemicals market (broad)",
+    "parent": "",
+    "value": 3500,
+    "hover": "Broad definition incl. specialties and formulated products; ~US$3.5–5.8T 2024. Root shown at US$3.5T for headroom."
+  },
+  {
+    "label": "Petrochemicals & Polymers",
+    "parent": "Global chemicals market (broad)",
+    "value": 700,
+    "hover": "Bulk olefins, aromatics, base polymers; ~US$0.7T 2024."
+  },
+  {
+    "label": "Specialty Chemicals",
+    "parent": "Global chemicals market (broad)",
+    "value": 950,
+    "hover": "High-value, lower-volume materials (coatings, additives, electronics, catalysts, etc.); ~US$0.9–1.0T 2024."
+  },
+  {
+    "label": "Agrochemicals",
+    "parent": "Global chemicals market (broad)",
+    "value": 250,
+    "hover": "Crop protection and ag inputs (ex-fertilizer bulk); ~US$0.25T 2024."
+  },
+  {
+    "label": "Industrial Gases",
+    "parent": "Global chemicals market (broad)",
+    "value": 110,
+    "hover": "O2, N2, H2, CO₂, noble gases; on-site and merchant supply; ~US$0.11T 2024."
+  },
+  {
+    "label": "Consumer & Care Ingredients",
+    "parent": "Global chemicals market (broad)",
+    "value": 125,
+    "hover": "Detergent and personal-care surfactants/ingredients; fragmented space; ~US$0.10–0.15T 2024."
+  },
+  {
+    "label": "BASF – Petrochemicals",
+    "parent": "Petrochemicals & Polymers",
+    "value": 8.75,
+    "hover": "BASF petrochemicals 2024 sales ≈ €8.1B → ~US$8.75B. Logo: media/companies/chemical_industry/basf.png"
+  },
+  {
+    "label": "Dow – Packaging & Specialty Plastics",
+    "parent": "Petrochemicals & Polymers",
+    "value": 21.8,
+    "hover": "Dow Packaging & Specialty Plastics 2024 net sales: US$21.8B. Logo: media/companies/chemical_industry/dow.png"
+  },
+  {
+    "label": "Evonik",
+    "parent": "Specialty Chemicals",
+    "value": 16.4,
+    "hover": "Evonik 2024 sales €15.2B → ~US$16.4B. Logo: media/companies/chemical_industry/evonik.png"
+  },
+  {
+    "label": "Clariant",
+    "parent": "Specialty Chemicals",
+    "value": 4.6,
+    "hover": "Clariant 2024 sales CHF 4.15B → ~US$4.6B. Logo: media/companies/chemical_industry/clariant.png"
+  },
+  {
+    "label": "Croda",
+    "parent": "Specialty Chemicals",
+    "value": 2.1,
+    "hover": "Croda 2024 sales £1.63B → ~US$2.1B. Logo: media/companies/chemical_industry/croda.png"
+  },
+  {
+    "label": "Bayer – Crop Science",
+    "parent": "Agrochemicals",
+    "value": 24.1,
+    "hover": "Bayer Crop Science 2024 sales €22.3B → ~US$24.1B. Logo: media/companies/chemical_industry/bayer.png"
+  },
+  {
+    "label": "Corteva",
+    "parent": "Agrochemicals",
+    "value": 16.9,
+    "hover": "Corteva 2024 net sales: US$16.9B. Logo: media/companies/chemical_industry/corteva.png"
+  },
+  {
+    "label": "Linde",
+    "parent": "Industrial Gases",
+    "value": 33.0,
+    "hover": "Linde 2024 sales: US$33.0B. Logo: media/companies/chemical_industry/linde.png"
+  },
+  {
+    "label": "Air Products",
+    "parent": "Industrial Gases",
+    "value": 12.1,
+    "hover": "Air Products fiscal 2024 sales: US$12.1B. Logo: media/companies/chemical_industry/air_products.png"
+  },
+  {
+    "label": "BASF – Care Chemicals",
+    "parent": "Consumer & Care Ingredients",
+    "value": 11.7,
+    "hover": "BASF Nutrition & Care / Care Chemicals within broader portfolio; Chemicals segment €10.8B → ~US$11.7B. Logo: media/companies/chemical_industry/basf.png"
+  },
+  {
+    "label": "Croda – Consumer Care",
+    "parent": "Consumer & Care Ingredients",
+    "value": 1.2,
+    "hover": "Croda consumer care ~57% of £1.63B → ~US$1.2B. Logo: media/companies/chemical_industry/croda.png"
+  },
+  {
+    "label": "Evonik – Care Solutions",
+    "parent": "Consumer & Care Ingredients",
+    "value": 5.0,
+    "hover": "Evonik care-focused lines (subset of €15.2B); illustrative ~US$5.0B. Logo: media/companies/chemical_industry/evonik.png"
+  }
+]
+

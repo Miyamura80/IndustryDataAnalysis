@@ -1,0 +1,87 @@
+[
+  {
+    "label": "Global construction (market cuts)",
+    "parent": "",
+    "value": 13600,
+    "hover": "Global guides ~$11–12T; child slices come from different sources and do not perfectly reconcile."
+  },
+  {
+    "label": "Residential buildings",
+    "parent": "Global construction (market cuts)",
+    "value": 4300,
+    "hover": "Global residential building construction ~$4.3T (2024 market report). Range $4.3–4.9T across studies."
+  },
+  {
+    "label": "D.R. Horton",
+    "parent": "Residential buildings",
+    "value": 36.8,
+    "hover": "2024 revenue ~$36.8B; ~0.9% of $4.3T residential market."
+  },
+  {
+    "label": "Lennar",
+    "parent": "Residential buildings",
+    "value": 35.4,
+    "hover": "2024 revenue ~$35.4B; ~96% homebuilding."
+  },
+  {
+    "label": "PulteGroup",
+    "parent": "Residential buildings",
+    "value": 18.0,
+    "hover": "2024 revenue nearly $18B; predominantly homebuilding."
+  },
+  {
+    "label": "Non-residential (total)",
+    "parent": "Global construction (market cuts)",
+    "value": 9300,
+    "hover": "MarketLine profile: global non-residential construction ~$9.3T (2024). Includes infrastructure."
+  },
+  {
+    "label": "Infrastructure / civil",
+    "parent": "Non-residential (total)",
+    "value": 3000,
+    "hover": "Infrastructure / civil engineering ~$3.0T (MarketLine 2024); other studies up to ~$3.6T."
+  },
+  {
+    "label": "CSCEC",
+    "parent": "Infrastructure / civil",
+    "value": 303.5,
+    "hover": "China State Construction Engineering revenue ~2,187B CNY ≈ $303.5B (2024). Heavy infrastructure + buildings."
+  },
+  {
+    "label": "China Railway Group (CREC)",
+    "parent": "Infrastructure / civil",
+    "value": 161.1,
+    "hover": "2024 revenue ~$161.1B; rail and heavy civil focused."
+  },
+  {
+    "label": "CRCC",
+    "parent": "Infrastructure / civil",
+    "value": 150.0,
+    "hover": "China Railway Construction Corp revenue ~1,067.2B CNY ≈ $150B (2024). Rail/metro/roads."
+  },
+  {
+    "label": "Other non-res buildings",
+    "parent": "Non-residential (total)",
+    "value": 6300,
+    "hover": "Non-residential buildings excluding infra: ~9.3T - 3.0T ≈ $6.3T (commercial/industrial/institutional)."
+  },
+  {
+    "label": "VINCI",
+    "parent": "Other non-res buildings",
+    "value": 78.4,
+    "hover": "2024 revenue €71.6B ≈ $78.4B; diversified building, transport, energy."
+  },
+  {
+    "label": "ACS Group",
+    "parent": "Other non-res buildings",
+    "value": 46.0,
+    "hover": "2024 sales €41.6B ≈ $45–46B; mix of building and infrastructure."
+  },
+  {
+    "label": "Bouygues Construction",
+    "parent": "Other non-res buildings",
+    "value": 12.0,
+    "hover": "Bouygues Construction arm €10.3B ≈ $11–12B (2024); broader group construction businesses €27.5B."
+  }
+]
+
