@@ -147,6 +147,7 @@ class Config(BaseSettings):
     GROQ_API_KEY: str
     PERPLEXITY_API_KEY: str
     GEMINI_API_KEY: str
+    LOGO_DEV_API_KEY: str
 
     # Runtime environment (computed)
     is_local: bool = Field(default=False)
