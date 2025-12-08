@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+Marimo notebooks constraint: each variable name must be defined in exactly one cell. Do not redeclare the same variable (e.g., `fig`) across cells; instead, keep related code in one cell, wrap in a function, or use private names (prefix with `_`) when separation is needed to avoid collisions.
