@@ -70,6 +70,6 @@ async def generate_banner(title: str, suggestion: str | None = None) -> Image.Im
 
 
 if __name__ == "__main__":
-    title = "Python-Template"
-    suggestion = "use a snake in the image"
+    title = "Industry Data Analysis"
+    suggestion = "use nier automata looking robots in the banner"
     asyncio.run(generate_banner(title, suggestion))

@@ -1,11 +1,11 @@
-# Python-Template
+# Industry Data Analysis
 
 <p align="center">
   <img src="media/banner.png" alt="2" width="400">
 </p>
 
 <p align="center">
-<b>Description of the project here. </b>
+<b>📊〽️ Analysis of industries <b>Description of the project here. </b> their margin, market share</b>
 </p>
 
 <p align="center">
