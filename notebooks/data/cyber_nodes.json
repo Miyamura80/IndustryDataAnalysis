@@ -1,0 +1,243 @@
+[
+  {
+    "label": "Cybersecurity (2024 est.)",
+    "parent": "",
+    "value": 212,
+    "hover": "Anchored to ~$210–220B global cyber/info-sec spend; fits within Gartner ($183.9B), Fortune ($193.7B), Grand View ($245.6B)."
+  },
+  {
+    "label": "Network & perimeter + OT",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 50,
+    "hover": "NGFW, SASE/SWG, VPN, NDR, DDoS, secure gateways, plus OT/ICS security; historically the largest product bucket."
+  },
+  {
+    "label": "Palo Alto Networks",
+    "parent": "Network & perimeter + OT",
+    "value": 8.0,
+    "hover": "FY24 revenue ~$8.0B; large share from NGFW + SASE + cloud security."
+  },
+  {
+    "label": "Fortinet",
+    "parent": "Network & perimeter + OT",
+    "value": 5.96,
+    "hover": "2024 revenue ~$5.96B; firewall/SASE-heavy portfolio."
+  },
+  {
+    "label": "Check Point",
+    "parent": "Network & perimeter + OT",
+    "value": 2.57,
+    "hover": "2024 revenue ~$2.57B; focus on firewalls, gateways, threat prevention."
+  },
+  {
+    "label": "Cisco Security",
+    "parent": "Network & perimeter + OT",
+    "value": 8.0,
+    "hover": "Security segment tracking toward ~$8B FY25; major share in secure networking and gateways."
+  },
+  {
+    "label": "Endpoint security",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 15,
+    "hover": "EPP/EDR/XDR agents on endpoints; analyst ranges $15–26B (Fortune vs. MarketsandMarkets)."
+  },
+  {
+    "label": "Microsoft Security (endpoint share)",
+    "parent": "Endpoint security",
+    "value": 8.0,
+    "hover": "Part of >$20B security run-rate; large EDR/XDR footprint across Defender suite."
+  },
+  {
+    "label": "CrowdStrike",
+    "parent": "Endpoint security",
+    "value": 3.06,
+    "hover": "FY24 total revenue ~$3.06B; ARR ~$3.44B."
+  },
+  {
+    "label": "SentinelOne",
+    "parent": "Endpoint security",
+    "value": 0.75,
+    "hover": "TTM revenue around $0.7–0.8B; ARR $724M as of Jan 2024."
+  },
+  {
+    "label": "Cloud security",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 36,
+    "hover": "CNAPP, CSPM, CWPP, SaaS posture, CASB, cloud-native WAAP/API protection; market guides ~$36B."
+  },
+  {
+    "label": "Zscaler",
+    "parent": "Cloud security",
+    "value": 2.3,
+    "hover": "FY24 revenue roughly $2.17–2.42B; core SSE/zero trust cloud security."
+  },
+  {
+    "label": "Palo Alto Networks (Prisma/Cortex share)",
+    "parent": "Cloud security",
+    "value": 8.0,
+    "hover": "Portion of $8.0B FY24 tied to Prisma Cloud/SASE/CNAPP offerings."
+  },
+  {
+    "label": "Wiz",
+    "parent": "Cloud security",
+    "value": 1.0,
+    "hover": "Private; 2024 funding at $12B valuation with $1B raise to scale CNAPP/DSPM."
+  },
+  {
+    "label": "Identity security (IAM/PAM/IGA)",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 23,
+    "hover": "IAM, CIAM, PAM, IGA, identity threat detection; anchored to ~$23B."
+  },
+  {
+    "label": "Okta",
+    "parent": "Identity security (IAM/PAM/IGA)",
+    "value": 2.5,
+    "hover": "FY24 revenue guide around $2.5B; workforce + CIAM focus."
+  },
+  {
+    "label": "CyberArk",
+    "parent": "Identity security (IAM/PAM/IGA)",
+    "value": 1.0,
+    "hover": "2024 revenue ~$1.0B; ARR $1.17B; PAM/identity security pure-play."
+  },
+  {
+    "label": "SailPoint",
+    "parent": "Identity security (IAM/PAM/IGA)",
+    "value": 0.7,
+    "hover": "FY24 GAAP revenue roughly $0.7B; ARR ~$813M (Oct 2024)."
+  },
+  {
+    "label": "Microsoft (identity share)",
+    "parent": "Identity security (IAM/PAM/IGA)",
+    "value": 5.0,
+    "hover": "Large IAM footprint via Entra/Defender; revenue not broken out, placeholder share shown."
+  },
+  {
+    "label": "Application & API security",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 10,
+    "hover": "SAST/DAST/IAST/SCA/RASP, WAAP/WAF/API protection, bot mitigation; anchored to ~$10B."
+  },
+  {
+    "label": "Akamai",
+    "parent": "Application & API security",
+    "value": 3.8,
+    "hover": "Multi-billion revenue; WAAP/WAF and DDoS central to security stream."
+  },
+  {
+    "label": "Cloudflare",
+    "parent": "Application & API security",
+    "value": 2.1,
+    "hover": "Multi-billion revenue with large WAAP/bot/zero-trust share; exact security split not broken out."
+  },
+  {
+    "label": "Palo Alto / Fortinet (WAAP share)",
+    "parent": "Application & API security",
+    "value": 1.2,
+    "hover": "WAAP/WAF embedded within broader platforms; share of PANW/FTNT revenue."
+  },
+  {
+    "label": "Data security (DLP/DSPM)",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 13,
+    "hover": "DLP, data discovery/classification, DSPM, tokenization, database monitoring; narrow DLP core ~$12.6B."
+  },
+  {
+    "label": "Broadcom (Symantec Enterprise / DLP)",
+    "parent": "Data security (DLP/DSPM)",
+    "value": 4.0,
+    "hover": "Symantec DLP among largest installed bases; revenue within Broadcom infra software."
+  },
+  {
+    "label": "Microsoft (data security share)",
+    "parent": "Data security (DLP/DSPM)",
+    "value": 5.0,
+    "hover": "Purview/Defender drive sizable DLP/DSPM spend; part of >$20B security business."
+  },
+  {
+    "label": "Zscaler (data control share)",
+    "parent": "Data security (DLP/DSPM)",
+    "value": 2.2,
+    "hover": "Inline SSE stack used for DLP/data access control; FY24 revenue ~$2.2B+."
+  },
+  {
+    "label": "Security analytics & operations",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 10,
+    "hover": "SIEM, SOAR, XDR command, threat intel platforms; SIEM core ~$8.3B with SOAR/XDR taking blended ~$10B."
+  },
+  {
+    "label": "Microsoft (Sentinel/Defender XDR share)",
+    "parent": "Security analytics & operations",
+    "value": 4.0,
+    "hover": "Part of >$20B security run-rate; Sentinel + Defender XDR not broken out, illustrative share (trimmed to keep subtree ≤ parent)."
+  },
+  {
+    "label": "Splunk (Cisco)",
+    "parent": "Security analytics & operations",
+    "value": 3.0,
+    "hover": "Multi-billion SIEM/SOC analytics; now inside Cisco security portfolio (value trimmed to keep subtree ≤ parent)."
+  },
+  {
+    "label": "Palo Alto Networks (Cortex/XSIAM)",
+    "parent": "Security analytics & operations",
+    "value": 2.0,
+    "hover": "Cortex/XDR/XSIAM a multi-billion ARR line inside $8.0B FY24 revenue."
+  },
+  {
+    "label": "Managed security services (MSS/MDR)",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 37,
+    "hover": "MSSP, SOC outsourcing, MDR, managed SIEM/XDR; blended 2024 estimate in high $30Bs."
+  },
+  {
+    "label": "Accenture Security",
+    "parent": "Managed security services (MSS/MDR)",
+    "value": 10.0,
+    "hover": "Security services revenue >$10B annually; heavy MSS/advisory mix."
+  },
+  {
+    "label": "IBM Security / Consulting",
+    "parent": "Managed security services (MSS/MDR)",
+    "value": 5.0,
+    "hover": "Large MSS plus QRadar/Cloud Pak; revenue not broken out, illustrative share."
+  },
+  {
+    "label": "Palo Alto / CrowdStrike MDR",
+    "parent": "Managed security services (MSS/MDR)",
+    "value": 1.0,
+    "hover": "MDR/XDR managed offerings embedded in PANW ($8.0B) and CRWD ($3.06B) totals."
+  },
+  {
+    "label": "Telco MSSPs (AT&T/BT/Orange etc.)",
+    "parent": "Managed security services (MSS/MDR)",
+    "value": 5.0,
+    "hover": "Telco-led managed security; illustrative allocation across major MSSPs."
+  },
+  {
+    "label": "GRC / security-driven compliance",
+    "parent": "Cybersecurity (2024 est.)",
+    "value": 18,
+    "hover": "Security-focused GRC platforms, compliance/risk tooling, and cyber-heavy consulting; noisy estimates ~$15–20B."
+  },
+  {
+    "label": "ServiceNow (Risk & SecOps)",
+    "parent": "GRC / security-driven compliance",
+    "value": 8.0,
+    "hover": "Multi-billion ARR platform; security & risk modules a significant workflow wedge."
+  },
+  {
+    "label": "RSA / Archer and peers",
+    "parent": "GRC / security-driven compliance",
+    "value": 1.0,
+    "hover": "RSA Archer, OneTrust, MetricStream sized in high hundreds of millions ARR; combined illustrative value."
+  },
+  {
+    "label": "Big 4 + boutiques (cyber advisory/audit)",
+    "parent": "GRC / security-driven compliance",
+    "value": 6.0,
+    "hover": "Deloitte, PwC, KPMG, EY cyber advisory/audit contributions; reported within broader consulting revenue."
+  }
+]
+

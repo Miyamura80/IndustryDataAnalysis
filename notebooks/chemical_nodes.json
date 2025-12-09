@@ -12,10 +12,202 @@
     "hover": "Bulk olefins, aromatics, base polymers; ~US$0.7T 2024."
   },
   {
+    "label": "Light olefins — Ethylene",
+    "parent": "Petrochemicals & Polymers",
+    "value": 195,
+    "hover": "Ethylene core building block; analysts place 2024 market ~US$190–200B."
+  },
+  {
+    "label": "ExxonMobil — Ethylene",
+    "parent": "Light olefins — Ethylene",
+    "value": 60,
+    "hover": "Large global cracker base (US, Singapore, China Huizhou)."
+  },
+  {
+    "label": "Sinopec — Ethylene",
+    "parent": "Light olefins — Ethylene",
+    "value": 50,
+    "hover": "China Petrochemical Corp. with extensive China olefins capacity."
+  },
+  {
+    "label": "SABIC — Ethylene",
+    "parent": "Light olefins — Ethylene",
+    "value": 40,
+    "hover": "World-scale Middle East ethylene and derivatives."
+  },
+  {
+    "label": "Light olefins — Propylene",
+    "parent": "Petrochemicals & Polymers",
+    "value": 120,
+    "hover": "Propylene feeding PP, acrylonitrile, propylene oxide, cumene; ~US$115–130B 2024."
+  },
+  {
+    "label": "Sinopec — Propylene",
+    "parent": "Light olefins — Propylene",
+    "value": 32,
+    "hover": "Major propylene supplier with very large C3 capacity."
+  },
+  {
+    "label": "LyondellBasell — Propylene",
+    "parent": "Light olefins — Propylene",
+    "value": 30,
+    "hover": "Large propylene and derivatives footprint; strong in polyolefins."
+  },
+  {
+    "label": "Dow — Propylene",
+    "parent": "Light olefins — Propylene",
+    "value": 26,
+    "hover": "Global propylene player highlighted in market reports."
+  },
+  {
+    "label": "Aromatics (BTX anchor — Benzene)",
+    "parent": "Petrochemicals & Polymers",
+    "value": 90,
+    "hover": "Benzene ~US$50B; broader BTX set roughly ~US$80–100B 2024."
+  },
+  {
+    "label": "ExxonMobil — Aromatics",
+    "parent": "Aromatics (BTX anchor — Benzene)",
+    "value": 18,
+    "hover": "Integrated refiner/petchem with major benzene/aromatics footprint."
+  },
+  {
+    "label": "BASF — Aromatics",
+    "parent": "Aromatics (BTX anchor — Benzene)",
+    "value": 16,
+    "hover": "Large aromatics and downstream styrenics chain."
+  },
+  {
+    "label": "Sinopec — Aromatics",
+    "parent": "Aromatics (BTX anchor — Benzene)",
+    "value": 14,
+    "hover": "Cited among leading benzene/aromatics suppliers."
+  },
+  {
+    "label": "Polyethylene (PE)",
+    "parent": "Petrochemicals & Polymers",
+    "value": 140,
+    "hover": "LDPE/LLDPE/HDPE; broad analyst range ~US$115–160B 2024 (mid ~US$140B)."
+  },
+  {
+    "label": "LyondellBasell — PE",
+    "parent": "Polyethylene (PE)",
+    "value": 30,
+    "hover": "Large global PE portfolio across grades."
+  },
+  {
+    "label": "ExxonMobil — PE",
+    "parent": "Polyethylene (PE)",
+    "value": 28,
+    "hover": "Major HDPE/LDPE/LLDPE producer."
+  },
+  {
+    "label": "PetroChina / CNPC — PE",
+    "parent": "Polyethylene (PE)",
+    "value": 26,
+    "hover": "Highlighted as a leading PE player in Asia."
+  },
+  {
+    "label": "Polypropylene (PP)",
+    "parent": "Petrochemicals & Polymers",
+    "value": 130,
+    "hover": "Rigid packaging, fibers, films; ~US$125–135B 2024 (mid ~US$130B)."
+  },
+  {
+    "label": "LyondellBasell — PP",
+    "parent": "Polypropylene (PP)",
+    "value": 28,
+    "hover": "Frequently cited as a leading PP producer."
+  },
+  {
+    "label": "PetroChina / CNPC — PP",
+    "parent": "Polypropylene (PP)",
+    "value": 24,
+    "hover": "Listed among top PP producers."
+  },
+  {
+    "label": "SABIC — PP",
+    "parent": "Polypropylene (PP)",
+    "value": 22,
+    "hover": "Major PP player with global reach."
+  },
+  {
+    "label": "Polyvinyl chloride (PVC)",
+    "parent": "Petrochemicals & Polymers",
+    "value": 87,
+    "hover": "Construction polymer; multiple sources converge near US$87B 2024."
+  },
+  {
+    "label": "Shin-Etsu — PVC",
+    "parent": "Polyvinyl chloride (PVC)",
+    "value": 16,
+    "hover": "Frequently ranked #1 global PVC producer."
+  },
+  {
+    "label": "Formosa Plastics — PVC",
+    "parent": "Polyvinyl chloride (PVC)",
+    "value": 15,
+    "hover": "Very large PVC capacity across Asia and US."
+  },
+  {
+    "label": "Westlake — PVC",
+    "parent": "Polyvinyl chloride (PVC)",
+    "value": 12,
+    "hover": "Major US-based PVC player."
+  },
+  {
+    "label": "PET resins",
+    "parent": "Petrochemicals & Polymers",
+    "value": 38,
+    "hover": "Bottle and fiber-grade PET resin; ~US$35–40B 2024 (PET share of ~US$48B PET+PBT)."
+  },
+  {
+    "label": "Indorama Ventures — PET",
+    "parent": "PET resins",
+    "value": 9,
+    "hover": "Often cited as a leading global PET producer."
+  },
+  {
+    "label": "Alpek — PET",
+    "parent": "PET resins",
+    "value": 6,
+    "hover": "Major PET/PET resin player."
+  },
+  {
+    "label": "Reliance Industries — PET",
+    "parent": "PET resins",
+    "value": 6,
+    "hover": "Large integrated PET/polyester capacity."
+  },
+  {
+    "label": "Polystyrene & styrenics",
+    "parent": "Petrochemicals & Polymers",
+    "value": 42,
+    "hover": "PS, EPS, and broader styrenic polymers; ~US$35–50B 2024."
+  },
+  {
+    "label": "INEOS Styrolution — Styrenics",
+    "parent": "Polystyrene & styrenics",
+    "value": 9,
+    "hover": "Focused styrenics specialist; leading PS/styrenics supplier."
+  },
+  {
+    "label": "TotalEnergies — Styrenics",
+    "parent": "Polystyrene & styrenics",
+    "value": 7,
+    "hover": "Major PS and styrenics player."
+  },
+  {
+    "label": "SABIC — Styrenics",
+    "parent": "Polystyrene & styrenics",
+    "value": 6,
+    "hover": "Global styrenics and PS presence."
+  },
+  {
     "label": "Specialty Chemicals",
     "parent": "Global chemicals market (broad)",
     "value": 950,
-    "hover": "High-value, lower-volume materials (coatings, additives, electronics, catalysts, etc.); ~US$0.9–1.0T 2024."
+    "hover": "High-value, lower-volume materials; ~US$0.9–1.0T 2024."
   },
   {
     "label": "Agrochemicals",
@@ -46,24 +238,6 @@
     "parent": "Petrochemicals & Polymers",
     "value": 21.8,
     "hover": "Dow Packaging & Specialty Plastics 2024 net sales: US$21.8B. Logo: media/companies/chemical_industry/dow.png"
-  },
-  {
-    "label": "Evonik",
-    "parent": "Specialty Chemicals",
-    "value": 16.4,
-    "hover": "Evonik 2024 sales €15.2B → ~US$16.4B. Logo: media/companies/chemical_industry/evonik.png"
-  },
-  {
-    "label": "Clariant",
-    "parent": "Specialty Chemicals",
-    "value": 4.6,
-    "hover": "Clariant 2024 sales CHF 4.15B → ~US$4.6B. Logo: media/companies/chemical_industry/clariant.png"
-  },
-  {
-    "label": "Croda",
-    "parent": "Specialty Chemicals",
-    "value": 2.1,
-    "hover": "Croda 2024 sales £1.63B → ~US$2.1B. Logo: media/companies/chemical_industry/croda.png"
   },
   {
     "label": "Bayer – Crop Science",
@@ -106,6 +280,221 @@
     "parent": "Consumer & Care Ingredients",
     "value": 5.0,
     "hover": "Evonik care-focused lines (subset of €15.2B); illustrative ~US$5.0B. Logo: media/companies/chemical_industry/evonik.png"
+  },
+  {
+    "label": "Paints, Coatings & Inks",
+    "parent": "Specialty Chemicals",
+    "value": 211,
+    "hover": "Architectural, industrial, automotive, marine coatings; ~US$211B 2024."
+  },
+  {
+    "label": "Sherwin-Williams",
+    "parent": "Paints, Coatings & Inks",
+    "value": 23.1,
+    "hover": "Sherwin-Williams 2024 net sales ~US$23.1B."
+  },
+  {
+    "label": "PPG Industries",
+    "parent": "Paints, Coatings & Inks",
+    "value": 15.8,
+    "hover": "PPG Industries 2024 net sales ~US$15.8B."
+  },
+  {
+    "label": "AkzoNobel",
+    "parent": "Paints, Coatings & Inks",
+    "value": 11.6,
+    "hover": "AkzoNobel 2024 revenue €10.7B → ~US$11.6B."
+  },
+  {
+    "label": "Construction Chemicals",
+    "parent": "Specialty Chemicals",
+    "value": 65.6,
+    "hover": "Admixtures, waterproofing, sealants, mortars; ~US$65.6B 2024."
+  },
+  {
+    "label": "Sika",
+    "parent": "Construction Chemicals",
+    "value": 13.1,
+    "hover": "Sika 2024 sales CHF 11.8B → ~US$13.1B."
+  },
+  {
+    "label": "Mapei",
+    "parent": "Construction Chemicals",
+    "value": 4.8,
+    "hover": "Mapei 2024 turnover ~€4.4B → ~US$4.8B."
+  },
+  {
+    "label": "RPM International (Construction)",
+    "parent": "Construction Chemicals",
+    "value": 2.7,
+    "hover": "RPM Construction Products Group FY2024 sales ~US$2.7B."
+  },
+  {
+    "label": "Adhesives & Sealants",
+    "parent": "Specialty Chemicals",
+    "value": 72.8,
+    "hover": "Industrial adhesives, hot-melts, tapes; ~US$72.8B 2024."
+  },
+  {
+    "label": "Henkel – Adhesive Tech",
+    "parent": "Adhesives & Sealants",
+    "value": 24.2,
+    "hover": "Henkel Adhesive Technologies 2024 sales €22.4B → ~US$24.2B."
+  },
+  {
+    "label": "H.B. Fuller",
+    "parent": "Adhesives & Sealants",
+    "value": 3.6,
+    "hover": "H.B. Fuller FY2024 net revenue ~US$3.6B."
+  },
+  {
+    "label": "3M – Safety & Industrial",
+    "parent": "Adhesives & Sealants",
+    "value": 11.0,
+    "hover": "3M Safety & Industrial (adhesives heavy) 2024 sales ~US$11.0B."
+  },
+  {
+    "label": "Electronic Chemicals",
+    "parent": "Specialty Chemicals",
+    "value": 73.9,
+    "hover": "Semiconductor materials, photoresists, specialty gases; ~US$73.9B 2024."
+  },
+  {
+    "label": "Shin-Etsu Chemical",
+    "parent": "Electronic Chemicals",
+    "value": 21.6,
+    "hover": "Shin-Etsu FY2022 revenue ¥2.8T → ~US$21.6B (major silicon/photoresist)."
+  },
+  {
+    "label": "Entegris",
+    "parent": "Electronic Chemicals",
+    "value": 3.4,
+    "hover": "Entegris 2024 run-rate sales ~US$3.4B."
+  },
+  {
+    "label": "JSR Corporation",
+    "parent": "Electronic Chemicals",
+    "value": 2.5,
+    "hover": "JSR Corporation photoresists/materials; est. ~US$2.5B."
+  },
+  {
+    "label": "Water Treatment Chemicals",
+    "parent": "Specialty Chemicals",
+    "value": 37.5,
+    "hover": "Coagulants, disinfectants, scale inhibitors; ~US$37.5B 2024."
+  },
+  {
+    "label": "Ecolab",
+    "parent": "Water Treatment Chemicals",
+    "value": 15.7,
+    "hover": "Ecolab 2024 net sales ~US$15.7B (Water + Hygiene)."
+  },
+  {
+    "label": "Kemira",
+    "parent": "Water Treatment Chemicals",
+    "value": 3.2,
+    "hover": "Kemira 2024 revenue €2.95B → ~US$3.2B."
+  },
+  {
+    "label": "Kurita Water",
+    "parent": "Water Treatment Chemicals",
+    "value": 2.8,
+    "hover": "Kurita Water Industries FY2024 revenue ¥409B → ~US$2.8B."
+  },
+  {
+    "label": "Oilfield Chemicals",
+    "parent": "Specialty Chemicals",
+    "value": 29.0,
+    "hover": "Drilling fluids, production chemicals; ~US$29B 2024."
+  },
+  {
+    "label": "ChampionX",
+    "parent": "Oilfield Chemicals",
+    "value": 3.6,
+    "hover": "ChampionX 2024 revenue ~US$3.6B; largely production chemicals."
+  },
+  {
+    "label": "Halliburton (C&P)",
+    "parent": "Oilfield Chemicals",
+    "value": 5.5,
+    "hover": "Halliburton Completion & Production 2024 revenue ~US$10.7B; chemicals slice shown as ~US$5.5B."
+  },
+  {
+    "label": "Baker Hughes (OFS)",
+    "parent": "Oilfield Chemicals",
+    "value": 5.5,
+    "hover": "Baker Hughes Oilfield Services 2024 revenue ~US$26.9B; chemicals slice shown as ~US$5.5B."
+  },
+  {
+    "label": "Personal-Care Ingredients",
+    "parent": "Specialty Chemicals",
+    "value": 11.8,
+    "hover": "Surfactants, emollients, actives for cosmetics; ~US$11.8B 2024."
+  },
+  {
+    "label": "BASF – Personal Care",
+    "parent": "Personal-Care Ingredients",
+    "value": 4.0,
+    "hover": "BASF Personal Care (subset of Care Chemicals); est. ~US$4.0B."
+  },
+  {
+    "label": "Clariant – Care Chem",
+    "parent": "Personal-Care Ingredients",
+    "value": 2.2,
+    "hover": "Clariant Care Chemicals sales ~CHF 2B → ~US$2.2B."
+  },
+  {
+    "label": "Croda – Personal Care",
+    "parent": "Personal-Care Ingredients",
+    "value": 0.9,
+    "hover": "Croda Personal Care (subset of Consumer Care); est. ~US$0.9B."
+  },
+  {
+    "label": "Flavors & Fragrances",
+    "parent": "Specialty Chemicals",
+    "value": 32.3,
+    "hover": "Aroma chemicals, extracts for food/scent; ~US$32.3B 2024."
+  },
+  {
+    "label": "Givaudan",
+    "parent": "Flavors & Fragrances",
+    "value": 7.9,
+    "hover": "Givaudan 2024 sales CHF 7.1B → ~US$7.9B."
+  },
+  {
+    "label": "IFF",
+    "parent": "Flavors & Fragrances",
+    "value": 10.7,
+    "hover": "IFF 2024 net sales ~US$10.7B."
+  },
+  {
+    "label": "Symrise",
+    "parent": "Flavors & Fragrances",
+    "value": 5.3,
+    "hover": "Symrise 2024 sales €4.9B → ~US$5.3B."
+  },
+  {
+    "label": "Textile Chemicals",
+    "parent": "Specialty Chemicals",
+    "value": 30.0,
+    "hover": "Dyes, finishing agents, auxiliaries; ~US$30B 2024."
+  },
+  {
+    "label": "Archroma",
+    "parent": "Textile Chemicals",
+    "value": 1.7,
+    "hover": "Archroma 2024 est. revenue ~US$1.7B."
+  },
+  {
+    "label": "BASF – Textile",
+    "parent": "Textile Chemicals",
+    "value": 0.5,
+    "hover": "BASF Textile Chemicals (niche slice)."
+  },
+  {
+    "label": "Huntsman (Historical)",
+    "parent": "Textile Chemicals",
+    "value": 0.9,
+    "hover": "Huntsman Textile Effects (sold 2023); historical scale ~US$0.9B."
   }
 ]
-

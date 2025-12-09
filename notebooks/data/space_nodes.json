@@ -1,6 +1,6 @@
 [
     {"label": "Space economy (2024 est.)", "parent": "", "value": 613, "hover": "Global space economy ~ $613B (all segments)"},
-    {"label": "Core satellite industry", "parent": "Space economy (2024 est.)", "value": 298.6, "hover": "Launch + manufacturing + satellite services + ground (BryceTech)"},
+    {"label": "Core satellite industry", "parent": "Space economy (2024 est.)", "value": 298.6, "hover": "Launch + manufacturing + services + ground (BryceTech)"},
     {"label": "Launch services", "parent": "Core satellite industry", "value": 15, "hover": "Commercial launch revenue ~$9–15B (2023–24)"},
     {"label": "SpaceX launch", "parent": "Launch services", "value": 3.5, "hover": "SpaceX launch revenue est. ~$3.5B in 2023"},
     {"label": "Rocket Lab launch", "parent": "Launch services", "value": 0.08, "hover": "Rocket Lab launch ~1/3 of $245M 2023 revenue"},
@@ -14,9 +14,16 @@
     {"label": "SES + Intelsat", "parent": "Satellite services", "value": 4.0, "hover": "Combined operator ~€3.8B (~$4B) annual revenue"},
     {"label": "Viasat (incl. Inmarsat)", "parent": "Satellite services", "value": 4.28, "hover": "Viasat FY2024 revenue $4.28B"},
     {"label": "Ground equipment (sat)", "parent": "Core satellite industry", "value": 155.3, "hover": "Ground equipment (GNSS, consumer, network) $155.3B 2024"},
-    {"label": "Qualcomm", "parent": "Ground equipment (sat)", "value": 39.0, "hover": "Fiscal 2024 revenue $39.0B; GNSS-capable SoCs/modems"},
-    {"label": "Garmin", "parent": "Ground equipment (sat)", "value": 6.3, "hover": "2024 revenue $6.3B; GNSS-centric devices"},
-    {"label": "u-blox", "parent": "Ground equipment (sat)", "value": 0.6, "hover": "2023 revenue ~CHF 577M (~$0.6B)"},
+    {"label": "GNSS Equipment", "parent": "Ground equipment (sat)", "value": 135.0, "hover": "GNSS receivers, chipsets, and devices (dominant ground segment)"},
+    {"label": "Qualcomm", "parent": "GNSS Equipment", "value": 39.0, "hover": "Fiscal 2024 revenue $39.0B; GNSS-capable SoCs/modems"},
+    {"label": "Garmin", "parent": "GNSS Equipment", "value": 6.3, "hover": "2024 revenue $6.3B; GNSS-centric devices"},
+    {"label": "u-blox", "parent": "GNSS Equipment", "value": 0.6, "hover": "2023 revenue ~CHF 577M (~$0.6B)"},
+    {"label": "Network Equipment", "parent": "Ground equipment (sat)", "value": 10.0, "hover": "Gateways, earth stations, teleports, and NOCs"},
+    {"label": "Kratos Defense", "parent": "Network Equipment", "value": 0.7, "hover": "Space/Satellite/Cyber revenue est. ~$700M"},
+    {"label": "Comtech", "parent": "Network Equipment", "value": 0.4, "hover": "Satellite ground systems revenue ~$400M"},
+    {"label": "Gilat", "parent": "Network Equipment", "value": 0.26, "hover": "2023 revenue $266M; VSAT/Baseband equipment"},
+    {"label": "Consumer User Equipment", "parent": "Ground equipment (sat)", "value": 10.3, "hover": "User terminals (VSAT, TV dishes, broadband antennas)"},
+    {"label": "Intellian", "parent": "Consumer User Equipment", "value": 0.23, "hover": "2023 revenue ~$230M; Maritime/User terminals"},
     {"label": "GNSS downstream (beyond core)", "parent": "Space economy (2024 est.)", "value": 260, "hover": "GNSS-enabled products/services ~$260–301B 2023–24"},
     {"label": "Earth observation & analytics", "parent": "Space economy (2024 est.)", "value": 6.5, "hover": "EO market ~$5–7B 2024"},
     {"label": "Planet", "parent": "Earth observation & analytics", "value": 0.244, "hover": "FY ending Jan 2025 revenue $244M"},
@@ -26,4 +33,3 @@
     {"label": "Virgin Galactic", "parent": "Space tourism & crew", "value": 0.007, "hover": "2023 revenue $7M (6 flights)"},
     {"label": "Axiom Space (contracts)", "parent": "Space tourism & crew", "value": 0.055, "hover": "Private missions ~$55M/seat; contracts $2.2B+ backlog"}
 ]
-

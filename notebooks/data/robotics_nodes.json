@@ -1,0 +1,160 @@
+[
+    {
+        "label": "Robotics 2024 (directional)",
+        "parent": "",
+        "value": 106,
+        "hover": "Directional sum of major slices; segments overlap across analyst cuts"
+    },
+    {
+        "label": "Industrial / factory",
+        "parent": "Robotics 2024 (directional)",
+        "value": 25,
+        "hover": "Articulated, SCARA, delta robots in manufacturing; mid-band of $18–34B estimates"
+    },
+    {
+        "label": "FANUC",
+        "parent": "Industrial / factory",
+        "value": 5.49,
+        "hover": "2024 revenue; majority CNC + robots, robot division is largest line"
+    },
+    {
+        "label": "ABB Robotics",
+        "parent": "Industrial / factory",
+        "value": 2.3,
+        "hover": "Robotics division revenue 2024"
+    },
+    {
+        "label": "Yaskawa Robotics",
+        "parent": "Industrial / factory",
+        "value": 1.15,
+        "hover": "FY2024 robotics segment revenue, USD billions"
+    },
+    {
+        "label": "Logistics & warehouse",
+        "parent": "Robotics 2024 (directional)",
+        "value": 18,
+        "hover": "AMRs, AGVs, sortation; working band $14.5–22.4B"
+    },
+    {
+        "label": "AutoStore",
+        "parent": "Logistics & warehouse",
+        "value": 0.601,
+        "hover": "2024 revenue, USD billions"
+    },
+    {
+        "label": "Geek+",
+        "parent": "Logistics & warehouse",
+        "value": 0.33,
+        "hover": "2024 revenue, USD billions"
+    },
+    {
+        "label": "KION / Dematic",
+        "parent": "Logistics & warehouse",
+        "value": 2.9,
+        "hover": "Supply Chain Solutions (Dematic) 2024 revenue, EUR translated to ~USD billions"
+    },
+    {
+        "label": "Medical & surgical",
+        "parent": "Robotics 2024 (directional)",
+        "value": 15,
+        "hover": "Robotic surgery, rehab, hospital automation; $13–16B band"
+    },
+    {
+        "label": "Intuitive Surgical",
+        "parent": "Medical & surgical",
+        "value": 8.35,
+        "hover": "2024 revenue, largely da Vinci + Ion ecosystem"
+    },
+    {
+        "label": "Stryker (Mako context)",
+        "parent": "Medical & surgical",
+        "value": 4,
+        "hover": "Directional robotics contribution within MedSurg/Neurotech, USD billions"
+    },
+    {
+        "label": "Medtronic (robotics slice)",
+        "parent": "Medical & surgical",
+        "value": 2,
+        "hover": "Directional robotics share of FY24 revenue, USD billions"
+    },
+    {
+        "label": "Agriculture autonomy",
+        "parent": "Robotics 2024 (directional)",
+        "value": 7,
+        "hover": "Autonomous tractors, smart sprayers, milking robots; $7.34B est."
+    },
+    {
+        "label": "John Deere PPA",
+        "parent": "Agriculture autonomy",
+        "value": 3,
+        "hover": "Production & Precision Ag 2024 revenue (robotics/autonomy rich), USD billions"
+    },
+    {
+        "label": "CNH Precision Tech",
+        "parent": "Agriculture autonomy",
+        "value": 0.784,
+        "hover": "Precision Technology 2024 revenue, USD billions"
+    },
+    {
+        "label": "DJI (ag slice)",
+        "parent": "Agriculture autonomy",
+        "value": 0.6,
+        "hover": "Directional ag drone/spraying share, USD billions"
+    },
+    {
+        "label": "Defense & security",
+        "parent": "Robotics 2024 (directional)",
+        "value": 30,
+        "hover": "Military robots + security robots; definitional overlap across sources"
+    },
+    {
+        "label": "Northrop Grumman Aero",
+        "parent": "Defense & security",
+        "value": 12,
+        "hover": "Aeronautics Systems 2024 sales, USD billions (includes unmanned systems)"
+    },
+    {
+        "label": "Elbit Systems",
+        "parent": "Defense & security",
+        "value": 6.83,
+        "hover": "2024 revenue, USD billions; mix includes UGVs/UAVs"
+    },
+    {
+        "label": "AeroVironment",
+        "parent": "Defense & security",
+        "value": 0.717,
+        "hover": "2024 revenue, USD billions; small UAVs / loitering munitions"
+    },
+    {
+        "label": "Consumer & home",
+        "parent": "Robotics 2024 (directional)",
+        "value": 11,
+        "hover": "Household cleaning, lawn, toy/edu robots; $11–12B band"
+    },
+    {
+        "label": "Ecovacs",
+        "parent": "Consumer & home",
+        "value": 2.3,
+        "hover": "2024 revenue, USD billions"
+    },
+    {
+        "label": "Roborock",
+        "parent": "Consumer & home",
+        "value": 1.65,
+        "hover": "2024 revenue, USD billions"
+    },
+    {
+        "label": "iRobot",
+        "parent": "Consumer & home",
+        "value": 0.682,
+        "hover": "2024 revenue, USD billions"
+    },
+    {
+        "label": "Service robots (scope band)",
+        "parent": "Robotics 2024 (directional)",
+        "value": 35,
+        "hover": "Illustrative marker for service robots $22.4–47.1B depending on inclusions"
+    }
+]
+
+

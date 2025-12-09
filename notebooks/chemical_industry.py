@@ -125,6 +125,8 @@ def _(mo):
         """
     **How to read the icicle:**
     - Root uses the narrower **US$3.5T** estimate to leave visual headroom; children roll up with branchvalues="total".
+    - Petrochemicals & Polymers now shows sub-segments (ethylene, propylene, aromatics, PE, PP, PVC, PET, styrenics) with illustrative top companies under each product family.
+    - **Specialty Chemicals** is further broken down into key sub-segments (Paints, Adhesives, Electronics, etc.) with representative market leaders.
     - Company nodes are illustrative and use reported 2024 segment/group sales converted roughly to USD (FX approximations).
     - Logos for the highlighted companies live in `media/companies/chemical_industry/` and can be linked or layered into custom tooltips if desired.
     """

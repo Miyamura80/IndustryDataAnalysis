@@ -1,0 +1,160 @@
+[
+    {
+        "label": "Actuators landscape (2024 rough TAM, overlapping cuts)",
+        "parent": "",
+        "value": 108.91,
+        "hover": "Sum of segment cuts (industrial, robotics, automotive, aerospace/defence, HVAC). Overlap across verticals; do not sum for market sizing."
+    },
+    {
+        "label": "Industrial / process actuators",
+        "parent": "Actuators landscape (2024 rough TAM, overlapping cuts)",
+        "value": 43.2,
+        "hover": "Process valves, pumps, motion in oil & gas, chemicals, power, water and general industry."
+    },
+    {
+        "label": "Industrial remainder / overlap",
+        "parent": "Industrial / process actuators",
+        "value": 40.2,
+        "hover": "Other suppliers and overlap with valves & systems; actuator slice within $65.8B valves+actuators market."
+    },
+    {
+        "label": "Emerson Electric",
+        "parent": "Industrial / process actuators",
+        "value": 1.0,
+        "hover": "Final Control valves/actuators; ~11.6% 2024 operating margin."
+    },
+    {
+        "label": "Flowserve",
+        "parent": "Industrial / process actuators",
+        "value": 1.0,
+        "hover": "Valves, pumps, actuators for process industries; ~10.1% 2024 operating margin."
+    },
+    {
+        "label": "Rotork",
+        "parent": "Industrial / process actuators",
+        "value": 1.0,
+        "hover": "Pure-play valve/fluid-control actuators; ~23–24% 2024 operating margin."
+    },
+    {
+        "label": "Robotics & factory automation",
+        "parent": "Actuators landscape (2024 rough TAM, overlapping cuts)",
+        "value": 15.2,
+        "hover": "Electric/servo actuators in robots, gantries, linear stages, automated machinery; ~$15.2B 2024."
+    },
+    {
+        "label": "Robotics remainder / overlap",
+        "parent": "Robotics & factory automation",
+        "value": 12.2,
+        "hover": "Other motion vendors and overlap with general automation spend."
+    },
+    {
+        "label": "SMC Corp",
+        "parent": "Robotics & factory automation",
+        "value": 1.0,
+        "hover": "Pneumatic actuators and motion components; ~25.3% FY 2024 operating margin."
+    },
+    {
+        "label": "Parker Hannifin",
+        "parent": "Robotics & factory automation",
+        "value": 1.0,
+        "hover": "Motion & control (electric and hydraulic actuators); ~20.6% 2024 operating margin."
+    },
+    {
+        "label": "ABB (Robotics & Motion)",
+        "parent": "Robotics & factory automation",
+        "value": 1.0,
+        "hover": "Drives, motors, actuators; ~18.1% 2024 operational EBITA margin."
+    },
+    {
+        "label": "Automotive actuators",
+        "parent": "Actuators landscape (2024 rough TAM, overlapping cuts)",
+        "value": 24.7,
+        "hover": "Throttle, EGR, turbo/boost, transmission/clutch, HVAC flaps, EPS, brake-by-wire, closures; ~$24.7B 2024."
+    },
+    {
+        "label": "Automotive remainder / overlap",
+        "parent": "Automotive actuators",
+        "value": 21.7,
+        "hover": "Other Tier-1/2 suppliers and overlapping mechatronics content."
+    },
+    {
+        "label": "BorgWarner",
+        "parent": "Automotive actuators",
+        "value": 1.0,
+        "hover": "Turbo/e-boost, transmission, AWD and EV actuators; ~3.9% 2024 operating margin."
+    },
+    {
+        "label": "Denso",
+        "parent": "Automotive actuators",
+        "value": 1.0,
+        "hover": "Thermal/engine/body actuators; ~6.4% 2024 operating margin."
+    },
+    {
+        "label": "Aisin",
+        "parent": "Automotive actuators",
+        "value": 1.0,
+        "hover": "Transmission, brake, body actuators; ~3.0% 2024 operating margin."
+    },
+    {
+        "label": "Aerospace & defence actuators",
+        "parent": "Actuators landscape (2024 rough TAM, overlapping cuts)",
+        "value": 11.0,
+        "hover": "Primary/secondary flight controls, landing gear, weapons and space mechanisms; ~$11B 2024."
+    },
+    {
+        "label": "Aerospace remainder / overlap",
+        "parent": "Aerospace & defence actuators",
+        "value": 8.0,
+        "hover": "Other platform and subsystem suppliers; long-life programmes and certification."
+    },
+    {
+        "label": "Moog",
+        "parent": "Aerospace & defence actuators",
+        "value": 1.0,
+        "hover": "Flight-control and space actuators; ~11–12% fiscal 2024 operating margin."
+    },
+    {
+        "label": "Curtiss-Wright",
+        "parent": "Aerospace & defence actuators",
+        "value": 1.0,
+        "hover": "Actuation and valves for defence, nuclear, industrial; ~16–17% 2024 operating margin."
+    },
+    {
+        "label": "Honeywell (aerospace)",
+        "parent": "Aerospace & defence actuators",
+        "value": 1.0,
+        "hover": "Flight-control, environmental and actuation systems; ~18–19% 2024 operating margin."
+    },
+    {
+        "label": "HVAC & building automation",
+        "parent": "Actuators landscape (2024 rough TAM, overlapping cuts)",
+        "value": 14.81,
+        "hover": "Damper and valve actuators for HVAC/VAV, zone valves, smoke/fire dampers; ~$14.81B 2024."
+    },
+    {
+        "label": "HVAC remainder / overlap",
+        "parent": "HVAC & building automation",
+        "value": 11.81,
+        "hover": "Other HVAC/BMS suppliers and overlap with building automation controls."
+    },
+    {
+        "label": "Johnson Controls",
+        "parent": "HVAC & building automation",
+        "value": 1.0,
+        "hover": "Building controls, damper actuators; ~6.6% 2024 operating margin."
+    },
+    {
+        "label": "Honeywell (buildings)",
+        "parent": "HVAC & building automation",
+        "value": 1.0,
+        "hover": "Valve/damper actuators and BMS; ~18–19% 2024 operating margin."
+    },
+    {
+        "label": "Siemens (Smart Infrastructure)",
+        "parent": "HVAC & building automation",
+        "value": 1.0,
+        "hover": "Valve/damper actuators, building automation; ~13–17% 2024 operating margin range."
+    }
+]
+
+
