@@ -7,12 +7,14 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     # Robotics industry snapshot (2024 order-of-magnitude)
     - Commercial robotics revenue 2024: ~**$45B** (analyst ranges vary widely).
     - Working split (do **not** sum; definitions overlap):
@@ -22,13 +24,15 @@ def _(mo):
       - Agriculture autonomy: ~$7B
       - Defense & security robots: ~$30B
       - Consumer / home: ~$11B
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import plotly.graph_objects as go
+
     return (go,)
 
 
@@ -73,12 +77,14 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **Notes on the pie:**
     - Slices use mid-band values from analyst ranges; numbers overlap across sources, so treat as scale markers rather than a reconciled total.
     - Industrial remains concentrated in a few Japanese/European suppliers; logistics and defense/security are fast-growing but defined differently by each analyst.
     - Consumer/home figures are smaller than industrial in dollars but dominate unit volumes (vacuums, mops, lawn).
-    """)
+    """
+    )
     return
 
 
@@ -91,7 +97,9 @@ def _(go):
     robotics_nodes_path = base_dir_robotics / "data" / "robotics_nodes.json"
 
     if not robotics_nodes_path.exists():
-        raise FileNotFoundError(f"Robotics nodes file not found at {robotics_nodes_path}")
+        raise FileNotFoundError(
+            f"Robotics nodes file not found at {robotics_nodes_path}"
+        )
 
     with robotics_nodes_path.open("r", encoding="utf-8") as robotics_nodes_file:
         robotics_nodes = json.load(robotics_nodes_file)
@@ -126,19 +134,16 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **How to read the icicle:**
     - Root uses a directional ~$106B sum for visualization; segments overlap across analyst definitions.
     - Company nodes show reported revenues where available; they do not reconcile to parents and are included for relative scale only.
     - Defense/security and service-robot scopes differ by source; percentages are best read within each branch, not as a global total.
-    """)
+    """
+    )
     return
 
 
 if __name__ == "__main__":
     app.run()
-
-
-
-
-
