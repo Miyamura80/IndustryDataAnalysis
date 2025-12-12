@@ -7,22 +7,26 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     # Space industry snapshot (2023–24 order-of-magnitude)
     - Global space economy 2024: ~**$613B** (all in)
     - Core satellite industry (launch + manufacturing + services + ground): ~**$293B**
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import plotly.graph_objects as go
+
     return (go,)
 
 
@@ -67,13 +71,15 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **Notes on the pie:**
     - Uses high-level, rounded figures across multiple analyst cuts.
     - Sums the core and adjacent slices (~$306B) rather than the full ~$613B space economy to keep the chart readable.
     - Launch + manufacturing are small compared with downstream services and ground equipment.
     - GNSS-only downstream estimates ($260–301B) would enlarge the ground slice substantially if added in full.
-    """)
+    """
+    )
     return
 
 
@@ -121,14 +127,16 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **How to read the icicle:**
     - Root uses ~$613B global space economy; children mix core satellite slices with adjacent GNSS and verticals. Branchvalues="total" rolls values upward.
     - Ground equipment sector broken down into GNSS, Network, and Consumer sub-segments for granularity.
     - Company nodes are illustrative, using reported or guided revenues/backlogs converted to USD where needed. They do not sum cleanly to parents.
     - GNSS downstream (~$260–301B) sits outside the BryceTech satellite-industry total; shown separately to avoid double counting the core.
     - Figures come from 2023–24 disclosures and analyst reports; treat as directional only.
-    """)
+    """
+    )
     return
 
 

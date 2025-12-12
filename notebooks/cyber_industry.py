@@ -7,22 +7,26 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     # Cybersecurity industry snapshot (2024 order-of-magnitude)
     - Global cyber / information security spend estimates (2024): Gartner $183.9B, Fortune $193.7B, Grand View $245.6B. This map anchors sectors to ~$210–220B.
     - Sectors shown: network/perimeter + OT, endpoint, cloud, identity, application/API, data security, security analytics/operations, managed security services, and GRC/compliance.
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import plotly.graph_objects as go
+
     return (go,)
 
 
@@ -88,12 +92,14 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **Notes on the pie:**
     - Sector anchors sum to ~$212B, sitting inside the broader $184–246B global cyber guides.
     - Sources vary widely (e.g., endpoint ranges $15–26B); values here lean conservative for sizing clarity.
     - Network/perimeter remains the largest single bucket; managed services, cloud, and identity are also large growth wedges.
-    """)
+    """
+    )
     return
 
 
@@ -157,16 +163,17 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **How to read the icicle:**
     - Root anchors to ~$212B to stay inside the major analyst ranges ($184–246B); sector branches reflect directional slices.
     - Company nodes are illustrative and do not sum to their sectors; values reference FY24 revenue or ARR where available.
     - OT and SASE sit inside the network/perimeter branch; SIEM/SOAR/XDR roll into security operations.
     - Managed services includes MSSP + MDR; GRC slice focuses on security-driven risk/compliance tooling and advisory.
-    """)
+    """
+    )
     return
 
 
 if __name__ == "__main__":
     app.run()
-

@@ -7,22 +7,26 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     # Semiconductor industry snapshot (2024 order-of-magnitude)
     - WSTS Autumn 2024 total semiconductor market: **$626.9B**
     - Broader 2024 “stack” (chips + equipment + OSAT + EDA/ESD): **~$805B** (rough, overlapping spend)
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import plotly.graph_objects as go
+
     return (go,)
 
 
@@ -68,12 +72,14 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **Notes on the pie:**
     - Source: WSTS Autumn 2024 forecast (full-year 2024) totaling $626.9B.
     - Shares: logic 33.3%, memory 26.6%, analog 12.7%, micro 12.6%, opto 6.7%, discrete 5.0%, sensors 3.0%.
     - Rounded values; category sums equal the WSTS total but do not map cleanly to company segment reporting.
-    """)
+    """
+    )
     return
 
 
@@ -82,18 +88,24 @@ def _(go, mo):
     import json
     from pathlib import Path
 
-    base_dir = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
+    base_dir = (
+        Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
+    )
     candidate_paths = [
         base_dir / "data" / "semiconductor_nodes.json",
         Path.cwd() / "notebooks" / "data" / "semiconductor_nodes.json",
     ]
 
-    semiconductor_nodes_path = next((path for path in candidate_paths if path.exists()), None)
+    semiconductor_nodes_path = next(
+        (path for path in candidate_paths if path.exists()), None
+    )
     if semiconductor_nodes_path is None:
         tried = ", ".join(str(path) for path in candidate_paths)
         raise FileNotFoundError(f"Semiconductor nodes file not found (tried: {tried})")
 
-    with semiconductor_nodes_path.open("r", encoding="utf-8") as semiconductor_nodes_file:
+    with semiconductor_nodes_path.open(
+        "r", encoding="utf-8"
+    ) as semiconductor_nodes_file:
         semiconductor_nodes = json.load(semiconductor_nodes_file)
 
     icicle_labels_semi = [node["label"] for node in semiconductor_nodes]
@@ -127,13 +139,15 @@ def _(go, mo):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **How to read the icicle:**
     - Root sums chips ($626.9B) plus equipment (~$117B), OSAT (~$44B), and EDA/ESD (~$17B) to sketch an ~$805B 2024 “stack.”
     - Company nodes are illustrative revenues mapped to the nearest bucket; they do not sum to the parent and often span multiple WSTS categories.
     - Values are rounded from 2024 disclosures or widely cited market estimates; treat as directional and overlapping (capex vs merchant spend, internal vs external services).
     - **Memory IC sub-segments (DRAM, NAND, etc.)** are based on Yole 2025 estimates (~$170B total) but scaled down ~6.5% to align with the WSTS Autumn 2024 total ($167.1B) for consistency at the top level.
-    """)
+    """
+    )
     return
 
 

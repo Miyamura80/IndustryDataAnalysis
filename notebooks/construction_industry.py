@@ -7,12 +7,14 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     # Construction industry snapshot (2024 order-of-magnitude)
     - Global construction market 2024: ~$11–12T (different cuts; treat as directional).
     - Representative segment slices (from separate analyst sources, so they do not sum cleanly):
@@ -20,13 +22,15 @@ def _(mo):
       - Non-residential total: ~$9.3T
       - Within non-residential, infrastructure / civil engineering: ~$3.0T
       - Other non-residential buildings (commercial/industrial/institutional): ~$6.3T
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import plotly.graph_objects as go
+
     return (go,)
 
 
@@ -38,9 +42,7 @@ def _(go):
         {"segment": "Other non-res buildings", "value_billion": 6300},
     ]
 
-    pie_labels_construction = [
-        entry["segment"] for entry in segment_data_construction
-    ]
+    pie_labels_construction = [entry["segment"] for entry in segment_data_construction]
     pie_values_construction = [
         entry["value_billion"] for entry in segment_data_construction
     ]
@@ -72,13 +74,15 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **Notes on the pie:**
     - Residential ($4.3T), infrastructure ($3.0T), and other non-residential buildings ($6.3T) come from separate market reports; they overlap, so the pie is for share intuition rather than a strict total.
     - Using billions keeps the chart readable; the implied sum (~$13.6T) sits slightly above the ~$11–12T global guides because of definitional differences.
     - Infrastructure sits inside non-residential; here it is shown separately to illustrate mix.
     - Percentages reflect the slice proportions of these three cuts, not a reconciled market total.
-    """)
+    """
+    )
     return
 
 
@@ -88,9 +92,7 @@ def _(go):
     import pathlib
 
     base_dir = (
-        pathlib.Path(__file__).parent
-        if "__file__" in globals()
-        else pathlib.Path.cwd()
+        pathlib.Path(__file__).parent if "__file__" in globals() else pathlib.Path.cwd()
     )
     construction_nodes_path = base_dir / "data" / "construction_nodes.json"
 
@@ -102,18 +104,10 @@ def _(go):
     with construction_nodes_path.open("r", encoding="utf-8") as construction_nodes_file:
         construction_nodes = json.load(construction_nodes_file)
 
-    icicle_labels_construction = [
-        node["label"] for node in construction_nodes
-    ]
-    icicle_parents_construction = [
-        node["parent"] for node in construction_nodes
-    ]
-    icicle_values_construction = [
-        node["value"] for node in construction_nodes
-    ]
-    icicle_hover_construction = [
-        node["hover"] for node in construction_nodes
-    ]
+    icicle_labels_construction = [node["label"] for node in construction_nodes]
+    icicle_parents_construction = [node["parent"] for node in construction_nodes]
+    icicle_values_construction = [node["value"] for node in construction_nodes]
+    icicle_hover_construction = [node["hover"] for node in construction_nodes]
 
     icicle_fig_construction = go.Figure(
         go.Icicle(
@@ -140,13 +134,15 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md("""
+    mo.md(
+        """
     **How to read the icicle:**
     - Root uses the summed segment figures (~$13.6T) to keep percentages internally consistent; this sits above the ~$11–12T global guide because sources overlap.
     - Non-residential contains infrastructure; shown separately to convey mix. Branchvalues="total" rolls values up the tree.
     - Company nodes are illustrative; revenues do not sum to parents and include diversified portfolios.
     - Use this for order-of-magnitude sizing and share thinking, not for precise reconciliation.
-    """)
+    """
+    )
     return
 
 
