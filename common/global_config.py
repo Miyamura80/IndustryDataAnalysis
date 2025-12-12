@@ -252,4 +252,5 @@ if is_local:
         warnings.warn(f"{env_file_to_check} file not found or empty", UserWarning)
 
 # Create a singleton instance
-global_config = Config()
+# Values are loaded from .env and YAML config files by pydantic-settings at runtime
+global_config = Config()  # type: ignore[call-arg]
