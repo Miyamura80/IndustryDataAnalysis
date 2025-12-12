@@ -1,34 +1,38 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "marimo",
+#     "pyzmq",
+# ]
+# ///
+
 import marimo
 
-__generated_with = "0.18.3"
+__generated_with = "0.18.4"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
+    mo.md("""
     # Actuator industry snapshot (2024)
 
     - Global actuators market: **~$60–70B** depending on scope and source.
     - Growth: **~6–8% CAGR** into the early 2030s.
     - Cuts overlap (industrial vs. valves, robotics vs. factory automation, automotive vs. EV systems), so avoid summing the vertical TAMs.
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _():
     import plotly.graph_objects as go
-
     return (go,)
 
 
@@ -72,18 +76,16 @@ def _(go):
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
+    mo.md("""
     **Notes on the pie and margins:**
     - Values reflect widely cited 2024 estimates; verticals overlap, so the pie is for relative scale only.
     - Margin snapshot (company-level operating margin, actuator exposure varies): SMC ~25%, Rotork ~24%, Parker ~21%, Honeywell ~18–19%, Curtiss-Wright ~17%, ABB ~18%, Emerson ~12%, Flowserve ~10%, Siemens low-teens, Moog ~11–12%, JCI ~6–7%, BorgWarner/Denso/Aisin ~3–7%.
-    """
-    )
+    """)
     return
 
 
 @app.cell
-def _(go, mo):
+def _(go):
     import json
     from pathlib import Path
 
@@ -126,25 +128,20 @@ def _(go, mo):
         uniformtext=dict(minsize=10, mode="hide"),
         height=900,
     )
-
-    return mo.ui.plotly(icicle_fig_actuator)
+    return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
+    mo.md("""
     **How to read the icicle:**
     - Root sums the segment cuts (~$109B) to let the icicle render; these cuts overlap (e.g., valves vs. automation vs. automotive mechatronics), so treat as directional.
     - Segment nodes show the approximate 2024 TAM for that slice.
     - Company nodes are sized nominally (value = 1) to surface their operating margins in the hover text without implying share; “remainder / overlap” balances the parent.
     - Margins are company-level operating margins because actuator-only margin disclosure is rare.
-    """
-    )
+    """)
     return
 
 
 if __name__ == "__main__":
     app.run()
-
-
