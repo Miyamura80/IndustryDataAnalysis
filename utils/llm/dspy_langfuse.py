@@ -1,6 +1,8 @@
 from dspy.utils.callback import BaseCallback
-from langfuse.decorators import langfuse_context  # type: ignore
-from langfuse.client import Langfuse, StatefulGenerationClient  # type: ignore
+from langfuse import get_client, Langfuse, LangfuseGeneration  # type: ignore
+
+# Get langfuse client for context operations
+langfuse_context = get_client()
 from litellm.cost_calculator import completion_cost  # type: ignore
 from typing import Optional, Any, Literal
 from pydantic import BaseModel, ValidationError, Field
@@ -51,7 +53,7 @@ class LangFuseDSPYCallback(BaseCallback):  # noqa
         )
         self.current_prompt = contextvars.ContextVar[str]("current_prompt")
         self.current_completion = contextvars.ContextVar[str]("current_completion")
-        self.current_span = contextvars.ContextVar[Optional[StatefulGenerationClient]](
+        self.current_span = contextvars.ContextVar[Optional[LangfuseGeneration]](
             "current_span"
         )
         self.model_name_at_span_creation = contextvars.ContextVar[Optional[str]](
@@ -100,7 +102,7 @@ class LangFuseDSPYCallback(BaseCallback):  # noqa
                 outputs_extracted = {"value": outputs}
             except Exception as e:
                 outputs_extracted = {"error_extracting_module_output": str(e)}
-        langfuse_context.update_current_observation(
+        langfuse_context.update_current_span(
             input=self.input_field_values.get(None) or {},
             output=outputs_extracted,
             metadata=metadata,
@@ -134,7 +136,7 @@ class LangFuseDSPYCallback(BaseCallback):  # noqa
         self.model_name_at_span_creation.set(model_name)
         trace_id = langfuse_context.get_current_trace_id()
         parent_observation_id = langfuse_context.get_current_observation_id()
-        span_obj: Optional[StatefulGenerationClient] = None
+        span_obj: Optional[LangfuseGeneration] = None
         if trace_id:
             span_obj = self.langfuse.generation(  # type: ignore (Langfuse fails the type check in this function, grr...)
                 input=user_input,
