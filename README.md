@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<b>📊〽️ Analysis of industries <b>Description of the project here. </b> their margin, market share</b>
+<b>📊〽️ Analysis of industries, their margin, and market share.</b>
 </p>
 
 <p align="center">
@@ -14,25 +14,21 @@
   <a href="#requirements">Requirements</a> •
   <a href="#quick-start">Quick Start</a> •
   <a href="#configuration-options">Configuration</a> •
-  <a href="#credits">Credits</a>
-  <a href="#related">Related</a>
+  <a href="#credits">Credits</a> •
   <a href="#about-the-core-contributors">About the Core Contributors</a>
 </p>
 
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMiyamura80%2FPython-Template%2Fmain%2Fpyproject.toml&query=%24.project.name&label=Project Name&color=purple" alt="Dynamic TOML Badge">
-  <img alt="Project Version" src="https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMiyamura80%2FPython-Template%2Fmain%2Fpyproject.toml&query=%24.project.version&label=version&color=blue">
-  <img alt="Python Version" src="https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMiyamura80%2FPython-Template%2Fmain%2Fpyproject.toml&query=%24.project['requires-python']&label=python&logo=python&color=blue">
-  <img src="https://img.shields.io/badge/License-MIT-blue" alt="License">
-  <img alt="Dynamic YAML Badge" src="https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMiyamura80%2FPython-Template%2Fmain%2Fcommon%2Fglobal_config.yaml&query=%24%5B%27model_name%27%5D&label=Model in Use&color=yellow">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Miyamura80/Python-Template">
-  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/Miyamura80/Python-Template/test_target_tests.yaml?branch=main">
+  <img alt="Project Version" src="https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMiyamura80%2FIndustryDataAnalysis%2Fmain%2Fpyproject.toml&query=%24.project.version&label=version&color=blue">
+  <img alt="Python Version" src="https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMiyamura80%2FIndustryDataAnalysis%2Fmain%2Fpyproject.toml&query=%24.project['requires-python']&label=python&logo=python&color=blue">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Miyamura80/IndustryDataAnalysis">
+  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/Miyamura80/IndustryDataAnalysis/test_target_tests.yaml?branch=main">
 
 </p>
 
---- 
+---
 
 <p align="center">
   <img src="media/creating_banner.gif" alt="2" width="600">
@@ -94,12 +90,10 @@ This software uses the following tools:
 - [DSPY: Pytorch for LLM Inference](https://dspy.ai/)
 - [LangFuse: LLM Observability Tool](https://langfuse.com/)
 
-## Related
+## About the Core Contributors
 
-Coming soon...
+<a href="https://github.com/Miyamura80/IndustryDataAnalysis/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Miyamura80/IndustryDataAnalysis" />
+</a>
 
-## You may also like...
-
-Coming soon...
-
-
+Made with [contrib.rocks](https://contrib.rocks).
