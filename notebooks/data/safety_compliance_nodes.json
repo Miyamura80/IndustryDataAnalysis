@@ -1,0 +1,152 @@
+[
+  {
+    "label": "Operational Safety Compliance (2024 est.)",
+    "parent": "",
+    "value": 47.0,
+    "hover": "Sum of sector slices ~$47B; sectors mix software-only with hardware/systems markets so not a clean industry total."
+  },
+  {
+    "label": "EHS / Workplace Safety software",
+    "parent": "Operational Safety Compliance (2024 est.)",
+    "value": 0.761,
+    "hover": "Incident mgmt, audits, compliance workflows; software-only market ~$0.76B."
+  },
+  {
+    "label": "IBM",
+    "parent": "EHS / Workplace Safety software",
+    "value": 0.15,
+    "hover": "Total 2024 revenue $62.8B; EHS software share illustrative."
+  },
+  {
+    "label": "SAP",
+    "parent": "EHS / Workplace Safety software",
+    "value": 0.2,
+    "hover": "Total 2024 revenue ~$37B (€34.2B); Enablon EHS share illustrative."
+  },
+  {
+    "label": "Wolters Kluwer (Enablon)",
+    "parent": "EHS / Workplace Safety software",
+    "value": 0.15,
+    "hover": "Total 2024 revenue ~$6.4B (€5.9B); EHS/Enablon portion illustrative."
+  },
+  {
+    "label": "Process Safety Systems",
+    "parent": "Operational Safety Compliance (2024 est.)",
+    "value": 4.2,
+    "hover": "SIS/ESD/BMS/HIPPS for high-hazard industrial; hardware + systems market ~$4.2B."
+  },
+  {
+    "label": "Honeywell",
+    "parent": "Process Safety Systems",
+    "value": 1.2,
+    "hover": "Total 2024 revenue $38.5B; process safety systems share illustrative."
+  },
+  {
+    "label": "Emerson",
+    "parent": "Process Safety Systems",
+    "value": 0.8,
+    "hover": "Total 2024 revenue $17.5B; process automation/safety share illustrative."
+  },
+  {
+    "label": "Siemens",
+    "parent": "Process Safety Systems",
+    "value": 1.0,
+    "hover": "Total 2024 revenue ~$82B (€75.9B); process safety share illustrative."
+  },
+  {
+    "label": "Aviation SMS",
+    "parent": "Operational Safety Compliance (2024 est.)",
+    "value": 3.5,
+    "hover": "Airline/airport safety compliance + reporting systems; market ~$3.5B."
+  },
+  {
+    "label": "RTX (Collins Aerospace)",
+    "parent": "Aviation SMS",
+    "value": 1.0,
+    "hover": "Total 2024 revenue $80.8B; aviation safety share illustrative."
+  },
+  {
+    "label": "Airbus",
+    "parent": "Aviation SMS",
+    "value": 0.8,
+    "hover": "Total 2024 revenue ~$75B (€69.2B); aviation SMS share illustrative."
+  },
+  {
+    "label": "Honeywell Aerospace",
+    "parent": "Aviation SMS",
+    "value": 0.6,
+    "hover": "Part of $38.5B total; aerospace safety share illustrative."
+  },
+  {
+    "label": "Maritime Safety Systems",
+    "parent": "Operational Safety Compliance (2024 est.)",
+    "value": 30.31,
+    "hover": "Vessel safety, comms, monitoring, coastal/port safety; hardware-heavy market ~$30.3B."
+  },
+  {
+    "label": "Thales",
+    "parent": "Maritime Safety Systems",
+    "value": 5.0,
+    "hover": "Total 2024 revenue ~$22B (€20.6B); maritime/defense systems share illustrative."
+  },
+  {
+    "label": "Kongsberg",
+    "parent": "Maritime Safety Systems",
+    "value": 2.5,
+    "hover": "Total 2024 revenue ~$4.5B (NOK 48.9B); maritime systems focus."
+  },
+  {
+    "label": "Saab",
+    "parent": "Maritime Safety Systems",
+    "value": 2.0,
+    "hover": "Total 2024 revenue ~$6B (SEK 63.8B); maritime/defense systems share illustrative."
+  },
+  {
+    "label": "Railway Safety Systems",
+    "parent": "Operational Safety Compliance (2024 est.)",
+    "value": 6.5,
+    "hover": "Train control/ATP/CBTC/wayside + compliance monitoring; market ~$6.5B."
+  },
+  {
+    "label": "Siemens Mobility",
+    "parent": "Railway Safety Systems",
+    "value": 2.0,
+    "hover": "Part of €75.9B total; rail signaling/safety share illustrative."
+  },
+  {
+    "label": "Alstom",
+    "parent": "Railway Safety Systems",
+    "value": 1.5,
+    "hover": "Total FY2024/25 revenue ~$20B (€18.5B); rail signaling/safety share illustrative."
+  },
+  {
+    "label": "Hitachi Rail",
+    "parent": "Railway Safety Systems",
+    "value": 1.2,
+    "hover": "Part of ¥9.78T ($65B) total; rail systems share illustrative."
+  },
+  {
+    "label": "Construction Safety Management software",
+    "parent": "Operational Safety Compliance (2024 est.)",
+    "value": 1.72,
+    "hover": "Site safety compliance, inspections, permits, incidents; software market ~$1.72B."
+  },
+  {
+    "label": "Autodesk",
+    "parent": "Construction Safety Management software",
+    "value": 0.4,
+    "hover": "Total FY2024 revenue $5.5B; construction safety share illustrative."
+  },
+  {
+    "label": "Trimble",
+    "parent": "Construction Safety Management software",
+    "value": 0.3,
+    "hover": "Total 2024 revenue $3.7B; construction safety share illustrative."
+  },
+  {
+    "label": "Procore",
+    "parent": "Construction Safety Management software",
+    "value": 0.35,
+    "hover": "Total 2024 revenue $1.15B; construction management/safety focus."
+  }
+]
