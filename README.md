@@ -5,15 +5,14 @@
 </p>
 
 <p align="center">
-<b>📊〽️ Analysis of industries, their margin, and market share.</b>
+<b>📊〽️ Interactive market segmentation analysis across industries.</b>
 </p>
 
 <p align="center">
 <p align="center">
-  <a href="#key-features">Key Features</a> •
+  <a href="#industries-covered">Industries</a> •
   <a href="#requirements">Requirements</a> •
   <a href="#quick-start">Quick Start</a> •
-  <a href="#configuration-options">Configuration</a> •
   <a href="#credits">Credits</a> •
   <a href="#about-the-core-contributors">About the Core Contributors</a>
 </p>
@@ -31,16 +30,24 @@
 ---
 
 <p align="center">
-  <img src="media/creating_banner.gif" alt="2" width="600">
+  <img src="media/industry_data.gif" alt="2" width="600">
 </p>
 
 
-## Key Features
+## Industries Covered
 
-- Super opinionated python stack to enable super fast development on new projects without getting the usual tooling available
-- CI/Linters built-in
-- LLM Inference/Observability built-in
-- (Optional) `saas` branch contains default template for building SaaS apps
+Interactive [marimo](https://marimo.io/) notebooks with pie charts and icicle visualizations showing market segments, sizes, and top companies:
+
+| Industry | Notebook | Market Focus |
+|----------|----------|--------------|
+| Construction | `construction_industry.py` | Residential, infrastructure, non-residential buildings |
+| Semiconductor | `semiconductor_industry.py` | Chip design, fabrication, equipment |
+| Chemical | `chemical_industry.py` | Specialty chemicals, petrochemicals, materials |
+| Cybersecurity | `cyber_industry.py` | Network, endpoint, cloud, identity, GRC |
+| Space | `space_industry.py` | Launch, satellites, ground systems |
+| Actuators | `actuator_industry.py` | Electric, hydraulic, pneumatic actuators |
+| Robotics | `robotics_industry.py` | Industrial, service, collaborative robots |
+| Safety Compliance | `safety_compliance_industry.py` | EHS, process safety, aviation/maritime/railway safety |
 
 ## Requirements
 
@@ -51,44 +58,22 @@
 
 ## Quick Start
 
+Run any industry notebook:
+```bash
+uv run marimo run notebooks/<industry>_industry.py
+```
+
+Other commands:
 - `make all` - runs `main.py`
-- `make fmt` - runs `black` linter, an opinionated linter
-- `make banner` - create a new banner that makes the README nice 😊
-- `make test` - runs all tests defined by `TEST_TARGETS = tests/folder1 tests/folder2`
-
-
-
-## Configuration Options
-
-This project uses **pydantic-settings** for configuration management, providing automatic validation and type checking.
-
-**Configuration Files:**
-- `common/global_config.yaml` - Base configuration values
-- `common/config_models.py` - Pydantic models for validation
-- `common/global_config.py` - Main Config class
-- `.env` - Environment variables and secrets (create this file)
-
-1. **Global config:** [`common/global_config.yaml`](common/global_config.yaml) - Add hyperparameters here
-2. **Environment Variables:** Store environment variables in `.env` (git-ignored) and `common/global_config.py` will read them automatically with validation:
-
-    `.env` file:
-    ```env
-    OPENAI_API_KEY=sk-...
-    ```
-    python file:
-    ```python
-    from common import global_config
-
-    print(global_config.OPENAI_API_KEY)
-    ```
+- `make fmt` - format code with Black
+- `make test` - run all tests
 
 ## Credits
 
 This software uses the following tools:
-- [Cursor: The AI Code Editor](cursor.com)
-- [uv](https://docs.astral.sh/uv/)
-- [DSPY: Pytorch for LLM Inference](https://dspy.ai/)
-- [LangFuse: LLM Observability Tool](https://langfuse.com/)
+- [marimo](https://marimo.io/) - Reactive Python notebooks
+- [Plotly](https://plotly.com/) - Interactive visualizations
+- [uv](https://docs.astral.sh/uv/) - Fast Python package manager
 
 ## About the Core Contributors
 
