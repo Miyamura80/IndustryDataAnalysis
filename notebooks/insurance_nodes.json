@@ -1,0 +1,428 @@
+[
+  {
+    "label": "Global Insurance Market",
+    "parent": "",
+    "value": 9319,
+    "hover": "Total global premiums 2024 across Life, Health, P&C, and Reinsurance; ~US$9.3T (converted from EUR at ~1.08 where applicable)."
+  },
+  {
+    "label": "Life",
+    "parent": "Global Insurance Market",
+    "value": 3134,
+    "hover": "Global life insurance premiums 2024: €2.902T → ~US$3.1T."
+  },
+  {
+    "label": "Savings & Investment Life",
+    "parent": "Life",
+    "value": 1400,
+    "hover": "Global savings/investment life (endowment, unit-linked, whole life savings) ~US$1.4T 2024. Residual: life total − annuities − protection."
+  },
+  {
+    "label": "🇨🇳 China Life",
+    "parent": "Savings & Investment Life",
+    "value": 110.019,
+    "hover": "China Life 2024 AM Best net premiums written: US$110.0B. Predominantly savings/investment products."
+  },
+  {
+    "label": "🇩🇪 Allianz — Life",
+    "parent": "Savings & Investment Life",
+    "value": 90.163,
+    "hover": "Allianz 2024 AM Best net premiums written: US$90.2B."
+  },
+  {
+    "label": "🇨🇳 Ping An — Life",
+    "parent": "Savings & Investment Life",
+    "value": 75.5,
+    "hover": "Ping An 2024 AM Best net premiums written: US$75.5B. Heavy savings/investment book."
+  },
+  {
+    "label": "Annuities / Retirement Income",
+    "parent": "Life",
+    "value": 1100,
+    "hover": "Global annuity/retirement income market ~US$1.1T 2024. Pension risk transfer, income streams."
+  },
+  {
+    "label": "Protection / Term Life",
+    "parent": "Life",
+    "value": 600,
+    "hover": "Global protection/term life (pure death coverage) ~US$0.6T 2024. Back-solved from ~$1.57T projected by 2033."
+  },
+  {
+    "label": "Health",
+    "parent": "Global Insurance Market",
+    "value": 1817,
+    "hover": "Global health insurance premiums 2024: €1.682T → ~US$1.8T."
+  },
+  {
+    "label": "Private Medical Insurance (PMI)",
+    "parent": "Health",
+    "value": 950,
+    "hover": "Global private medical insurance ~US$950B 2024. Full private cover; dominated by US managed care."
+  },
+  {
+    "label": "🇺🇸 UnitedHealth",
+    "parent": "Private Medical Insurance (PMI)",
+    "value": 308.81,
+    "hover": "UnitedHealth Group 2024 AM Best net premiums written: US$308.8B."
+  },
+  {
+    "label": "🇺🇸 Centene",
+    "parent": "Private Medical Insurance (PMI)",
+    "value": 159.869,
+    "hover": "Centene 2024 AM Best net premiums written: US$159.9B."
+  },
+  {
+    "label": "🇺🇸 Elevance",
+    "parent": "Private Medical Insurance (PMI)",
+    "value": 144.166,
+    "hover": "Elevance Health 2024 AM Best net premiums written: US$144.2B."
+  },
+  {
+    "label": "Supplemental / Gap Insurance",
+    "parent": "Health",
+    "value": 420,
+    "hover": "Global supplemental/gap insurance ~US$420B 2024. Top-ups for public health systems (Europe, Asia)."
+  },
+  {
+    "label": "Dental / Vision / Cash Plans",
+    "parent": "Health",
+    "value": 230,
+    "hover": "Global dental, vision, and cash plan coverage ~US$230B 2024. Small-ticket health coverage."
+  },
+  {
+    "label": "Employer Self-Insured Admin (ASO)",
+    "parent": "Health",
+    "value": 200,
+    "hover": "Global employer ASO (administrative services only) ~US$200B 2024. Insurers managing employer risk pools."
+  },
+  {
+    "label": "Property & Casualty (P&C)",
+    "parent": "Global Insurance Market",
+    "value": 2618,
+    "hover": "Global P&C insurance premiums 2024: €2.424T → ~US$2.6T."
+  },
+  {
+    "label": "Private Passenger Auto",
+    "parent": "Property & Casualty (P&C)",
+    "value": 359.07,
+    "hover": "U.S. private passenger auto DPW 2024: US$359.1B (NAIC)."
+  },
+  {
+    "label": "🇺🇸 State Farm — Auto",
+    "parent": "Private Passenger Auto",
+    "value": 67.75,
+    "hover": "State Farm 2024 private passenger auto DPW: US$67.8B."
+  },
+  {
+    "label": "🇺🇸 Progressive — Auto",
+    "parent": "Private Passenger Auto",
+    "value": 60.05,
+    "hover": "Progressive 2024 private passenger auto DPW: US$60.1B."
+  },
+  {
+    "label": "🇺🇸 Berkshire Hathaway — Auto",
+    "parent": "Private Passenger Auto",
+    "value": 41.76,
+    "hover": "Berkshire Hathaway 2024 private passenger auto DPW: US$41.8B."
+  },
+  {
+    "label": "Homeowners (Multiple Peril)",
+    "parent": "Property & Casualty (P&C)",
+    "value": 172.84,
+    "hover": "U.S. homeowners multiple peril DPW 2024: US$172.8B (NAIC)."
+  },
+  {
+    "label": "🇺🇸 State Farm — Homeowners",
+    "parent": "Homeowners (Multiple Peril)",
+    "value": 31.46,
+    "hover": "State Farm 2024 homeowners DPW: US$31.5B."
+  },
+  {
+    "label": "🇺🇸 Allstate — Homeowners",
+    "parent": "Homeowners (Multiple Peril)",
+    "value": 15.49,
+    "hover": "Allstate 2024 homeowners DPW: US$15.5B."
+  },
+  {
+    "label": "🇺🇸 USAA — Homeowners",
+    "parent": "Homeowners (Multiple Peril)",
+    "value": 11.9,
+    "hover": "USAA 2024 homeowners DPW: US$11.9B."
+  },
+  {
+    "label": "Commercial Auto",
+    "parent": "Property & Casualty (P&C)",
+    "value": 71.97,
+    "hover": "U.S. commercial auto DPW 2024: US$72.0B (NAIC)."
+  },
+  {
+    "label": "🇺🇸 Progressive — Comm. Auto",
+    "parent": "Commercial Auto",
+    "value": 10.79,
+    "hover": "Progressive 2024 commercial auto DPW: US$10.8B."
+  },
+  {
+    "label": "🇺🇸 Travelers — Comm. Auto",
+    "parent": "Commercial Auto",
+    "value": 3.86,
+    "hover": "Travelers 2024 commercial auto DPW: US$3.9B."
+  },
+  {
+    "label": "🇺🇸 Old Republic — Comm. Auto",
+    "parent": "Commercial Auto",
+    "value": 2.95,
+    "hover": "Old Republic 2024 commercial auto DPW: US$3.0B."
+  },
+  {
+    "label": "Workers' Compensation",
+    "parent": "Property & Casualty (P&C)",
+    "value": 57.48,
+    "hover": "U.S. workers' compensation DPW 2024: US$57.5B (NAIC)."
+  },
+  {
+    "label": "🇺🇸 Travelers — Workers' Comp",
+    "parent": "Workers' Compensation",
+    "value": 3.83,
+    "hover": "Travelers 2024 workers' comp DPW: US$3.8B."
+  },
+  {
+    "label": "🇺🇸 The Hartford — Workers' Comp",
+    "parent": "Workers' Compensation",
+    "value": 3.71,
+    "hover": "The Hartford 2024 workers' comp DPW: US$3.7B."
+  },
+  {
+    "label": "🇺🇸 AmTrust — Workers' Comp",
+    "parent": "Workers' Compensation",
+    "value": 3.37,
+    "hover": "AmTrust 2024 workers' comp DPW: US$3.4B."
+  },
+  {
+    "label": "Other Liability (incl. GL)",
+    "parent": "Property & Casualty (P&C)",
+    "value": 129.3,
+    "hover": "U.S. other liability (incl. general liability) DPW 2024: US$129.3B (NAIC)."
+  },
+  {
+    "label": "🇨🇭 Chubb — Other Liability",
+    "parent": "Other Liability (incl. GL)",
+    "value": 9.52,
+    "hover": "Chubb 2024 other liability DPW: US$9.5B."
+  },
+  {
+    "label": "🇺🇸 Travelers — Other Liability",
+    "parent": "Other Liability (incl. GL)",
+    "value": 6.15,
+    "hover": "Travelers 2024 other liability DPW: US$6.2B."
+  },
+  {
+    "label": "🇺🇸 Berkshire Hathaway — Other Liability",
+    "parent": "Other Liability (incl. GL)",
+    "value": 5.65,
+    "hover": "Berkshire Hathaway 2024 other liability DPW: US$5.7B."
+  },
+  {
+    "label": "Commercial Property: Fire",
+    "parent": "Property & Casualty (P&C)",
+    "value": 125.6,
+    "hover": "Global commercial property (fire) premium est. ~US$125.6B (top-5 market normalization from US NAIC line mix)."
+  },
+  {
+    "label": "🇺🇸 Starr Group — Fire",
+    "parent": "Commercial Property: Fire",
+    "value": 2.362,
+    "hover": "Starr Group 2024 fire DPW: US$2.4B."
+  },
+  {
+    "label": "🇺🇸 Berkshire Hathaway — Fire",
+    "parent": "Commercial Property: Fire",
+    "value": 1.997,
+    "hover": "Berkshire Hathaway 2024 fire DPW: US$2.0B."
+  },
+  {
+    "label": "🇺🇸 FM Global — Fire",
+    "parent": "Commercial Property: Fire",
+    "value": 1.505,
+    "hover": "FM Global 2024 fire DPW: US$1.5B."
+  },
+  {
+    "label": "Commercial Property: Allied Lines",
+    "parent": "Property & Casualty (P&C)",
+    "value": 127.4,
+    "hover": "Global commercial property (allied lines) premium est. ~US$127.4B (top-5 market normalization from US NAIC line mix)."
+  },
+  {
+    "label": "🇺🇸 FM Global — Allied Lines",
+    "parent": "Commercial Property: Allied Lines",
+    "value": 1.955,
+    "hover": "FM Global 2024 allied lines DPW: US$2.0B."
+  },
+  {
+    "label": "🇺🇸 Citizens Property Insurance — Allied Lines",
+    "parent": "Commercial Property: Allied Lines",
+    "value": 1.763,
+    "hover": "Citizens Property Insurance Corp 2024 allied lines DPW: US$1.8B."
+  },
+  {
+    "label": "🇺🇸 Berkshire Hathaway — Allied Lines",
+    "parent": "Commercial Property: Allied Lines",
+    "value": 1.665,
+    "hover": "Berkshire Hathaway 2024 allied lines DPW: US$1.7B."
+  },
+  {
+    "label": "Inland Marine",
+    "parent": "Property & Casualty (P&C)",
+    "value": 141.0,
+    "hover": "Global inland marine premium est. ~US$141.0B (top-5 market normalization from US NAIC line mix)."
+  },
+  {
+    "label": "🇺🇸 Liberty Mutual — Inland Marine",
+    "parent": "Inland Marine",
+    "value": 4.323,
+    "hover": "Liberty Mutual 2024 inland marine US DPW: US$4.3B."
+  },
+  {
+    "label": "🇺🇸 CNA — Inland Marine",
+    "parent": "Inland Marine",
+    "value": 2.856,
+    "hover": "CNA 2024 inland marine US DPW: US$2.9B."
+  },
+  {
+    "label": "🇩🇪 Allianz — Inland Marine",
+    "parent": "Inland Marine",
+    "value": 2.508,
+    "hover": "Allianz 2024 inland marine US DPW: US$2.5B."
+  },
+  {
+    "label": "Surety",
+    "parent": "Property & Casualty (P&C)",
+    "value": 41.4,
+    "hover": "Global surety premium est. ~US$41.4B (top-5 market normalization from US NAIC line mix)."
+  },
+  {
+    "label": "🇺🇸 Travelers — Surety",
+    "parent": "Surety",
+    "value": 1.363,
+    "hover": "Travelers 2024 surety DPW: US$1.4B."
+  },
+  {
+    "label": "🇺🇸 Liberty Mutual — Surety",
+    "parent": "Surety",
+    "value": 1.257,
+    "hover": "Liberty Mutual 2024 surety DPW: US$1.3B."
+  },
+  {
+    "label": "🇨🇭 Zurich — Surety",
+    "parent": "Surety",
+    "value": 0.719,
+    "hover": "Zurich 2024 surety DPW: US$0.7B."
+  },
+  {
+    "label": "Cyber",
+    "parent": "Property & Casualty (P&C)",
+    "value": 15.3,
+    "hover": "Global cyber insurance premium 2024: ~US$15.3B (Munich Re estimate)."
+  },
+  {
+    "label": "🇨🇭 Chubb — Cyber",
+    "parent": "Cyber",
+    "value": 0.561,
+    "hover": "Chubb 2024 cyber DPW: US$0.6B."
+  },
+  {
+    "label": "🇺🇸 Travelers — Cyber",
+    "parent": "Cyber",
+    "value": 0.535,
+    "hover": "Travelers 2024 cyber DPW: US$0.5B."
+  },
+  {
+    "label": "🇨🇦 Fairfax — Cyber",
+    "parent": "Cyber",
+    "value": 0.361,
+    "hover": "Fairfax 2024 cyber DPW: US$0.4B."
+  },
+  {
+    "label": "D&O (Monoline)",
+    "parent": "Property & Casualty (P&C)",
+    "value": 10.83,
+    "hover": "U.S. D&O (monoline) DPW 2024: US$10.8B."
+  },
+  {
+    "label": "🇨🇭 Chubb INA — D&O",
+    "parent": "D&O (Monoline)",
+    "value": 0.96,
+    "hover": "Chubb INA Group 2024 D&O DPW: US$1.0B."
+  },
+  {
+    "label": "🇺🇸 AIG — D&O",
+    "parent": "D&O (Monoline)",
+    "value": 0.939,
+    "hover": "AIG 2024 D&O DPW: US$0.9B."
+  },
+  {
+    "label": "🇫🇷 AXA XL — D&O",
+    "parent": "D&O (Monoline)",
+    "value": 0.876,
+    "hover": "XL America (AXA XL) 2024 D&O DPW: US$0.9B."
+  },
+  {
+    "label": "Medical Professional Liability",
+    "parent": "Property & Casualty (P&C)",
+    "value": 12.6,
+    "hover": "U.S. medical professional liability DPW 2024: US$12.6B (NAIC)."
+  },
+  {
+    "label": "🇺🇸 Berkshire Hathaway — Med Mal",
+    "parent": "Medical Professional Liability",
+    "value": 2.21,
+    "hover": "Berkshire Hathaway 2024 medical professional liability DPW: US$2.2B."
+  },
+  {
+    "label": "🇺🇸 The Doctors Company",
+    "parent": "Medical Professional Liability",
+    "value": 1.27,
+    "hover": "The Doctors Company 2024 medical professional liability DPW: US$1.3B."
+  },
+  {
+    "label": "🇺🇸 CNA — Med Mal",
+    "parent": "Medical Professional Liability",
+    "value": 0.76,
+    "hover": "CNA 2024 medical professional liability DPW: US$0.8B."
+  },
+  {
+    "label": "Reinsurance",
+    "parent": "Global Insurance Market",
+    "value": 1750,
+    "hover": "Global gross reinsurance premiums end-2024: US$1.75T (per IAIS 2025 GIMAR). By structure: Treaty ~$1.3T, Facultative ~$0.45T."
+  },
+  {
+    "label": "P&C Reinsurance",
+    "parent": "Reinsurance",
+    "value": 1100,
+    "hover": "Global P&C reinsurance ~US$1.1T 2024. Dominates catastrophe and capital relief markets."
+  },
+  {
+    "label": "🇨🇭 Swiss Re",
+    "parent": "P&C Reinsurance",
+    "value": 36.181,
+    "hover": "Swiss Re 2024 AM Best GPW: US$36.2B. Writes both P&C and L&H but predominantly P&C cat/treaty."
+  },
+  {
+    "label": "🇩🇪 Munich Re",
+    "parent": "P&C Reinsurance",
+    "value": 32.555,
+    "hover": "Munich Re 2024 AM Best GPW: US$32.6B. Writes both P&C and L&H but predominantly P&C cat/treaty."
+  },
+  {
+    "label": "🇩🇪 Hannover Re",
+    "parent": "P&C Reinsurance",
+    "value": 27.48,
+    "hover": "Hannover Re 2024 AM Best GPW: US$27.5B. Writes both P&C and L&H but predominantly P&C cat/treaty."
+  },
+  {
+    "label": "Life & Health Reinsurance",
+    "parent": "Reinsurance",
+    "value": 650,
+    "hover": "Global L&H reinsurance ~US$650B 2024. Standalone L&H reinsurance projected ~$218B by 2029 (subset)."
+  }
+]
