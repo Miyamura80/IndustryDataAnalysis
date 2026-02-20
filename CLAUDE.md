@@ -96,6 +96,10 @@ class TestFeature(TestTemplate):
 - 4 spaces for indentation
 - Use native `list`, `tuple` type hints (Python 3.12+), not `typing.List`
 
+## Notebooks
+
+- Whenever a new notebook is created or significantly updated, the root `README.md` should be updated to reflect the changes or additions.
+
 ## LangFuse Observability
 
 Use `@observe` decorator for LLM tracing:
