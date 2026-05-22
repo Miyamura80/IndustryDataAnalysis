@@ -585,7 +585,7 @@ def _(go):
     _values = [0.0]
     _customdata = [""]
 
-    categories = sorted({c["category"] for c in cyber_company_premiums})
+    categories = sorted({str(c["category"]) for c in cyber_company_premiums})
     category_to_idx: dict[str, int] = {}
     for cat in categories:
         category_to_idx[cat] = len(_labels)
@@ -627,7 +627,7 @@ def _(go):
         )
 
         # Accumulate into the category node so branchvalues="total" works.
-        _values[category_to_idx[c["category"]]] += mid_b
+        _values[category_to_idx[str(c["category"])]] += mid_b
 
     _values[0] = total_mid_b
 
