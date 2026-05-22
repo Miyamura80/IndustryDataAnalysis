@@ -1,5 +1,8 @@
 old_scripts/
 
+# Editor settings
+.vscode/
+
 # Overwrite global config
 .global_config.yaml
 

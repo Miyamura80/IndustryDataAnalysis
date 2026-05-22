@@ -48,6 +48,7 @@ Interactive [marimo](https://marimo.io/) notebooks with pie charts and icicle vi
 | Actuators | `actuator_industry.py` | Electric, hydraulic, pneumatic actuators |
 | Robotics | `robotics_industry.py` | Industrial, service, collaborative robots |
 | Safety Compliance | `safety_compliance_industry.py` | EHS, process safety, aviation/maritime/railway safety |
+| Japan Economy | `japan_economy.py` | GDP-equivalent sector mix and representative listed leaders |
 
 ## Requirements
 

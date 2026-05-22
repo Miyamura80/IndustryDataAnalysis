@@ -1,0 +1,308 @@
+[
+  {
+    "label": "Japan economy (2024 nominal GDP)",
+    "parent": "",
+    "value": 608.8,
+    "hover": "Rounded sector values sum to JPY 608.8T (nominal GDP: JPY 609.3T; 0.5T gap is rounding of Cabinet Office shares)."
+  },
+  {
+    "label": "Manufacturing",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 115.8,
+    "hover": "19.0% of the economy, about JPY 115.8T. Largest single sector."
+  },
+  {
+    "label": "Toyota",
+    "parent": "Manufacturing",
+    "value": 48.0,
+    "hover": "FY2025 revenue: JPY 48.0T. Shown as company revenue scale, not value-added share."
+  },
+  {
+    "label": "Honda",
+    "parent": "Manufacturing",
+    "value": 21.69,
+    "hover": "FY2025 sales revenue: JPY 21.69T."
+  },
+  {
+    "label": "Sony Group",
+    "parent": "Manufacturing",
+    "value": 12.96,
+    "hover": "FY2024 sales and financial services revenue: JPY 12.96T."
+  },
+  {
+    "label": "Other manufacturing",
+    "parent": "Manufacturing",
+    "value": 33.15,
+    "hover": "Residual of the sector after illustrative leaders; includes autos, machinery, electronics, materials, food, and other manufacturing."
+  },
+  {
+    "label": "Real estate",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 78.0,
+    "hover": "12.8% of the economy, about JPY 78.0T."
+  },
+  {
+    "label": "Mitsui Fudosan",
+    "parent": "Real estate",
+    "value": 2.63,
+    "hover": "FY2024 revenue from operations: JPY 2.63T."
+  },
+  {
+    "label": "Mitsubishi Estate",
+    "parent": "Real estate",
+    "value": 1.58,
+    "hover": "FY2024 operating revenue: JPY 1.58T."
+  },
+  {
+    "label": "Sumitomo Realty & Development",
+    "parent": "Real estate",
+    "value": 1.01,
+    "hover": "FY2024 revenue from operations: JPY 1.01T."
+  },
+  {
+    "label": "Other / imputed real estate activity",
+    "parent": "Real estate",
+    "value": 72.78,
+    "hover": "Residual of sector size after illustrative listed leaders. Real estate GVA includes broad property services and imputed rent, so listed developer revenue is only a partial lens."
+  },
+  {
+    "label": "Wholesale & retail trade",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 76.2,
+    "hover": "12.5% of the economy, about JPY 76.2T."
+  },
+  {
+    "label": "Seven & i",
+    "parent": "Wholesale & retail trade",
+    "value": 11.97,
+    "hover": "FY ended February 28, 2025 revenues from operations: JPY 11.97T."
+  },
+  {
+    "label": "AEON",
+    "parent": "Wholesale & retail trade",
+    "value": 10.13,
+    "hover": "FY2024 operating revenue: JPY 10.13T."
+  },
+  {
+    "label": "Fast Retailing",
+    "parent": "Wholesale & retail trade",
+    "value": 3.4,
+    "hover": "FY2025 revenue: JPY 3.40T."
+  },
+  {
+    "label": "Other wholesale & retail",
+    "parent": "Wholesale & retail trade",
+    "value": 50.7,
+    "hover": "Residual sector activity across wholesalers, convenience, supermarkets, e-commerce, apparel, and specialty retail."
+  },
+  {
+    "label": "Professional, scientific & technical",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 56.1,
+    "hover": "9.2% of the economy, about JPY 56.1T."
+  },
+  {
+    "label": "Fragmented professional services base",
+    "parent": "Professional, scientific & technical",
+    "value": 56.1,
+    "hover": "Consulting, engineering, architecture, legal, accounting, R&D, and technical services are fragmented, so a clean top-3 listed-company view is less meaningful."
+  },
+  {
+    "label": "Health & social work",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 41.4,
+    "hover": "6.8% of the economy, about JPY 41.4T."
+  },
+  {
+    "label": "Public / nonprofit / fragmented providers",
+    "parent": "Health & social work",
+    "value": 41.4,
+    "hover": "Hospitals, clinics, elder care, and social services are largely public, nonprofit, or fragmented, so listed-company ranking is a weak lens."
+  },
+  {
+    "label": "Finance & insurance",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 37.8,
+    "hover": "6.2% of the economy, about JPY 37.8T."
+  },
+  {
+    "label": "Large banks, insurers, brokers, and asset managers",
+    "parent": "Finance & insurance",
+    "value": 37.8,
+    "hover": "Kept aggregated here because sector output and company revenue are not directly comparable, and business-model differences make a simple top-3 revenue ranking noisy."
+  },
+  {
+    "label": "Construction",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 32.3,
+    "hover": "5.3% of the economy, about JPY 32.3T."
+  },
+  {
+    "label": "Daiwa House",
+    "parent": "Construction",
+    "value": 5.43,
+    "hover": "FY ended March 2025 net sales: JPY 5.43T."
+  },
+  {
+    "label": "Sekisui House",
+    "parent": "Construction",
+    "value": 4.06,
+    "hover": "FY2024 net sales: JPY 4.06T."
+  },
+  {
+    "label": "Obayashi",
+    "parent": "Construction",
+    "value": 2.62,
+    "hover": "FY ended March 31, 2025 net sales: JPY 2.62T."
+  },
+  {
+    "label": "Other construction",
+    "parent": "Construction",
+    "value": 20.19,
+    "hover": "Residual activity across general contractors, housing, civil engineering, specialty trades, and public works."
+  },
+  {
+    "label": "Transport & postal",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 32.3,
+    "hover": "5.3% of the economy, about JPY 32.3T."
+  },
+  {
+    "label": "JR East",
+    "parent": "Transport & postal",
+    "value": 2.89,
+    "hover": "FY March 2025 operating revenue: JPY 2.89T."
+  },
+  {
+    "label": "ANA Holdings",
+    "parent": "Transport & postal",
+    "value": 2.26,
+    "hover": "FY ended March 31, 2025 revenue: JPY 2.26T."
+  },
+  {
+    "label": "Yamato Holdings",
+    "parent": "Transport & postal",
+    "value": 1.76,
+    "hover": "FY ended March 31, 2025 operating revenue: JPY 1.76T."
+  },
+  {
+    "label": "Other transport & postal",
+    "parent": "Transport & postal",
+    "value": 25.39,
+    "hover": "Residual activity across rail, trucking, shipping, airlines, warehousing, transit, and Japan Post."
+  },
+  {
+    "label": "Public administration",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 29.9,
+    "hover": "4.9% of the economy, about JPY 29.9T."
+  },
+  {
+    "label": "Government services",
+    "parent": "Public administration",
+    "value": 29.9,
+    "hover": "Central and local government activity. No listed-company ranking is relevant here."
+  },
+  {
+    "label": "Information & communications",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 26.8,
+    "hover": "4.4% of the economy, about JPY 26.8T."
+  },
+  {
+    "label": "NTT",
+    "parent": "Information & communications",
+    "value": 13.7,
+    "hover": "FY ended March 31, 2025 operating revenues: JPY 13.70T."
+  },
+  {
+    "label": "SoftBank Corp.",
+    "parent": "Information & communications",
+    "value": 6.54,
+    "hover": "FY2024 revenue: JPY 6.54T."
+  },
+  {
+    "label": "KDDI",
+    "parent": "Information & communications",
+    "value": 5.92,
+    "hover": "FY ended March 2025 consolidated revenue: JPY 5.92T."
+  },
+  {
+    "label": "Other info & comms",
+    "parent": "Information & communications",
+    "value": 0.64,
+    "hover": "Small residual after the top telecom operators. Read carefully: company revenue is not the same thing as sector gross value added, so this is an illustration of concentration, not a reconciliation."
+  },
+  {
+    "label": "Other services",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 26.8,
+    "hover": "4.4% of the economy, about JPY 26.8T."
+  },
+  {
+    "label": "Fragmented services remainder",
+    "parent": "Other services",
+    "value": 26.8,
+    "hover": "Catch-all services bucket with heterogeneous and fragmented activity."
+  },
+  {
+    "label": "Education",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 21.9,
+    "hover": "3.6% of the economy, about JPY 21.9T."
+  },
+  {
+    "label": "Schools, universities, and training providers",
+    "parent": "Education",
+    "value": 21.9,
+    "hover": "Mostly public and nonprofit activity, making a listed-company leaderboard a poor summary."
+  },
+  {
+    "label": "Utilities, water, waste",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 15.8,
+    "hover": "2.6% of the economy, about JPY 15.8T."
+  },
+  {
+    "label": "Power, gas, water, and waste systems",
+    "parent": "Utilities, water, waste",
+    "value": 15.8,
+    "hover": "Aggregated here rather than forcing a top-3 list across mixed utility models."
+  },
+  {
+    "label": "Accommodation & food services",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 11.0,
+    "hover": "1.8% of the economy, about JPY 11.0T."
+  },
+  {
+    "label": "Hotels, restaurants, and food service operators",
+    "parent": "Accommodation & food services",
+    "value": 11.0,
+    "hover": "Highly fragmented category with many small operators and chains."
+  },
+  {
+    "label": "Agriculture, forestry & fishing",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 6.1,
+    "hover": "1.0% of the economy, about JPY 6.1T."
+  },
+  {
+    "label": "Primary sector activity",
+    "parent": "Agriculture, forestry & fishing",
+    "value": 6.1,
+    "hover": "Kept aggregated due to fragmentation and cooperative structures."
+  },
+  {
+    "label": "Mining",
+    "parent": "Japan economy (2024 nominal GDP)",
+    "value": 0.6,
+    "hover": "0.1% of the economy, tiny at about JPY 0.6T."
+  },
+  {
+    "label": "Mining residual",
+    "parent": "Mining",
+    "value": 0.6,
+    "hover": "Very small sector in Japan's 2024 economy."
+  }
+]
