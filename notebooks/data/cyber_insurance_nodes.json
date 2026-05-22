@@ -1,0 +1,212 @@
+[
+  {
+    "label": "Cyber Insurance (2025 est.)",
+    "parent": "",
+    "value": 16.5,
+    "hover": "Anchored to ~$16.5B global cyber insurance GWP (2025); Munich Re published $16.3B, Swiss Re $15.6B."
+  },
+  {
+    "label": "Carriers (direct writers)",
+    "parent": "Cyber Insurance (2025 est.)",
+    "value": 7.8,
+    "hover": "Direct-writing insurance carriers with dedicated cyber books."
+  },
+  {
+    "label": "Beazley 🇬🇧",
+    "parent": "Carriers (direct writers)",
+    "value": 1.20,
+    "hover": "2025 cyber GWP ~$1.15-1.2B (down ~8% YoY from $1.28B). Largest pureplay cyber insurer globally. ~15,000 policies. Strategy: scale/mass, buying SOC companies."
+  },
+  {
+    "label": "Chubb 🇨🇭",
+    "parent": "Carriers (direct writers)",
+    "value": 1.05,
+    "hover": "2025 US standalone DWP $467M. ~6% global cyber market share. FY24 cyber GWP ~$1.03B."
+  },
+  {
+    "label": "AIG 🇺🇸",
+    "parent": "Carriers (direct writers)",
+    "value": 1.40,
+    "hover": "Range $1.2-1.6B cyber GWP (est.). Q1 2025 Global Commercial NPW rose 8% YoY."
+  },
+  {
+    "label": "Travelers 🇺🇸",
+    "parent": "Carriers (direct writers)",
+    "value": 0.90,
+    "hover": "2025 US standalone DWP $467M (+43.5% YoY). Acquired Corvus Insurance for $435M in 2024."
+  },
+  {
+    "label": "AXA XL 🇫🇷",
+    "parent": "Carriers (direct writers)",
+    "value": 0.70,
+    "hover": "2025 US standalone DWP $338M (-30.6% YoY). Pulling back from cyber."
+  },
+  {
+    "label": "Hiscox 🇬🇧",
+    "parent": "Carriers (direct writers)",
+    "value": 0.40,
+    "hover": "2025 total GWP $4.98B. Cyber-specific ~$0.35-0.4B (est.)."
+  },
+  {
+    "label": "Zurich 🇨🇭",
+    "parent": "Carriers (direct writers)",
+    "value": 0.60,
+    "hover": "Est. $0.5-0.7B cyber GWP. Announced acquisition of Beazley."
+  },
+  {
+    "label": "Sompo / Aspen 🇯🇵",
+    "parent": "Carriers (direct writers)",
+    "value": 0.50,
+    "hover": "Sompo bought Aspen for $4.5B. 2025 US DWP $263M. Major Japanese carrier going international."
+  },
+  {
+    "label": "Tokio Marine 🇯🇵",
+    "parent": "Carriers (direct writers)",
+    "value": 0.25,
+    "hover": "2025 US standalone DWP $246M (-16.6% YoY)."
+  },
+  {
+    "label": "QBE 🇦🇺",
+    "parent": "Carriers (direct writers)",
+    "value": 0.30,
+    "hover": "Est. $0.25-0.35B cyber GWP."
+  },
+  {
+    "label": "Brit 🇬🇧",
+    "parent": "Carriers (direct writers)",
+    "value": 0.27,
+    "hover": "Est. $0.2-0.3B. Lloyd's syndicate."
+  },
+  {
+    "label": "Aviva 🇬🇧",
+    "parent": "Carriers (direct writers)",
+    "value": 0.23,
+    "hover": "Est. $0.15-0.25B cyber GWP."
+  },
+  {
+    "label": "MGAs / Insurtechs",
+    "parent": "Cyber Insurance (2025 est.)",
+    "value": 3.2,
+    "hover": "Managing General Agents and insurtech underwriters with delegated authority."
+  },
+  {
+    "label": "Coalition 🇺🇸",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.90,
+    "hover": "Est. >$800M GWP (2025). Started in SME with free tooling, struggling to scale past $1B+ revenue enterprises."
+  },
+  {
+    "label": "CFC 🇬🇧",
+    "parent": "MGAs / Insurtechs",
+    "value": 1.10,
+    "hover": "Lloyd's Syndicate 1988 GWP +18% in 2025. >£1B annual premium. Large corporate primary ~$125M alone."
+  },
+  {
+    "label": "At-Bay 🇺🇸",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.35,
+    "hover": "2025 US standalone DWP $281M (+345% YoY!). Explosive growth in SME/mid-market."
+  },
+  {
+    "label": "Cowbell 🇺🇸",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.25,
+    "hover": "SMB-focused continuous underwriting model. Est. $0.2-0.25B."
+  },
+  {
+    "label": "Resilience 🇺🇸",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.25,
+    "hover": "48% GWP growth in Europe in 2025. Won MGA of the Year at Cyber Insurance Awards Europe."
+  },
+  {
+    "label": "Trium Cyber 🇬🇧",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.10,
+    "hover": "£73M premium (~$95M) across 375 policies in 3 years. Zero claims. 10 US + 6 London underwriters. ICP: $100M-$1B+ rev. Most technical underwriter in Lloyd's."
+  },
+  {
+    "label": "Mosaic 🇬🇧",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.15,
+    "hover": "New London-based MGA. Aggressive niche targeting."
+  },
+  {
+    "label": "Elpha Secure 🇺🇸",
+    "parent": "MGAs / Insurtechs",
+    "value": 0.10,
+    "hover": "Early stage. Partnered with SentinelOne (Oct 2025)."
+  },
+  {
+    "label": "Reinsurers (cyber book)",
+    "parent": "Cyber Insurance (2025 est.)",
+    "value": 3.5,
+    "hover": "Reinsurance capacity backing primary cyber carriers."
+  },
+  {
+    "label": "Munich Re 🇩🇪",
+    "parent": "Reinsurers (cyber book)",
+    "value": 1.75,
+    "hover": "Largest cyber reinsurer globally. Range $1.5-2.0B cyber GWP. Published $16.3B global market estimate for 2025."
+  },
+  {
+    "label": "Swiss Re 🇨🇭",
+    "parent": "Reinsurers (cyber book)",
+    "value": 1.30,
+    "hover": "Range $1.1-1.5B cyber reinsurance GWP. Published $15.6B global market estimate."
+  },
+  {
+    "label": "Hannover Re 🇩🇪",
+    "parent": "Reinsurers (cyber book)",
+    "value": 0.45,
+    "hover": "Est. $0.35-0.55B cyber book. Issued cyber cat bond renewal in 2025."
+  },
+  {
+    "label": "Brokers & adjacent services",
+    "parent": "Cyber Insurance (2025 est.)",
+    "value": 2.0,
+    "hover": "Brokers placing cyber risk and adjacent pre-/post-breach service providers."
+  },
+  {
+    "label": "Marsh (cyber desk) 🇺🇸",
+    "parent": "Brokers & adjacent services",
+    "value": 0.50,
+    "hover": "Largest insurance broker. Reported US cyber rates declined 5-7% in 2025."
+  },
+  {
+    "label": "Aon (cyber desk) 🇺🇸",
+    "parent": "Brokers & adjacent services",
+    "value": 0.40,
+    "hover": "Launched Aon Broker Copilot (AI underwriting tool) June 2025. ~$250M new cyber reinsurance capacity in H1 2025."
+  },
+  {
+    "label": "WTW (cyber desk) 🇬🇧",
+    "parent": "Brokers & adjacent services",
+    "value": 0.30,
+    "hover": "Third largest broker. Joined PPL Next-Gen electronic placement platform."
+  },
+  {
+    "label": "Lockton 🇺🇸",
+    "parent": "Brokers & adjacent services",
+    "value": 0.15,
+    "hover": "Largest privately held broker. Growing cyber specialty desk."
+  },
+  {
+    "label": "Pre-breach services",
+    "parent": "Brokers & adjacent services",
+    "value": 0.30,
+    "hover": "Risk scoring & scanning bundled with policies. SecurityScorecard, BitSight, UpGuard."
+  },
+  {
+    "label": "Incident response",
+    "parent": "Brokers & adjacent services",
+    "value": 0.25,
+    "hover": "Retainer panels bundled with policies. CrowdStrike, Mandiant/Google, Kroll, Kivu."
+  },
+  {
+    "label": "Claims mgmt / TPA",
+    "parent": "Brokers & adjacent services",
+    "value": 0.10,
+    "hover": "Sedgwick, Crawford cyber claims. Specialized cyber claims adjusting."
+  }
+]
