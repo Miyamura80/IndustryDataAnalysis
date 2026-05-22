@@ -1,15 +1,16 @@
+import contextvars
+from typing import Optional, Any, Literal
+
+from dspy.adapters import Image as dspy_Image
+from dspy.signatures import Signature as dspy_Signature
 from dspy.utils.callback import BaseCallback
 from langfuse import get_client, Langfuse, LangfuseGeneration  # type: ignore
+from litellm.cost_calculator import completion_cost  # type: ignore
+from loguru import logger as log
+from pydantic import BaseModel, ValidationError, Field
 
 # Get langfuse client for context operations
 langfuse_context = get_client()
-from litellm.cost_calculator import completion_cost  # type: ignore
-from typing import Optional, Any, Literal
-from pydantic import BaseModel, ValidationError, Field
-from dspy.adapters import Image as dspy_Image
-from dspy.signatures import Signature as dspy_Signature
-import contextvars
-from loguru import logger as log
 
 
 # Pydantic models for parsing the 'outputs' dictionary when it's a dict
