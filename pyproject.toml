@@ -43,7 +43,8 @@ packages = ["src/python_template"]
 [tool.vulture]
 exclude = [
     ".venv/",
-    "tests/**/test_*.py",
+    "*/tests/**/test_*.py",
+    "*/tests/test_*.py",
     "tests/test_template.py",
     "utils/llm/",
     "common/",
