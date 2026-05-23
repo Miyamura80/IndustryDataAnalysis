@@ -26,6 +26,7 @@ dependencies = [
     "marimo>=0.18.3",
     "pyzmq>=27.1.0",
     "plotly>=6.5.0",
+    "pymupdf>=1.27.2.3",
 ]
 readme = "README.md"
 requires-python = ">= 3.12"
