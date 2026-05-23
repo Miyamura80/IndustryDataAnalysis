@@ -51,6 +51,7 @@ Interactive [marimo](https://marimo.io/) notebooks with pie charts and icicle vi
 | Insurance | `insurance_industry.py` | Life, P&C, health, reinsurance — global premium pools |
 | Cyber Insurance | `cyber_insurance_industry.py` | Carriers, MGAs, reinsurers, strategy archetypes, threat-to-claim flows |
 | Japan Economy | `japan_economy.py` | GDP-equivalent sector mix and representative listed leaders |
+| Ocean / Blue Economy | `ocean_industry.py` | Shipping, offshore energy, fisheries, tourism, shipbuilding, naval defense, subsea infrastructure. Appendix: shipping decarbonization deep dive |
 
 ## Requirements
 
