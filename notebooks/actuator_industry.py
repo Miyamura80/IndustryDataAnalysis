@@ -664,7 +664,8 @@ def _(go):
         )
     )
     share_fig.update_layout(
-        title="Selected public market-share figures in robotics actuation / motion control",
+        title="Selected public market-share figures in robotics actuation / motion control<br>"
+        "<sup>figure status: mix of ACTUAL/reported, a LEGACY claim, and a 2030 TARGET - see dot legend below</sup>",
         xaxis_title="share of its OWN market (%) - bars are NOT comparable",
         xaxis_range=[0, 70],
         annotations=[
@@ -680,8 +681,8 @@ def _(go):
                 font_size=10.5,
             )
         ],
-        margin=dict(t=130, l=10, r=30, b=50),
-        height=460,
+        margin=dict(t=160, l=10, r=30, b=50),
+        height=480,
     )
     share_fig
     return
@@ -698,6 +699,8 @@ def _(mo):
     - Yaskawa 16% (AC servo drive) and 7% (industrial robots) are two different markets for the same firm.
     - Schaeffler 10% is a 2030 ambition for humanoid components, not a position it holds today (shown grey).
     - HDSI 12.1% is China strain-wave only; the global strain-wave figure is much higher (~50%, low confidence).
+
+    Data sources: each figure's primary source, geography, year and confidence are in the company master table above (source_url column). Headline references - Nabtesco IR (nabtesco.com/en/products/robot), Yaskawa via Mordor Intelligence global servo report, Leaderdrive company profile (leaderdrive.com) cross-checked against GGII, and Schaeffler's 2030 target via humanoidsdaily.com.
     """
     )
     return
