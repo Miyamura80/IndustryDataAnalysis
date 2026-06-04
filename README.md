@@ -53,6 +53,7 @@ Interactive [marimo](https://marimo.io/) notebooks with pie charts and icicle vi
 | Japan Economy | `japan_economy.py` | GDP-equivalent sector mix and representative listed leaders |
 | Ocean / Blue Economy | `ocean_industry.py` | Shipping, offshore energy, fisheries, tourism, shipbuilding, naval defense, subsea infrastructure. Appendix: shipping decarbonization deep dive |
 | Lloyd's Syndicate-in-a-Box | `lloyds_siab.py` | All 14 SiaBs approved (2020-2026): sectors, stamp capacity, outcomes, Carbon 4747 growth, managing agent concentration, new entrant comparison |
+| Human Sensory Bandwidth | `sensory_bandwidth.py` | Raw sensory input vs. conscious experience: bandwidth funnel, the missing senses, interactive effective-bandwidth toy model, scenario presets, output channels, five definitions of "human bandwidth" |
 
 ## Requirements
 
