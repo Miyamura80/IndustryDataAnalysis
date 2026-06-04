@@ -810,7 +810,8 @@ def _(mo):
 @app.cell
 def _(CHANNELS, CHANNEL_COLORS, RAW_BW, effective_profile, go, scenario):
     # Each scenario: channel -> (attention, novelty, salience), all 0..1.
-    # gate = attention * novelty * salience ; effective = raw * gate.
+    # gate = attention * novelty * salience ; experienced share comes from
+    # effective_profile (log10(raw) * gate, a unitless salience score).
     # Values are illustrative, chosen to make the qualitative point.
     SCENARIOS = {
         "Reading a book": {
