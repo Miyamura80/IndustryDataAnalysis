@@ -45,7 +45,7 @@ Interactive [marimo](https://marimo.io/) notebooks with pie charts and icicle vi
 | Chemical | `chemical_industry.py` | Specialty chemicals, petrochemicals, materials |
 | Cybersecurity | `cyber_industry.py` | Network, endpoint, cloud, identity, GRC |
 | Space | `space_industry.py` | Launch, satellites, ground systems |
-| Actuators | `actuator_industry.py` | Electric, hydraulic, pneumatic actuators |
+| Actuators | `actuator_industry.py` | Electric, hydraulic, pneumatic actuators. Appendix: robotics actuator deep dive — precision reducers, servo/drives, integrated joint modules and robot OEMs across Japan/China/Europe-US; sourced market-share table, China RV substitution trend, humanoid BOM split, and a "value accrues in the joint" thesis |
 | Robotics | `robotics_industry.py` | Industrial, service, collaborative robots |
 | Safety Compliance | `safety_compliance_industry.py` | EHS, process safety, aviation/maritime/railway safety |
 | Insurance | `insurance_industry.py` | Life, P&C, health, reinsurance — global premium pools |
