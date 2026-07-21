@@ -75,7 +75,7 @@ def _(mo):
         """
     **Notes on the pie:**
     - Uses high-level, rounded figures across multiple analyst cuts.
-    - Sums the core and adjacent slices (~$300B) rather than the full ~$613B space economy to keep the chart readable.
+    - Sums the core and adjacent slices (~\$300B) rather than the full ~\$613B space economy to keep the chart readable.
     - Launch + manufacturing are small compared with downstream services and ground equipment.
     - GNSS-only downstream estimates ($260–301B) would enlarge the ground slice substantially if added in full.
     """

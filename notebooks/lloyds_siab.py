@@ -392,7 +392,7 @@ def _(go):
         {"name": "Wakam 1347", "year": 2022, "color": "#e15759"},
         {"name": "Wildfire Def. 1996", "year": 2023, "color": "#59a14f"},
         {"name": "Oka 1922", "year": 2023, "color": "#59a14f"},
-        {"name": "MCI 1966", "year": 2024, "color": "#59a14f"},
+        {"name": "MCI 1966", "year": 2024, "color": "#e15759"},
         {"name": "Agile 2427", "year": 2024, "color": "#59a14f"},
     ]
 

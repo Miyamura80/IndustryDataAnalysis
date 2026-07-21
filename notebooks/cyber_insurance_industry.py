@@ -1226,7 +1226,7 @@ def _(mo):
 
     5. Cyber catastrophe bonds (\$800M issued vs. \$56B total cat bond market). Only 1.4% of the cat bond market addresses cyber risk. Beazley's PoleStar Re (\$300M) and Hannover Re have pioneered, but ILS investors remain wary of cyber aggregation modeling. This is the primary bottleneck for scaling systemic risk capacity.
 
-    6. Supply-chain and systemic risk (\$80B modeled loss, ~\$15B insured). Lloyd's models a 72-hour major cloud outage at \$80B economic loss with ~\$15B insured — nearly an entire year's global premium consumed by a single event. The CrowdStrike outage (July 2024) gave a preview: \$5.4B economic loss, only \$0.4-1.5B insured. Traditional reinsurance balance sheets cannot absorb correlated cyber losses of this magnitude.
+    6. Supply-chain and systemic risk (\$80B modeled loss, ~\$15B insured). Lloyd's models a 72-hour major cloud outage at \$80B economic loss with ~\$15B insured — nearly an entire year's global premium consumed by a single event. The CrowdStrike outage (July 2024) gave a preview: \$5.4B direct loss to US Fortune-500 firms (Parametrix, ex-Microsoft), only ~\$0.54-1.08B insured. Traditional reinsurance balance sheets cannot absorb correlated cyber losses of this magnitude.
 
     7. AI liability (\$50B+ emerging exposure, ~\$500M covered). AI-generated code vulnerabilities, model poisoning, deepfake-enabled fraud, and autonomous agent errors are largely uncovered. Munich Re's standalone AI liability product saw limited uptake — the market hasn't figured out how to price AI-specific risk.
 
@@ -1651,7 +1651,7 @@ def _(go, mo):
     ]
 
     _tm_hover_jp = [
-        "3rd largest insurance market globally. ~$350B in annual premiums.",
+        "~4th largest insurance market globally by total premiums (~3rd in life). ~$350B in annual premiums.",
         "Big Three hold ~85% domestic share. Motor (~47%), property (~23%), other lines (~30%).",
         "3rd largest life market globally (behind US and China). ~90% of households carry life insurance.",
         "~85% combined domestic P&C market share. All three expanding aggressively overseas.",

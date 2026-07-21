@@ -103,7 +103,7 @@ def _(mo):
         """
     **Notes on the pie:**
     - Maritime Safety Systems dominates at ~$30B (65% of combined sectors), reflecting that it includes vessel hardware, communications equipment, and coastal/port infrastructure.
-    - EHS/Workplace and Construction Safety are software-only markets, hence much smaller ($0.76B — a narrow Grand View workplace-safety EHS-software cut; broader standalone EHS-software estimates run ~$2–8B — and $1.72B respectively).
+    - EHS/Workplace and Construction Safety are software-only markets, hence much smaller (\$0.76B — a narrow Grand View workplace-safety EHS-software cut; broader standalone EHS-software estimates run ~\$2–8B — and \$1.72B respectively).
     - Process Safety, Aviation SMS, and Railway Safety mix software with hardware/systems, sitting in the $3.5B-$6.5B range.
     - Sectors are not additive into one clean total because definitions and scope vary across analyst reports.
     """

@@ -69,10 +69,10 @@ def _(mo):
 
     - Market sizes (Life / Health / P&C) are global premium pools originally reported in **EUR** by Allianz (Global Insurance Report 2025), converted here at ~1.08 EUR/USD for visual consistency.
     - Life: €2.902T → ~$3.1T | Health: €1.682T → ~$1.8T | P&C: €2.424T → ~$2.6T
-    - Reinsurance market size (~$0.4T) is 2024 global reinsurance gross written premium (~$293B non-life + ~$102B life; Atlas Magazine / AM Best reinsurer rankings).
+    - Reinsurance market size (~\$0.4T) is 2024 global reinsurance gross written premium (~\$293B non-life + ~\$102B life; Atlas Magazine / AM Best reinsurer rankings).
     - Company figures use **AM Best 2024 net premiums written** (USD), which provides a clean comparable basis across sectors.
     - Reinsurer company figures are AM Best **gross premiums written** from their reinsurer ranking.
-    - Total across all four sectors sums to approximately **US$8.0T**; note reinsurance (~$0.4T) is largely ceded from the primary Life/Health/P&C books, so primary premiums alone are ~$7.6T (Swiss Re sigma).
+    - Total across all four sectors sums to approximately **US\$8.0T**; note reinsurance (~\$0.4T) is largely ceded from the primary Life/Health/P&C books, so primary premiums alone are ~\$7.6T (Swiss Re sigma).
     """)
     return
 
@@ -119,10 +119,10 @@ def _(mo):
     mo.md("""
     **How to read the icicle:**
 
-    - Root shows the combined global insurance market at **~US$8.0T** (sum of four sectors); children roll up with `branchvalues="total"`.
+    - Root shows the combined global insurance market at **~US\$8.0T** (sum of four sectors); children roll up with `branchvalues="total"`.
     - **Life** (~$3.1T) is the largest sector by premiums, followed by **P&C** (~$2.6T), **Health** (~$1.8T), and **Reinsurance** (~$0.4T).
     - Company nodes use AM Best 2024 net premiums written (or GPW for reinsurers) in USD for cross-sector comparability.
-    - There is inherent overlap: reinsurance premiums are ceded from primary Life, Health, and P&C books, so the $8.0T total double-counts some premium flow.
+    - There is inherent overlap: reinsurance premiums are ceded from primary Life, Health, and P&C books, so the \$8.0T total double-counts some premium flow.
     - Health sector top players (UnitedHealth, Centene, Elevance) are US-centric managed-care giants; the global pool includes many smaller national carriers.
     """)
     return

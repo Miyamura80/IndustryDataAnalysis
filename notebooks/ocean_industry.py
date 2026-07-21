@@ -14,7 +14,7 @@ def _():
 def _(mo):
     mo.md(
         """
-    # If the ocean were a country, its \$2.5 trillion economy would be one of the world's largest (OECD and UNCTAD frame it as the fifth-largest).
+    # If the ocean were a country, its \$2.5 trillion economy would be one of the world's largest (OECD frames it as the world's fifth-largest economy).
 
     80% of all global goods travel by sea. The ocean economy has grown 2.5x since 1995, outpacing the 1.9x growth of the world economy (UNCTAD 2025). In 2024, global seaborne trade hit 12.7 billion tons -- roughly 1.6 tons for every person on Earth.
 
@@ -547,7 +547,7 @@ def _(mo):
         """
     Growth projection notes:
     - The blue economy has grown 2.5x since 1995, outpacing the 1.9x growth of the world economy (UNCTAD 2025). It is projected to at least double again by 2050.
-    - OECD projects the ocean economy will exceed \$3T GVA by 2030 and nearly 4x its 1995 level by 2050. Cumulative capex of ~\$20T is implied.
+    - OECD projects the ocean economy will exceed \$3T GVA by 2030 and nearly 4x its 1995 level by 2050. Cumulative capex of ~\$20T is implied. (The trajectory bars blend different measures — UNCTAD ocean-trade value, a Polaris market-size estimate, and OECD GVA — so read them as directional scale, not a single consistent metric; the 2034→2050 step looks flat only because those two bars use different definitions.)
     - The structural drivers: offshore wind (~16% CAGR), aquaculture (6-8% CAGR replacing stagnant wild capture), submarine cables (surging from AI data center demand), and desalination (water scarcity in MENA, India, Australia).
     - The structural headwind: offshore oil and gas -- currently \$155B -- is projected to shrink from dominant to 25% of ocean economy capex by 2050 as the energy transition progresses (OECD). Offshore wind is projected to capture 50% of capex.
     - Deep-sea mining is the wild card: if ISA grants commercial licenses (expected 2025-2027), the segment could grow from \$3.9B to \$10-41B by 2033, but environmental opposition is fierce (30+ countries support a moratorium).
@@ -592,8 +592,8 @@ def _(go):
             marker_color="#4e79a7",
             text=[f"{v}%" for v in _pct],
             textposition="outside",
-            customdata=_risk,
-            hovertemplate="<b>%{y}</b><br>%{x}% of global trade<br>%{customdata}<extra></extra>",
+            customdata=list(zip(_risk, _barrels)),
+            hovertemplate="<b>%{y}</b><br>%{x}% of global trade · ~%{customdata[1]}M b/d oil<br>%{customdata[0]}<extra></extra>",
         )
     )
 

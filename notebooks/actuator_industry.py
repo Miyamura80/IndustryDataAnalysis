@@ -91,7 +91,7 @@ def _(mo):
     mo.md(
         """
     **Notes on the pie and margins:**
-    - Values reflect widely cited 2024 estimates; verticals overlap and some span a wide analyst range — notably HVAC & building automation, where 2024 estimates run from ~$3–5B (HVAC actuators only) to ~$15B (broad building-automation scope, Market Research Future) — so the pie is for relative scale only.
+    - Values reflect widely cited 2024 estimates; verticals overlap and some span a wide analyst range — notably HVAC & building automation, where 2024 estimates run from ~\$3–5B (HVAC actuators only) to ~\$15B (broad building-automation scope, Market Research Future) — so the pie is for relative scale only.
     - Margin snapshot (company-level operating margin, actuator exposure varies): SMC ~25%, Rotork ~24%, Parker ~21%, Honeywell ~18–19%, Curtiss-Wright ~17%, ABB ~18%, Emerson ~19%, Flowserve ~10%, Siemens low-teens, Moog ~11–12%, JCI ~6–7%, BorgWarner/Denso/Aisin ~3–7%.
     """
     )
