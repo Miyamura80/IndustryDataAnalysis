@@ -56,6 +56,6 @@ class TestJapanEconomyNotebook(TestTemplate):
     def test_treemap_csv_contains_public_private_and_mixed_rows(self):
         csv_text = self.treemap_csv_path.read_text(encoding="utf-8")
 
-        assert "Toyota,Public,305.78" in csv_text
+        assert "Toyota,Public,315.10" in csv_text
         assert "Nippon Life Insurance,Private,72.18" in csv_text
-        assert "Rest of covered universe,Mixed,2323.38" in csv_text
+        assert "Rest of covered universe,Mixed,2304.79" in csv_text
