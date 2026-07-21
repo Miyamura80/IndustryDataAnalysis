@@ -33,7 +33,7 @@ def _():
 @app.cell
 def _(go):
     segment_data_space = [
-        {"segment": "Launch services", "value_billion": 15},
+        {"segment": "Launch services", "value_billion": 9.3},
         {"segment": "Satellite manufacturing", "value_billion": 20},
         {"segment": "Satellite services", "value_billion": 108.3},
         {"segment": "Ground equipment (sat)", "value_billion": 155.3},
@@ -75,7 +75,7 @@ def _(mo):
         """
     **Notes on the pie:**
     - Uses high-level, rounded figures across multiple analyst cuts.
-    - Sums the core and adjacent slices (~$306B) rather than the full ~$613B space economy to keep the chart readable.
+    - Sums the core and adjacent slices (~$300B) rather than the full ~$613B space economy to keep the chart readable.
     - Launch + manufacturing are small compared with downstream services and ground equipment.
     - GNSS-only downstream estimates ($260–301B) would enlarge the ground slice substantially if added in full.
     """

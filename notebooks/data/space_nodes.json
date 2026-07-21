@@ -1,7 +1,7 @@
 [
     {"label": "Space economy (2024 est.)", "parent": "", "value": 613, "hover": "Global space economy ~ $613B (all segments)"},
-    {"label": "Core satellite industry", "parent": "Space economy (2024 est.)", "value": 298.6, "hover": "Launch + manufacturing + services + ground (BryceTech)"},
-    {"label": "Launch services", "parent": "Core satellite industry", "value": 15, "hover": "Commercial launch revenue ~$9–15B (2023–24)"},
+    {"label": "Core satellite industry", "parent": "Space economy (2024 est.)", "value": 292.9, "hover": "Launch + manufacturing + services + ground (BryceTech)"},
+    {"label": "Launch services", "parent": "Core satellite industry", "value": 9.3, "hover": "Commercial launch revenue ~$9.3B (2024, SIA/BryceTech)"},
     {"label": "SpaceX launch", "parent": "Launch services", "value": 3.5, "hover": "SpaceX launch revenue est. ~$3.5B in 2023"},
     {"label": "Rocket Lab launch", "parent": "Launch services", "value": 0.08, "hover": "Rocket Lab launch ~1/3 of $245M 2023 revenue"},
     {"label": "ULA", "parent": "Launch services", "value": 1.0, "hover": "NSSL awards $5.3B through 2029; value shown is simplified annualized slice"},

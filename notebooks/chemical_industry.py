@@ -76,7 +76,7 @@ def _(mo):
     The chart above visualizes the major functional segments described in the text.
     The sum of these specific segments is approximately **US$2.14T**.
 
-    The text notes that the total global chemicals market is estimated between **US$3.5T** (narrow definition) and **US$5.8T** (broad definition including pharma). The difference is accounted for by overlapping categories, pharmaceuticals, fertilizers, and other downstream formulated products not explicitly categorized in the five main functional buckets.
+    The text notes that the total global chemicals market is estimated at ~**US$5.5T** (CEFIC ex-pharma world chemical sales, 2023) rising to ~**US$6T** on a broad definition including pharmaceuticals. Older "narrow" cuts near **US$3.5T** undercount specialties and formulated products. The spread is accounted for by overlapping categories, pharmaceuticals, fertilizers, and other downstream formulated products not explicitly categorized in the five main functional buckets.
     """
     )
     return
@@ -124,7 +124,7 @@ def _(mo):
     mo.md(
         """
     **How to read the icicle:**
-    - Root uses the narrower **US$3.5T** estimate to leave visual headroom; children roll up with branchvalues="total".
+    - Root uses the ~**US$5.5T** broad (ex-pharma) estimate; itemized segments are shown and the remainder is many smaller/formulated lines; children roll up with branchvalues="total".
     - Petrochemicals & Polymers now shows sub-segments (ethylene, propylene, aromatics, PE, PP, PVC, PET, styrenics) with illustrative top companies under each product family.
     - **Specialty Chemicals** is further broken down into key sub-segments (Paints, Adhesives, Electronics, etc.) with representative market leaders.
     - Company nodes are illustrative and use reported 2024 segment/group sales converted roughly to USD (FX approximations).

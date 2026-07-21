@@ -26,8 +26,8 @@
     {
         "label": "Yaskawa Robotics",
         "parent": "Industrial / factory",
-        "value": 1.15,
-        "hover": "FY2024 robotics segment revenue, USD billions"
+        "value": 1.55,
+        "hover": "Robotics segment revenue ≈ $1.55B (¥237.4B, FYE Feb-2025), USD billions"
     },
     {
         "label": "Logistics & warehouse",
@@ -50,8 +50,8 @@
     {
         "label": "KION / Dematic",
         "parent": "Logistics & warehouse",
-        "value": 2.9,
-        "hover": "Supply Chain Solutions (Dematic) 2024 revenue, EUR translated to ~USD billions"
+        "value": 3.2,
+        "hover": "Supply Chain Solutions (Dematic) 2024 revenue €2.94B ≈ $3.2B, USD billions"
     },
     {
         "label": "Medical & surgical",
@@ -69,13 +69,13 @@
         "label": "Stryker (Mako context)",
         "parent": "Medical & surgical",
         "value": 4,
-        "hover": "Directional robotics contribution within MedSurg/Neurotech, USD billions"
+        "hover": "Illustrative: Mako robotic-arm franchise sits in Stryker's Orthopaedics segment; Stryker does not disclose Mako revenue — directional only, USD billions"
     },
     {
         "label": "Medtronic (robotics slice)",
         "parent": "Medical & surgical",
-        "value": 2,
-        "hover": "Directional robotics share of FY24 revenue, USD billions"
+        "value": 0.2,
+        "hover": "Illustrative: Medtronic does not disclose robotics revenue; Hugo RAS had minimal sales before US FDA clearance (2025) — directional only, USD billions"
     },
     {
         "label": "Agriculture autonomy",
@@ -87,7 +87,7 @@
         "label": "John Deere PPA",
         "parent": "Agriculture autonomy",
         "value": 3,
-        "hover": "Production & Precision Ag 2024 revenue (robotics/autonomy rich), USD billions"
+        "hover": "Directional robotics/autonomy slice of Deere's Production & Precision Ag segment (segment total ~$20.8B FY2024), USD billions"
     },
     {
         "label": "CNH Precision Tech",

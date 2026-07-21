@@ -16,16 +16,16 @@ def _(mo):
         """
     # Only 2 of 14 Lloyd's Syndicates-in-a-Box have graduated. The remaining active SiaBs write just 0.23% of Lloyd's GWP.
 
-    Lloyd's launched the Syndicate-in-a-Box (SiaB) programme in 2020 as a "fail-fast" innovation sandbox under the "Future at Lloyd's" strategy. The idea: let entrepreneurial underwriters enter Lloyd's at lower cost, with reduced reporting, a GBP 100m year-one cap, and a 3-year review window. Seven years in, 14 SiaBs have been approved, 5 have closed or entered run-off, and the survivors collectively write GBP 133.7m -- a rounding error against Lloyd's GBP 57.9bn market.
+    Lloyd's launched the Syndicate-in-a-Box (SiaB) programme in 2020 as a "fail-fast" innovation sandbox under the "Future at Lloyd's" strategy. The idea: let entrepreneurial underwriters enter Lloyd's at lower cost, with reduced reporting, a GBP 100m year-one cap, and a 3-year review window. Six years in, 14 SiaBs have been approved (Insurance Insider's 2026 analysis counts 13 "entrants"); ~6 have closed or entered run-off, and the survivors collectively write GBP 133.7m -- a rounding error against Lloyd's GBP 57.9bn market.
 
     ---
 
     ## Lloyd's Syndicate-in-a-Box Programme Deep Dive (2020-2026)
     - Programme launched 2020 as part of Blueprint One / "Future at Lloyd's" under CEO John Neal.
-    - 14 SiaBs approved in total. 2 graduated to full syndicate, ~7 remain active, ~5 closed or in run-off.
+    - 14 SiaBs approved on this roster (Insurance Insider counts 13 entrants). 2 graduated to full syndicate, ~6 remain active, ~6 closed or in run-off.
     - Combined active SiaB GWP: ~GBP 133.7m = 0.23% of Lloyd's total GWP (GBP 57.9bn in 2025). Excludes graduated Carbon 4747.
     - Year-one GWP cap: less than GBP 100m. Must predominantly write short-tail, monoline business with only incidental catastrophe exposure.
-    - Only 1 clear success story: Carbon Syndicate 4747, which graduated in 2.5 years and now writes ~GBP 400m across two syndicates.
+    - Only 1 clear success story: Carbon Syndicate 4747, which graduated in 2.5 years and wrote ~GBP 204m in 2024. A planned second syndicate (5757) was approved in principle in 2024 but had not begun trading as of late 2025, so the mooted ~GBP 400m two-syndicate figure did not materialize.
     - Industry verdict: "an interesting experiment; it probably hasn't worked" (Insurance Insider, 2026).
     """
     )
@@ -42,9 +42,9 @@ def _():
 def _(go):
     scale_data = [
         {"label": "Lloyd's total GWP (2025)", "value_m": 57900, "color": "#4e79a7"},
-        {"label": "Top syndicate (Beazley 623/2623)", "value_m": 6500, "color": "#76b7b2"},
+        {"label": "Largest syndicate book (Beazley 623/2623, ~GBP 3.2bn)", "value_m": 3200, "color": "#76b7b2"},
         {"label": "Average syndicate capacity", "value_m": 667, "color": "#59a14f"},
-        {"label": "Carbon 4747 + 5757 (graduated SiaB)", "value_m": 400, "color": "#f28e2b"},
+        {"label": "Carbon 4747 (graduated SiaB)", "value_m": 204, "color": "#f28e2b"},
         {"label": "All active SiaBs combined", "value_m": 133.7, "color": "#e15759"},
         {"label": "SiaB year-one GWP cap", "value_m": 100, "color": "#b07aa1"},
     ]
@@ -97,7 +97,7 @@ def _(mo):
     Scale context:
     - Lloyd's total GWP reached GBP 57.9bn in 2025, delivering its third consecutive year of 20%+ return on capital (22.0%).
     - The combined GWP of all active SiaBs (GBP 133.7m) is less than a single mid-sized syndicate.
-    - A single top-10 syndicate like Beazley 623/2623 individually writes more GWP than all SiaBs combined by a factor of ~50x.
+    - A single large syndicate book -- Beazley 623/2623 together write ~GBP 3.2bn -- is bigger than all SiaBs combined by a factor of ~24x. (For the 2025 year, Canopius 4444 is the largest single syndicate by capacity.)
     - The GBP 100m year-one cap constrains SiaBs to niche, monoline business -- by design.
     - Sources: Lloyd's Full Year Results 2025; Insurance Insider SiaB analysis (2026); Howden Re.
     """
@@ -146,7 +146,7 @@ def _(go):
     trad_vals = [
         "No cap",
         "12-24 months",
-        "> GBP 200k",
+        "GBP 200k",
         "Required from day one (Solvency II)",
         "Full cat classes permitted",
         "Required (underwriting room)",
@@ -212,8 +212,8 @@ def _(mo):
 @app.cell
 def _(go):
     outcome_data = [
-        {"status": "Active", "count": 7, "color": "#59a14f"},
-        {"status": "Closed / run-off", "count": 5, "color": "#e15759"},
+        {"status": "Active", "count": 6, "color": "#59a14f"},
+        {"status": "Closed / run-off", "count": 6, "color": "#e15759"},
         {"status": "Graduated (confirmed)", "count": 1, "color": "#4e79a7"},
         {"status": "Graduated (likely)", "count": 1, "color": "#7fb3d8"},
     ]
@@ -251,8 +251,8 @@ def _(mo):
     Outcome notes:
     - Lloyd's original expectation was "a third transitioning, a third failing, and a third remaining small." Actual results roughly match.
     - Graduated (14%): Carbon 4747 is the unambiguous success. MCI 1902 may be the second, based on its GBP 143.5m stamp capacity suggesting transition beyond SiaB constraints.
-    - Active but small (50%): Most SiaBs remain niche operations writing GBP 7-66m -- well below the average Lloyd's syndicate capacity of ~GBP 667m.
-    - Closed/run-off (36%): Munich Re 1840, Beazley ESG 4321, MIC Global 5183, Wakam 1347, Picnic 2460.
+    - Active but small (43%): Most SiaBs remain niche operations writing GBP 7-66m -- well below the average Lloyd's syndicate capacity of ~GBP 667m.
+    - Closed/run-off (43%): Munich Re 1840, Beazley ESG 4321, MIC Global 5183, Wakam 1347, Picnic 2460, MCI 1966 (shutting down 2025).
     - Wakam 1347 holds the record for shortest SiaB lifespan -- shuttered after less than one year of trading.
     """
     )
@@ -313,7 +313,7 @@ def _(mo):
     mo.md(
         """
     Stamp capacity notes:
-    - Carbon 4747 graduated January 2023 and now operates alongside Syndicate 5757; combined GWP target is ~GBP 400m for 2025.
+    - Carbon 4747 graduated January 2023 and wrote ~GBP 204m in 2024. A second syndicate (5757) was approved in principle in 2024 but had not begun trading as of late 2025, so the ~GBP 400m two-syndicate target was a forecast that did not materialize.
     - MCI 1902 has the largest stamp capacity among non-graduated SiaBs at GBP 143.5m, well above the GBP 100m year-one cap, suggesting it has likely graduated to full syndicate status.
     - MIC Global 5183 peaked at GBP 27.5m before closing at end of 2024 YoA; now operates as a coverholder of Greenlight Re 3456.
     - Wildfire Defense 1996 and MCI 1966 capacities are estimates based on reported GWP targets and year-one constraints.
@@ -452,14 +452,12 @@ def _(go):
         "2022",
         "2023\n(graduated)",
         "2024",
-        "2025\n(+Syn 5757)",
     ]
-    carbon_gwp = [15, 40, 62.5, 150, 204, 400]
+    carbon_gwp = [15, 40, 62.5, 150, 204]
     carbon_colors = [
         "#f28e2b",
         "#f28e2b",
         "#f28e2b",
-        "#4e79a7",
         "#4e79a7",
         "#4e79a7",
     ]
@@ -478,7 +476,7 @@ def _(go):
     carbon_fig.update_layout(
         title="Carbon 4747: the SiaB success story (GWP growth, GBP millions)",
         xaxis=dict(title="", type="category"),
-        yaxis=dict(title="GWP (GBP millions)", range=[0, 470]),
+        yaxis=dict(title="GWP (GBP millions)", range=[0, 260]),
         margin=dict(t=70, l=60, r=40, b=70),
         height=400,
     )
@@ -494,16 +492,6 @@ def _(go):
         font=dict(size=12, color="#4e79a7"),
     )
 
-    carbon_fig.add_annotation(
-        x="2025\n(+Syn 5757)",
-        y=400,
-        text="Second syndicate<br>5757 launched",
-        showarrow=True,
-        arrowhead=2,
-        ax=-70,
-        ay=-40,
-        font=dict(size=12, color="#4e79a7"),
-    )
 
     carbon_fig
     return
@@ -517,7 +505,7 @@ def _(mo):
     - Carbon Underwriting is an independent MGU with no parent insurer sponsor, managed by Asta.
     - Grew from 4 employees at launch to 51 by 2025.
     - First SiaB to graduate to full syndicate (January 2023), having met all KPIs within 2.5 years.
-    - Received approval for second syndicate (5757) in 2024.
+    - Received approval in principle for a second syndicate (5757) in 2024; as of late 2025 it had not yet begun trading.
     - Described as delivering "consistently profitable and stable underwriting results" with "top-quartile" ambitions.
     - Orange bars = SiaB period. Blue bars = full syndicate period.
     - The poster child -- but also the exception. No other SiaB has come close to this trajectory.
@@ -568,7 +556,7 @@ def _(mo):
         """
     Asta dominance:
     - Asta Managing Agency manages ~10 of 14 SiaBs ever launched, plus 18 full syndicates, with GBP 5.5bn total GWP under management.
-    - Asta's full syndicate portfolio includes Ki/ARTes 1618 (GBP 730m stamp capacity), Fidelis 3123 (GBP 581m), CFC 1988 (GBP 300m), Convex 1984 (GBP 294m), and graduated SiaB Carbon 4747 (GBP 225m stamp capacity; current GWP ~GBP 400m across 4747+5757).
+    - Asta's full syndicate portfolio includes Ki/ARTes 1618 (GBP 730m stamp capacity), Fidelis 3123 (GBP 581m), CFC 1988 (GBP 300m), Convex 1984 (GBP 294m), and graduated SiaB Carbon 4747 (GBP 225m stamp capacity; 2024 GWP ~GBP 204m, 4747 only).
     - Polo Managing Agency hosted Wakam 1347 (closed after <1 year) and Wildfire Defense 1996 (active).
     - The concentration is notable: if an entrant wants a SiaB at Lloyd's, Asta is effectively the only viable managing agent.
     - Sources: Asta website; Lloyd's market data.
@@ -582,7 +570,7 @@ def _(go):
     entrant_data = [
         {
             "name": "Ki 1618\n(follow platform)",
-            "gwp": 877,
+            "gwp": 715,
             "type": "Full syndicate",
             "color": "#4e79a7",
         },
@@ -593,8 +581,8 @@ def _(go):
             "color": "#4e79a7",
         },
         {
-            "name": "Carbon 4747+5757\n(graduated SiaB)",
-            "gwp": 400,
+            "name": "Carbon 4747\n(graduated SiaB)",
+            "gwp": 204,
             "type": "Graduated SiaB",
             "color": "#f28e2b",
         },
@@ -641,7 +629,7 @@ def _(mo):
     mo.md(
         r"""
     New entrant comparison:
-    - Ki (Syndicate 1618) is NOT a SiaB -- it launched as a full algorithmically-driven follow syndicate in 2021, backed by Brit (Fairfax Financial). It reached \$1.11bn Gross Managed Premium (~GBP 877m) in 2025 with a 91.3% adjusted combined ratio and \$171.4m adjusted PBT. Became standalone within Fairfax in January 2025, now managed by Asta.
+    - Ki (Syndicate 1618) is NOT a SiaB -- it launched as a full algorithmically-driven follow syndicate in 2021, backed by Brit (Fairfax Financial). It reached \$1.11bn Gross Managed Premium (~GBP 877m) in 2025 -- of which Syndicate 1618 itself wrote ~\$905m (~GBP 715m), the rest via capacity partners -- with a 91.3% adjusted combined ratio and \$171.4m adjusted PBT. Became standalone within Fairfax in January 2025, now managed by Asta.
     - Inigo (Syndicate 1301) is also not a SiaB -- it acquired StarStone's managing agency and syndicate. GWP grew from \$411m (2021) to \$1.1bn (~GBP 869m, 2023) with an 85.5% combined ratio and \$144.5m PBT.
     - Convex (Syndicate 1984) entered Lloyd's in 2025 as a new full syndicate, targeting GBP 150m year one, GBP 294m stamp for 2026.
     - The contrast is stark: full syndicate startups with institutional backing scale 5-10x faster than SiaBs.
@@ -1149,7 +1137,7 @@ def _(go):
         "Closed (<1yr)",
         "Active",
         "Active",
-        "Active",
+        "Run-off (2025)",
         "Active",
     ]
     capacities = [
@@ -1258,7 +1246,7 @@ def _(mo):
     Roster notes:
     - Green = active. Blue = graduated. Red = closed/ceased/run-off.
     - Parsyl 1796 was created in partnership with Gavi (The Vaccine Alliance) to insure COVID-19 vaccine transportation to emerging economies via the Global Health Risk Facility (GHRF). It transferred from Ascot Underwriting to Asta in August 2022.
-    - Sukoon 2880 is the first SiaB to operate outside London, based in the Dubai International Financial Centre (DIFC). Oman Insurance Company rebranded to Sukoon Insurance in January 2024.
+    - Sukoon 2880 is the first SiaB to operate outside London, based in the Dubai International Financial Centre (DIFC). Oman Insurance Company rebranded to Sukoon Insurance in October 2022 (legal name change completed shortly after).
     - Greenlight Re 3456 accepted third-party capital for the first time in 2025 and absorbed MIC Global (former SiaB 5183) as a coverholder after its closure.
     - MCI is the only sponsor to launch two SiaBs: 1902 (medical malpractice/life science) and 1966 (clinical trial funding using AI-assisted underwriting via GATC Health).
     - Oka 1922 insures carbon credit buyer-side risks -- a novel product covering financial, reputational, regulatory, and climate risks on carbon credits.
@@ -1286,7 +1274,7 @@ def _(mo):
     - Lloyd's stated there were "10 proposals in the pipeline" early on, but many never materialized
     - Requirements: differentiation/innovation in product or distribution, operation through existing and tested technology, credible disruption to traditional practices
     - All entrants must have a credible capital backer, competent management team, and viable business plan
-    - There was a ~2-year gap (roughly mid-2022 to late-2023) without new approvals, suggesting either limited demand or Lloyd's reticence
+    - Approvals slowed but did not stop between the 2022 cohort and the 2023 approvals (Wildfire Defense 1996 in July 2023, Oka 1922 in October 2023) -- a gap of roughly 7-8 months, suggesting selectivity rather than absent demand
     - Lloyd's does not publicly disclose rejection rates
 
     Lloyd's Lab pipeline: Lloyd's Lab is a 10-week insurtech accelerator selecting ~10 teams from 150-200 applications per cohort. Parsyl and Oka came through innovation channels, but the Lab-to-SiaB pipeline is informal -- most Lab graduates become coverholders or technology partners, not syndicate operators.
@@ -1304,7 +1292,7 @@ def _(mo):
     - Combined active SiaB GWP of ~GBP 133.7m (excluding graduated Carbon 4747) is negligible against Lloyd's GBP 57.9bn total (0.23%).
 
     Counterargument:
-    - Carbon 4747 is genuine proof-of-concept: startup to GBP 400m GWP in 5 years via SiaB launchpad.
+    - Carbon 4747 is genuine proof-of-concept: startup to ~GBP 204m GWP (2024) via the SiaB launchpad.
     - The broader market trend favours smaller syndicates: small-syndicate capacity share grew 22% YoY in 2025.
     - Lloyd's projects 62.5% of accretive 2026 growth from new entrants and structured solutions.
     - "There is a need to accept some failures are inevitable in innovation, rather than treating each closure as a programme-level setback."

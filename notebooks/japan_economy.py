@@ -17,7 +17,7 @@ def _(mo):
     # Japan economy snapshot (2024 nominal GDP basis)
 
     - Base used here: **Japan nominal GDP = JPY 609.3T**.
-    - Sector slices use the Cabinet Office's **2024 gross value added share by industry**.
+    - Sector slices are **reconstructed/approximate** value-added shares (aligned to Cabinet Office SNA industry data, normalized to 100%), not a verbatim single-table release.
     - These are **GDP-equivalent sector sizes**, not company TAM estimates.
     - Company nodes use latest annual disclosed revenue / operating revenue / net sales and are shown as **illustrative scale markers**, not as strict sector share.
     """)
@@ -44,13 +44,13 @@ def _(go, mo):
     sector_data_japan = [
         {
             "segment": "Manufacturing",
-            "share_percent": 19.0,
-            "value_trillion_yen": 115.8,
+            "share_percent": 20.6,
+            "value_trillion_yen": 125.5,
         },
         {
             "segment": "Real estate",
-            "share_percent": 12.8,
-            "value_trillion_yen": 78.0,
+            "share_percent": 11.0,
+            "value_trillion_yen": 67.0,
         },
         {
             "segment": "Wholesale & retail trade",
@@ -64,13 +64,13 @@ def _(go, mo):
         },
         {
             "segment": "Health & social work",
-            "share_percent": 6.8,
-            "value_trillion_yen": 41.4,
+            "share_percent": 8.3,
+            "value_trillion_yen": 50.6,
         },
         {
             "segment": "Finance & insurance",
-            "share_percent": 6.2,
-            "value_trillion_yen": 37.8,
+            "share_percent": 4.8,
+            "value_trillion_yen": 29.2,
         },
         {
             "segment": "Construction",
@@ -89,8 +89,8 @@ def _(go, mo):
         },
         {
             "segment": "Information & communications",
-            "share_percent": 4.4,
-            "value_trillion_yen": 26.8,
+            "share_percent": 4.6,
+            "value_trillion_yen": 28.0,
         },
         {"segment": "Other services", "share_percent": 4.4, "value_trillion_yen": 26.8},
         {"segment": "Education", "share_percent": 3.6, "value_trillion_yen": 21.9},

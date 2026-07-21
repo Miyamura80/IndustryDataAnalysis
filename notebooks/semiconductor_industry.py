@@ -17,7 +17,7 @@ def _(mo):
         """
     # Semiconductor industry snapshot (2024 order-of-magnitude)
     - WSTS Autumn 2024 total semiconductor market: **$626.9B**
-    - Broader 2024 “stack” (chips + equipment + OSAT + EDA/ESD): **~$805B** (rough, overlapping spend)
+    - Broader 2024 “stack” (chips + equipment + OSAT + EDA/ESD): **~$807B** (rough, overlapping spend)
     """
     )
     return
@@ -142,10 +142,10 @@ def _(mo):
     mo.md(
         """
     **How to read the icicle:**
-    - Root sums chips ($626.9B) plus equipment (~$117B), OSAT (~$44B), and EDA/ESD (~$17B) to sketch an ~$805B 2024 “stack.”
+    - Root sums chips ($626.9B) plus equipment (~$117B), OSAT (~$44B), and EDA/ESD (~$19B) to sketch an ~$807B 2024 “stack.”
     - Company nodes are illustrative revenues mapped to the nearest bucket; they do not sum to the parent and often span multiple WSTS categories.
     - Values are rounded from 2024 disclosures or widely cited market estimates; treat as directional and overlapping (capex vs merchant spend, internal vs external services).
-    - **Memory IC sub-segments (DRAM, NAND, etc.)** are based on Yole 2025 estimates (~$170B total) but scaled down ~6.5% to align with the WSTS Autumn 2024 total ($167.1B) for consistency at the top level.
+    - **Memory IC sub-segments (DRAM, NAND, etc.)** are based on Yole 2025 sub-segment estimates (DRAM ~$97B + NAND ~$68B + NOR ~$4.5B + emerging ~$9.1B ≈ $179B) scaled down ~6.5% to align with the WSTS Autumn 2024 memory total ($167.1B) for consistency at the top level.
     """
     )
     return

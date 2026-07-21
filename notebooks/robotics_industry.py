@@ -16,7 +16,7 @@ def _(mo):
     mo.md(
         """
     # Robotics industry snapshot (2024 order-of-magnitude)
-    - Commercial robotics revenue 2024: ~**$45B** (analyst ranges vary widely).
+    - Commercial/service robotics revenue 2024: ~**$45B**; the directional all-segment sum below (incl. industrial + defense) is ~**$106B** (analyst ranges vary widely; scopes overlap).
     - Working split (do **not** sum; definitions overlap):
       - Industrial / factory: ~$25B
       - Logistics & warehouse: ~$15–20B

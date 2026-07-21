@@ -1,5 +1,5 @@
 [
-    {"label": "Semiconductor stack (2024 est.)", "parent": "", "value": 805.1, "hover": "WSTS chips plus equipment, OSAT, and EDA/ESD totals ~ $805B"},
+    {"label": "Semiconductor stack (2024 est.)", "parent": "", "value": 807.3, "hover": "WSTS chips plus equipment, OSAT, and EDA/ESD totals ~ $807B"},
     {"label": "Chips (WSTS 2024)", "parent": "Semiconductor stack (2024 est.)", "value": 626.9, "hover": "WSTS Autumn 2024 total semiconductor market $626.9B"},
     {"label": "Logic IC", "parent": "Chips (WSTS 2024)", "value": 208.7, "hover": "Logic SoCs, GPUs, ASICs; 33.3% share of chips"},
     {"label": "TSMC (logic-heavy)", "parent": "Logic IC", "value": 87.8, "hover": "2024 revenue NT$2,894.3B ≈ $87.8B; mostly logic wafers"},
@@ -57,7 +57,7 @@
     {"label": "ASE Technology", "parent": "OSAT (assembly & test)", "value": 18.1, "hover": "2024 net revenues NT$595.4B ≈ $18.1B"},
     {"label": "Amkor Technology", "parent": "OSAT (assembly & test)", "value": 6.32, "hover": "2024 net sales $6.32B"},
     {"label": "JCET Group", "parent": "OSAT (assembly & test)", "value": 5.0, "hover": "2024 revenue CNY 35.96B ≈ $5.0B"},
-    {"label": "EDA / ESD / IP", "parent": "Semiconductor stack (2024 est.)", "value": 17.0, "hover": "EDA/ESD market roughly $16–18B in 2024"},
+    {"label": "EDA / ESD / IP", "parent": "Semiconductor stack (2024 est.)", "value": 19.2, "hover": "EDA/ESD market ~$19.2B in 2024 (ESD Alliance)"},
     {"label": "Synopsys", "parent": "EDA / ESD / IP", "value": 6.13, "hover": "Fiscal 2024 revenue $6.13B"},
     {"label": "Cadence Design Systems", "parent": "EDA / ESD / IP", "value": 4.64, "hover": "2024 revenue $4.64B"},
     {"label": "Siemens EDA", "parent": "EDA / ESD / IP", "value": 3.0, "hover": "Part of Siemens Digital Industries; multi-billion EDA business"}

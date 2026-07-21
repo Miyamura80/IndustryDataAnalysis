@@ -91,8 +91,8 @@ def _(mo):
     mo.md(
         """
     **Notes on the pie and margins:**
-    - Values reflect widely cited 2024 estimates; verticals overlap, so the pie is for relative scale only.
-    - Margin snapshot (company-level operating margin, actuator exposure varies): SMC ~25%, Rotork ~24%, Parker ~21%, Honeywell ~18–19%, Curtiss-Wright ~17%, ABB ~18%, Emerson ~12%, Flowserve ~10%, Siemens low-teens, Moog ~11–12%, JCI ~6–7%, BorgWarner/Denso/Aisin ~3–7%.
+    - Values reflect widely cited 2024 estimates; verticals overlap and some span a wide analyst range — notably HVAC & building automation, where 2024 estimates run from ~$3–5B (HVAC actuators only) to ~$15B (broad building-automation scope, Market Research Future) — so the pie is for relative scale only.
+    - Margin snapshot (company-level operating margin, actuator exposure varies): SMC ~25%, Rotork ~24%, Parker ~21%, Honeywell ~18–19%, Curtiss-Wright ~17%, ABB ~18%, Emerson ~19%, Flowserve ~10%, Siemens low-teens, Moog ~11–12%, JCI ~6–7%, BorgWarner/Denso/Aisin ~3–7%.
     """
     )
     return
@@ -973,10 +973,10 @@ def _(go):
             "rev": {
                 2019: 7390,
                 2020: 11511,
-                2021: 23008,
-                2022: 30420,
-                2023: 37041,
-                2024: 41367,
+                2021: 17943,
+                2022: 23008,
+                2023: 30420,
+                2024: 37041,
             },
         },
         "\U0001f1e8\U0001f1f3 Estun": {
@@ -1083,8 +1083,8 @@ def _(mo):
         """
     How to read the revenue-growth chart:
 
-    - Each line is rebased to 100 at its base year (FY2019 for all; Japanese FYs end Feb/Mar, so a label like FY2019 is the year ending early 2020). Indexing is on native-currency revenue, so the lines show real top-line growth, not yen/yuan/euro FX swings.
-    - The thesis shows up immediately. The China challenger cluster compounds fast: Inovance ~5.6x (group; drives + EV, robotics a slice), Estun ~2.7x, Shuanghuan ~2.7x, Leaderdrive ~2x but volatile. The Japan incumbent cluster is comparatively flat: Nabtesco ~1.1x, Yaskawa ~1.3x, FANUC ~1.6x, Harmonic Drive ~1.5x with a sharp 2021-2023 cobot/automation cycle.
+    - Each line is rebased to 100 at its base year (FY2019 for all; fiscal-year ends vary by company (see below), so a label like FY2019 may be the year ending in early 2020). Indexing is on native-currency revenue, so the lines show real top-line growth, not yen/yuan/euro FX swings.
+    - The thesis shows up immediately. The China challenger cluster compounds fast: Inovance ~5.0x (group; drives + EV, robotics a slice), Estun ~2.7x, Shuanghuan ~2.7x, Leaderdrive ~2x but volatile. The Japan incumbent cluster is comparatively flat: Nabtesco ~1.1x, Yaskawa ~1.3x, FANUC ~1.6x, Harmonic Drive ~1.5x with a sharp 2021-2023 cobot/automation cycle.
     - Dashed lines are group-level revenue where actuators are a fraction (Yaskawa, FANUC, Inovance, Schaeffler) - read those as direction, not pure-play actuator demand. Solid lines (Nabtesco, Harmonic Drive, Leaderdrive, Estun, Shuanghuan) are closer to robotics/actuator-pure.
 
     Caveats and sources:

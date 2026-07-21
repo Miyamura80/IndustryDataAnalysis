@@ -2,14 +2,14 @@
   {
     "label": "Japan economy (2024 nominal GDP)",
     "parent": "",
-    "value": 608.8,
-    "hover": "Rounded sector values sum to JPY 608.8T (nominal GDP: JPY 609.3T; 0.5T gap is rounding of Cabinet Office shares)."
+    "value": 609.3,
+    "hover": "Reconstructed sector values sum to JPY 609.3T, matching nominal GDP (JPY 609.3T)."
   },
   {
     "label": "Manufacturing",
     "parent": "Japan economy (2024 nominal GDP)",
-    "value": 115.8,
-    "hover": "19.0% of the economy, about JPY 115.8T. Largest single sector."
+    "value": 125.5,
+    "hover": "20.6% of the economy, about JPY 125.5T. Largest single sector."
   },
   {
     "label": "Toyota",
@@ -32,14 +32,14 @@
   {
     "label": "Other manufacturing",
     "parent": "Manufacturing",
-    "value": 33.15,
+    "value": 42.85,
     "hover": "Residual of the sector after illustrative leaders; includes autos, machinery, electronics, materials, food, and other manufacturing."
   },
   {
     "label": "Real estate",
     "parent": "Japan economy (2024 nominal GDP)",
-    "value": 78.0,
-    "hover": "12.8% of the economy, about JPY 78.0T."
+    "value": 67.0,
+    "hover": "11.0% of the economy, about JPY 67.0T."
   },
   {
     "label": "Mitsui Fudosan",
@@ -62,7 +62,7 @@
   {
     "label": "Other / imputed real estate activity",
     "parent": "Real estate",
-    "value": 72.78,
+    "value": 61.78,
     "hover": "Residual of sector size after illustrative listed leaders. Real estate GVA includes broad property services and imputed rent, so listed developer revenue is only a partial lens."
   },
   {
@@ -110,25 +110,25 @@
   {
     "label": "Health & social work",
     "parent": "Japan economy (2024 nominal GDP)",
-    "value": 41.4,
-    "hover": "6.8% of the economy, about JPY 41.4T."
+    "value": 50.6,
+    "hover": "8.3% of the economy, about JPY 50.6T."
   },
   {
     "label": "Public / nonprofit / fragmented providers",
     "parent": "Health & social work",
-    "value": 41.4,
+    "value": 50.6,
     "hover": "Hospitals, clinics, elder care, and social services are largely public, nonprofit, or fragmented, so listed-company ranking is a weak lens."
   },
   {
     "label": "Finance & insurance",
     "parent": "Japan economy (2024 nominal GDP)",
-    "value": 37.8,
-    "hover": "6.2% of the economy, about JPY 37.8T."
+    "value": 29.2,
+    "hover": "4.8% of the economy, about JPY 29.2T."
   },
   {
     "label": "Large banks, insurers, brokers, and asset managers",
     "parent": "Finance & insurance",
-    "value": 37.8,
+    "value": 29.2,
     "hover": "Kept aggregated here because sector output and company revenue are not directly comparable, and business-model differences make a simple top-3 revenue ranking noisy."
   },
   {
@@ -206,8 +206,8 @@
   {
     "label": "Information & communications",
     "parent": "Japan economy (2024 nominal GDP)",
-    "value": 26.8,
-    "hover": "4.4% of the economy, about JPY 26.8T."
+    "value": 28.0,
+    "hover": "4.6% of the economy, about JPY 28.0T."
   },
   {
     "label": "NTT",
@@ -230,7 +230,7 @@
   {
     "label": "Other info & comms",
     "parent": "Information & communications",
-    "value": 0.64,
+    "value": 1.84,
     "hover": "Small residual after the top telecom operators. Read carefully: company revenue is not the same thing as sector gross value added, so this is an illustration of concentration, not a reconciliation."
   },
   {
