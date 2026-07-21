@@ -9,7 +9,7 @@
     "label": "EHS / Workplace Safety software",
     "parent": "Operational Safety Compliance (2024 est.)",
     "value": 0.761,
-    "hover": "Incident mgmt, audits, compliance workflows; software-only market ~$0.76B."
+    "hover": "Incident mgmt, audits, compliance workflows; narrow EHS-software cut ~$0.76B (Grand View 'workplace safety' sub-segment). Broader standalone EHS-software estimates run ~$2–8B."
   },
   {
     "label": "IBM",
@@ -105,7 +105,7 @@
     "label": "Railway Safety Systems",
     "parent": "Operational Safety Compliance (2024 est.)",
     "value": 6.5,
-    "hover": "Train control/ATP/CBTC/wayside + compliance monitoring; market ~$6.5B."
+    "hover": "Train control/ATP/CBTC/wayside + compliance monitoring; market ~$6.5B (published railway-safety estimates span ~$3–30B by scope/definition)."
   },
   {
     "label": "Siemens Mobility",
@@ -135,7 +135,7 @@
     "label": "Autodesk",
     "parent": "Construction Safety Management software",
     "value": 0.4,
-    "hover": "Total FY2024 revenue $5.5B; construction safety share illustrative."
+    "hover": "Total FY2025 revenue $6.1B (FY ended Jan 2025); construction safety share illustrative."
   },
   {
     "label": "Trimble",

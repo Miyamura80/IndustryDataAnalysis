@@ -2,8 +2,8 @@
   {
     "label": "Global Insurance Market",
     "parent": "",
-    "value": 9319,
-    "hover": "Total global premiums 2024 across Life, Health, P&C, and Reinsurance; ~US$9.3T (converted from EUR at ~1.08 where applicable)."
+    "value": 7964,
+    "hover": "Total global premiums 2024 across Life, Health, P&C, and Reinsurance; ~US$8.0T (converted from EUR at ~1.08 where applicable). Reinsurance is largely ceded from primary books, so primary premiums alone are ~US$7.6T."
   },
   {
     "label": "Life",
@@ -392,14 +392,14 @@
   {
     "label": "Reinsurance",
     "parent": "Global Insurance Market",
-    "value": 1750,
-    "hover": "Global gross reinsurance premiums end-2024: US$1.75T (per IAIS 2025 GIMAR). By structure: Treaty ~$1.3T, Facultative ~$0.45T."
+    "value": 395,
+    "hover": "Global reinsurance gross written premium 2024: ~US$0.4T (~$293B non-life + ~$102B life; Atlas Magazine / AM Best reinsurer rankings)."
   },
   {
     "label": "P&C Reinsurance",
     "parent": "Reinsurance",
-    "value": 1100,
-    "hover": "Global P&C reinsurance ~US$1.1T 2024. Dominates catastrophe and capital relief markets."
+    "value": 293,
+    "hover": "Global non-life (P&C) reinsurance gross premiums ~US$293B 2024. Dominates catastrophe and capital relief markets."
   },
   {
     "label": "🇨🇭 Swiss Re",
@@ -422,7 +422,7 @@
   {
     "label": "Life & Health Reinsurance",
     "parent": "Reinsurance",
-    "value": 650,
-    "hover": "Global L&H reinsurance ~US$650B 2024. Standalone L&H reinsurance projected ~$218B by 2029 (subset)."
+    "value": 102,
+    "hover": "Global life & health reinsurance gross premiums ~US$102B 2024."
   }
 ]

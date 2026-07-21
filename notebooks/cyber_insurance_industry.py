@@ -16,14 +16,14 @@ def _(mo):
         """
     # Only 0.17% of cyber economic losses are insured.
 
-    Cybercrime costs the global economy ~\$9.5 trillion per year. The entire cyber insurance industry collects \$16.5 billion in premiums and pays out ~\$8.3 billion in claims. That is 0.09% of the damage it is meant to cover.
+    Cybercrime costs the global economy ~\$9.5 trillion per year (2024; Cybersecurity Ventures put 2025 at ~\$10.5T). The entire cyber insurance industry collects \$16.5 billion in premiums and pays out ~\$8.3 billion in claims. That is 0.09% of the damage it is meant to cover.
 
     ---
 
     ## Cyber Insurance Industry Deep Dive (2025)
     - Global cyber insurance market: ~\$16.5B GWP (2025). Consensus: Munich Re \$16.3B, Swiss Re \$15.6B, Gallagher Re \$16.9B.
-    - US market: ~\$12.4B DWP (+11% YoY rebound after two years of decline).
-    - Sits at the intersection of the ~\$9.3T global insurance industry and ~\$212B cybersecurity spend.
+    - US market: ~\$9.14B DWP (2024, NAIC; first-ever decline, -7% YoY).
+    - Sits at the intersection of the ~\$7.9T global insurance industry and ~\$212B cybersecurity spend.
     - Market in deep soft cycle: 10 consecutive quarters of rate decline, reinsurance down -32% at Jan 1, 2026 renewals.
     """
     )
@@ -128,7 +128,7 @@ def _(mo):
     mo.md(
         """
     Protection gap notes:
-    - Global cybercrime economic cost is estimated at \$9.5T in 2025 (Cybersecurity Ventures), encompassing direct losses, business disruption, stolen IP, reputational damage, and recovery costs.
+    - Global cybercrime economic cost is estimated at \$9.5T in 2024 (Cybersecurity Ventures; ~\$10.5T projected for 2025), encompassing direct losses, business disruption, stolen IP, reputational damage, and recovery costs.
     - The \$212B cybersecurity spend is the prevention layer — what companies pay to stop attacks.
     - Cyber insurance premiums (\$16.5B) are only 0.17% of the economic cost they're meant to cover. Actual claims paid (~\$8.3B, implied by ~50% loss ratio) represent 0.09%.
     - Munich Re, Swiss Re, and Howden project the market needs to reach \$30-50B by 2030 to begin closing the gap. Even at \$50B, the insured fraction would be <0.5% of projected cybercrime costs.
@@ -179,7 +179,7 @@ def _(mo):
     mo.md(
         """
     Coverage type notes:
-    - Standalone cyber is 54-59% of the total market and growing as Lloyd's mandated affirmative-only cyber since Jan 1, 2025.
+    - Standalone cyber is 54-59% of the total market and growing. Lloyd's phased in its affirm-or-exclude silent-cyber mandate over 2020-2021; the Jan 1, 2025 change was a narrower state-backed war-cyber wording update, not a new affirmative-only mandate.
     - Tech E&O + cyber blended is the largest claim area by value — errors and omissions disputes drag on for years.
     - Endorsements (cyber bolted onto a BOP or GL policy) have a remarkably low ~10% loss ratio vs ~49% for primary standalone, because endorsement sub-limits are small and rarely triggered.
     """
@@ -303,7 +303,7 @@ def _(mo):
     - Root anchors to ~\$16.5B global cyber insurance GWP (2025), split into four branches: Carriers, MGAs/Insurtechs, Reinsurers, and Brokers & adjacent services.
     - MGAs originate an estimated ~33% of total cyber GWP (including premium written on carrier paper via delegated authority), though the icicle shows only MGA-retained GWP at \$3.2B (19%). They are the innovation layer.
     - Trium Cyber stands out: zero claims across 375 policies over 3 years. Hyper-selective underwriting targeting \$100M-\$1B+ revenue companies with strong security postures.
-    - Beazley is among the largest cyber insurers by absolute GWP (~\$1.2B, ~15,000 policies), though cyber is 21% of its total book — Property and Specialty are each larger segments. AIG writes a comparable or larger cyber book (\$1.2-1.6B range). Zurich agreed to acquire Beazley in early 2026; deal pending regulatory approval.
+    - Beazley is among the largest cyber insurers by absolute GWP (~\$1.2B, ~15,000 policies), though cyber is 21% of its total book — Property and Specialty are each larger segments. AIG's US cyber book is far smaller (~\$0.28B US DWP in 2024, ~4% share). Zurich agreed to acquire Beazley in early 2026; deal pending regulatory approval.
     - Brokers & adjacent services include pre-breach scanning (SecurityScorecard, BitSight), incident response panels (CrowdStrike, Mandiant), and claims management.
     """
     )
@@ -321,15 +321,15 @@ def _(go):
         {"company": "Chubb", "country": "CH", "strategy": "Scale / mass writers", "premium_b": 1.05,
          "focus": "diversified", "cyber_pct": 2.5,
          "hover": "~6% global cyber market share. Cyber is ~2.5% of total P&C premiums (~$42B). Massive multi-line group."},
-        {"company": "AIG", "country": "US", "strategy": "Scale / mass writers", "premium_b": 1.40,
-         "focus": "diversified", "cyber_pct": 5.6,
-         "hover": "$1.2-1.6B range. Cyber is ~5.6% of ~$25B net premiums. Global commercial/personal/life insurer."},
-        {"company": "Travelers", "country": "US", "strategy": "Scale / mass writers", "premium_b": 0.90,
-         "focus": "diversified", "cyber_pct": 2.2,
-         "hover": "US DWP $467M (+43.5%). Acquired Corvus for $435M. Cyber is ~2.2% of ~$41B total premiums."},
+        {"company": "AIG", "country": "US", "strategy": "Scale / mass writers", "premium_b": 0.28,
+         "focus": "diversified", "cyber_pct": 1.1,
+         "hover": "~$0.28B US cyber DWP (2024, NAIC; ~4% share). The older $1.2-1.6B figure reflected AIG's ~2017-21 peak. Global commercial/personal/life insurer."},
+        {"company": "Travelers", "country": "US", "strategy": "Scale / mass writers", "premium_b": 0.54,
+         "focus": "diversified", "cyber_pct": 1.3,
+         "hover": "US cyber DWP $535M (2024, ~7.6% share, #2 US writer). Acquired Corvus for $435M. The $467M/+43.5% figure was 2023."},
         {"company": "Trium Cyber", "country": "UK", "strategy": "Technical underwriters", "premium_b": 0.10,
          "focus": "specialist", "cyber_pct": 100,
-         "hover": "First Lloyd's-approved mono-line cyber syndicate (1322). 100% cyber. £73M premium, 375 policies, ZERO claims in 3 years."},
+         "hover": "First Lloyd's-approved mono-line cyber syndicate (1322). 100% cyber. £73M premium, 375 policies, ZERO claims in 3 years (company-stated; not independently verified)."},
         {"company": "Hiscox", "country": "UK", "strategy": "Technical underwriters", "premium_b": 0.38,
          "focus": "diversified", "cyber_pct": 7.5,
          "hover": "Cyber is ~7-8% of ~$5B GWP. Specialty Lloyd's carrier also writing property, casualty, marine, D&O, K&R. Actively managing down cyber as rates fall."},
@@ -473,7 +473,7 @@ def _(mo):
 def _(go):
     years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025"]
     global_gwp_b = [4.0, 5.5, 7.5, 11.5, 13.5, 15.3, 16.5]
-    us_loss_ratio_pct = [47, 67, 72, 55, 43, 49, 51]
+    us_loss_ratio_pct = [47, 67, 66, 43, 44, 49, 51]
 
     from plotly.subplots import make_subplots
 
@@ -522,8 +522,8 @@ def _(mo):
     mo.md(
         """
     Premium growth vs. loss ratio notes:
-    - The 2020-2021 ransomware crisis (Colonial Pipeline, Kaseya, JBS) pushed US loss ratios above 70%, triggering the hard market.
-    - Hard-market re-pricing in 2022 compressed loss ratios back to ~55%, then further to ~43% in 2023 as rates kept rising while claims stabilized.
+    - The 2020-2021 ransomware crisis (Colonial Pipeline, Kaseya, JBS) pushed US standalone cyber loss ratios to ~66-67%, triggering the hard market.
+    - Hard-market re-pricing compressed the loss ratio from ~66% (2021) down to ~43% in a single year (2022), where it held (~44% in 2023) as rates kept rising while claims stabilized.
     - Now rates are softening (10 consecutive quarters of decline) while loss ratios are ticking back up to ~51%. S&P forecasts 15-20% premium rate increases in 2026 to correct the cycle.
     - The 4x premium growth from 2019 (\$4B) to 2025 (\$16.5B) reflects both rate increases and new buyer adoption, not just volume.
     """
@@ -759,7 +759,7 @@ def _(go):
         },
         {
             "event": "SolarWinds (2020)",
-            "insured_loss_b": 0.9,
+            "insured_loss_b": 0.09,
             "total_loss_b": 5.0,
             "affected": "18,000 orgs, US govt agencies, Fortune 500",
             "vector": "Supply chain (Orion update)",
@@ -780,7 +780,7 @@ def _(go):
         },
         {
             "event": "CrowdStrike outage (2024)",
-            "insured_loss_b": 1.5,
+            "insured_loss_b": 0.8,
             "total_loss_b": 5.4,
             "affected": "8.5M Windows devices, airlines, hospitals, banks",
             "vector": "Software update (single vendor)",
@@ -868,11 +868,11 @@ def _(mo):
         """
     Systemic risk notes:
     - Each historical event above was a correlated loss — a single cause triggering claims across hundreds or thousands of policyholders simultaneously.
-    - The CrowdStrike outage (July 2024) caused ~\$5.4B in economic damage from a non-malicious software update. Insured losses (~\$1.5B) nearly equalled 10% of the entire annual cyber premium pool.
+    - The CrowdStrike outage (July 2024) caused ~\$5.4B in direct financial loss to US Fortune-500 firms (Parametrix, ex-Microsoft) from a non-malicious software update. Insured losses were ~\$0.54-1.08B (Parametrix), a meaningful fraction of the annual cyber premium pool.
     - The hypothetical 72-hour major cloud provider outage (AWS, Azure, or GCP) is the scenario Lloyd's and Munich Re model as the "cyber hurricane." At \$80B total loss, the insured portion (\$15B) would consume an entire year's global premium in a single event.
     - The dashed line shows total annual cyber insurance premiums (\$16.5B) for scale. Any event where the insured bar crosses that line threatens the industry's solvency in that year.
     - This is why cyber cat bonds (Beazley PoleStar Re \$300M, Hannover Re renewals) are emerging — traditional reinsurance balance sheets cannot absorb truly systemic cyber tail risk.
-    - Lloyd's is focused on hyperscaler outages, but the real systemic risk may be third-party software dependencies: SAP (97% of FTSE 500), monday.com, or a compromised NPM package in thousands of codebases.
+    - Lloyd's is focused on hyperscaler outages, but the real systemic risk may be third-party software dependencies: SAP (~86% of the Global Fortune 500), monday.com, or a compromised NPM package in thousands of codebases.
     """
     )
     return
@@ -890,11 +890,11 @@ def _(mo):
 
     3. Soft market danger. 10 quarters of rate cuts, reinsurance down 32%. Loss ratios ticking up. S&P forecasts 15-20% increases in 2026. The carriers cutting rates deepest today will have the worst reserve development in 2028-2030.
 
-    4. AI insurance confusion. The market thinks AI cyber risk is already covered by existing policies. Munich Re tried a standalone AI product — the market didn't bite. Lloyd's is modeling the wrong catastrophes (hyperscaler outages) while the real systemic risk is third-party software dependencies (SAP = 97% of FTSE 500 revenue, a single NPM package in thousands of codebases).
+    4. AI insurance confusion. The market thinks AI cyber risk is already covered by existing policies. Munich Re tried a standalone AI product — the market didn't bite. Lloyd's is modeling the wrong catastrophes (hyperscaler outages) while the real systemic risk is third-party software dependencies (SAP is used by ~86% of the Global Fortune 500, a single NPM package in thousands of codebases).
 
     5. Claim timeline elongation. From 1-2 years to 4-6 years for BI claims. This is a structural problem for reserving — actuarial models calibrated on historical claim durations are systematically underestimating tail development.
 
-    6. Silent cyber runoff. Lloyd's mandated affirmative-only coverage since Jan 1, 2025. The US market is slower but moving in the same direction. The implication: cyber risk that was previously hidden inside property and liability policies must now be explicitly priced — or explicitly excluded.
+    6. Silent cyber runoff. Lloyd's phased in its affirm-or-exclude silent-cyber mandate over 2020-2021 (the Jan 1, 2025 change was a narrower state-backed war-cyber wording update). The US market is slower but moving in the same direction. The implication: cyber risk that was previously hidden inside property and liability policies must now be explicitly priced — or explicitly excluded.
 
     7. Systemic risk unsolved. A single cloud outage = industry-wide correlated loss. Traditional reinsurance balance sheets can't absorb it. Cyber cat bonds (\$300M Beazley PoleStar Re) are emerging but tiny relative to total exposure. The gap between insured cyber loss and actual cyber economic loss remains enormous.
     """
@@ -926,7 +926,7 @@ def _(mo):
 
     - Syndicate-in-a-Box (SIAB): A team of 5-10 cyber experts can launch a syndicate writing \$50-100M GWP without building a full carrier. Trium did this — first-ever monoline cyber syndicate (1322), launched 2023 with Asta as third-party managing agent. CFC converted from MGA to Syndicate 1988 in 2021.
     - Capital separation: Underwriting judgment is separated from capital provision. Third-party investors (ILS funds, pension funds) supply the balance sheet; specialists supply the risk selection. No US equivalent exists.
-    - Single regulator: Lloyd's mandated affirmative cyber clarity (2019), state-backed attack exclusions (2023), and affirmative-only products (Jan 2025). This forced every participant to treat cyber as a distinct, expert-driven peril class. The US has no comparable centralized mandate — 50 state regulators, each with different rules.
+    - Single regulator: Lloyd's mandated affirmative cyber clarity (2019-2021), state-backed attack exclusions (2023), and state-backed war-cyber wording updates (Jan 2025). This forced every participant to treat cyber as a distinct, expert-driven peril class. The US has no comparable centralized mandate — 50 state regulators, each with different rules.
     - Central Fund rating: Even a tiny specialist syndicate benefits from Lloyd's AA- (S&P) rating. A US startup carrier would need hundreds of millions in surplus and years of state-by-state licensing.
     - 77 cyber risk insurers operate within Lloyd's, writing ~20-30% of global cyber premium (\$3.3-5B).
 
@@ -934,7 +934,7 @@ def _(mo):
 
     - 50-state regulation favors large incumbents with regulatory affairs teams (Chubb, AIG, Travelers) and penalizes specialist startups.
     - Retail agent distribution rewards broad appetite and fast turnaround, pushing toward algorithmic mass-market underwriting over bespoke judgment.
-    - VC funding produces insurtechs optimized for distribution scale (Coalition: 300,000+ policies) rather than underwriting precision (Trium: 375 policies).
+    - VC funding produces insurtechs optimized for distribution scale (Coalition: 100,000+ policyholders) rather than underwriting precision (Trium: 375 policies).
 
     The pipeline: Complex cyber risks flow from US retail brokers to London wholesale brokers (Tysers, Miller, McGill) to Lloyd's subscription market. Lloyd's handles the tail — large limits, novel exposures, bespoke wordings. US domestic carriers handle the commoditized volume. Lloyd's is where cyber underwriting expertise concentrates. The US is where cyber distribution innovation concentrates. They serve different functions in the same ecosystem.
     """
@@ -956,7 +956,7 @@ def _(go, mo):
     ]
 
     _uk_display = ["1 (+ Lloyd's)", "$5M (SIAB)", "375-2,000", "~22%", "77 syndicates", "~1 yr"]
-    _us_display = ["50 states", "$300M+", "15,000-300,000", "~67%", "~200 carriers", "3-5 yrs"]
+    _us_display = ["50 states", "$300M+", "15,000-100,000", "~67%", "~200 carriers", "3-5 yrs"]
 
     _struct_fig = _make_subplots_struct(
         rows=1,
@@ -1099,7 +1099,7 @@ def _(mo):
         """
     How to read the two charts above:
 
-    The butterfly chart compares six structural dimensions. The numbers are not on the same scale — they are displayed as labels to highlight the qualitative contrast. Key takeaways: Lloyd's lets a 5-person team launch a cyber syndicate with ~\$5M and start writing within a year; the US requires ~\$300M+ in surplus and 3-5 years of state-by-state licensing. Lloyd's produces specialists (375-2,000 policies each); the US produces scale writers (15,000-300,000 policies).
+    The butterfly chart compares six structural dimensions. The numbers are not on the same scale — they are displayed as labels to highlight the qualitative contrast. Key takeaways: Lloyd's lets a 5-person team launch a cyber syndicate with ~\$5M and start writing within a year; the US requires ~\$300M+ in surplus and 3-5 years of state-by-state licensing. Lloyd's produces specialists (375-2,000 policies each); the US produces scale writers (15,000-100,000 policies).
 
     The Sankey shows how premium flows through each ecosystem. Blue links trace the UK/Lloyd's path: complex risks go from policyholder to UK retail broker to London wholesale broker (Tysers, Miller, McGill) to a Lloyd's specialist syndicate, which is backed by the Central Fund (AA- rating) and lays off tail risk to reinsurers or ILS/cat bond investors. Red links trace the US path: SME and mid-market risks go from policyholder to US retail broker/agent, then split between admitted carriers (Chubb, AIG, Travelers) and MGA/insurtechs (Coalition, At-Bay, Cowbell), which use external capacity providers. Both systems ultimately feed into the same global reinsurance and ILS pool (purple links).
 
@@ -1226,11 +1226,11 @@ def _(mo):
 
     5. Cyber catastrophe bonds (\$800M issued vs. \$56B total cat bond market). Only 1.4% of the cat bond market addresses cyber risk. Beazley's PoleStar Re (\$300M) and Hannover Re have pioneered, but ILS investors remain wary of cyber aggregation modeling. This is the primary bottleneck for scaling systemic risk capacity.
 
-    6. Supply-chain and systemic risk (\$80B modeled loss, ~\$15B insured). Lloyd's models a 72-hour major cloud outage at \$80B economic loss with ~\$15B insured — nearly an entire year's global premium consumed by a single event. The CrowdStrike outage (July 2024) gave a preview: \$5.4B economic loss, only \$0.4-1.5B insured. Traditional reinsurance balance sheets cannot absorb correlated cyber losses of this magnitude.
+    6. Supply-chain and systemic risk (\$80B modeled loss, ~\$15B insured). Lloyd's models a 72-hour major cloud outage at \$80B economic loss with ~\$15B insured — nearly an entire year's global premium consumed by a single event. The CrowdStrike outage (July 2024) gave a preview: \$5.4B direct loss to US Fortune-500 firms (Parametrix, ex-Microsoft), only ~\$0.54-1.08B insured. Traditional reinsurance balance sheets cannot absorb correlated cyber losses of this magnitude.
 
     7. AI liability (\$50B+ emerging exposure, ~\$500M covered). AI-generated code vulnerabilities, model poisoning, deepfake-enabled fraud, and autonomous agent errors are largely uncovered. Munich Re's standalone AI liability product saw limited uptake — the market hasn't figured out how to price AI-specific risk.
 
-    8. War and nation-state exclusions (\$30B+ exposure, ~\$200M covered). Lloyd's mandated state-backed attack exclusions from March 2023. NotPetya (\$10B+ total loss) was the catalyst. The coverage boundary between "cybercrime" and "cyberwar" remains legally contested (Merck v. Zurich settled for \$1.4B). This creates a structural gap for any organization targeted by APT groups with state affiliations.
+    8. War and nation-state exclusions (\$30B+ exposure, ~\$200M covered). Lloyd's mandated state-backed attack exclusions from March 2023. NotPetya (\$10B+ total loss) was the catalyst. The coverage boundary between "cybercrime" and "cyberwar" remains legally contested (Merck v. ACE American, a ~\$1.4B NotPetya loss claim, settled January 2024 on undisclosed terms; the parallel Mondelez v. Zurich case settled separately). This creates a structural gap for any organization targeted by APT groups with state affiliations.
     """
     )
     return
@@ -1242,7 +1242,7 @@ def _(mo):
         """
     ## C. Japanese insurance market structure
 
-    Japan is the 3rd largest insurance market globally (~JPY 52.6T / ~\$350B in annual premiums), behind the US and China. The non-life (P&C) market is extremely concentrated — the "Big Three" groups (Tokio Marine, MS&AD, Sompo) hold ~85% domestic market share. The life insurance market is the 2nd largest globally, with ~90% household penetration. All three P&C giants are aggressively expanding overseas to escape Japan's shrinking domestic market.
+    Japan is the ~3rd-4th largest insurance market globally (~JPY 52.6T / ~\$350B in annual premiums; ~4th by total premiums, behind the US, China and the UK). The non-life (P&C) market is extremely concentrated — the "Big Three" groups (Tokio Marine, MS&AD, Sompo) hold ~85% domestic market share. The life insurance market is the 3rd largest globally (behind the US and China; China overtook Japan years ago), with ~90% household penetration. All three P&C giants are aggressively expanding overseas to escape Japan's shrinking domestic market.
     """
     )
     return
@@ -1397,7 +1397,7 @@ def _(go, mo):
     _intl_fig.add_annotation(
         x="FY2016",
         y=14,
-        text="MS Amlin ($3.5B)",
+        text="MS Amlin (£3.5B / ~$5.3B)",
         showarrow=True,
         arrowhead=2,
         ax=-55,
@@ -1453,7 +1453,7 @@ def _(mo):
     Internationalization trend notes:
     - Tokio Marine led earliest and most aggressively. The HCC Insurance acquisition (FY2015, \$7.5B) was the inflection point that lifted international to ~44%. In FY2025, Tokio Marine crossed the 50% threshold at ~57% — international NPW (JPY 3.57T) now substantially exceeds domestic (~JPY 2.7T). The majority of Tokio Marine's P&C business is now outside Japan.
     - Sompo's overseas expansion was catalyzed by the Endurance Specialty acquisition (FY2017, \$6.3B). International share jumped from ~8% to ~23% in three years. The Aspen acquisition (\$3.5B, completed Feb 2026) adds >US\$4.6B in annual GWP — only ~2 months are captured in FY2025, but FY2026 will be the first full year. Sompo is projected to cross 50% international by FY2026.
-    - MS&AD has been the most conservative. The MS Amlin acquisition (FY2016, ~\$3.5B) gave it Lloyd's access but overseas share has grown more slowly, reaching ~35% by FY2025. MS&AD has earmarked \$4.4B for further North American acquisitions and will merge its two domestic subsidiaries (MSI + ADI) by April 2027.
+    - MS&AD has been the most conservative. The MS Amlin acquisition (FY2016, ~£3.5B / ~\$5.3B) gave it Lloyd's access but overseas share has grown more slowly, reaching ~35% by FY2025. MS&AD has earmarked \$4.4B for further North American acquisitions and will merge its two domestic subsidiaries (MSI + ADI) by April 2027.
     - FY2026 figures (shaded area) are projected from mid-term management plan targets and analyst estimates. FY2025 figures are from annual results published May 20, 2026 — Tokio Marine international NPW is confirmed; Sompo domestic (JPY 2,126B) is confirmed; MS&AD total NPW (~JPY 5.0T) is confirmed. Segment splits for MS&AD and Sompo international are estimated from available data.
     - Caveat: the FY2022-FY2025 acceleration in international % partly reflects JPY depreciation (USD/JPY moved from ~110 to ~150), which mechanically inflates yen-denominated overseas premiums. Organic growth is real but somewhat overstated in JPY terms.
     - All three are unwinding ~\$60B in cross-held equity shares (by March 2031), freeing capital for further international M&A.
@@ -1651,16 +1651,16 @@ def _(go, mo):
     ]
 
     _tm_hover_jp = [
-        "3rd largest insurance market globally. ~$350B in annual premiums.",
+        "~4th largest insurance market globally by total premiums (~3rd in life). ~$350B in annual premiums.",
         "Big Three hold ~85% domestic share. Motor (~47%), property (~23%), other lines (~30%).",
-        "2nd largest life market globally. ~90% of households carry life insurance.",
+        "3rd largest life market globally (behind US and China). ~90% of households carry life insurance.",
         "~85% combined domestic P&C market share. All three expanding aggressively overseas.",
         "AIG is the largest foreign non-life insurer in Japan.",
         "Four largest private life insurers by premium income.",
         "Includes govt-affiliated (Kampo), foreign (Aflac), and conglomerate players.",
         "Smaller mutuals (Asahi), foreign players (Zurich, Allianz), cooperative insurance.",
         "Largest domestic P&C group (FY2024). MSI + ADI planning merger by April 2027.",
-        "Oldest (est. 1887). International NPW (¥2.9T) rivals domestic (¥3.0T).",
+        "Oldest (est. 1879). International NPW (¥2.9T) rivals domestic (¥3.0T).",
         "3rd largest domestic P&C. Acquired Aspen for $3.5B (Feb 2026). Also runs 300+ nursing care facilities.",
         "Largest foreign non-life insurer. ¥463B premiums. Medical and group accident focus.",
         "Kyoei Fire, Nisshin Fire, Chubb Japan, Zurich, Allianz, and others.",
@@ -1716,7 +1716,7 @@ def _(mo):
 
     The stacked bar shows how each of the Big Three splits between domestic Japan P&C and international operations (all figures NPW). Tokio Marine's international segment (JPY 2.9T) now rivals its domestic book (JPY 3.0T) — a milestone driven by acquisitions like HCC Insurance (\$7.5B, 2015) and Philadelphia Consolidated. Sompo's international NPW (~JPY 1.3T after reinsurance cessions; GWP is ~JPY 2.5T including Endurance; the Aspen acquisition closed in FY2025 and will shift this balance further). MS&AD has the largest domestic P&C book but the smallest international presence, though it plans further North American acquisitions and will merge its two domestic subsidiaries (MSI + ADI) by April 2027. All three groups are diversifying overseas because Japan's shrinking population caps domestic growth — the Big Three already control ~85% of a market that cannot expand.
 
-    The treemap shows the full domestic insurance landscape. Life insurance (JPY 43T) dwarfs P&C (JPY 9.6T) by premium volume — Japan has the 2nd largest life market globally, with ~90% household penetration. Nippon Life (JPY 7.86T) alone is about 82% the size of the entire domestic P&C market. Notable foreign players include AIG (largest foreign non-life insurer) and Aflac, a US company that earns >70% of its global pretax profits from Japan and holds ~70% of the cancer insurance market.
+    The treemap shows the full domestic insurance landscape. Life insurance (JPY 43T) dwarfs P&C (JPY 9.6T) by premium volume — Japan has the 3rd largest life market globally (behind the US and China), with ~90% household penetration. Nippon Life (JPY 7.86T) alone is about 82% the size of the entire domestic P&C market. Notable foreign players include AIG (largest foreign non-life insurer) and Aflac, a US company that earns >70% of its global pretax profits from Japan and holds ~70% of the cancer insurance market.
 
     On health insurance: Japan has universal public health coverage (National Health Insurance / Employee Health Insurance), so private health products occupy the "third sector" — supplementary medical, cancer, and nursing care policies. This segment (~JPY 7.2T in annualized premiums in force) sits between life and non-life regulation. Aflac pioneered cancer insurance in Japan in 1974 and still dominates it. The aging population (29% of Japanese are 65+) is shifting demand from traditional death-benefit life policies toward medical and nursing care products — health/medical insurance is now the leading category for new individual policy sales.
 

@@ -2,14 +2,14 @@
   {
     "label": "Global chemicals market (broad)",
     "parent": "",
-    "value": 3500,
-    "hover": "Broad definition incl. specialties and formulated products; ~US$3.5–5.8T 2024. Root shown at US$3.5T for headroom."
+    "value": 5500,
+    "hover": "Broad definition incl. specialties and formulated products; CEFIC ex-pharma world chemical sales ~US$5.5T (2023), ~US$6T incl. pharma. Named segments below are itemized; the remainder is many smaller/formulated lines."
   },
   {
     "label": "Petrochemicals & Polymers",
     "parent": "Global chemicals market (broad)",
-    "value": 700,
-    "hover": "Bulk olefins, aromatics, base polymers; ~US$0.7T 2024."
+    "value": 875,
+    "hover": "Bulk olefins, aromatics, base polymers; net ~US$0.7T 2024. Shown at ~US$875B here as the gross sum of the overlapping product-market slices below (which double-count shared upstream feedstocks such as ethylene)."
   },
   {
     "label": "Light olefins — Ethylene",
@@ -213,7 +213,7 @@
     "label": "Agrochemicals",
     "parent": "Global chemicals market (broad)",
     "value": 250,
-    "hover": "Crop protection and ag inputs (ex-fertilizer bulk); ~US$0.25T 2024."
+    "hover": "Crop protection + fertilizers; ~US$0.25T 2024 (crop protection alone is ~$70–96B)."
   },
   {
     "label": "Industrial Gases",
@@ -266,8 +266,8 @@
   {
     "label": "BASF – Care Chemicals",
     "parent": "Consumer & Care Ingredients",
-    "value": 11.7,
-    "hover": "BASF Nutrition & Care / Care Chemicals within broader portfolio; Chemicals segment €10.8B → ~US$11.7B. Logo: media/companies/chemical_industry/basf.png"
+    "value": 5.1,
+    "hover": "BASF Care Chemicals division 2024 sales €4.75B → ~US$5.1B (the €10.8B 'Chemicals' segment is petrochemicals/intermediates, a different segment). Logo: media/companies/chemical_industry/basf.png"
   },
   {
     "label": "Croda – Consumer Care",
@@ -338,8 +338,8 @@
   {
     "label": "Henkel – Adhesive Tech",
     "parent": "Adhesives & Sealants",
-    "value": 24.2,
-    "hover": "Henkel Adhesive Technologies 2024 sales €22.4B → ~US$24.2B."
+    "value": 11.9,
+    "hover": "Henkel Adhesive Technologies 2024 sales €10.97B → ~US$11.9B."
   },
   {
     "label": "H.B. Fuller",
@@ -362,14 +362,14 @@
   {
     "label": "Shin-Etsu Chemical",
     "parent": "Electronic Chemicals",
-    "value": 21.6,
-    "hover": "Shin-Etsu FY2022 revenue ¥2.8T → ~US$21.6B (major silicon/photoresist)."
+    "value": 5.5,
+    "hover": "Shin-Etsu semiconductor-silicon + electronics-materials ~US$5.5B (FY3/2025); total company ~¥2.5T is majority PVC/silicones, shown separately under PVC."
   },
   {
     "label": "Entegris",
     "parent": "Electronic Chemicals",
-    "value": 3.4,
-    "hover": "Entegris 2024 run-rate sales ~US$3.4B."
+    "value": 3.24,
+    "hover": "Entegris 2024 net sales ~US$3.24B."
   },
   {
     "label": "JSR Corporation",
@@ -386,8 +386,8 @@
   {
     "label": "Ecolab",
     "parent": "Water Treatment Chemicals",
-    "value": 15.7,
-    "hover": "Ecolab 2024 net sales ~US$15.7B (Water + Hygiene)."
+    "value": 5.0,
+    "hover": "Ecolab Water segment ~US$5.0B (of ~$15.7B total company 2024 sales across Industrial, Institutional, Healthcare, Pest)."
   },
   {
     "label": "Kemira",
@@ -417,13 +417,13 @@
     "label": "Halliburton (C&P)",
     "parent": "Oilfield Chemicals",
     "value": 5.5,
-    "hover": "Halliburton Completion & Production 2024 revenue ~US$10.7B; chemicals slice shown as ~US$5.5B."
+    "hover": "Halliburton Completion & Production 2024 revenue ~US$13.3B; chemicals slice shown as ~US$5.5B."
   },
   {
     "label": "Baker Hughes (OFS)",
     "parent": "Oilfield Chemicals",
     "value": 5.5,
-    "hover": "Baker Hughes Oilfield Services 2024 revenue ~US$26.9B; chemicals slice shown as ~US$5.5B."
+    "hover": "Baker Hughes OFSE segment 2024 revenue ~US$15.63B; chemicals slice shown as ~US$5.5B."
   },
   {
     "label": "Personal-Care Ingredients",
@@ -458,14 +458,14 @@
   {
     "label": "Givaudan",
     "parent": "Flavors & Fragrances",
-    "value": 7.9,
-    "hover": "Givaudan 2024 sales CHF 7.1B → ~US$7.9B."
+    "value": 8.4,
+    "hover": "Givaudan 2024 sales CHF 7.4B → ~US$8.4B."
   },
   {
     "label": "IFF",
     "parent": "Flavors & Fragrances",
-    "value": 10.7,
-    "hover": "IFF 2024 net sales ~US$10.7B."
+    "value": 11.48,
+    "hover": "IFF 2024 net sales ~US$11.48B."
   },
   {
     "label": "Symrise",

@@ -31,7 +31,7 @@ def _(go):
         {"segment": "Life", "value_trillion": 3.134},
         {"segment": "Property & Casualty (P&C)", "value_trillion": 2.618},
         {"segment": "Health", "value_trillion": 1.817},
-        {"segment": "Reinsurance", "value_trillion": 1.750},
+        {"segment": "Reinsurance", "value_trillion": 0.395},
     ]
 
     pie_labels = [entry["segment"] for entry in segment_data]
@@ -67,12 +67,12 @@ def _(mo):
     mo.md("""
     **Note on Data:**
 
-    - Market sizes (Life / Health / P&C) are global premium pools originally reported in **EUR** by IAIS / sigma, converted here at ~1.08 EUR/USD for visual consistency.
+    - Market sizes (Life / Health / P&C) are global premium pools originally reported in **EUR** by Allianz (Global Insurance Report 2025), converted here at ~1.08 EUR/USD for visual consistency.
     - Life: €2.902T → ~$3.1T | Health: €1.682T → ~$1.8T | P&C: €2.424T → ~$2.6T
-    - Reinsurance market size ($1.75T) is gross reinsurance premiums from IAIS 2025 GIMAR (end-2024).
+    - Reinsurance market size (~\$0.4T) is 2024 global reinsurance gross written premium (~\$293B non-life + ~\$102B life; Atlas Magazine / AM Best reinsurer rankings).
     - Company figures use **AM Best 2024 net premiums written** (USD), which provides a clean comparable basis across sectors.
     - Reinsurer company figures are AM Best **gross premiums written** from their reinsurer ranking.
-    - Total across all four sectors sums to approximately **US$9.3T**, though there is some overlap (e.g. reinsurance premiums are ceded from primary insurers).
+    - Total across all four sectors sums to approximately **US\$8.0T**; note reinsurance (~\$0.4T) is largely ceded from the primary Life/Health/P&C books, so primary premiums alone are ~\$7.6T (Swiss Re sigma).
     """)
     return
 
@@ -119,10 +119,10 @@ def _(mo):
     mo.md("""
     **How to read the icicle:**
 
-    - Root shows the combined global insurance market at **~US$9.3T** (sum of four sectors); children roll up with `branchvalues="total"`.
-    - **Life** (~$3.1T) is the largest sector by premiums, followed by **P&C** (~$2.6T), **Health** (~$1.8T), and **Reinsurance** ($1.75T).
+    - Root shows the combined global insurance market at **~US\$8.0T** (sum of four sectors); children roll up with `branchvalues="total"`.
+    - **Life** (~$3.1T) is the largest sector by premiums, followed by **P&C** (~$2.6T), **Health** (~$1.8T), and **Reinsurance** (~$0.4T).
     - Company nodes use AM Best 2024 net premiums written (or GPW for reinsurers) in USD for cross-sector comparability.
-    - There is inherent overlap: reinsurance premiums are ceded from primary Life, Health, and P&C books, so the $9.3T total double-counts some premium flow.
+    - There is inherent overlap: reinsurance premiums are ceded from primary Life, Health, and P&C books, so the \$8.0T total double-counts some premium flow.
     - Health sector top players (UnitedHealth, Centene, Elevance) are US-centric managed-care giants; the global pool includes many smaller national carriers.
     """)
     return
@@ -476,32 +476,32 @@ def _(go):
             "country": "UK",
             "status": "Exact",
             "category": "Carrier",
-            "low_b": 1.05,
-            "high_b": 1.05,
+            "low_b": 1.276,
+            "high_b": 1.276,
         },
         {
             "company": "Chubb",
             "country": "CH",
-            "status": "Exact",
+            "status": "Est.",
             "category": "Carrier",
-            "low_b": 1.03,
-            "high_b": 1.03,
+            "low_b": 0.56,
+            "high_b": 0.80,
         },
         {
             "company": "AIG",
             "country": "US",
             "status": "Range",
             "category": "Carrier",
-            "low_b": 1.2,
-            "high_b": 1.6,
+            "low_b": 0.25,
+            "high_b": 0.30,
         },
         {
             "company": "Travelers",
             "country": "US",
             "status": "Est.",
             "category": "Carrier",
-            "low_b": 0.8,
-            "high_b": 1.0,
+            "low_b": 0.4,
+            "high_b": 0.5,
         },
         {
             "company": "AXA XL",
@@ -530,7 +530,7 @@ def _(go):
         {
             "company": "Swiss Re",
             "country": "CH",
-            "status": "Range",
+            "status": "Est.",
             "category": "Reinsurer",
             "low_b": 1.3,
             "high_b": 1.8,

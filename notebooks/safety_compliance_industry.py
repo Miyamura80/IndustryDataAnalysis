@@ -27,7 +27,7 @@ def _(mo):
     | Aviation SMS | $3.5B | RTX $80.8B, Airbus ~$75B, Honeywell $38.5B |
     | Maritime Safety Systems | $30.3B | Thales ~$22B, Kongsberg ~$4.5B, Saab ~$6B |
     | Railway Safety Systems | $6.5B | Siemens ~$82B, Alstom ~$20B, Hitachi ~$65B |
-    | Construction Safety Management software | $1.72B | Autodesk $5.5B, Trimble $3.7B, Procore $1.15B |
+    | Construction Safety Management software | $1.72B | Autodesk $6.1B, Trimble $3.7B, Procore $1.15B |
     """
     )
     return
@@ -103,7 +103,7 @@ def _(mo):
         """
     **Notes on the pie:**
     - Maritime Safety Systems dominates at ~$30B (65% of combined sectors), reflecting that it includes vessel hardware, communications equipment, and coastal/port infrastructure.
-    - EHS/Workplace and Construction Safety are software-only markets, hence much smaller ($0.76B and $1.72B respectively).
+    - EHS/Workplace and Construction Safety are software-only markets, hence much smaller (\$0.76B — a narrow Grand View workplace-safety EHS-software cut; broader standalone EHS-software estimates run ~\$2–8B — and \$1.72B respectively).
     - Process Safety, Aviation SMS, and Railway Safety mix software with hardware/systems, sitting in the $3.5B-$6.5B range.
     - Sectors are not additive into one clean total because definitions and scope vary across analyst reports.
     """

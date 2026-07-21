@@ -14,14 +14,14 @@ def _():
 def _(mo):
     mo.md(
         """
-    # If the ocean were a country, its \$2.5 trillion economy would be the world's 7th largest.
+    # If the ocean were a country, its \$2.5 trillion economy would be one of the world's largest (OECD frames it as the world's fifth-largest economy).
 
     80% of all global goods travel by sea. The ocean economy has grown 2.5x since 1995, outpacing the 1.9x growth of the world economy (UNCTAD 2025). In 2024, global seaborne trade hit 12.7 billion tons -- roughly 1.6 tons for every person on Earth.
 
     ---
 
     ## Blue Economy Overview (2024)
-    - Global blue economy: ~\$2.2T in direct economic value (UNCTAD), ~\$2.5T GVA (OECD/WWF).
+    - Global blue economy: ~\$2.5T GVA (OECD); UNCTAD puts ocean trade (exports) at ~\$2.2T (2023).
     - Marine tourism is the single largest segment at \$725B (33% of ocean trade).
     - Maritime shipping moves 80% of global trade by volume but is only 17% of the ocean economy by value.
     - Offshore wind is the fastest-growing segment at ~16% CAGR, projected to reach \$215B by 2034.
@@ -186,9 +186,9 @@ def _(go):
          "hover": "Revenue $20.0B (2024 record). 90+ terminals. Acquiring logistics companies to become end-to-end."},
 
         {"company": "Equinor", "country": "NO", "strategy": "Energy transition players", "revenue_b": 104.0,
-         "hover": "$104B total. 67% offshore O&G, growing offshore wind (Dogger Bank, Empire Wind). Targeting 12-16 GW renewables by 2030."},
-        {"company": "Ørsted", "country": "DK", "strategy": "Energy transition players", "revenue_b": 8.5,
-         "hover": "$8.5B. Former DONG Energy (Danish Oil & Natural Gas). Fully pivoted to offshore wind. 15.5 GW portfolio."},
+         "hover": "$104B total. 67% offshore O&G, growing offshore wind (Dogger Bank, Empire Wind). Targeting 10-12 GW renewables by 2030 (cut from 12-16 GW in Feb 2025)."},
+        {"company": "Ørsted", "country": "DK", "strategy": "Energy transition players", "revenue_b": 10.3,
+         "hover": "$10.3B (DKK 71.0B, 2024). Former DONG Energy (Danish Oil & Natural Gas). Fully pivoted to offshore wind. 15.5 GW portfolio."},
         {"company": "Shell (offshore)", "country": "NL", "strategy": "Energy transition players", "revenue_b": 45.0,
          "hover": "Offshore-attributable ~$45B (of $284B total). Deep water Gulf of Mexico, North Sea. Sold onshore wind assets to focus offshore."},
         {"company": "Petrobras", "country": "BR", "strategy": "Energy transition players", "revenue_b": 82.0,
@@ -225,8 +225,8 @@ def _(go):
          "hover": "~$4.7B. Nuclear subs (Barracuda-class), frigates. French state-owned. Export programs globally."},
         {"company": "BAE Systems (maritime)", "country": "UK", "strategy": "Naval & defense", "revenue_b": 8.0,
          "hover": "Maritime segment ~$8B (of $35.7B total). Type 26 frigates, Astute-class subs, Dreadnought program."},
-        {"company": "Hanwha Ocean", "country": "KR", "strategy": "Naval & defense", "revenue_b": 6.0,
-         "hover": "~$6B. Ex-DSME. South Korean submarines and naval vessels + commercial shipbuilding dual-use."},
+        {"company": "Hanwha Ocean", "country": "KR", "strategy": "Naval & defense", "revenue_b": 7.9,
+         "hover": "~$7.9B (KRW 10.78T, 2024). Ex-DSME. South Korean submarines and naval vessels + commercial shipbuilding dual-use."},
 
         {"company": "Prysmian", "country": "IT", "strategy": "Subsea specialists", "revenue_b": 18.5,
          "hover": "EUR 17B+ total ($18.5B). Subsea cables ~$5B. World leader in submarine power and telecom cables."},
@@ -324,8 +324,8 @@ def _(mo):
     Companies grouped by HOW they compete in the ocean economy, not by traditional industry verticals:
 
     1. Ocean logistics integrators (Maersk, CMA CGM, COSCO, DP World): These companies are converging from different starting points -- shipping lines acquiring logistics, port operators expanding inland -- all racing to become end-to-end supply chain platforms. Maersk and CMA CGM both hit \$55.5B in 2024, but with opposite strategies: Maersk divested Svitzer (towage) to double down on integrated logistics, while CMA CGM expanded into air cargo and media.
-    2. Energy transition players (Equinor, Orsted, Shell, Petrobras): Companies bridging offshore oil and gas to offshore wind. Orsted is the extreme case -- formerly Danish Oil & Natural Gas, now 100% renewables. Equinor targets 12-16 GW of renewables by 2030 while still producing 2M+ barrels/day offshore.
-    3. Shipyard conglomerates (CSSC, HD Hyundai Heavy, Samsung Heavy, Fincantieri): South Korea and China control ~90% of global shipbuilding by tonnage. Record orderbooks in 2024 driven by LNG carrier demand and container ship fleet renewal. Fincantieri is the European outlier -- dominant in cruise ship construction.
+    2. Energy transition players (Equinor, Orsted, Shell, Petrobras): Companies bridging offshore oil and gas to offshore wind. Orsted is the extreme case -- formerly Danish Oil & Natural Gas, now 100% renewables. Equinor targets 10-12 GW of renewables by 2030 (cut from 12-16 GW in Feb 2025) while still producing 2M+ barrels/day offshore.
+    3. Shipyard conglomerates (CSSC, HD Hyundai Heavy, Samsung Heavy, Fincantieri): China (~53%) and South Korea (~28%) together build ~81% of global shipbuilding by tonnage (~93% including Japan). Record orderbooks in 2024 driven by LNG carrier demand and container ship fleet renewal. Fincantieri is the European outlier -- dominant in cruise ship construction.
     4. Cruise and marine tourism (Carnival, Royal Caribbean, Norwegian): All three posted record revenues in 2024, fully recovered from COVID. Combined fleet of ~200+ ships. Capital-intensive: a single large cruise ship costs \$1-1.5B to build.
     5. Seafood and aquaculture (Mowi, Maruha Nichiro, Thai Union, Nippon Suisan): Japanese companies dominate by revenue but Norwegian companies lead in high-value Atlantic salmon. The industry is consolidating -- top 10 companies control ~15% of global seafood trade.
     6. Naval and defense (HII, Naval Group, BAE Maritime, Hanwha Ocean): Driven by geopolitical competition. HII has irreplaceable monopoly position as US Navy's only aircraft carrier builder. AUKUS submarine deal (Australia-UK-US) is reshaping global naval supply chains.
@@ -433,7 +433,7 @@ def _(mo):
     mo.md(
         """
     Seaborne trade flow notes:
-    - Left column (blue): Cargo categories. Dry bulk (iron ore, coal, grain) is the largest by tonnage at ~4.6B tons (36% of 12.7B total). Containerized goods are ~17% by tonnage but carry the highest value per ton.
+    - Left column (blue): Cargo categories. Dry bulk is the largest by tonnage at >5.6B tons (~44% of the 12.7B total); the narrower "main bulks" (iron ore, coal, grain) are ~3.5B tons. Containerized goods are ~17% by tonnage but carry the highest value per ton.
     - Middle column (orange): Major sea routes. Intra-Asia dominates -- 63% of global container port calls are in Asia. The Middle East to Asia corridor is the primary energy artery (crude oil + LNG to China, India, Japan, South Korea).
     - Right column (green): Importing regions. Asia-Pacific is the dominant destination, reflecting China's role as both the world's largest importer of raw materials and a major consumer market.
     - Flows are directional weights illustrating relative volume, not exact tonnage. The intent is to show the structural pattern: raw materials flow east, manufactured goods flow west, and intra-Asian trade is the largest single flow.
@@ -449,8 +449,8 @@ def _(go):
     from plotly.subplots import make_subplots
 
     wind_years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024"]
-    cumulative_gw = [23, 27, 34, 48, 58, 68, 75]
-    annual_invest_b = [19, 22, 26, 42, 37, 40, 49]
+    cumulative_gw = [23, 29, 35, 57, 64, 75, 83]
+    annual_invest_b = [26, 31, 50, 43, 31, 77, 31]
 
     dual_fig = make_subplots(specs=[[{"secondary_y": True}]])
 
@@ -497,8 +497,8 @@ def _(mo):
     mo.md(
         """
     Offshore wind investment notes:
-    - Cumulative installed offshore wind capacity reached ~75 GW by end of 2024, up from ~23 GW in 2018 -- a 3.3x increase in six years.
-    - Annual investment hit \$49B in 2024, a record driven by projects in China (leading by installed capacity), UK (Dogger Bank), and commitments in the US (Vineyard Wind, Empire Wind).
+    - Cumulative installed offshore wind capacity reached ~83 GW by end of 2024 (GWEC), up from ~23 GW in 2018 -- a 3.6x increase in six years.
+    - Annual investment fell to ~\$31B in 2024 after a record ~\$77B in 2023 (BloombergNEF); offshore-wind investment is lumpy, driven by large project-financing cycles in China (leading by installed capacity), the UK (Dogger Bank), and the US (Vineyard Wind, Empire Wind).
     - The 2022 dip reflects supply chain disruption and Siemens Gamesa turbine quality issues that delayed several European projects.
     - Floating offshore wind is <1% of installed capacity today but unlocks 80%+ of the global ocean wind resource (areas with water depth >60m). Hywind Tampen (Norway) and WindFloat Atlantic (Portugal) are early commercial demonstrators.
     - By 2034, the offshore wind market is projected to reach \$215B at ~16% CAGR (Precedence Research), making it the fastest value-growth segment in the blue economy.
@@ -514,7 +514,7 @@ def _(go):
         {"period": "2024 (actual)", "value_t": 2.2, "color": "#4e79a7", "source": "UNCTAD"},
         {"period": "2030 (projected)", "value_t": 3.2, "color": "#f28e2b", "source": "OECD"},
         {"period": "2034 (projected)", "value_t": 5.0, "color": "#f28e2b", "source": "Polaris (~8.6% CAGR)"},
-        {"period": "2050 (projected)", "value_t": 8.8, "color": "#e15759", "source": "OECD extrapolation"},
+        {"period": "2050 (projected)", "value_t": 5.2, "color": "#e15759", "source": "OECD (~4x 1995)"},
     ]
 
     growth_fig = go.Figure(
@@ -547,7 +547,7 @@ def _(mo):
         """
     Growth projection notes:
     - The blue economy has grown 2.5x since 1995, outpacing the 1.9x growth of the world economy (UNCTAD 2025). It is projected to at least double again by 2050.
-    - OECD projects the ocean economy will exceed \$3T GVA by 2030 and nearly 4x its 1995 level by 2050. Cumulative capex of ~\$20T is implied.
+    - OECD projects the ocean economy will exceed \$3T GVA by 2030 and nearly 4x its 1995 level by 2050. Cumulative capex of ~\$20T is implied. (The trajectory bars blend different measures — UNCTAD ocean-trade value, a Polaris market-size estimate, and OECD GVA — so read them as directional scale, not a single consistent metric; the 2034→2050 step looks flat only because those two bars use different definitions.)
     - The structural drivers: offshore wind (~16% CAGR), aquaculture (6-8% CAGR replacing stagnant wild capture), submarine cables (surging from AI data center demand), and desalination (water scarcity in MENA, India, Australia).
     - The structural headwind: offshore oil and gas -- currently \$155B -- is projected to shrink from dominant to 25% of ocean economy capex by 2050 as the energy transition progresses (OECD). Offshore wind is projected to capture 50% of capex.
     - Deep-sea mining is the wild card: if ISA grants commercial licenses (expected 2025-2027), the segment could grow from \$3.9B to \$10-41B by 2033, but environmental opposition is fierce (30+ countries support a moratorium).
@@ -560,18 +560,18 @@ def _(mo):
 @app.cell
 def _(go):
     chokepoint_data = [
-        {"chokepoint": "Strait of Malacca", "pct_trade": 25, "daily_barrels_m": 16.0,
+        {"chokepoint": "Strait of Malacca", "pct_trade": 25, "daily_barrels_m": 23.7,
          "risk": "Piracy, congestion. 94,000+ vessels/yr. Narrowest point: 2.8 km."},
         {"chokepoint": "Strait of Hormuz", "pct_trade": 8, "daily_barrels_m": 21.0,
-         "risk": "Geopolitical (Iran). 20-25% of global oil. 33% of seaborne LNG."},
+         "risk": "Geopolitical (Iran). 20-25% of global oil. ~20% of seaborne LNG."},
         {"chokepoint": "Suez Canal", "pct_trade": 12, "daily_barrels_m": 5.5,
-         "risk": "Single point of failure. Ever Given 2021. Houthi attacks 2024 rerouted 80%+ of traffic."},
+         "risk": "Single point of failure. Ever Given 2021. Houthi attacks 2024 rerouted most container traffic (container tonnage -75-82%; overall Suez tonnage -51-64%)."},
         {"chokepoint": "Panama Canal", "pct_trade": 5, "daily_barrels_m": 0.9,
          "risk": "Drought (2023-24 reduced transits 36%). Water-dependent locks. US-China trade route."},
         {"chokepoint": "Danish Straits", "pct_trade": 3, "daily_barrels_m": 3.2,
          "risk": "Baltic Sea access. Russian energy exports. Shallow draft limits."},
         {"chokepoint": "Bab el-Mandeb", "pct_trade": 7, "daily_barrels_m": 6.2,
-         "risk": "Yemen/Houthi attacks. Gateway to Suez. 4.8M barrels/day oil + 8% of LNG."},
+         "risk": "Yemen/Houthi attacks. Gateway to Suez. ~6.2M barrels/day oil + 8% of LNG."},
         {"chokepoint": "Cape of Good Hope", "pct_trade": 5, "daily_barrels_m": 2.0,
          "risk": "Suez alternative. +10-14 days transit. Surged in 2024 due to Red Sea diversions."},
     ]
@@ -592,8 +592,8 @@ def _(go):
             marker_color="#4e79a7",
             text=[f"{v}%" for v in _pct],
             textposition="outside",
-            customdata=_risk,
-            hovertemplate="<b>%{y}</b><br>%{x}% of global trade<br>%{customdata}<extra></extra>",
+            customdata=list(zip(_risk, _barrels)),
+            hovertemplate="<b>%{y}</b><br>%{x}% of global trade · ~%{customdata[1]}M b/d oil<br>%{customdata[0]}<extra></extra>",
         )
     )
 
@@ -615,8 +615,8 @@ def _(mo):
         """
     Maritime chokepoint notes:
     - These seven passages collectively handle ~65% of global seaborne trade. Disruption at any one reshapes global logistics costs.
-    - The Houthi attacks on Red Sea shipping (2024-2025) demonstrated real-world impact: 80%+ of Suez traffic rerouted via Cape of Good Hope, adding 10-14 days and ~\$1M per voyage in fuel costs. Container shipping rates spiked 3-4x on Asia-Europe lanes.
-    - The Strait of Hormuz is the most consequential for energy: 20-25% of global oil and 33% of seaborne LNG passes through. Iran's proximity makes it a permanent geopolitical flashpoint.
+    - The Houthi attacks on Red Sea shipping (2024-2025) demonstrated real-world impact: most container traffic rerouted via Cape of Good Hope (container tonnage down ~75-82%; overall Suez tonnage down ~51-64%), adding 10-14 days and ~\$1M per voyage in fuel costs. Container shipping rates spiked 3-4x on Asia-Europe lanes.
+    - The Strait of Hormuz is the most consequential for energy: 20-25% of global oil and ~20% of seaborne LNG passes through. Iran's proximity makes it a permanent geopolitical flashpoint.
     - Panama Canal drought (2023-24) reduced daily transits from ~38 to ~24, creating months-long queues. Auction slots sold for \$4M+. Climate change makes this a recurring risk.
     - The Strait of Malacca (25% of global trade, 94,000+ vessels/year) is the world's busiest -- a single accident or blockage would dwarf the Ever Given disruption.
     - Insurance implications: war risk premiums for Red Sea transit surged from 0.07% to 1.0%+ of hull value in 2024. The maritime insurance market (hull, cargo, P&I) is ~\$35B globally.
@@ -645,8 +645,8 @@ def _(go):
     gap_data = [
         {"gap": "Shipping decarbonization investment needed", "value_b": 1000, "category": "Technology",
          "detail": "IMO 2050 net-zero requires $1T. Green fuels are <1% of energy mix today."},
-        {"gap": "Coastal climate adaptation shortfall", "value_b": 284, "category": "Finance",
-         "detail": "Developing nations need $310B/yr by 2035; only $26B/yr flows today (12x gap)."},
+        {"gap": "Climate adaptation finance gap (all sectors)", "value_b": 284, "category": "Finance",
+         "detail": "Developing nations need $310-365B/yr by 2035 for all adaptation; only ~$26B/yr flows today (~12x gap; UNEP)."},
         {"gap": "Offshore wind supply chain (cables + vessels)", "value_b": 120, "category": "Infrastructure",
          "detail": "117,640 km of subsea cable needed by 2040. Only 3 HVDC cable makers. Vessels ~$400M each."},
         {"gap": "IUU fishing economic losses", "value_b": 50, "category": "Sustainability",
@@ -738,7 +738,7 @@ def _(mo):
 
     Tier 1 -- systemic, trillion-dollar gaps:
     - Shipping decarbonization (\$1T): The IMO's Net-Zero Framework was approved in April 2025 but adoption was delayed until October 2026. Green methanol and ammonia are not cost-competitive. Zero/near-zero fuels must be 5-10% of shipping's energy mix by 2030 -- currently a rounding error. Up to 800,000 seafarers will need alternative fuel training.
-    - Coastal climate adaptation (\$284B/yr shortfall): Developing countries need \$310B/year by 2035 for adaptation; only \$26B/year flows today -- a 12x gap. Coastal flood protection is the single highest adaptation cost globally but offers minimal financial returns, leaving public finance as the only viable path.
+    - Climate adaptation finance gap (\$284B/yr, all sectors): Developing countries need \$310-365B/year by 2035 for adaptation across all sectors; only ~\$26B/year flows today -- a ~12x gap (UNEP Adaptation Gap 2025). Coastal flood protection is among the highest adaptation costs but offers minimal financial returns, leaving public finance as the main path.
 
     Tier 2 -- addressable, billion-dollar opportunities:
     - Offshore wind supply chain: 117,640 km of submarine cable needed by 2040 (vs. 55,500 km installed today). Only 3 companies make HVDC cable. Installation vessels cost ~\$400M each and take 3-4 years to build. This is a capital-intensive bottleneck with a decade-long runway.
@@ -767,7 +767,7 @@ def _(mo):
 
     Shipping burns 242 million tonnes of fuel per year. Only 0.7% of it is decarbonized.
 
-    International shipping emits ~1,000 Mt CO2 annually -- 3% of global emissions, more than the entire aviation industry. In 2024, container shipping alone hit a record 240.6 Mt CO2. The IMO approved a landmark Net-Zero Framework in April 2025 with carbon pricing at \$100-\$380/tCO2, but actual decarbonization in 2025 amounts to approximately 0.7% of bunker sales. Green methanol and ammonia remain 2-4x more expensive than fossil fuels, and the 1,942-ship alternative fuel orderbook is mostly LNG -- a fuel whose climate credentials are contested due to methane slip.
+    International shipping emits ~700-900 Mt CO2 annually (all shipping ~1,000 Mt, ~3% of global emissions) -- roughly comparable to the aviation industry. In 2024, container shipping alone hit a record 240.6 Mt CO2. The IMO approved a landmark Net-Zero Framework in April 2025 with carbon pricing at \$100-\$380/tCO2, but actual decarbonization in 2025 amounts to approximately 0.7% of bunker sales. Green methanol and ammonia remain 2-4x more expensive than fossil fuels, and the 1,942-ship alternative fuel orderbook is mostly LNG -- a fuel whose climate credentials are contested due to methane slip.
 
     Key figures:
     - Global shipping fuel consumption: ~242.4 Mt (2024), up 4.0% YoY due to Red Sea rerouting.
