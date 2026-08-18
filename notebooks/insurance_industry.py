@@ -713,16 +713,68 @@ def _(mo):
         """
     ## 2. The multiple gradient
 
-    The gradient across those layers is steep, and it is the single fact that explains most investor behaviour.
+    The gradient across those layers is steep, and it is the single fact that explains most investor behaviour. Software-layer businesses clear 10-30x revenue; brokers sit around 5x; capital-intensive carriers earn just 1-3x.
+    """
+    )
+    return
 
-    | Layer | Revenue multiple | Margin profile |
-    |---|---|---|
-    | AI-native / B2B insurance infrastructure | 15x to 30x | software |
-    | Insurance software (historic) | ~10x | software |
-    | Insurtech blended average (2024) | 9.7x | mixed |
-    | Broker | 5x+ | 20-30% |
-    | Capital-intensive carrier | 1x to 3x | 5-10% |
 
+@app.cell
+def _(go):
+    _mg_layers = [
+        "AI-native / B2B insurance infra",
+        "Insurance software (historic)",
+        "Insurtech blended avg (2024)",
+        "Broker",
+        "Capital-intensive carrier",
+    ]
+    _mg_mid = [22.5, 10.0, 9.7, 5.0, 2.0]
+    _mg_err_plus = [7.5, 0.0, 0.0, 0.0, 1.0]
+    _mg_err_minus = [7.5, 0.0, 0.0, 0.0, 1.0]
+    _mg_disp = ["15x to 30x", "~10x", "9.7x", "5x+", "1x to 3x"]
+    _mg_margin = ["software", "software", "mixed", "20-30%", "5-10%"]
+    _mg_colors = ["#1f5fd6", "#4f83e0", "#7aa3e8", "#c98f3c", "#b5502e"]
+
+    _mg_fig = go.Figure(
+        go.Bar(
+            y=_mg_layers,
+            x=_mg_mid,
+            orientation="h",
+            marker_color=_mg_colors,
+            error_x=dict(
+                type="data",
+                symmetric=False,
+                array=_mg_err_plus,
+                arrayminus=_mg_err_minus,
+                color="#7a8496",
+                thickness=1.4,
+                width=6,
+            ),
+            customdata=list(zip(_mg_disp, _mg_margin)),
+            text=_mg_disp,
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate=(
+                "<b>%{y}</b><br>Revenue multiple: %{customdata[0]}"
+                "<br>Margin profile: %{customdata[1]}<extra></extra>"
+            ),
+        )
+    )
+    _mg_fig.update_layout(
+        title="The multiple gradient: EV/revenue by layer (bar = midpoint, whisker = range)",
+        xaxis=dict(title="EV / revenue multiple (x)", range=[0, 36]),
+        yaxis=dict(autorange="reversed"),
+        height=340,
+        margin=dict(t=70, l=210, r=60, b=50),
+    )
+    _mg_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
     At a 5x revenue multiple, 30% margins imply roughly a 16.6x P/E. At 1x revenue, 7% margins imply roughly 14.3x. The equity story converges even though the revenue multiple differs by 5x, which is why the revenue multiple alone misleads across layers.
 
     Valuation basis has also tightened. Gross Written Premium is no longer treated as a credible basis in most deals. The market moved to net revenue, net commission for MGAs, or earned premium minus reinsurance and claims for carriers. Investors now pay for retained economics and unit durability.
@@ -741,23 +793,65 @@ def _(mo):
         """
     ## 3. Cyber insurance conditions, 2024-2026
 
-    Underwriting quality and growth trajectory have diverged sharply. Both facts need holding at once.
+    Underwriting quality and growth trajectory have diverged sharply, and both facts need holding at once. Underwriting is healthy: the surplus-lines loss ratio is ~56% (2025, and surplus lines is now nearly two-thirds of all cyber premium), the admitted-carrier loss ratio is ~50.2%, and Allianz Commercial reports average claim severity down 50% with large-loss frequency down 30%. Growth, meanwhile, has stalled — Q1 2026 was the eighth consecutive quarter of US pricing cuts. The chart tracks where the market is heading.
+    """
+    )
+    return
 
-    Underwriting is healthy:
 
-    - Surplus lines incurred loss ratio ~56% (2025). Surplus lines is now nearly two thirds of all cyber premium.
-    - Admitted carrier loss ratio ~50.2%.
-    - Allianz Commercial: average claim severity down 50%, large-loss frequency down 30%.
+@app.cell
+def _(go):
+    _cc_labels = [
+        "US cyber premium (2024)",
+        "Cyber reinsurance (Jan 2026 renewals)",
+        "Global premium (2025->2026, proj.)",
+        "S&P premium growth (2026, proj.)",
+        "Third-party claims (trend)",
+    ]
+    _cc_vals = [-7.0, -32.0, 5.1, 17.5, 30.0]
+    _cc_proj = [False, False, True, True, False]
+    _cc_detail = [
+        "First annual decline on record; US DWP fell to $9.14bn",
+        "Risk-adjusted, aggregate excess of loss; driven by excess capacity",
+        "$15.6bn (2025) -> $16.4bn (2026), projected",
+        "S&P Global Ratings; 15-20% range, contested vs. 8 quarters of softening",
+        "Rising; the main forward uncertainty",
+    ]
+    _cc_colors = ["#c0392b" if _v < 0 else "#2e8b57" for _v in _cc_vals]
+    _cc_pattern = ["/" if _p else "" for _p in _cc_proj]
 
-    Growth has stalled or reversed:
+    _cc_fig = go.Figure(
+        go.Bar(
+            y=_cc_labels,
+            x=_cc_vals,
+            orientation="h",
+            marker=dict(
+                color=_cc_colors,
+                pattern=dict(shape=_cc_pattern, solidity=0.72),
+            ),
+            customdata=_cc_detail,
+            text=[f"{_v:+.0f}%" for _v in _cc_vals],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="<b>%{y}</b><br>Change: %{x:+.1f}%<br>%{customdata}<extra></extra>",
+        )
+    )
+    _cc_fig.add_vline(x=0, line_width=1, line_color="#9aa4b2")
+    _cc_fig.update_layout(
+        title="Cyber market 2024-26: pricing down, claims and forecasts up (hatched = projected)",
+        xaxis=dict(title="Change (%)", range=[-42, 44], zeroline=False),
+        yaxis=dict(autorange="reversed"),
+        height=340,
+        margin=dict(t=70, l=240, r=50, b=50),
+    )
+    _cc_fig
+    return
 
-    - Q1 2026 was the eighth consecutive quarter of US cyber pricing cuts.
-    - US premium fell 7% in 2024 to \$9.14bn, the first decline on record.
-    - Cyber reinsurance repriced -32% risk-adjusted on aggregate excess of loss at the 1 January 2026 renewals, driven by excess capacity.
-    - Global premium ~\$15.6bn (2025), projected ~\$16.4bn (2026).
-    - Third-party claims trending up 30%, which is the main forward uncertainty.
-    - S&P Global Ratings nonetheless projects 15-20% premium growth in 2026 on rising severity and AI-driven attack cost. Treat as a contested forecast against eight quarters of observed softening.
 
+@app.cell
+def _(mo):
+    mo.md(
+        """
     The takeaway: a well-run cyber carrier is profitable and growing slowly. That combination is fine for insurance capital and unworkable for venture capital. Category quality and venture suitability are separate questions.
     """
     )
@@ -770,10 +864,68 @@ def _(mo):
         """
     ## 4. Exit evidence
 
-    - Corvus to Travelers, \$435M (announced Nov 2023, closed Jan 2024) against a \$750M valuation in the 2021 round. A down exit for the category's benchmark insurtech.
-    - Coalition: \$175M led by Index Ventures at \$1.75bn (March 2021), later marked higher during the peak.
-    - Insurtech funding fell ~50% in 2023 with valuations off more than 60%. The period is referred to in the sector as "the death of Insurtech 1.0".
-    - Insurance CVC participation at a 9-year low: only four insurance CVCs invested in insurtechs in Q1 2026 (American Family Ventures, Intact Ventures, Optum Ventures, Sancor Seguros Ventures).
+    The category's benchmark exit was a down-round: Corvus sold to Travelers for \$435M (announced Nov 2023, closed Jan 2024), against a \$750M valuation in its 2021 round — a 42% markdown. Coalition's \$175M round (Index Ventures, March 2021) set a \$1.75bn mark at the peak.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _ex_labels = [
+        "Corvus - 2021 round",
+        "Corvus - 2024 exit (Travelers)",
+        "Coalition - 2021 round",
+    ]
+    _ex_vals = [750, 435, 1750]
+    _ex_text = ["$750M", "$435M", "$1.75bn"]
+    _ex_colors = ["#7aa3e8", "#b5502e", "#9aa4b2"]
+    _ex_note = [
+        "Funding-round valuation (2021 peak)",
+        "Acquisition price; a 42% down-round vs. the 2021 mark",
+        "Index Ventures round; benchmark scale insurtech",
+    ]
+
+    _ex_fig = go.Figure(
+        go.Bar(
+            y=_ex_labels,
+            x=_ex_vals,
+            orientation="h",
+            marker_color=_ex_colors,
+            customdata=_ex_note,
+            text=_ex_text,
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="<b>%{y}</b><br>Valuation: $%{x:,.0f}M<br>%{customdata}<extra></extra>",
+        )
+    )
+    _ex_fig.add_annotation(
+        x=435,
+        y="Corvus - 2024 exit (Travelers)",
+        text="-42% vs. 2021",
+        showarrow=True,
+        arrowhead=2,
+        ax=80,
+        ay=-26,
+        font=dict(size=10, color="#b5502e"),
+    )
+    _ex_fig.update_layout(
+        title="Insurtech exits: the Corvus down-round (USD millions)",
+        xaxis=dict(title="Valuation / price (USD millions)", range=[0, 2050]),
+        yaxis=dict(autorange="reversed"),
+        height=280,
+        margin=dict(t=70, l=210, r=70, b=50),
+    )
+    _ex_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    - Insurtech funding fell ~50% in 2023 with valuations off more than 60% — the period the sector calls "the death of Insurtech 1.0".
+    - Insurance CVC participation hit a 9-year low: only four insurance CVCs invested in insurtechs in Q1 2026 (American Family Ventures, Intact Ventures, Optum Ventures, Sancor Seguros Ventures).
     - Reinsurer scrutiny and capital constraint is the recurring friction cited against MGA models.
     """
     )
