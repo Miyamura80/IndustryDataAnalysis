@@ -768,34 +768,23 @@ def _(go):
         (
             "Breakout",
             "#2e8b57",
-            [1, 2, 3, 1],
+            [2, 1, 4, 1],
             [
-                "Guidewire",
-                "Coalition, Corvus",
-                "Next, bolttech, Cover Genius",
+                "Guidewire, Akur8",
+                "Coalition",
+                "Next, Bold Penguin, bolttech, Cover Genius",
                 "Alan",
-            ],
-        ),
-        (
-            "Solid",
-            "#4f83e0",
-            [3, 3, 4, 0],
-            [
-                "Duck Creek, Akur8, Ledger",
-                "At-Bay, Cowbell, Resilience",
-                "Pie, Openly, Kin, Sure",
-                "—",
             ],
         ),
         (
             "Mixed",
             "#c98f3c",
-            [2, 0, 2, 4],
+            [4, 4, 5, 4],
             [
-                "Shift, Tractable",
-                "—",
-                "Bold Penguin, Vouch",
-                "Lemonade, Root, Oscar, ZhongAn",
+                "Duck Creek, Shift, Tractable, Ledger",
+                "At-Bay, Cowbell, Corvus, Resilience",
+                "Pie, Openly, Kin, Vouch, Sure",
+                "Lemonade, Hippo, Oscar, ZhongAn",
             ],
         ),
         (
@@ -806,7 +795,7 @@ def _(go):
                 "—",
                 "—",
                 "Branch, Trov",
-                "Metromile, Hippo, Clover, Wefox",
+                "Root, Metromile, Clover, wefox",
             ],
         ),
     ]
@@ -845,64 +834,75 @@ def _(go):
 def _(mo):
     mo.md(
         """
-    Read the bars top to bottom, high multiple to low. Every software, infrastructure and cyber-MGA company lands in breakout, solid or mixed — none cautionary. The full-stack carriers invert it: one breakout (Alan, in Europe), the rest mixed or cautionary. The mechanism is the balance sheet. A carrier is judged on loss and combined ratios, holds regulatory capital, and carries catastrophe and reserve risk, so growth consumes capital instead of compounding it. When public markets stopped granting these companies software multiples and re-anchored them to insurance economics, the drawdowns ran 80-95% (Metromile sold for scrap; Hippo, Clover and Wefox all cautionary).
+    Read the bars top to bottom, high multiple to low. Every software, infrastructure and cyber-MGA company lands in breakout or mixed — none cautionary. The full-stack carriers invert it: one breakout (Alan, in Europe), the rest mixed or cautionary. The mechanism is the balance sheet. A carrier is judged on loss and combined ratios, holds regulatory capital, and carries catastrophe and reserve risk, so growth consumes capital instead of compounding it. When public markets stopped granting these companies software multiples and re-anchored them to insurance economics, the drawdowns ran 80-90% (Root is off ~87% from its IPO; Metromile was sold for less than the cash on its own balance sheet).
 
     ### Signal, software and infrastructure — the durable layer
 
-    | Company | Founded | VC raised (approx) | Status | Outcome |
+    | Company | Founded | Raised (approx) | Status | Outcome |
     |---|---|---|---|---|
-    | Guidewire 🇺🇸 | 2001 | VC pre-IPO | IPO 2012 (GWRE), ~\$14-15B mcap | Breakout |
-    | Duck Creek 🇺🇸 | 2000 | Accenture-backed | IPO 2020 → Vista take-private \$2.6B (2023) | Solid |
-    | Shift Technology 🇫🇷 | 2014 | ~\$320M | Private, \$1B+ (2021) | Mixed |
+    | Guidewire 🇺🇸 | 2001 | \$40M total pre-IPO | IPO 2012 (GWRE), ~\$10B at 6.9x revenue | Breakout |
+    | Akur8 🇫🇷 | 2018 | ~\$180-195M | Private; \$120M Series C (2024); Guidewire-backed | Breakout |
+    | Duck Creek 🇺🇸 | 2000 | PE / corporate-backed | Vista take-private \$2.6B (2023) | Mixed |
+    | Shift Technology 🇫🇷 | 2014 | ~\$320M | Private, unicorn (2021) | Mixed |
     | Tractable 🇬🇧 | 2014 | ~\$185M | Private, \$1B (2021); first CV unicorn | Mixed |
-    | Akur8 🇫🇷 | 2018 | ~\$180M | Private, ~\$400M | Solid |
-    | Ledger Investing 🇺🇸 | 2016 | ~\$185M | Private | Solid |
+    | Ledger Investing 🇺🇸 | 2016 | ~\$90-185M (disputed) | Private; casualty ILS rails | Mixed |
 
     ### Cyber MGA — signal plus distribution
 
-    | Company | Founded | VC raised (approx) | Status | Outcome |
+    | Company | Founded | Raised (approx) | Status | Outcome |
     |---|---|---|---|---|
-    | Coalition 🇺🇸 | 2017 | ~\$755-800M | Private, \$5B (2022) | Breakout |
-    | Corvus 🇺🇸 | 2017 | ~\$150M | Acquired by Travelers \$435M (2024) | Breakout (exit) |
-    | At-Bay 🇺🇸 | 2016 | ~\$292M | Private, \$1.35B (2021) | Solid |
-    | Cowbell 🇺🇸 | 2019 | ~\$209M | Private; Zurich strategic round (2024) | Solid |
-    | Resilience 🇺🇸 | 2016 | ~\$220-325M | Private, Series D (2023) | Solid |
+    | Coalition 🇺🇸 | 2017 | ~\$800-860M | Private, \$5B (2022); ~\$1B revenue, no S-1 | Breakout |
+    | At-Bay 🇺🇸 | 2016 | ~\$292M | Private, \$1.35B (2021) | Mixed |
+    | Cowbell 🇺🇸 | 2019 | ~\$202-209M | Private; Zurich-led Series C (2024) | Mixed |
+    | Corvus 🇺🇸 | 2017 | ~\$150M | Acquired by Travelers ~\$435M (2024) | Mixed |
+    | Resilience 🇺🇸 | 2016 | ~\$325M | Private; Series D (2023) | Mixed |
 
     ### Distribution — MGA and embedded
 
-    | Company | Founded | VC raised (approx) | Status | Outcome |
+    | Company | Founded | Raised (approx) | Status | Outcome |
     |---|---|---|---|---|
-    | Next Insurance 🇺🇸 | 2016 | >\$1B | Acquired by Munich Re \$2.6B (2025) | Breakout |
-    | bolttech 🇸🇬 | 2020 | ~\$640M | Private, \$2.1B | Breakout |
-    | Cover Genius 🇦🇺 | 2014 | ~\$345M | Private, \$1.9B (2024) | Breakout |
-    | Pie Insurance 🇺🇸 | 2017 | ~\$615M | Private, >\$2B (2022) | Solid |
-    | Openly 🇺🇸 | 2017 | ~\$450M | Private | Solid |
-    | Kin 🇺🇸 | 2016 | ~\$286M equity | Private, \$2B (2025) | Solid |
-    | Sure 🇺🇸 | 2015 | ~\$123M | Private, \$550M (2021) | Solid |
-    | Bold Penguin 🇺🇸 | 2016 | ~\$50M | Acquired by American Family (2021) | Mixed |
-    | Vouch 🇺🇸 | 2018 | ~\$212M | Acquired by Hiscox (2025) | Mixed |
-    | Branch 🇺🇸 | 2017 | ~\$150M | Private, distressed | Cautionary |
-    | Trov 🇺🇸 | 2012 | ~\$114M | D2C shut 2019; assets absorbed | Cautionary |
+    | Next Insurance 🇺🇸 | 2016 | ~\$1.1-1.2B | Acquired by Munich Re / ERGO \$2.6B (2025) | Breakout |
+    | Bold Penguin 🇺🇸 | 2016 | ~\$50M | Acquired by American Family (2021) | Breakout |
+    | bolttech 🇸🇬 | 2020 | ~\$640-690M | Private, \$2.1B (2025) | Breakout |
+    | Cover Genius 🇦🇺 | 2014 | ~\$350M+ equity | Private, \$1.9B (2026) | Breakout |
+    | Pie Insurance 🇺🇸 | 2017 | ~\$620M | Private; \$315M Series D (2022) | Mixed |
+    | Openly 🇺🇸 | 2017 | ~\$293M+ | Private; \$193M growth round (2025) | Mixed |
+    | Kin 🇺🇸 | 2016 | ~\$265M equity | Private, unicorn (2023); reciprocal exchange | Mixed |
+    | Vouch 🇺🇸 | 2018 | ~\$185M+ | Private; startup-focused MGA | Mixed |
+    | Sure 🇺🇸 | 2015 | ~\$123M | Private; embedded-insurance API | Mixed |
+    | Branch 🇺🇸 | 2018 | ~\$197M | Private; \$1.05B mark (2022), now stale | Cautionary |
+    | Trov 🇺🇸 | 2012 | ~\$85-100M | Tech assets to Travelers (2022) | Cautionary |
 
     ### Full-stack carriers — risk transfer, the repriced layer
 
-    | Company | Founded | VC raised (approx) | Status | Outcome |
+    | Company | Founded | Raised (approx) | Status | Outcome |
     |---|---|---|---|---|
-    | Alan 🇫🇷 | 2016 | ~€754M | Private, €5B (2025) | Breakout |
-    | Lemonade 🇺🇸 | 2015 | ~\$480M pre-IPO | IPO 2020 (LMND) | Mixed |
-    | Root 🇺🇸 | 2015 | ~\$520M pre-IPO | IPO 2020 (ROOT); profitable 2024 | Mixed |
-    | Oscar Health 🇺🇸 | 2012 | ~\$1.6B | IPO 2021 (OSCR); first profit 2024 | Mixed |
-    | ZhongAn 🇨🇳 | 2013 | strategic (Ant / Ping An / Tencent) | IPO 2017 (6060.HK), ~\$11B | Mixed |
-    | Metromile 🇺🇸 | 2011 | ~\$290M | SPAC 2021 → sold to Lemonade \$145M (2022) | Cautionary |
-    | Hippo 🇺🇸 | 2015 | ~\$710M | SPAC 2021 at \$5B (HIPO) | Cautionary |
-    | Clover Health 🇺🇸 | 2014 | ~\$925M | SPAC 2021 (CLOV) | Cautionary |
-    | Wefox 🇩🇪 | 2015 | ~\$1.3B | Private, distressed | Cautionary |
+    | Alan 🇫🇷 | 2016 | ~\$1.1B+ | Private, €5.5B (2026); profitable in France | Breakout |
+    | Lemonade 🇺🇸 | 2015 | ~\$480M pre-IPO | IPO 2020 (LMND), ~\$5.6B mcap; still ~7x revenue | Mixed |
+    | Hippo 🇺🇸 | 2015 | ~\$1.2B incl. SPAC | SPAC 2021 (HIPO); 5 profitable quarters after pivot | Mixed |
+    | Oscar Health 🇺🇸 | 2012 | ~\$1.6B | IPO 2021 (OSCR); \$15.3B revenue, 0.53x sales | Mixed |
+    | ZhongAn 🇨🇳 | 2013 | \$1.5B at IPO | IPO 2017 (6060.HK) at \$11B; >20% China online P&C | Mixed |
+    | Root 🇺🇸 | 2015 | ~\$523M pre-IPO | IPO 2020 (ROOT), −87% vs IPO; profitable 2025 | Cautionary |
+    | Metromile 🇺🇸 | 2011 | ~\$300M+ | Sold to Lemonade ~\$145M (2022), below its cash | Cautionary |
+    | Clover Health 🇺🇸 | 2014 | ~\$925M | SPAC 2021 (CLOV); ~1.1x sales, loss-making | Cautionary |
+    | wefox 🇩🇪 | 2014 | ~\$1.9B | Peak \$4.5B (2022) → near-insolvency, restructured | Cautionary |
 
-    Two mechanisms explain the sort. First, capital: money put into a carrier funds reserves and statutory surplus, not growth, so venture dollars convert at an insurance multiple and sit exposed to loss volatility the fund cannot model. MGAs and embedded players front on someone else's paper and earn commission, so they scale without proportional capital and can be bought cleanly by incumbents hungry for distribution — Next to Munich Re at \$2.6B (~4.7x revenue), Corvus to Travelers at \$435M. Infrastructure software carries no underwriting risk at all and commands the richest multiples: Guidewire trades near 10x revenue where even a recovered carrier earns perhaps 5-7x book.
+    The single cleanest comparison in the set is Guidewire against Metromile. Guidewire raised \$40M in its entire pre-IPO life and is worth roughly \$10B; Metromile raised ~\$300M, SPAC'd at \$1.3B, and sold three years later for less than the cash on its own balance sheet. Both were "insurance technology." The difference is that one of them promised to pay claims. Premium revenue is a capital call, not free revenue: growing a carrier's book 50% demands ~50% more surplus, so top-line growth consumes equity instead of throwing off cash — the inverse of the software model those 2020-21 multiples were priced on. The most telling evidence is not the failures but how the survivors survived: they changed layer. Hippo pivoted from concentrated cat-exposed homeowners into an MGA and fronting platform and has now posted five straight profitable quarters; wefox sold its carrier and re-emerged asset-light. The fix for a struggling full-stack model was to stop being full-stack.
 
-    Second, the cyber MGAs are the instructive hybrid. Structurally they are MGAs, but they own a proprietary signal — continuous attack-surface scanning — that reduces adverse selection and improves loss ratios, which is why strategic reinsurers funded the whole cohort (Munich Re into At-Bay, Zurich into Cowbell) and the exits stayed clean. Asset-light economics plus a defensible data moat is exactly the shape the layer model predicts should win, and it did.
+    The cyber MGAs are the instructive hybrid. Structurally they are MGAs, but they own a proprietary signal — continuous attack-surface scanning — that genuinely predicts loss, on a short tail the insurer can intervene to prevent. That let them capture underwriting alpha without the balance-sheet drag, which is why strategic reinsurers funded the whole cohort and Coalition now stands at a \$5B private mark on ~\$1B of revenue. The cautionary read within cyber is the Corvus price: Travelers paid ~\$435M for a \$200M+ book, roughly 2x premium — a distribution-and-capability price, not a software multiple. The gap between that and Coalition's \$5B mark is the most important unresolved number here, and a Coalition S-1 would settle it.
 
-    Figures are approximate: private "raised" totals are aggregator estimates (Crunchbase / PitchBook / CB Insights) and occasionally blend debt with equity; deal prices, IPO proceeds and public multiples are from filings and trade press and are firmer. Valuations are last known marks, not current.
+    ### The multiple falls monotonically down the stack
+
+    | Layer | Typical multiple | Public / deal reference points |
+    |---|---|---|
+    | Software / infrastructure | 6-15x revenue | Guidewire 6.9x revenue, 30x EBITDA; Duck Creek \$2.6B take-private |
+    | MGA / fee-based | 3-8x net revenue | MGA M&A 10-22x EBITDA; Cover Genius \$1.9B, bolttech \$2.1B |
+    | Fronting | ~9-10x revenue | Accelerant IPO implied ~9-10x on \$178M Q1 2025 revenue |
+    | Full-stack carrier | 1.5-4x revenue | Oscar 0.53x sales; Root ~0.6x; Clover ~1.1x |
+
+    Two refinements matter. The definitional shift did most of the damage: the market stopped accepting gross written premium as a valuation base and moved to net revenue (MGAs) or earned premium net of reinsurance and claims (carriers), so a company priced on a GWP-derived top line at a software multiple, then repriced on net revenue at an insurance multiple, lost an order of magnitude without anything changing operationally. And Lemonade is the live outlier: at ~\$5.6B on ~\$800M of revenue it still trades near 7x, a software multiple on a balance-sheet business. Whether that converges up (it earns the multiple by hitting profitability) or down (toward Root and Oscar) is the cleanest open test of the whole thesis, and it should resolve within about eighteen months.
+
+    Figures are approximate: private "raised" totals are aggregator estimates (Crunchbase / PitchBook / Tracxn) and occasionally blend debt with equity — Ledger Investing's own figure (>\$90M) and ZoomInfo's (\$185M) genuinely conflict. Deal prices, IPO proceeds and public multiples are from filings and trade press and are firmer. Valuations are last known marks, not current.
     """
     )
     return
@@ -1160,11 +1160,12 @@ def _(mo):
 
     Category-defining companies and multiples (section 3):
 
-    - https://fintech.global/2025/03/25/munich-re-acquires-next-insurance-for-2-6bn-to-expand-insurtech-footprint/
-    - https://www.securityweek.com/travelers-to-acquire-cyberinsurance-firm-corvus-for-435-million/
-    - https://www.vistaequitypartners.com/news/duck-creek-agrees-to-be-acquired-by-vista-equity-partners-for-2-6-billion/
-    - https://www.gurufocus.com/term/enterprise-value-to-revenue/GWRE
-    - https://simplywall.st/stocks/us/insurance/nyse-lmnd/lemonade/valuation
+    - https://www.ergo.com/en/newsroom/media-information/2025/20250701-ergo-acquisition-next-insurance
+    - https://investor.travelers.com/newsroom/press-releases/news-details/2023/Travelers-to-Acquire-Corvus-Insurance/default.aspx
+    - https://www.vistaequitypartners.com/news/vista-equity-partners-completes-acquisition-of-duck-creek-technologies/
+    - https://www.coalitioninc.com/announcements/coalition-closes-250-million-in-series-f-funding
+    - https://multiples.vc/public-comps/guidewire-valuation-multiples
+    - https://windsordrake.com/insurtech-valuation/
     """
     )
     return
