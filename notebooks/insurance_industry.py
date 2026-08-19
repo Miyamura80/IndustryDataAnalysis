@@ -131,6 +131,213 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md("""
+    ## US P&C market sizes (last 5 years)
+
+    US Property & Casualty net premiums written by line of business (NAIC statutory data via Triple-I / S&P Global). The dashed line sums the net-written lines only; Cyber is shown as direct premiums written (it is reported as DWP, not NPW) and is excluded from that total. The Triple-I line-of-business table is publicly archived only through 2023, so the NPW lines are blank for 2024-2025; Cyber runs to 2024.
+    """)
+    return
+
+
+@app.cell
+def _(go, mo):
+    import csv as _csv
+    from pathlib import Path as _Path
+
+    _data_dir = (
+        _Path(__file__).parent / "data"
+        if "__file__" in globals()
+        else _Path.cwd() / "notebooks" / "data"
+    )
+    _csv_path = _data_dir / "insurance_us_pc_market_sizes_2020_2025.csv"
+
+    _uspc_out = None
+    if not _csv_path.exists():
+        _uspc_out = mo.md(f"Data file not found: `{_csv_path}`")
+    else:
+        with _csv_path.open("r", newline="", encoding="utf-8") as _f:
+            _reader = _csv.DictReader(_f)
+            _fields = _reader.fieldnames or []
+            _years = sorted(int(_c) for _c in _fields if _c.isdigit())
+            _rows = [
+                _r
+                for _r in _reader
+                if _r.get("segment") == "Property & Casualty"
+                and _r.get("geo") == "US"
+            ]
+
+        _exclude = {
+            "Commercial Property - Fire",
+            "Commercial Property - Allied Lines",
+        }
+        _direct_only = {"Cyber"}
+
+        _year_has = {
+            _y: any((_r.get(str(_y)) or "").strip() for _r in _rows) for _y in _years
+        }
+        _plot_years = [_y for _y in _years if _year_has[_y]][-5:]
+
+        _series = {}
+        for _r in _rows:
+            _sub = (_r.get("subsegment") or "").strip()
+            if not _sub or _sub in _exclude:
+                continue
+            _vals = []
+            for _y in _plot_years:
+                _raw = (_r.get(str(_y)) or "").strip()
+                _vals.append(float(_raw) if _raw else None)
+            _series[_sub] = _vals
+
+        _totals = []
+        for _i in range(len(_plot_years)):
+            _t, _has = 0.0, False
+            for _sub, _vals in _series.items():
+                if _sub in _direct_only or _vals[_i] is None:
+                    continue
+                _t += _vals[_i]
+                _has = True
+            _totals.append(_t if _has else None)
+
+        _x = [str(_y) for _y in _plot_years]
+        _fig = go.Figure()
+        for _name in sorted(_series):
+            _fig.add_trace(
+                go.Scatter(
+                    x=_x,
+                    y=_series[_name],
+                    mode="lines+markers",
+                    name=_name,
+                    connectgaps=False,
+                    hovertemplate="<b>%{fullData.name}</b><br>%{x}: $%{y:.1f}B<extra></extra>",
+                )
+            )
+        _fig.add_trace(
+            go.Scatter(
+                x=_x,
+                y=_totals,
+                mode="lines+markers",
+                name="Total (net-written lines only)",
+                line=dict(width=4, dash="dash", color="#1b2330"),
+                hovertemplate="<b>%{fullData.name}</b><br>%{x}: $%{y:.1f}B<extra></extra>",
+            )
+        )
+        _fig.update_layout(
+            title=f"US P&C insurance market sizes ({_plot_years[0]}-{_plot_years[-1]})",
+            xaxis=dict(title="Year", type="category"),
+            yaxis_title="Premiums ($bn)",
+            legend_title="Line of business",
+            hovermode="x unified",
+            height=470,
+            margin=dict(t=70, l=55, r=20, b=40),
+        )
+        _uspc_out = _fig
+
+    _uspc_out
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    ## Global insurance market size proxies (last 5 years, with uncertainty)
+
+    Global premium pools by segment, with a low/high band spanning reputable estimates (Swiss Re sigma, Allianz, Munich Re, OECD). The line is the point estimate; whiskers show the band. Bands widen where sources disagree on definitions — most visibly Health in 2024, where Swiss Re allocates all accident-and-health to non-life and captures the full US private-health pool, while Allianz draws health more narrowly.
+    """)
+    return
+
+
+@app.cell
+def _(go, mo):
+    import csv as _pcsv
+    from pathlib import Path as _PPath
+
+    _pdir = (
+        _PPath(__file__).parent / "data"
+        if "__file__" in globals()
+        else _PPath.cwd() / "notebooks" / "data"
+    )
+    _proxy_path = _pdir / "insurance_global_market_size_proxies_2020_2025.csv"
+
+    _proxy_out = None
+    if not _proxy_path.exists():
+        _proxy_out = mo.md(f"Data file not found: `{_proxy_path}`")
+    else:
+        with _proxy_path.open("r", newline="", encoding="utf-8") as _pf:
+            _preader = _pcsv.DictReader(_pf)
+            _pyears = sorted(
+                int(_c) for _c in (_preader.fieldnames or []) if _c.isdigit()
+            )
+            _prows = list(_preader)
+
+        _seg_color = {
+            "Life": "#1f5fd6",
+            "Health": "#2e8b57",
+            "Property & Casualty": "#c0392b",
+            "Reinsurance": "#c98f3c",
+        }
+        _x2 = [str(_y) for _y in _pyears]
+        _pfig = go.Figure()
+        for _r in _prows:
+            _seg = (_r.get("segment") or "").strip()
+            _sub = (_r.get("subsegment") or "").strip()
+            if "total" not in _sub.lower() and "all products" not in _sub.lower():
+                continue
+            _yv, _ep, _em, _has = [], [], [], False
+            for _y in _pyears:
+                _v = (_r.get(str(_y)) or "").strip()
+                _lo = (_r.get(f"{_y}_low") or "").strip()
+                _hi = (_r.get(f"{_y}_high") or "").strip()
+                if _v and _lo and _hi:
+                    _vf, _lof, _hif = float(_v), float(_lo), float(_hi)
+                    _yv.append(_vf)
+                    _ep.append(max(0.0, _hif - _vf))
+                    _em.append(max(0.0, _vf - _lof))
+                    _has = True
+                else:
+                    _yv.append(None)
+                    _ep.append(0.0)
+                    _em.append(0.0)
+            if not _has:
+                continue
+            _color = _seg_color.get(_seg, "#7f7f7f")
+            _pfig.add_trace(
+                go.Scatter(
+                    x=_x2,
+                    y=_yv,
+                    mode="lines+markers",
+                    name=_seg,
+                    line=dict(width=2.5, color=_color),
+                    marker=dict(size=7, color=_color),
+                    error_y=dict(
+                        type="data",
+                        symmetric=False,
+                        array=_ep,
+                        arrayminus=_em,
+                        color=_color,
+                        thickness=1,
+                        width=4,
+                    ),
+                    connectgaps=True,
+                    hovertemplate="<b>%{fullData.name}</b><br>%{x}: $%{y:,.0f}B<extra></extra>",
+                )
+            )
+        _pfig.update_layout(
+            title="Global insurance premium pools by segment (2020-2025, with uncertainty)",
+            xaxis=dict(title="Year", type="category"),
+            yaxis=dict(title="Premiums ($bn, log scale)", type="log"),
+            legend_title="Segment",
+            hovermode="x unified",
+            height=470,
+            margin=dict(t=70, l=60, r=20, b=40),
+        )
+        _proxy_out = _pfig
+
+    _proxy_out
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
     ## Cyber insurance companies (treemap by premium volume)
 
     Treemap areas use the midpoint of the stated range (or the exact value where available). Hover shows the low/high bounds and the confidence tag.

@@ -1,0 +1,13 @@
+segment,subsegment,2020,2020_low,2020_high,2021,2021_low,2021_high,2022,2022_low,2022_high,2023,2023_low,2023_high,2024,2024_low,2024_high,2025,2025_low,2025_high
+Life,All life products (total),2762.3,2727.2,2797.4,2940.3,2706.0,2997.6,2813.6,2760.1,2868.4,2862.5,2835.9,2889.0,3120.6,3100.0,3141.1,3096.8,3019.4,3174.2
+Life,Savings and annuities,2149.1,2121.8,2176.4,,,,,,,,,,2480.9,2464.5,2497.2,,,
+Life,Risk protection (mortality and morbidity),613.2,605.4,621.0,,,,,,,,,,639.7,635.5,643.9,,,
+Health,Private health (all products),,,,,,,1190.6,1136.5,1244.8,1544.6,1506.0,1583.2,2015.8,1820.6,2211.0,1827.1,1781.4,1872.8
+Property & Casualty,All P&C lines (total),,,,1840.1,1786.0,1894.2,1948.3,1894.2,2002.4,2330.4,2272.1,2388.7,2508.4,2393.0,2623.8,2511.1,2448.3,2573.9
+Property & Casualty,Motor,,,,,,,,,,,,,974.0,925.3,1022.7,,,
+Property & Casualty,Property,,,,,,,,,,,,,636.0,604.2,667.8,,,
+Property & Casualty,Liability,,,,,,,,,,,,,253.0,240.4,265.7,,,
+Property & Casualty,Specialty and other,,,,,,,,,,,,,530.0,503.5,556.5,,,
+Reinsurance,All reinsurance (total),,,,,,,364.0,364.0,400.0,378.5,369.1,388.0,394.7,384.8,404.6,,,
+Reinsurance,Non-life reinsurance,,,,,,,256.7,250.3,263.1,277.0,275.0,279.0,293.0,285.7,300.3,,,
+Reinsurance,Life reinsurance,,,,,,,,,,99.5,99.5,103.5,101.5,99.0,104.0,,,
