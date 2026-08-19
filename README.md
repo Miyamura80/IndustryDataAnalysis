@@ -48,8 +48,9 @@ Interactive [marimo](https://marimo.io/) notebooks with pie charts and icicle vi
 | Actuators | `actuator_industry.py` | Electric, hydraulic, pneumatic actuators. Appendix: robotics actuator deep dive — precision reducers, servo/drives, integrated joint modules and robot OEMs across Japan/China/Europe-US; sourced market-share table, China RV substitution trend, humanoid BOM split, and a "value accrues in the joint" thesis |
 | Robotics | `robotics_industry.py` | Industrial, service, collaborative robots |
 | Safety Compliance | `safety_compliance_industry.py` | EHS, process safety, aviation/maritime/railway safety |
-| Insurance | `insurance_industry.py` | Life, P&C, health, reinsurance — global premium pools |
+| Insurance | `insurance_industry.py` | Life, P&C, health, reinsurance — global premium pools. Appendix: insurance market structure entry — the signal/distribution/risk-transfer layer model, the revenue-multiple gradient, cyber insurance conditions (2024-2026), and who funds cyber insurance (worked case: Evolution Equity Partners) |
 | Cyber Insurance | `cyber_insurance_industry.py` | Carriers, MGAs, reinsurers, strategy archetypes, threat-to-claim flows |
+| Japan Insurance | `japan_insurance_industry.py` | Japanese market structure: Big Three P&C (Tokio Marine, MS&AD, Sompo), internationalization trend (FY2014-FY2026), domestic line-of-business mix, Big Three cyber books, and a life/non-life/third-sector company treemap |
 | Japan Economy | `japan_economy.py` | GDP-equivalent sector mix and representative listed leaders |
 | Ocean / Blue Economy | `ocean_industry.py` | Shipping, offshore energy, fisheries, tourism, shipbuilding, naval defense, subsea infrastructure. Appendix: shipping decarbonization deep dive |
 | Lloyd's Syndicate-in-a-Box | `lloyds_siab.py` | All 14 SiaBs approved (2020-2026): sectors, stamp capacity, outcomes, Carbon 4747 growth, managing agent concentration, new entrant comparison |

@@ -133,153 +133,105 @@ def _(mo):
     mo.md("""
     ## US P&C market sizes (last 5 years)
 
-    The plot below uses the provided CSV (NAIC/III-derived lines of business) and shows the last 5 years with available data.
-
-    Notes:
-    - The CSV includes a 2025 column but it is blank in this extract, so the chart will typically show 2020-2024.
-    - Cyber is included, but note it is reported as *direct* premiums written in the CSV, while the other lines are *net* premiums written.
-    - "Commercial Property - Fire + Allied (combined)" is used (and the separate Fire / Allied rows are excluded) to avoid double counting.
+    US Property & Casualty net premiums written by line of business (NAIC statutory data via Triple-I / S&P Global). The dashed line sums the net-written lines only; Cyber is shown as direct premiums written (it is reported as DWP, not NPW) and is excluded from that total. The Triple-I line-of-business table is publicly archived only through 2023, so the NPW lines are blank for 2024-2025; Cyber runs to 2024.
     """)
     return
 
 
 @app.cell
 def _(go, mo):
-    import csv
-    import pathlib
+    import csv as _csv
+    from pathlib import Path as _Path
 
-    csv_path = pathlib.Path(
-        "/Users/eito/Downloads/insurance_subsegment_market_sizes_2020_2025_partial.csv"
+    _data_dir = (
+        _Path(__file__).parent / "data"
+        if "__file__" in globals()
+        else _Path.cwd() / "notebooks" / "data"
     )
-    warning = None
-    fig = None
+    _csv_path = _data_dir / "insurance_us_pc_market_sizes_2020_2025.csv"
 
-    if not csv_path.exists():
-        warning = mo.md(
-            "WARNING: CSV not found at: "
-            f"`{csv_path}`\n\n"
-            "Update `csv_path` in this cell to point to your local file."
-        )
+    _uspc_out = None
+    if not _csv_path.exists():
+        _uspc_out = mo.md(f"Data file not found: `{_csv_path}`")
     else:
-        with csv_path.open("r", newline="", encoding="utf-8") as csv_file:
-            reader = csv.DictReader(csv_file)
-            fieldnames = reader.fieldnames or []
-            year_cols = [c for c in fieldnames if c.isdigit()]
-            years = sorted(int(c) for c in year_cols)
-            rows = [
-                r
-                for r in reader
-                if r.get("segment") == "Property & Casualty" and r.get("geo") == "US"
+        with _csv_path.open("r", newline="", encoding="utf-8") as _f:
+            _reader = _csv.DictReader(_f)
+            _fields = _reader.fieldnames or []
+            _years = sorted(int(_c) for _c in _fields if _c.isdigit())
+            _rows = [
+                _r
+                for _r in _reader
+                if _r.get("segment") == "Property & Casualty"
+                and _r.get("geo") == "US"
             ]
 
-        year_has_data: dict[int, bool] = {y: False for y in years}
-        for r in rows:
-            for y in years:
-                v = (r.get(str(y)) or "").strip()
-                if v:
-                    year_has_data[y] = True
+        _exclude = {
+            "Commercial Property - Fire",
+            "Commercial Property - Allied Lines",
+        }
+        _direct_only = {"Cyber"}
 
-        years_with_data = [y for y in years if year_has_data.get(y)]
-        plot_years = years_with_data[-5:]
+        _year_has = {
+            _y: any((_r.get(str(_y)) or "").strip() for _r in _rows) for _y in _years
+        }
+        _plot_years = [_y for _y in _years if _year_has[_y]][-5:]
 
-        if not plot_years:
-            warning = mo.md("WARNING: No year columns with data found in the CSV.")
-        else:
-            exclude_subsegments = {
-                "Commercial Property - Fire",
-                "Commercial Property - Allied Lines",
-            }
+        _series = {}
+        for _r in _rows:
+            _sub = (_r.get("subsegment") or "").strip()
+            if not _sub or _sub in _exclude:
+                continue
+            _vals = []
+            for _y in _plot_years:
+                _raw = (_r.get(str(_y)) or "").strip()
+                _vals.append(float(_raw) if _raw else None)
+            _series[_sub] = _vals
 
-            subsegment_to_values: dict[str, list[float | None]] = {}
-            direct_only_subsegments = {"Cyber"}
-            for r in rows:
-                metric = (r.get("metric") or "").strip()
-                subsegment = (r.get("subsegment") or "").strip()
-                if not subsegment or subsegment in exclude_subsegments:
+        _totals = []
+        for _i in range(len(_plot_years)):
+            _t, _has = 0.0, False
+            for _sub, _vals in _series.items():
+                if _sub in _direct_only or _vals[_i] is None:
                     continue
+                _t += _vals[_i]
+                _has = True
+            _totals.append(_t if _has else None)
 
-                if subsegment in direct_only_subsegments:
-                    if not metric.startswith("Direct premiums written"):
-                        continue
-                else:
-                    if not metric.startswith("Net premiums written"):
-                        continue
-
-                values: list[float | None] = []
-                for y in plot_years:
-                    raw = (r.get(str(y)) or "").strip()
-                    values.append(float(raw) if raw else None)
-
-                subsegment_to_values[subsegment] = values
-
-            if not subsegment_to_values:
-                warning = mo.md(
-                    "WARNING: No US P&C rows with metric `Net premiums written` were found to plot."
+        _x = [str(_y) for _y in _plot_years]
+        _fig = go.Figure()
+        for _name in sorted(_series):
+            _fig.add_trace(
+                go.Scatter(
+                    x=_x,
+                    y=_series[_name],
+                    mode="lines+markers",
+                    name=_name,
+                    connectgaps=False,
+                    hovertemplate="<b>%{fullData.name}</b><br>%{x}: $%{y:.1f}B<extra></extra>",
                 )
-            else:
-                totals_net: list[float | None] = []
-                for i in range(len(plot_years)):
-                    total = 0.0
-                    has_any = False
-                    for series in subsegment_to_values.values():
-                        # Don't mix direct-written cyber into the net-written total.
-                        if series is subsegment_to_values.get("Cyber"):
-                            continue
-                        val = series[i]
-                        if val is None:
-                            continue
-                        total += val
-                        has_any = True
-                    totals_net.append(total if has_any else None)
+            )
+        _fig.add_trace(
+            go.Scatter(
+                x=_x,
+                y=_totals,
+                mode="lines+markers",
+                name="Total (net-written lines only)",
+                line=dict(width=4, dash="dash", color="#1b2330"),
+                hovertemplate="<b>%{fullData.name}</b><br>%{x}: $%{y:.1f}B<extra></extra>",
+            )
+        )
+        _fig.update_layout(
+            title=f"US P&C insurance market sizes ({_plot_years[0]}-{_plot_years[-1]})",
+            xaxis=dict(title="Year", type="category"),
+            yaxis_title="Premiums ($bn)",
+            legend_title="Line of business",
+            hovermode="x unified",
+            height=470,
+            margin=dict(t=70, l=55, r=20, b=40),
+        )
+        _uspc_out = _fig
 
-                fig = go.Figure()
-                x_years = [str(y) for y in plot_years]
-                for name in sorted(subsegment_to_values.keys()):
-                    fig.add_trace(
-                        go.Scatter(
-                            x=x_years,
-                            y=subsegment_to_values[name],
-                            mode="lines+markers",
-                            name=name,
-                            hovertemplate=(
-                                "<b>%{fullData.name}</b><br>Year: %{x}<br>Premiums: $%{y:.2f}B"
-                                "<extra></extra>"
-                            ),
-                        )
-                    )
-
-                fig.add_trace(
-                    go.Scatter(
-                        x=x_years,
-                        y=totals_net,
-                        mode="lines+markers",
-                        name="Total (net-written lines only)",
-                        line=dict(width=4, dash="dash"),
-                        hovertemplate=(
-                            "<b>%{fullData.name}</b><br>Year: %{x}<br>Premiums: $%{y:.2f}B"
-                            "<extra></extra>"
-                        ),
-                    )
-                )
-
-                fig.update_layout(
-                    title=(
-                        f"US P&C insurance market sizes ({plot_years[0]}-{plot_years[-1]})"
-                    ),
-                    xaxis=dict(
-                        title="Year",
-                        type="category",
-                        categoryorder="array",
-                        categoryarray=x_years,
-                    ),
-                    yaxis_title="Premiums ($bn)",
-                    legend_title="Line of business",
-                    hovermode="x unified",
-                    margin=dict(t=70, l=40, r=20, b=40),
-                )
-
-    output = warning if warning is not None else fig
-    output
+    _uspc_out
     return
 
 
@@ -288,139 +240,98 @@ def _(mo):
     mo.md("""
     ## Global insurance market size proxies (last 5 years, with uncertainty)
 
-    This chart uses a proxy-estimates CSV that includes a point estimate and a low/high uncertainty band by year.
-    Values are aggregated to the sector level (Life / Health / P&C / Reinsurance) by summing subsegments.
+    Global premium pools by segment, with a low/high band spanning reputable estimates (Swiss Re sigma, Allianz, Munich Re, OECD). The line is the point estimate; whiskers show the band. Bands widen where sources disagree on definitions — most visibly Health in 2024, where Swiss Re allocates all accident-and-health to non-life and captures the full US private-health pool, while Allianz draws health more narrowly.
     """)
     return
 
 
 @app.cell
 def _(go, mo):
-    import csv as _csv
-    import pathlib as _pathlib
+    import csv as _pcsv
+    from pathlib import Path as _PPath
 
-    _proxy_csv_path = _pathlib.Path(
-        "/Users/eito/Downloads/insurance_subsegment_market_sizes_2020_2025_proxy_estimates.csv"
+    _pdir = (
+        _PPath(__file__).parent / "data"
+        if "__file__" in globals()
+        else _PPath.cwd() / "notebooks" / "data"
     )
+    _proxy_path = _pdir / "insurance_global_market_size_proxies_2020_2025.csv"
 
-    _proxy_output = None
-    _proxy_fig = None
-
-    if not _proxy_csv_path.exists():
-        _proxy_output = mo.md(
-            "WARNING: Proxy estimates CSV not found at: "
-            f"`{_proxy_csv_path}`\n\n"
-            "Update `_proxy_csv_path` in this cell to point to your local file."
-        )
+    _proxy_out = None
+    if not _proxy_path.exists():
+        _proxy_out = mo.md(f"Data file not found: `{_proxy_path}`")
     else:
-        with _proxy_csv_path.open("r", newline="", encoding="utf-8") as _proxy_csv_file:
-            _proxy_reader = _csv.DictReader(_proxy_csv_file)
-            _proxy_fieldnames = _proxy_reader.fieldnames or []
-            _proxy_year_cols = [c for c in _proxy_fieldnames if c.isdigit()]
-            _proxy_years = sorted(int(c) for c in _proxy_year_cols)
-            _proxy_rows = [r for r in _proxy_reader]
-
-        # Last 5 years with any data present.
-        _year_has_data: dict[int, bool] = {y: False for y in _proxy_years}
-        for _r in _proxy_rows:
-            for _y in _proxy_years:
-                if (_r.get(str(_y)) or "").strip():
-                    _year_has_data[_y] = True
-        _years_with_data = [y for y in _proxy_years if _year_has_data.get(y)]
-        _plot_years = _years_with_data[-5:]
-
-        if not _plot_years:
-            _proxy_output = mo.md("WARNING: No year columns with data found in the proxy CSV.")
-        else:
-            _segment_color = {
-                "Life": "#1f77b4",
-                "Health": "#2ca02c",
-                "Reinsurance": "#ff7f0e",
-                "Property & Casualty": "#d62728",
-            }
-
-            _x_years = [str(y) for y in _plot_years]
-            _proxy_fig = go.Figure()
-
-            # Plot each subsegment as its own series.
-            for _r in _proxy_rows:
-                _seg = (_r.get("segment") or "").strip()
-                _subseg = (_r.get("subsegment") or "").strip()
-                if not _seg or not _subseg:
-                    continue
-
-                _y_vals_b: list[float | None] = []
-                _err_plus_b: list[float] = []
-                _err_minus_b: list[float] = []
-                _has_any = False
-
-                for _y in _plot_years:
-                    _raw = (_r.get(str(_y)) or "").strip()
-                    _raw_low = (_r.get(f"{_y}_low") or "").strip()
-                    _raw_high = (_r.get(f"{_y}_high") or "").strip()
-                    if not _raw or not _raw_low or not _raw_high:
-                        _y_vals_b.append(None)
-                        _err_plus_b.append(0.0)
-                        _err_minus_b.append(0.0)
-                        continue
-
-                    _v = float(_raw)
-                    _low = float(_raw_low)
-                    _high = float(_raw_high)
-                    _has_any = True
-
-                    _y_vals_b.append(_v / 1e9)
-                    _err_plus_b.append(max(0.0, (_high - _v) / 1e9))
-                    _err_minus_b.append(max(0.0, (_v - _low) / 1e9))
-
-                if not _has_any:
-                    continue
-
-                _name = f"{_seg} — {_subseg}"
-                _color = _segment_color.get(_seg, "#7f7f7f")
-
-                _proxy_fig.add_trace(
-                    go.Scatter(
-                        x=_x_years,
-                        y=_y_vals_b,
-                        mode="lines+markers",
-                        name=_name,
-                        legendgroup=_seg,
-                        line=dict(width=2, color=_color),
-                        marker=dict(size=6, color=_color),
-                        error_y=dict(
-                            type="data",
-                            array=_err_plus_b,
-                            arrayminus=_err_minus_b,
-                            visible=True,
-                        ),
-                        hovertemplate=(
-                            "<b>%{fullData.name}</b><br>Year: %{x}"
-                            "<br>Premiums: $%{y:.1f}B"
-                            "<extra></extra>"
-                        ),
-                    )
-                )
-
-            _proxy_fig.update_layout(
-                title=(
-                    "Global insurance market size proxies by subsegment "
-                    f"({_plot_years[0]}-{_plot_years[-1]}, with uncertainty)"
-                ),
-                xaxis=dict(
-                    title="Year",
-                    type="category",
-                    categoryorder="array",
-                    categoryarray=_x_years,
-                ),
-                yaxis=dict(title="Estimated premiums ($bn, log scale)", type="log"),
-                legend_title="Subsegment",
-                hovermode="x unified",
-                margin=dict(t=70, l=50, r=20, b=40),
+        with _proxy_path.open("r", newline="", encoding="utf-8") as _pf:
+            _preader = _pcsv.DictReader(_pf)
+            _pyears = sorted(
+                int(_c) for _c in (_preader.fieldnames or []) if _c.isdigit()
             )
+            _prows = list(_preader)
 
-    _proxy_output_or_fig = _proxy_output if _proxy_output is not None else _proxy_fig
-    _proxy_output_or_fig
+        _seg_color = {
+            "Life": "#1f5fd6",
+            "Health": "#2e8b57",
+            "Property & Casualty": "#c0392b",
+            "Reinsurance": "#c98f3c",
+        }
+        _x2 = [str(_y) for _y in _pyears]
+        _pfig = go.Figure()
+        for _r in _prows:
+            _seg = (_r.get("segment") or "").strip()
+            _sub = (_r.get("subsegment") or "").strip()
+            if "total" not in _sub.lower() and "all products" not in _sub.lower():
+                continue
+            _yv, _ep, _em, _has = [], [], [], False
+            for _y in _pyears:
+                _v = (_r.get(str(_y)) or "").strip()
+                _lo = (_r.get(f"{_y}_low") or "").strip()
+                _hi = (_r.get(f"{_y}_high") or "").strip()
+                if _v and _lo and _hi:
+                    _vf, _lof, _hif = float(_v), float(_lo), float(_hi)
+                    _yv.append(_vf)
+                    _ep.append(max(0.0, _hif - _vf))
+                    _em.append(max(0.0, _vf - _lof))
+                    _has = True
+                else:
+                    _yv.append(None)
+                    _ep.append(0.0)
+                    _em.append(0.0)
+            if not _has:
+                continue
+            _color = _seg_color.get(_seg, "#7f7f7f")
+            _pfig.add_trace(
+                go.Scatter(
+                    x=_x2,
+                    y=_yv,
+                    mode="lines+markers",
+                    name=_seg,
+                    line=dict(width=2.5, color=_color),
+                    marker=dict(size=7, color=_color),
+                    error_y=dict(
+                        type="data",
+                        symmetric=False,
+                        array=_ep,
+                        arrayminus=_em,
+                        color=_color,
+                        thickness=1,
+                        width=4,
+                    ),
+                    connectgaps=True,
+                    hovertemplate="<b>%{fullData.name}</b><br>%{x}: $%{y:,.0f}B<extra></extra>",
+                )
+            )
+        _pfig.update_layout(
+            title="Global insurance premium pools by segment (2020-2025, with uncertainty)",
+            xaxis=dict(title="Year", type="category"),
+            yaxis=dict(title="Premiums ($bn, log scale)", type="log"),
+            legend_title="Segment",
+            hovermode="x unified",
+            height=470,
+            margin=dict(t=70, l=60, r=20, b=40),
+        )
+        _proxy_out = _pfig
+
+    _proxy_out
     return
 
 
@@ -649,6 +560,958 @@ def _(go):
     )
 
     treemap_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ---
+
+    # Insurance market structure: who bears risk, who funds it, at what multiple
+
+    Notebook entry. Durable structural model plus the 2024-2026 evidence that supports it. Point-in-time figures are dated inline; the layer model and the multiple gradient are the parts expected to survive.
+
+    Researched: 2026-08-18. Trigger: checking whether large dedicated cybersecurity VCs carry any cyber-insurance exposure. The answer is essentially none, which turned out to be the normal case and worth explaining.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 1. The layer model
+
+    Insurance markets separate into three layers that look adjacent but have different economics, different capital providers, and different valuation regimes. Confusing them is the most common error when reasoning about "insurance" as a business.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    _svg = """
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Insurance layer model: signal/software feeds distribution, which writes on risk transfer; the revenue multiple falls down the stack from 15-30x to 1-3x" style="width:100%;max-width:720px;height:auto;font-family:'PT Sans',system-ui,-apple-system,'Segoe UI',sans-serif;">
+  <defs>
+    <linearGradient id="mgrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f5fd6"/>
+      <stop offset="50%" stop-color="#c98f3c"/>
+      <stop offset="100%" stop-color="#b5502e"/>
+    </linearGradient>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5b6675"/>
+    </marker>
+  </defs>
+
+  <rect x="24" y="20" width="600" height="116" rx="12" fill="#eef3fc" stroke="#c7d8f4"/>
+  <rect x="24" y="20" width="7" height="116" rx="3.5" fill="#1f5fd6"/>
+  <text x="48" y="52" font-size="16" font-weight="700" fill="#1f5fd6">SIGNAL / SOFTWARE</text>
+  <text x="48" y="78" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">OWNS</text>
+  <text x="48" y="98" font-size="13.5" fill="#1b2330">data, scores, controls,</text>
+  <text x="48" y="116" font-size="13.5" fill="#1b2330">evidence, telemetry</text>
+  <text x="330" y="78" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">FUNDED BY</text>
+  <text x="330" y="98" font-size="13.5" fill="#1b2330">generalist + sector VC</text>
+  <text x="330" y="116" font-size="13.5" fill="#1b2330">(software multiples)</text>
+  <text x="600" y="52" font-size="15" font-weight="700" text-anchor="end" fill="#1f5fd6">15–30x</text>
+
+  <line x1="120" y1="140" x2="120" y2="174" stroke="#5b6675" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="132" y="162" font-size="12" font-style="italic" fill="#5b6675">feeds</text>
+
+  <rect x="24" y="178" width="600" height="116" rx="12" fill="#fbf4e8" stroke="#ecd9b6"/>
+  <rect x="24" y="178" width="7" height="116" rx="3.5" fill="#c98f3c"/>
+  <text x="48" y="210" font-size="16" font-weight="700" fill="#b07d2c">DISTRIBUTION — MGA / broker</text>
+  <text x="48" y="236" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">OWNS</text>
+  <text x="48" y="256" font-size="13.5" fill="#1b2330">the customer, underwriting</text>
+  <text x="48" y="274" font-size="13.5" fill="#1b2330">authority, commission on GWP</text>
+  <text x="330" y="236" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">FUNDED BY</text>
+  <text x="330" y="256" font-size="13.5" fill="#1b2330">insurance-native capital,</text>
+  <text x="330" y="274" font-size="13.5" fill="#1b2330">carriers who supply the paper</text>
+  <text x="600" y="210" font-size="15" font-weight="700" text-anchor="end" fill="#b07d2c">~5x</text>
+
+  <line x1="120" y1="298" x2="120" y2="332" stroke="#5b6675" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="132" y="320" font-size="12" font-style="italic" fill="#5b6675">writes on</text>
+
+  <rect x="24" y="336" width="600" height="116" rx="12" fill="#f8ece7" stroke="#e6c3b6"/>
+  <rect x="24" y="336" width="7" height="116" rx="3.5" fill="#b5502e"/>
+  <text x="48" y="368" font-size="16" font-weight="700" fill="#b5502e">RISK TRANSFER — carrier</text>
+  <text x="48" y="394" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">OWNS</text>
+  <text x="48" y="414" font-size="13.5" fill="#1b2330">the balance sheet, statutory</text>
+  <text x="48" y="432" font-size="13.5" fill="#1b2330">capital, the loss itself</text>
+  <text x="330" y="394" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">FUNDED BY</text>
+  <text x="330" y="414" font-size="13.5" fill="#1b2330">reinsurers, PE, strategic</text>
+  <text x="330" y="432" font-size="13.5" fill="#1b2330">carriers, sovereigns</text>
+  <text x="600" y="368" font-size="15" font-weight="700" text-anchor="end" fill="#b5502e">1–3x</text>
+
+  <rect x="648" y="20" width="15" height="432" rx="7.5" fill="url(#mgrad)"/>
+  <text x="695" y="236" font-size="10.5" letter-spacing="0.09em" fill="#5b6675" text-anchor="middle" transform="rotate(90 695 236)">REVENUE MULTIPLE FALLS</text>
+</svg>
+"""
+    mo.Html(_svg)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    The layer determines almost everything else about the business. An MGA holds underwriting authority without holding the risk, so it lives or dies on whether a reinsurer keeps granting capacity. A carrier holds the risk and therefore holds regulatory capital, which is the constraint that governs its growth rate.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 2. The multiple gradient
+
+    The gradient across those layers is steep, and it is the single fact that explains most investor behaviour. Software-layer businesses clear 10-30x revenue; brokers sit around 5x; capital-intensive carriers earn just 1-3x.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _mg_layers = [
+        "AI-native / B2B insurance infra",
+        "Insurance software (historic)",
+        "Insurtech blended avg (2024)",
+        "Broker",
+        "Capital-intensive carrier",
+    ]
+    _mg_mid = [22.5, 10.0, 9.7, 5.0, 2.0]
+    _mg_err_plus = [7.5, 0.0, 0.0, 0.0, 1.0]
+    _mg_err_minus = [7.5, 0.0, 0.0, 0.0, 1.0]
+    _mg_disp = ["15x to 30x", "~10x", "9.7x", "5x+", "1x to 3x"]
+    _mg_margin = ["software", "software", "mixed", "20-30%", "5-10%"]
+    _mg_colors = ["#1f5fd6", "#4f83e0", "#7aa3e8", "#c98f3c", "#b5502e"]
+
+    _mg_fig = go.Figure(
+        go.Bar(
+            y=_mg_layers,
+            x=_mg_mid,
+            orientation="h",
+            marker_color=_mg_colors,
+            error_x=dict(
+                type="data",
+                symmetric=False,
+                array=_mg_err_plus,
+                arrayminus=_mg_err_minus,
+                color="#7a8496",
+                thickness=1.4,
+                width=6,
+            ),
+            customdata=list(zip(_mg_disp, _mg_margin)),
+            text=_mg_disp,
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate=(
+                "<b>%{y}</b><br>Revenue multiple: %{customdata[0]}"
+                "<br>Margin profile: %{customdata[1]}<extra></extra>"
+            ),
+        )
+    )
+    _mg_fig.update_layout(
+        title="The multiple gradient: EV/revenue by layer (bar = midpoint, whisker = range)",
+        xaxis=dict(title="EV / revenue multiple (x)", range=[0, 36]),
+        yaxis=dict(autorange="reversed"),
+        height=340,
+        margin=dict(t=70, l=210, r=60, b=50),
+    )
+    _mg_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    At a 5x revenue multiple, 30% margins imply roughly a 16.6x P/E. At 1x revenue, 7% margins imply roughly 14.3x. The equity story converges even though the revenue multiple differs by 5x, which is why the revenue multiple alone misleads across layers.
+
+    Valuation basis has also tightened. Gross Written Premium is no longer treated as a credible basis in most deals. The market moved to net revenue, net commission for MGAs, or earned premium minus reinsurance and claims for carriers. Investors now pay for retained economics and unit durability.
+
+    ### Why venture capital concentrates at the top layer
+
+    Money put into a carrier funds reserves and statutory surplus. It does not fund growth. That is the worst possible use of venture dollars: the capital is absorbed by regulatory requirement, converts at an insurance multiple, and is exposed to loss volatility the fund cannot model. An MGA is better but carries a capacity dependency underneath it that no growth-equity fund wants sitting under a large position.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 3. The whole VC-backed insurance universe sorts the same way
+
+    The layer model is not a cyber-only pattern. Take the roughly thirty most category-defining venture-backed insurance companies since 2010 — full-stack carriers, MGAs, embedded players, core-systems software — and their outcomes sort cleanly by layer. The companies that carried balance-sheet risk absorbed the worst repricings; the capital-light distribution and software layers held up; the cyber MGAs, which pair asset-light economics with a proprietary security signal, did best of the risk-adjacent group.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _co_layers = [
+        "Software / infrastructure",
+        "Cyber MGA (signal + distribution)",
+        "Distribution — MGA / embedded",
+        "Full-stack carrier (risk transfer)",
+    ]
+    # Counts aligned to _co_layers, ordered high-multiple (top) to low (bottom).
+    _co_outcomes = [
+        (
+            "Breakout",
+            "#2e8b57",
+            [2, 1, 4, 1],
+            [
+                "Guidewire, Akur8",
+                "Coalition",
+                "Next, Bold Penguin, bolttech, Cover Genius",
+                "Alan",
+            ],
+        ),
+        (
+            "Mixed",
+            "#c98f3c",
+            [4, 4, 5, 4],
+            [
+                "Duck Creek, Shift, Tractable, Ledger",
+                "At-Bay, Cowbell, Corvus, Resilience",
+                "Pie, Openly, Kin, Vouch, Sure",
+                "Lemonade, Hippo, Oscar, ZhongAn",
+            ],
+        ),
+        (
+            "Cautionary",
+            "#b5502e",
+            [0, 0, 2, 4],
+            [
+                "—",
+                "—",
+                "Branch, Trov",
+                "Root, Metromile, Clover, wefox",
+            ],
+        ),
+    ]
+
+    _co_fig = go.Figure()
+    for _co_name, _co_color, _co_vals, _co_examples in _co_outcomes:
+        _co_fig.add_trace(
+            go.Bar(
+                y=_co_layers,
+                x=_co_vals,
+                name=_co_name,
+                orientation="h",
+                marker_color=_co_color,
+                customdata=_co_examples,
+                hovertemplate=(
+                    "<b>%{y}</b><br>"
+                    + _co_name
+                    + ": %{x} companies<br>%{customdata}<extra></extra>"
+                ),
+            )
+        )
+    _co_fig.update_layout(
+        barmode="stack",
+        title="Where the outcomes landed: category-defining insurtechs by layer and result",
+        xaxis=dict(title="Number of companies"),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(title="Outcome", orientation="h", y=-0.24),
+        height=360,
+        margin=dict(t=70, l=220, r=30, b=80),
+    )
+    _co_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    Read the bars top to bottom, high multiple to low. Every software, infrastructure and cyber-MGA company lands in breakout or mixed — none cautionary. The full-stack carriers invert it: one breakout (Alan, in Europe), the rest mixed or cautionary. The mechanism is the balance sheet. A carrier is judged on loss and combined ratios, holds regulatory capital, and carries catastrophe and reserve risk, so growth consumes capital instead of compounding it. When public markets stopped granting these companies software multiples and re-anchored them to insurance economics, the drawdowns ran 80-90% (Root is off ~87% from its IPO; Metromile was sold for less than the cash on its own balance sheet).
+
+    ### Signal, software and infrastructure — the durable layer
+
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Guidewire 🇺🇸 | 2001 | \$40M total pre-IPO | IPO 2012 (GWRE), ~\$10B mcap | 6.9x | Breakout |
+    | Akur8 🇫🇷 | 2018 | ~\$180-195M | Private; \$120M Series C (2024); Guidewire-backed | n/a | Breakout |
+    | Duck Creek 🇺🇸 | 2000 | PE / corporate-backed | Vista take-private \$2.6B (2023) | ~8x (deal) | Mixed |
+    | Shift Technology 🇫🇷 | 2014 | ~\$320M | Private, unicorn (2021) | ~12x (2021) | Mixed |
+    | Tractable 🇬🇧 | 2014 | ~\$185M | Private, \$1B (2021); first CV unicorn | n/a | Mixed |
+    | Ledger Investing 🇺🇸 | 2016 | ~\$90-185M (disputed) | Private; casualty ILS rails | n/a | Mixed |
+
+    ### Cyber MGA — signal plus distribution
+
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Coalition 🇺🇸 | 2017 | ~\$800-860M | Private, \$5B (2022); ~\$1B revenue, no S-1 | ~5x | Breakout |
+    | At-Bay 🇺🇸 | 2016 | ~\$292M | Private, \$1.35B (2021) | ~9x (2021) | Mixed |
+    | Cowbell 🇺🇸 | 2019 | ~\$202-209M | Private; Zurich-led Series C (2024) | n/a | Mixed |
+    | Corvus 🇺🇸 | 2017 | ~\$150M | Acquired by Travelers ~\$435M (2024) | ~2x prem. | Mixed |
+    | Resilience 🇺🇸 | 2016 | ~\$325M | Private; Series D (2023) | n/a | Mixed |
+
+    ### Distribution — MGA and embedded
+
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Next Insurance 🇺🇸 | 2016 | ~\$1.1-1.2B | Acquired by Munich Re / ERGO \$2.6B (2025) | 4.7x (deal) | Breakout |
+    | Bold Penguin 🇺🇸 | 2016 | ~\$50M | Acquired by American Family (2021) | n/a | Breakout |
+    | bolttech 🇸🇬 | 2020 | ~\$640-690M | Private, \$2.1B (2025) | n/a | Breakout |
+    | Cover Genius 🇦🇺 | 2014 | ~\$350M+ equity | Private, \$1.9B (2026) | n/a | Breakout |
+    | Pie Insurance 🇺🇸 | 2017 | ~\$620M | Private; \$315M Series D (2022) | n/a | Mixed |
+    | Openly 🇺🇸 | 2017 | ~\$293M+ | Private; \$193M growth round (2025) | n/a | Mixed |
+    | Kin 🇺🇸 | 2016 | ~\$265M equity | Private, unicorn (2023); reciprocal exchange | n/a | Mixed |
+    | Vouch 🇺🇸 | 2018 | ~\$185M+ | Private; startup-focused MGA | n/a | Mixed |
+    | Sure 🇺🇸 | 2015 | ~\$123M | Private; embedded-insurance API | n/a | Mixed |
+    | Branch 🇺🇸 | 2018 | ~\$197M | Private; \$1.05B mark (2022), now stale | n/a | Cautionary |
+    | Trov 🇺🇸 | 2012 | ~\$85-100M | Tech assets to Travelers (2022) | n/a | Cautionary |
+
+    ### Full-stack carriers — risk transfer, the repriced layer
+
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Alan 🇫🇷 | 2016 | ~\$1.1B+ | Private, €5.5B (2026); profitable in France | ~7x | Breakout |
+    | Lemonade 🇺🇸 | 2015 | ~\$480M pre-IPO | IPO 2020 (LMND), ~\$5.6B mcap | ~7x | Mixed |
+    | Hippo 🇺🇸 | 2015 | ~\$1.2B incl. SPAC | SPAC 2021 (HIPO); 5 profitable quarters after pivot | ~2x (est.) | Mixed |
+    | Oscar Health 🇺🇸 | 2012 | ~\$1.6B | IPO 2021 (OSCR); \$15.3B revenue | 0.53x | Mixed |
+    | ZhongAn 🇨🇳 | 2013 | \$1.5B at IPO | IPO 2017 (6060.HK) at \$11B; >20% China online P&C | ~1x (est.) | Mixed |
+    | Root 🇺🇸 | 2015 | ~\$523M pre-IPO | IPO 2020 (ROOT), −87% vs IPO; profitable 2025 | ~0.6x | Cautionary |
+    | Metromile 🇺🇸 | 2011 | ~\$300M+ | Sold to Lemonade ~\$145M (2022), below its cash | n/a | Cautionary |
+    | Clover Health 🇺🇸 | 2014 | ~\$925M | SPAC 2021 (CLOV); loss-making | ~1.1x | Cautionary |
+    | wefox 🇩🇪 | 2014 | ~\$1.9B | Peak \$4.5B (2022) → near-insolvency, restructured | n/a | Cautionary |
+
+    The single cleanest comparison in the set is Guidewire against Metromile. Guidewire raised \$40M in its entire pre-IPO life and is worth roughly \$10B; Metromile raised ~\$300M, SPAC'd at \$1.3B, and sold three years later for less than the cash on its own balance sheet. Both were "insurance technology." The difference is that one of them promised to pay claims. Premium revenue is a capital call, not free revenue: growing a carrier's book 50% demands ~50% more surplus, so top-line growth consumes equity instead of throwing off cash — the inverse of the software model those 2020-21 multiples were priced on. The most telling evidence is not the failures but how the survivors survived: they changed layer. Hippo pivoted from concentrated cat-exposed homeowners into an MGA and fronting platform and has now posted five straight profitable quarters; wefox sold its carrier and re-emerged asset-light. The fix for a struggling full-stack model was to stop being full-stack.
+
+    The cyber MGAs are the instructive hybrid. Structurally they are MGAs, but they own a proprietary signal — continuous attack-surface scanning — that genuinely predicts loss, on a short tail the insurer can intervene to prevent. That let them capture underwriting alpha without the balance-sheet drag, which is why strategic reinsurers funded the whole cohort and Coalition now stands at a \$5B private mark on ~\$1B of revenue. The cautionary read within cyber is the Corvus price: Travelers paid ~\$435M for a \$200M+ book, roughly 2x premium — a distribution-and-capability price, not a software multiple. The gap between that and Coalition's \$5B mark is the most important unresolved number here, and a Coalition S-1 would settle it.
+
+    ### The multiple falls monotonically down the stack
+
+    | Layer | Typical multiple | Public / deal reference points |
+    |---|---|---|
+    | Software / infrastructure | 6-15x revenue | Guidewire 6.9x revenue, 30x EBITDA; Duck Creek \$2.6B take-private |
+    | MGA / fee-based | 3-8x net revenue | MGA M&A 10-22x EBITDA; Cover Genius \$1.9B, bolttech \$2.1B |
+    | Fronting | ~9-10x revenue | Accelerant IPO implied ~9-10x on \$178M Q1 2025 revenue |
+    | Full-stack carrier | 1.5-4x revenue | Oscar 0.53x sales; Root ~0.6x; Clover ~1.1x |
+
+    Two refinements matter. The definitional shift did most of the damage: the market stopped accepting gross written premium as a valuation base and moved to net revenue (MGAs) or earned premium net of reinsurance and claims (carriers), so a company priced on a GWP-derived top line at a software multiple, then repriced on net revenue at an insurance multiple, lost an order of magnitude without anything changing operationally. And Lemonade is the live outlier: at ~\$5.6B on ~\$800M of revenue it still trades near 7x, a software multiple on a balance-sheet business. Whether that converges up (it earns the multiple by hitting profitability) or down (toward Root and Oscar) is the cleanest open test of the whole thesis, and it should resolve within about eighteen months.
+
+    A note on the EV/revenue column. It is shown only where a revenue base actually exists: for public names it is current; "deal" marks the multiple implied by an acquisition or IPO price; a year in parentheses is a stale private valuation set against newer revenue, so read those as directional. MGAs and embedded players earn commission on premium rather than premium itself, so where their revenue is undisclosed the cell is left n/a rather than computed off premium — Corvus is the one exception, shown as ~2x its premium book, the basis on which Travelers acquired it.
+
+    Figures are approximate: private "raised" totals are aggregator estimates (Crunchbase / PitchBook / Tracxn) and occasionally blend debt with equity — Ledger Investing's own figure (>\$90M) and ZoomInfo's (\$185M) genuinely conflict. Deal prices, IPO proceeds and public multiples are from filings and trade press and are firmer. Valuations are last known marks, not current.
+
+    The company-level EV/revenue picture, for the names where the ratio is defensible:
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    # Company-level EV/revenue, where a revenue base exists. Basis varies
+    # (public/current, an acquisition or IPO deal, or a stale private mark);
+    # see the note above and each point's hover for its basis.
+    _ev_layer_color = {
+        "Software / infra": "#1f5fd6",
+        "Cyber MGA": "#17a2b8",
+        "Distribution / MGA": "#c98f3c",
+        "Full-stack carrier": "#b5502e",
+    }
+    _ev_rows = [
+        ("Shift Technology", "Software / infra", 12.0, "2021 mark / 2024 rev"),
+        ("At-Bay", "Cyber MGA", 9.0, "2021 mark / 2024 rev"),
+        ("Duck Creek", "Software / infra", 8.0, "2023 take-private"),
+        ("Alan", "Full-stack carrier", 7.0, "2026 mark / ARR"),
+        ("Lemonade", "Full-stack carrier", 7.0, "public, current"),
+        ("Guidewire", "Software / infra", 6.9, "public, current"),
+        ("Coalition", "Cyber MGA", 5.0, "2022 mark / rev est."),
+        ("Next Insurance", "Distribution / MGA", 4.7, "2025 acquisition"),
+        ("Hippo", "Full-stack carrier", 2.0, "public, est."),
+        ("Clover Health", "Full-stack carrier", 1.1, "public, current"),
+        ("ZhongAn", "Full-stack carrier", 1.0, "public, est."),
+        ("Root", "Full-stack carrier", 0.6, "public, current"),
+        ("Oscar Health", "Full-stack carrier", 0.53, "public, current"),
+    ]
+    _ev_names = [_r[0] for _r in _ev_rows]
+    _ev_vals = [_r[2] for _r in _ev_rows]
+    _ev_colors = [_ev_layer_color[_r[1]] for _r in _ev_rows]
+    _ev_meta = [(_r[1], _r[3]) for _r in _ev_rows]
+
+    _ev_fig = go.Figure(
+        go.Bar(
+            y=_ev_names,
+            x=_ev_vals,
+            orientation="h",
+            marker_color=_ev_colors,
+            customdata=_ev_meta,
+            text=[f"{_v:g}x" for _v in _ev_vals],
+            textposition="outside",
+            cliponaxis=False,
+            showlegend=False,
+            hovertemplate=(
+                "<b>%{y}</b><br>Layer: %{customdata[0]}"
+                "<br>EV/revenue: %{x:.2g}x<br>Basis: %{customdata[1]}<extra></extra>"
+            ),
+        )
+    )
+    # Layer legend via dummy marker traces.
+    for _lname, _lcolor in _ev_layer_color.items():
+        _ev_fig.add_trace(
+            go.Scatter(
+                x=[None],
+                y=[None],
+                mode="markers",
+                marker=dict(size=10, color=_lcolor),
+                name=_lname,
+            )
+        )
+    _ev_fig.add_vline(
+        x=1.0, line_width=1, line_dash="dot", line_color="#9aa4b2"
+    )
+    _ev_fig.update_layout(
+        title="Company-level EV/revenue: the same gradient, with Alan and Lemonade as carrier outliers",
+        xaxis=dict(
+            title="EV / revenue (x, log scale)", type="log", range=[-0.35, 1.16]
+        ),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(title="Layer", orientation="h", y=-0.16),
+        height=470,
+        margin=dict(t=70, l=140, r=55, b=70),
+    )
+    _ev_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ### Capital in versus value out
+
+    The same companies plotted as capital raised against last known valuation or exit, on log-log axes with 1x / 10x / 100x reference lines. Height above the diagonal is the return on invested capital, and it sorts by layer: Guidewire sits alone near 250x on a \$40M raise, while the carriers hug the bottom — Metromile and Hippo are the two names below the 1x line, and Metromile was sold for less than the capital put into it. Names with undisclosed valuations (Bold Penguin, Openly, Trov) are omitted.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _ce_color = {
+        "Software / infra": "#1f5fd6",
+        "Cyber MGA": "#17a2b8",
+        "Distribution / MGA": "#c98f3c",
+        "Full-stack carrier": "#b5502e",
+    }
+    # (company, layer, raised $M, last value $M, value basis)
+    _ce_rows = [
+        ("Guidewire", "Software / infra", 40, 10000, "public mcap"),
+        ("Akur8", "Software / infra", 185, 400, "last private mark"),
+        ("Shift", "Software / infra", 320, 1000, "2021 unicorn mark"),
+        ("Tractable", "Software / infra", 185, 1000, "2021 unicorn mark"),
+        ("Coalition", "Cyber MGA", 830, 5000, "2022 mark"),
+        ("At-Bay", "Cyber MGA", 292, 1350, "2021 mark"),
+        ("Corvus", "Cyber MGA", 150, 435, "2024 acquisition"),
+        ("Next Insurance", "Distribution / MGA", 1150, 2600, "2025 acquisition"),
+        ("bolttech", "Distribution / MGA", 665, 2100, "2025 mark"),
+        ("Cover Genius", "Distribution / MGA", 350, 1900, "2026 mark"),
+        ("Pie Insurance", "Distribution / MGA", 620, 2000, "2022 mark"),
+        ("Kin", "Distribution / MGA", 265, 1000, "unicorn mark"),
+        ("Vouch", "Distribution / MGA", 185, 550, "2021 mark"),
+        ("Sure", "Distribution / MGA", 123, 550, "2021 mark"),
+        ("Branch", "Distribution / MGA", 197, 1050, "2022 mark"),
+        ("Alan", "Full-stack carrier", 1100, 6300, "2026 mark"),
+        ("Lemonade", "Full-stack carrier", 480, 5600, "public mcap"),
+        ("Oscar Health", "Full-stack carrier", 1600, 9000, "public mcap"),
+        ("Clover Health", "Full-stack carrier", 925, 2500, "public mcap"),
+        ("Root", "Full-stack carrier", 523, 890, "public mcap"),
+        ("Hippo", "Full-stack carrier", 1200, 800, "public mcap"),
+        ("Metromile", "Full-stack carrier", 300, 145, "2022 sale"),
+    ]
+
+    _ce_fig = go.Figure()
+    # Reference lines: value = k * raised (plotly clips to the axis range).
+    for _ce_k, _ce_lab, _ce_lx, _ce_ly in [
+        (1, "1x", 1900, 1900),
+        (10, "10x", 850, 8500),
+        (100, "100x", 105, 10500),
+    ]:
+        _ce_fig.add_trace(
+            go.Scatter(
+                x=[30, 2500],
+                y=[_ce_k * 30, _ce_k * 2500],
+                mode="lines",
+                line=dict(color="#d3d8e0", width=1, dash="dot"),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+        _ce_fig.add_trace(
+            go.Scatter(
+                x=[_ce_lx],
+                y=[_ce_ly],
+                mode="text",
+                text=[_ce_lab],
+                textfont=dict(size=10, color="#9aa4b2"),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+    for _ce_layer, _ce_col in _ce_color.items():
+        _ce_pts = [_r for _r in _ce_rows if _r[1] == _ce_layer]
+        _ce_fig.add_trace(
+            go.Scatter(
+                x=[_r[2] for _r in _ce_pts],
+                y=[_r[3] for _r in _ce_pts],
+                mode="markers+text",
+                name=_ce_layer,
+                text=[_r[0] for _r in _ce_pts],
+                textposition="top center",
+                textfont=dict(size=9),
+                marker=dict(size=11, color=_ce_col, line=dict(width=0.5, color="white")),
+                customdata=[(_r[4], _r[3] / _r[2]) for _r in _ce_pts],
+                hovertemplate=(
+                    "<b>%{text}</b><br>Raised: $%{x:,.0f}M"
+                    "<br>Value: $%{y:,.0f}M (%{customdata[0]})"
+                    "<br>Return: %{customdata[1]:.1f}x invested<extra></extra>"
+                ),
+            )
+        )
+    _ce_fig.update_layout(
+        title="Capital in vs. value out: return on invested capital falls down the stack",
+        xaxis=dict(
+            title="Total capital raised ($M, log)",
+            type="log",
+            range=[1.477, 3.398],
+        ),
+        yaxis=dict(
+            title="Last valuation / exit ($M, log)",
+            type="log",
+            range=[2.0, 4.176],
+        ),
+        legend=dict(title="Layer", orientation="h", y=-0.2),
+        height=560,
+        margin=dict(t=70, l=70, r=30, b=80),
+    )
+    _ce_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ### The repricing
+
+    For the names that went public or SPAC'd, peak valuation against the current mark. Re-anchoring from software multiples to insurance economics cost 50-90% of peak value; Metromile's ended below its own cash balance. Oscar and Alan are the two that bucked it and are left out here.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    # (company, peak $M, now $M, peak basis, now basis)
+    _dd_rows = [
+        ("Hippo", 8270, 800, "post-SPAC peak", "current mcap"),
+        ("Root", 6810, 890, "IPO (2020)", "current mcap"),
+        ("Clover Health", 8000, 2500, "2021 high (est.)", "current mcap"),
+        ("Metromile", 1300, 145, "SPAC (2021)", "2022 sale"),
+        ("Lemonade", 11000, 5600, "2021 high (est.)", "current mcap"),
+    ]
+    _dd_rows = sorted(_dd_rows, key=lambda _r: _r[2] / _r[1])
+    _dd_names = [_r[0] for _r in _dd_rows]
+
+    _dd_fig = go.Figure()
+    for _r in _dd_rows:
+        _dd_fig.add_trace(
+            go.Scatter(
+                x=[_r[1], _r[2]],
+                y=[_r[0], _r[0]],
+                mode="lines",
+                line=dict(color="#e0a9a0", width=3),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+    _dd_fig.add_trace(
+        go.Scatter(
+            x=[_r[1] for _r in _dd_rows],
+            y=_dd_names,
+            mode="markers",
+            name="Peak valuation",
+            marker=dict(size=13, color="#7a8496"),
+            customdata=[_r[3] for _r in _dd_rows],
+            hovertemplate="<b>%{y}</b><br>Peak: $%{x:,.0f}M (%{customdata})<extra></extra>",
+        )
+    )
+    _dd_fig.add_trace(
+        go.Scatter(
+            x=[_r[2] for _r in _dd_rows],
+            y=_dd_names,
+            mode="markers",
+            name="Now / exit",
+            marker=dict(size=13, color="#b5502e"),
+            customdata=[_r[4] for _r in _dd_rows],
+            hovertemplate="<b>%{y}</b><br>Now: $%{x:,.0f}M (%{customdata})<extra></extra>",
+        )
+    )
+    _dd_fig.add_trace(
+        go.Scatter(
+            x=[_r[1] for _r in _dd_rows],
+            y=_dd_names,
+            mode="text",
+            text=[f"{(_r[2] / _r[1] - 1) * 100:.0f}%" for _r in _dd_rows],
+            textposition="top right",
+            textfont=dict(size=10, color="#b5502e"),
+            hoverinfo="skip",
+            showlegend=False,
+        )
+    )
+    _dd_fig.update_layout(
+        title="The repricing: peak valuation to current mark (USD millions, log)",
+        xaxis=dict(title="Valuation ($M, log)", type="log", range=[2.0, 4.146]),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(orientation="h", y=-0.18),
+        height=360,
+        margin=dict(t=70, l=120, r=40, b=60),
+    )
+    _dd_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ### Where the capital actually went
+
+    The chart at the top of this section counts companies; this one counts dollars (capital raised, including the IPO/SPAC proceeds of the public names, not venture rounds alone). Roughly \$9.5B flowed into the full-stack carrier layer — the most of any layer and the one with the worst outcomes — with more going to companies that became cautionary tales than to the single breakout. The software layer, which produced the most durable results, absorbed the least.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _cap_layers = [
+        "Software / infra",
+        "Cyber MGA",
+        "Distribution / MGA",
+        "Full-stack carrier",
+    ]
+    # Approx capital raised ($M) by layer x outcome (incl. IPO/SPAC proceeds).
+    _cap_data = [
+        ("Breakout", "#2e8b57", [225, 830, 2215, 1100]),
+        ("Mixed", "#c98f3c", [690, 972, 1486, 4780]),
+        ("Cautionary", "#b5502e", [0, 0, 289, 3648]),
+    ]
+    _cap_fig = go.Figure()
+    for _cap_name, _cap_color, _cap_vals in _cap_data:
+        _cap_fig.add_trace(
+            go.Bar(
+                y=_cap_layers,
+                x=[_v / 1000 for _v in _cap_vals],
+                orientation="h",
+                name=_cap_name,
+                marker_color=_cap_color,
+                hovertemplate=(
+                    "<b>%{y}</b><br>" + _cap_name + ": $%{x:.2f}B<extra></extra>"
+                ),
+            )
+        )
+    _cap_fig.update_layout(
+        barmode="stack",
+        title="Capital raised by layer, shaded by outcome ($B, all financing)",
+        xaxis=dict(title="Capital raised ($B)"),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(title="Outcome", orientation="h", y=-0.22),
+        height=340,
+        margin=dict(t=70, l=150, r=30, b=70),
+    )
+    _cap_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 4. Cyber insurance conditions, 2024-2026
+
+    Underwriting quality and growth trajectory have diverged sharply, and both facts need holding at once. Underwriting is healthy: the surplus-lines loss ratio is ~56% (2025, and surplus lines is now nearly two-thirds of all cyber premium), the admitted-carrier loss ratio is ~50.2%, and Allianz Commercial reports average claim severity down 50% with large-loss frequency down 30%. Growth, meanwhile, has stalled — Q1 2026 was the eighth consecutive quarter of US pricing cuts. The chart tracks where the market is heading.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _cc_labels = [
+        "US cyber premium (2024)",
+        "Cyber reinsurance (Jan 2026 renewals)",
+        "Global premium (2025->2026, proj.)",
+        "S&P premium growth (2026, proj.)",
+        "Third-party claims (trend)",
+    ]
+    _cc_vals = [-7.0, -32.0, 5.1, 17.5, 30.0]
+    _cc_proj = [False, False, True, True, False]
+    _cc_detail = [
+        "First annual decline on record; US DWP fell to $9.14bn",
+        "Risk-adjusted, aggregate excess of loss; driven by excess capacity",
+        "$15.6bn (2025) -> $16.4bn (2026), projected",
+        "S&P Global Ratings; 15-20% range, contested vs. 8 quarters of softening",
+        "Rising; the main forward uncertainty",
+    ]
+    _cc_colors = ["#c0392b" if _v < 0 else "#2e8b57" for _v in _cc_vals]
+    _cc_pattern = ["/" if _p else "" for _p in _cc_proj]
+
+    _cc_fig = go.Figure(
+        go.Bar(
+            y=_cc_labels,
+            x=_cc_vals,
+            orientation="h",
+            marker=dict(
+                color=_cc_colors,
+                pattern=dict(shape=_cc_pattern, solidity=0.72),
+            ),
+            customdata=_cc_detail,
+            text=[f"{_v:+.0f}%" for _v in _cc_vals],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="<b>%{y}</b><br>Change: %{x:+.1f}%<br>%{customdata}<extra></extra>",
+        )
+    )
+    _cc_fig.add_vline(x=0, line_width=1, line_color="#9aa4b2")
+    _cc_fig.update_layout(
+        title="Cyber market 2024-26: pricing down, claims and forecasts up (hatched = projected)",
+        xaxis=dict(title="Change (%)", range=[-42, 44], zeroline=False),
+        yaxis=dict(autorange="reversed"),
+        height=340,
+        margin=dict(t=70, l=240, r=50, b=50),
+    )
+    _cc_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    The takeaway: a well-run cyber carrier is profitable and growing slowly. That combination is fine for insurance capital and unworkable for venture capital. Category quality and venture suitability are separate questions.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 5. Exit evidence
+
+    The category's benchmark exit was a down-round: Corvus sold to Travelers for \$435M (announced Nov 2023, closed Jan 2024), against a \$750M valuation in its 2021 round — a 42% markdown. Coalition's \$175M round (Index Ventures, March 2021) set a \$1.75bn mark at the peak.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _ex_labels = [
+        "Corvus - 2021 round",
+        "Corvus - 2024 exit (Travelers)",
+        "Coalition - 2021 round",
+    ]
+    _ex_vals = [750, 435, 1750]
+    _ex_text = ["$750M", "$435M", "$1.75bn"]
+    _ex_colors = ["#7aa3e8", "#b5502e", "#9aa4b2"]
+    _ex_note = [
+        "Funding-round valuation (2021 peak)",
+        "Acquisition price; a 42% down-round vs. the 2021 mark",
+        "Index Ventures round; benchmark scale insurtech",
+    ]
+
+    _ex_fig = go.Figure(
+        go.Bar(
+            y=_ex_labels,
+            x=_ex_vals,
+            orientation="h",
+            marker_color=_ex_colors,
+            customdata=_ex_note,
+            text=_ex_text,
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="<b>%{y}</b><br>Valuation: $%{x:,.0f}M<br>%{customdata}<extra></extra>",
+        )
+    )
+    _ex_fig.add_annotation(
+        x=435,
+        y="Corvus - 2024 exit (Travelers)",
+        text="-42% vs. 2021",
+        showarrow=True,
+        arrowhead=2,
+        ax=80,
+        ay=-26,
+        font=dict(size=10, color="#b5502e"),
+    )
+    _ex_fig.update_layout(
+        title="Insurtech exits: the Corvus down-round (USD millions)",
+        xaxis=dict(title="Valuation / price (USD millions)", range=[0, 2050]),
+        yaxis=dict(autorange="reversed"),
+        height=280,
+        margin=dict(t=70, l=210, r=70, b=50),
+    )
+    _ex_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    - Insurtech funding fell ~50% in 2023 with valuations off more than 60% — the period the sector calls "the death of Insurtech 1.0".
+    - Insurance CVC participation hit a 9-year low: only four insurance CVCs invested in insurtechs in Q1 2026 (American Family Ventures, Intact Ventures, Optum Ventures, Sancor Seguros Ventures).
+    - Reinsurer scrutiny and capital constraint is the recurring friction cited against MGA models.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 6. Who actually funds cyber insurance
+
+    The cap tables sort exactly along the layer model. Strategic insurance capital dominates risk transfer and distribution.
+
+    | Company | Backers | Note |
+    |---|---|---|
+    | Corvus 🇺🇸 | Aquiline, FinTLV, .406 Ventures, SiriusPoint, Travelers | acquired by Travelers |
+    | At-Bay 🇺🇸 | Munich Re | reinsurer-backed |
+    | Cowbell 🇺🇸 | Zurich | carrier-backed |
+    | Coalition 🇺🇸 | Index Ventures | fintech thesis rather than a cyber thesis |
+
+    The structural logic: the natural investor in an MGA is a carrier that can also supply the paper. They are buying distribution and underwriting data, and the capacity arrives bundled with the cheque. A software fund brings money and nothing else the business needs.
+
+    ### Cyber-specialist VCs do sometimes cross over
+
+    Worth recording because it falsifies the simpler story that cyber funds avoid insurance on principle.
+
+    - Forgepoint Capital 🇺🇸 led Converge Insurance 🇺🇸 (\$15M Series A, August 2023, an SMB cyber MGA), with two managing directors taking board seats. It was Forgepoint's second move into the space after incubating Surefire Cyber 🇺🇸, which sells incident response to insurers, brokers, and law firms.
+
+    Note the shape: small, early-stage, sometimes incubated in-house. That is a fund buying optionality on a category thesis. It is a different instrument from a \$20-150M growth cheque, and it does not generalise to growth-stage funds.
+
+    ### The AI-liability MGAs confirm the split
+
+    The emerging AI-specific carriers are funded by insurance capital and generalists, with no cyber fund among them.
+
+    - Armilla AI 🇨🇦: Lloyd's coverholder, Chaucer-backed, up to \$25M per organisation. Also sells a performance warranty that pays out against missed contractual KPIs such as accuracy or bias thresholds.
+    - Testudo 🇺🇸: Apollo-backed, Lloyd's paper, up to \$10M, all 50 states.
+    - AIUC 🇺🇸: MGA that secured Beazley paper for its liability product (May 2026). \$15M seed led by NFDG (Nat Friedman), with Emergence, Terrain, and Ben Mann among angels.
+    - Munich Re aiSure 🇩🇪: incumbent reinsurer product.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 7. Where cybersecurity VCs actually sit
+
+    Look at a large dedicated cybersecurity / AI-software fund — the kind running a ~\$1bn vehicle, writing \$20-150M cheques into 50-plus portfolio companies — and the pattern is consistent: zero risk-bearing exposure. No carrier, no MGA, no insurtech, no warranty product anywhere in the portfolio. What these funds own instead sits one layer up, in underwriting inputs. Representative signal-layer vendors:
+
+    - SecurityScorecard: dedicated insurance business (insurance.securityscorecard.com). Partnerships with Great American Insurance Group, Willis, and Measured Analytics (first premium discount tied to a security rating). Scores correlate with claims frequency per the Marsh McLennan Cyber Risk Intelligence Center. Insurers use it for risk selection, application review, subjectivity management, and pricing.
+    - Panaseer: continuous controls monitoring marketed explicitly for answering cyber insurance application questionnaires with evidence, improving terms.
+    - Quantexa: decision intelligence for carriers across underwriting and claims, though general commercial lines rather than cyber.
+
+    The AI-security startups these funds favour (data-security and agent-security companies) typically have no insurance partnership, premium programme, warranty, or payout guarantee at all.
+
+    Caveat on interpretation: the mandate-and-multiple explanation is sufficient on its own. Do not read this absence as evidence that agentic AI risk is unpriceable. That is a separate argument requiring separate evidence, and conflating the two weakens both.
+
+    Second caveat: these funds' LP bases often include insurance companies. That is capital flowing from insurers into software funds. It does not indicate a strategy aimed at insurers, though it does mean carriers watch these portfolios.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 8. Implication for a signal-layer vendor
+
+    A one-way door. If a software vendor ever bears risk (warranty, payout guarantee, MGA arm), it moves from the 15-30x column to the 1-3x column, and its natural investor base shifts from software funds to carriers and reinsurers.
+
+    Staying at the signal layer keeps software economics while still selling into the insurance channel. SecurityScorecard is the proof of shape: insurers use it for risk selection and pricing, Marsh McLennan validated its claims correlation, and it remained a software company throughout. That is a fundable shape for a generalist or sector software fund. Risk-bearing is not.
+
+    One white space still holds: no AI-runtime or agent-security vendor has yet claimed either an insurer partnership or an insurance-backed offering. The layer model says the reachable version of that white space is the signal layer, sold to carriers, rather than capacity.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## Sources
+
+    Portfolio and investor structure:
+
+    - https://forgepointcap.com/perspectives/converge-insurance-announces-15-million-series-a-funding-from-forgepoint-capital/
+    - https://www.securityweek.com/forgepoint-capital-places-15m-series-a-bet-on-converge-insurance/
+    - https://securityscorecard.com/company/press/securityscorecard-joins-forces-with-measured-analytics-and-insurance-to-deliver-industry-first-cyber-insurance-discounts-for-top-security-ratings/
+    - https://www.financialcontent.com/article/bizwire-2025-4-2-securityscorecard-announces-strategic-partnership-with-willis
+    - https://panaseer.com/resources/reports/support-your-cyber-insurance-application-process-with-continuous-controls-monitoring
+    - https://www.quantexa.com/industries/insurance/
+
+    Market conditions and valuation:
+
+    - https://www.insurancejournal.com/magazines/mag-features/2026/07/27/878813.htm
+    - https://www.insurancebusinessmag.com/reinsurance/news/breaking-news/historic-softening-in-cyber-reinsurance-pricing-as-rates-plunge-32--gallagher-re-563874.aspx
+    - https://windsordrake.com/insurtech-valuation/
+    - https://www.cbinsights.com/research/report/insurtech-trends-q1-2026/
+    - https://www.gunder.com/en/news-insights/client-news/corvus-insurance-acquired-by-travelers-companies-for-435m
+    - https://research.astorya.io/post/corvus-insurance-acquired-the-story-of-a-us-cyber-insurtech-benchmark
+
+    AI liability capacity:
+
+    - https://www.theinsurer.com/ti/news/exclusive-ai-insurance-mga-aiuc-secures-beazley-paper-for-liability-product-2026-05-15/
+    - https://www.armilla.ai/ai-insurance
+
+    Category-defining companies and multiples (section 3):
+
+    - https://www.ergo.com/en/newsroom/media-information/2025/20250701-ergo-acquisition-next-insurance
+    - https://investor.travelers.com/newsroom/press-releases/news-details/2023/Travelers-to-Acquire-Corvus-Insurance/default.aspx
+    - https://www.vistaequitypartners.com/news/vista-equity-partners-completes-acquisition-of-duck-creek-technologies/
+    - https://www.coalitioninc.com/announcements/coalition-closes-250-million-in-series-f-funding
+    - https://multiples.vc/public-comps/guidewire-valuation-multiples
+    - https://windsordrake.com/insurtech-valuation/
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## Caveats
+
+    - Web research only, point-in-time. Some fund portfolio pages were unreachable from the research environment (proxy policy blocked the domain), so portfolios were reconstructed from funding announcements and press coverage. Announced deals are covered; unannounced or quiet positions are not.
+    - Loss ratios, rate movements, and premium totals move every quarter. Re-verify anything in section 4 before using it in a pitch.
+    - The S&P 15-20% growth projection for 2026 contradicts the observed softening. Both are recorded deliberately. Do not cite either without the other.
+    """
+    )
     return
 
 
