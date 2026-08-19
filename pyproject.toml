@@ -14,6 +14,7 @@ dependencies = [
     "termcolor>=2.4.0",
     "loguru>=0.7.3",
     "vulture>=2.14",
+    "ruff==0.15.8",
     "dspy>=2.6.24",
     "langfuse>=2.60.5",
     "litellm>=1.70.0",
