@@ -1191,7 +1191,7 @@ def _(mo):
         """
     ### Where the capital actually went
 
-    The chart at the top of this section counts companies; this one counts dollars. Roughly \$9.5B of venture capital flowed into the full-stack carrier layer — the most of any layer and the one with the worst outcomes — with more going to companies that became cautionary tales than to the single breakout. The software layer, which produced the most durable results, absorbed the least.
+    The chart at the top of this section counts companies; this one counts dollars (capital raised, including the IPO/SPAC proceeds of the public names, not venture rounds alone). Roughly \$9.5B flowed into the full-stack carrier layer — the most of any layer and the one with the worst outcomes — with more going to companies that became cautionary tales than to the single breakout. The software layer, which produced the most durable results, absorbed the least.
     """
     )
     return
@@ -1205,7 +1205,7 @@ def _(go):
         "Distribution / MGA",
         "Full-stack carrier",
     ]
-    # Approx VC raised ($M) by layer x outcome.
+    # Approx capital raised ($M) by layer x outcome (incl. IPO/SPAC proceeds).
     _cap_data = [
         ("Breakout", "#2e8b57", [225, 830, 2215, 1100]),
         ("Mixed", "#c98f3c", [690, 972, 1486, 4780]),
@@ -1227,7 +1227,7 @@ def _(go):
         )
     _cap_fig.update_layout(
         barmode="stack",
-        title="Capital raised by layer, shaded by outcome (approx VC in, $B)",
+        title="Capital raised by layer, shaded by outcome ($B, all financing)",
         xaxis=dict(title="Capital raised ($B)"),
         yaxis=dict(autorange="reversed"),
         legend=dict(title="Outcome", orientation="h", y=-0.22),
