@@ -838,54 +838,54 @@ def _(mo):
 
     ### Signal, software and infrastructure — the durable layer
 
-    | Company | Founded | Raised (approx) | Status | Outcome |
-    |---|---|---|---|---|
-    | Guidewire 🇺🇸 | 2001 | \$40M total pre-IPO | IPO 2012 (GWRE), ~\$10B at 6.9x revenue | Breakout |
-    | Akur8 🇫🇷 | 2018 | ~\$180-195M | Private; \$120M Series C (2024); Guidewire-backed | Breakout |
-    | Duck Creek 🇺🇸 | 2000 | PE / corporate-backed | Vista take-private \$2.6B (2023) | Mixed |
-    | Shift Technology 🇫🇷 | 2014 | ~\$320M | Private, unicorn (2021) | Mixed |
-    | Tractable 🇬🇧 | 2014 | ~\$185M | Private, \$1B (2021); first CV unicorn | Mixed |
-    | Ledger Investing 🇺🇸 | 2016 | ~\$90-185M (disputed) | Private; casualty ILS rails | Mixed |
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Guidewire 🇺🇸 | 2001 | \$40M total pre-IPO | IPO 2012 (GWRE), ~\$10B mcap | 6.9x | Breakout |
+    | Akur8 🇫🇷 | 2018 | ~\$180-195M | Private; \$120M Series C (2024); Guidewire-backed | n/a | Breakout |
+    | Duck Creek 🇺🇸 | 2000 | PE / corporate-backed | Vista take-private \$2.6B (2023) | ~8x (deal) | Mixed |
+    | Shift Technology 🇫🇷 | 2014 | ~\$320M | Private, unicorn (2021) | ~12x (2021) | Mixed |
+    | Tractable 🇬🇧 | 2014 | ~\$185M | Private, \$1B (2021); first CV unicorn | n/a | Mixed |
+    | Ledger Investing 🇺🇸 | 2016 | ~\$90-185M (disputed) | Private; casualty ILS rails | n/a | Mixed |
 
     ### Cyber MGA — signal plus distribution
 
-    | Company | Founded | Raised (approx) | Status | Outcome |
-    |---|---|---|---|---|
-    | Coalition 🇺🇸 | 2017 | ~\$800-860M | Private, \$5B (2022); ~\$1B revenue, no S-1 | Breakout |
-    | At-Bay 🇺🇸 | 2016 | ~\$292M | Private, \$1.35B (2021) | Mixed |
-    | Cowbell 🇺🇸 | 2019 | ~\$202-209M | Private; Zurich-led Series C (2024) | Mixed |
-    | Corvus 🇺🇸 | 2017 | ~\$150M | Acquired by Travelers ~\$435M (2024) | Mixed |
-    | Resilience 🇺🇸 | 2016 | ~\$325M | Private; Series D (2023) | Mixed |
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Coalition 🇺🇸 | 2017 | ~\$800-860M | Private, \$5B (2022); ~\$1B revenue, no S-1 | ~5x | Breakout |
+    | At-Bay 🇺🇸 | 2016 | ~\$292M | Private, \$1.35B (2021) | ~9x (2021) | Mixed |
+    | Cowbell 🇺🇸 | 2019 | ~\$202-209M | Private; Zurich-led Series C (2024) | n/a | Mixed |
+    | Corvus 🇺🇸 | 2017 | ~\$150M | Acquired by Travelers ~\$435M (2024) | ~2x prem. | Mixed |
+    | Resilience 🇺🇸 | 2016 | ~\$325M | Private; Series D (2023) | n/a | Mixed |
 
     ### Distribution — MGA and embedded
 
-    | Company | Founded | Raised (approx) | Status | Outcome |
-    |---|---|---|---|---|
-    | Next Insurance 🇺🇸 | 2016 | ~\$1.1-1.2B | Acquired by Munich Re / ERGO \$2.6B (2025) | Breakout |
-    | Bold Penguin 🇺🇸 | 2016 | ~\$50M | Acquired by American Family (2021) | Breakout |
-    | bolttech 🇸🇬 | 2020 | ~\$640-690M | Private, \$2.1B (2025) | Breakout |
-    | Cover Genius 🇦🇺 | 2014 | ~\$350M+ equity | Private, \$1.9B (2026) | Breakout |
-    | Pie Insurance 🇺🇸 | 2017 | ~\$620M | Private; \$315M Series D (2022) | Mixed |
-    | Openly 🇺🇸 | 2017 | ~\$293M+ | Private; \$193M growth round (2025) | Mixed |
-    | Kin 🇺🇸 | 2016 | ~\$265M equity | Private, unicorn (2023); reciprocal exchange | Mixed |
-    | Vouch 🇺🇸 | 2018 | ~\$185M+ | Private; startup-focused MGA | Mixed |
-    | Sure 🇺🇸 | 2015 | ~\$123M | Private; embedded-insurance API | Mixed |
-    | Branch 🇺🇸 | 2018 | ~\$197M | Private; \$1.05B mark (2022), now stale | Cautionary |
-    | Trov 🇺🇸 | 2012 | ~\$85-100M | Tech assets to Travelers (2022) | Cautionary |
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Next Insurance 🇺🇸 | 2016 | ~\$1.1-1.2B | Acquired by Munich Re / ERGO \$2.6B (2025) | 4.7x (deal) | Breakout |
+    | Bold Penguin 🇺🇸 | 2016 | ~\$50M | Acquired by American Family (2021) | n/a | Breakout |
+    | bolttech 🇸🇬 | 2020 | ~\$640-690M | Private, \$2.1B (2025) | n/a | Breakout |
+    | Cover Genius 🇦🇺 | 2014 | ~\$350M+ equity | Private, \$1.9B (2026) | n/a | Breakout |
+    | Pie Insurance 🇺🇸 | 2017 | ~\$620M | Private; \$315M Series D (2022) | n/a | Mixed |
+    | Openly 🇺🇸 | 2017 | ~\$293M+ | Private; \$193M growth round (2025) | n/a | Mixed |
+    | Kin 🇺🇸 | 2016 | ~\$265M equity | Private, unicorn (2023); reciprocal exchange | n/a | Mixed |
+    | Vouch 🇺🇸 | 2018 | ~\$185M+ | Private; startup-focused MGA | n/a | Mixed |
+    | Sure 🇺🇸 | 2015 | ~\$123M | Private; embedded-insurance API | n/a | Mixed |
+    | Branch 🇺🇸 | 2018 | ~\$197M | Private; \$1.05B mark (2022), now stale | n/a | Cautionary |
+    | Trov 🇺🇸 | 2012 | ~\$85-100M | Tech assets to Travelers (2022) | n/a | Cautionary |
 
     ### Full-stack carriers — risk transfer, the repriced layer
 
-    | Company | Founded | Raised (approx) | Status | Outcome |
-    |---|---|---|---|---|
-    | Alan 🇫🇷 | 2016 | ~\$1.1B+ | Private, €5.5B (2026); profitable in France | Breakout |
-    | Lemonade 🇺🇸 | 2015 | ~\$480M pre-IPO | IPO 2020 (LMND), ~\$5.6B mcap; still ~7x revenue | Mixed |
-    | Hippo 🇺🇸 | 2015 | ~\$1.2B incl. SPAC | SPAC 2021 (HIPO); 5 profitable quarters after pivot | Mixed |
-    | Oscar Health 🇺🇸 | 2012 | ~\$1.6B | IPO 2021 (OSCR); \$15.3B revenue, 0.53x sales | Mixed |
-    | ZhongAn 🇨🇳 | 2013 | \$1.5B at IPO | IPO 2017 (6060.HK) at \$11B; >20% China online P&C | Mixed |
-    | Root 🇺🇸 | 2015 | ~\$523M pre-IPO | IPO 2020 (ROOT), −87% vs IPO; profitable 2025 | Cautionary |
-    | Metromile 🇺🇸 | 2011 | ~\$300M+ | Sold to Lemonade ~\$145M (2022), below its cash | Cautionary |
-    | Clover Health 🇺🇸 | 2014 | ~\$925M | SPAC 2021 (CLOV); ~1.1x sales, loss-making | Cautionary |
-    | wefox 🇩🇪 | 2014 | ~\$1.9B | Peak \$4.5B (2022) → near-insolvency, restructured | Cautionary |
+    | Company | Founded | Raised (approx) | Status | EV/rev | Outcome |
+    |---|---|---|---|---|---|
+    | Alan 🇫🇷 | 2016 | ~\$1.1B+ | Private, €5.5B (2026); profitable in France | ~7x | Breakout |
+    | Lemonade 🇺🇸 | 2015 | ~\$480M pre-IPO | IPO 2020 (LMND), ~\$5.6B mcap | ~7x | Mixed |
+    | Hippo 🇺🇸 | 2015 | ~\$1.2B incl. SPAC | SPAC 2021 (HIPO); 5 profitable quarters after pivot | ~2x (est.) | Mixed |
+    | Oscar Health 🇺🇸 | 2012 | ~\$1.6B | IPO 2021 (OSCR); \$15.3B revenue | 0.53x | Mixed |
+    | ZhongAn 🇨🇳 | 2013 | \$1.5B at IPO | IPO 2017 (6060.HK) at \$11B; >20% China online P&C | ~1x (est.) | Mixed |
+    | Root 🇺🇸 | 2015 | ~\$523M pre-IPO | IPO 2020 (ROOT), −87% vs IPO; profitable 2025 | ~0.6x | Cautionary |
+    | Metromile 🇺🇸 | 2011 | ~\$300M+ | Sold to Lemonade ~\$145M (2022), below its cash | n/a | Cautionary |
+    | Clover Health 🇺🇸 | 2014 | ~\$925M | SPAC 2021 (CLOV); loss-making | ~1.1x | Cautionary |
+    | wefox 🇩🇪 | 2014 | ~\$1.9B | Peak \$4.5B (2022) → near-insolvency, restructured | n/a | Cautionary |
 
     The single cleanest comparison in the set is Guidewire against Metromile. Guidewire raised \$40M in its entire pre-IPO life and is worth roughly \$10B; Metromile raised ~\$300M, SPAC'd at \$1.3B, and sold three years later for less than the cash on its own balance sheet. Both were "insurance technology." The difference is that one of them promised to pay claims. Premium revenue is a capital call, not free revenue: growing a carrier's book 50% demands ~50% more surplus, so top-line growth consumes equity instead of throwing off cash — the inverse of the software model those 2020-21 multiples were priced on. The most telling evidence is not the failures but how the survivors survived: they changed layer. Hippo pivoted from concentrated cat-exposed homeowners into an MGA and fronting platform and has now posted five straight profitable quarters; wefox sold its carrier and re-emerged asset-light. The fix for a struggling full-stack model was to stop being full-stack.
 
@@ -902,9 +902,89 @@ def _(mo):
 
     Two refinements matter. The definitional shift did most of the damage: the market stopped accepting gross written premium as a valuation base and moved to net revenue (MGAs) or earned premium net of reinsurance and claims (carriers), so a company priced on a GWP-derived top line at a software multiple, then repriced on net revenue at an insurance multiple, lost an order of magnitude without anything changing operationally. And Lemonade is the live outlier: at ~\$5.6B on ~\$800M of revenue it still trades near 7x, a software multiple on a balance-sheet business. Whether that converges up (it earns the multiple by hitting profitability) or down (toward Root and Oscar) is the cleanest open test of the whole thesis, and it should resolve within about eighteen months.
 
+    A note on the EV/revenue column. It is shown only where a revenue base actually exists: for public names it is current; "deal" marks the multiple implied by an acquisition or IPO price; a year in parentheses is a stale private valuation set against newer revenue, so read those as directional. MGAs and embedded players earn commission on premium rather than premium itself, so where their revenue is undisclosed the cell is left n/a rather than computed off premium — Corvus is the one exception, shown as ~2x its premium book, the basis on which Travelers acquired it.
+
     Figures are approximate: private "raised" totals are aggregator estimates (Crunchbase / PitchBook / Tracxn) and occasionally blend debt with equity — Ledger Investing's own figure (>\$90M) and ZoomInfo's (\$185M) genuinely conflict. Deal prices, IPO proceeds and public multiples are from filings and trade press and are firmer. Valuations are last known marks, not current.
+
+    The company-level EV/revenue picture, for the names where the ratio is defensible:
     """
     )
+    return
+
+
+@app.cell
+def _(go):
+    # Company-level EV/revenue, where a revenue base exists. Basis varies
+    # (public/current, an acquisition or IPO deal, or a stale private mark);
+    # see the note above and each point's hover for its basis.
+    _ev_layer_color = {
+        "Software / infra": "#1f5fd6",
+        "Cyber MGA": "#17a2b8",
+        "Distribution / MGA": "#c98f3c",
+        "Full-stack carrier": "#b5502e",
+    }
+    _ev_rows = [
+        ("Shift Technology", "Software / infra", 12.0, "2021 mark / 2024 rev"),
+        ("At-Bay", "Cyber MGA", 9.0, "2021 mark / 2024 rev"),
+        ("Duck Creek", "Software / infra", 8.0, "2023 take-private"),
+        ("Alan", "Full-stack carrier", 7.0, "2026 mark / ARR"),
+        ("Lemonade", "Full-stack carrier", 7.0, "public, current"),
+        ("Guidewire", "Software / infra", 6.9, "public, current"),
+        ("Coalition", "Cyber MGA", 5.0, "2022 mark / rev est."),
+        ("Next Insurance", "Distribution / MGA", 4.7, "2025 acquisition"),
+        ("Hippo", "Full-stack carrier", 2.0, "public, est."),
+        ("Clover Health", "Full-stack carrier", 1.1, "public, current"),
+        ("ZhongAn", "Full-stack carrier", 1.0, "public, est."),
+        ("Root", "Full-stack carrier", 0.6, "public, current"),
+        ("Oscar Health", "Full-stack carrier", 0.53, "public, current"),
+    ]
+    _ev_names = [_r[0] for _r in _ev_rows]
+    _ev_vals = [_r[2] for _r in _ev_rows]
+    _ev_colors = [_ev_layer_color[_r[1]] for _r in _ev_rows]
+    _ev_meta = [(_r[1], _r[3]) for _r in _ev_rows]
+
+    _ev_fig = go.Figure(
+        go.Bar(
+            y=_ev_names,
+            x=_ev_vals,
+            orientation="h",
+            marker_color=_ev_colors,
+            customdata=_ev_meta,
+            text=[f"{_v:g}x" for _v in _ev_vals],
+            textposition="outside",
+            cliponaxis=False,
+            showlegend=False,
+            hovertemplate=(
+                "<b>%{y}</b><br>Layer: %{customdata[0]}"
+                "<br>EV/revenue: %{x:.2g}x<br>Basis: %{customdata[1]}<extra></extra>"
+            ),
+        )
+    )
+    # Layer legend via dummy marker traces.
+    for _lname, _lcolor in _ev_layer_color.items():
+        _ev_fig.add_trace(
+            go.Scatter(
+                x=[None],
+                y=[None],
+                mode="markers",
+                marker=dict(size=10, color=_lcolor),
+                name=_lname,
+            )
+        )
+    _ev_fig.add_vline(
+        x=1.0, line_width=1, line_dash="dot", line_color="#9aa4b2"
+    )
+    _ev_fig.update_layout(
+        title="Company-level EV/revenue: the same gradient, with Alan and Lemonade as carrier outliers",
+        xaxis=dict(
+            title="EV / revenue (x, log scale)", type="log", range=[-0.35, 1.16]
+        ),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(title="Layer", orientation="h", y=-0.16),
+        height=470,
+        margin=dict(t=70, l=140, r=55, b=70),
+    )
+    _ev_fig
     return
 
 
