@@ -588,30 +588,77 @@ def _(mo):
     ## 1. The layer model
 
     Insurance markets separate into three layers that look adjacent but have different economics, different capital providers, and different valuation regimes. Confusing them is the most common error when reasoning about "insurance" as a business.
+    """
+    )
+    return
 
-    ```
-      LAYER                     WHAT IT OWNS              WHO FUNDS IT
-      -----                     ------------              ------------
-      +-------------------+
-      | SIGNAL / SOFTWARE |     data, scores, controls    generalist + sector VC
-      |                   |     evidence, telemetry       (software multiples)
-      +---------+---------+
-                | feeds
-                v
-      +-------------------+
-      | DISTRIBUTION      |     the customer, the         insurance-native capital,
-      | (MGA / broker)    |     underwriting authority,   carriers who also supply
-      |                   |     commission on GWP         the paper
-      +---------+---------+
-                | writes on
-                v
-      +-------------------+
-      | RISK TRANSFER     |     the balance sheet,        reinsurers, PE, strategic
-      | (carrier)         |     statutory capital,        carriers, sovereigns
-      |                   |     the loss itself           (insurance multiples)
-      +-------------------+
-    ```
 
+@app.cell
+def _(mo):
+    _svg = """
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Insurance layer model: signal/software feeds distribution, which writes on risk transfer; the revenue multiple falls down the stack from 15-30x to 1-3x" style="width:100%;max-width:720px;height:auto;font-family:'PT Sans',system-ui,-apple-system,'Segoe UI',sans-serif;">
+  <defs>
+    <linearGradient id="mgrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f5fd6"/>
+      <stop offset="50%" stop-color="#c98f3c"/>
+      <stop offset="100%" stop-color="#b5502e"/>
+    </linearGradient>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5b6675"/>
+    </marker>
+  </defs>
+
+  <rect x="24" y="20" width="600" height="116" rx="12" fill="#eef3fc" stroke="#c7d8f4"/>
+  <rect x="24" y="20" width="7" height="116" rx="3.5" fill="#1f5fd6"/>
+  <text x="48" y="52" font-size="16" font-weight="700" fill="#1f5fd6">SIGNAL / SOFTWARE</text>
+  <text x="48" y="78" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">OWNS</text>
+  <text x="48" y="98" font-size="13.5" fill="#1b2330">data, scores, controls,</text>
+  <text x="48" y="116" font-size="13.5" fill="#1b2330">evidence, telemetry</text>
+  <text x="330" y="78" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">FUNDED BY</text>
+  <text x="330" y="98" font-size="13.5" fill="#1b2330">generalist + sector VC</text>
+  <text x="330" y="116" font-size="13.5" fill="#1b2330">(software multiples)</text>
+  <text x="600" y="52" font-size="15" font-weight="700" text-anchor="end" fill="#1f5fd6">15–30x</text>
+
+  <line x1="120" y1="140" x2="120" y2="174" stroke="#5b6675" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="132" y="162" font-size="12" font-style="italic" fill="#5b6675">feeds</text>
+
+  <rect x="24" y="178" width="600" height="116" rx="12" fill="#fbf4e8" stroke="#ecd9b6"/>
+  <rect x="24" y="178" width="7" height="116" rx="3.5" fill="#c98f3c"/>
+  <text x="48" y="210" font-size="16" font-weight="700" fill="#b07d2c">DISTRIBUTION — MGA / broker</text>
+  <text x="48" y="236" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">OWNS</text>
+  <text x="48" y="256" font-size="13.5" fill="#1b2330">the customer, underwriting</text>
+  <text x="48" y="274" font-size="13.5" fill="#1b2330">authority, commission on GWP</text>
+  <text x="330" y="236" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">FUNDED BY</text>
+  <text x="330" y="256" font-size="13.5" fill="#1b2330">insurance-native capital,</text>
+  <text x="330" y="274" font-size="13.5" fill="#1b2330">carriers who supply the paper</text>
+  <text x="600" y="210" font-size="15" font-weight="700" text-anchor="end" fill="#b07d2c">~5x</text>
+
+  <line x1="120" y1="298" x2="120" y2="332" stroke="#5b6675" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="132" y="320" font-size="12" font-style="italic" fill="#5b6675">writes on</text>
+
+  <rect x="24" y="336" width="600" height="116" rx="12" fill="#f8ece7" stroke="#e6c3b6"/>
+  <rect x="24" y="336" width="7" height="116" rx="3.5" fill="#b5502e"/>
+  <text x="48" y="368" font-size="16" font-weight="700" fill="#b5502e">RISK TRANSFER — carrier</text>
+  <text x="48" y="394" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">OWNS</text>
+  <text x="48" y="414" font-size="13.5" fill="#1b2330">the balance sheet, statutory</text>
+  <text x="48" y="432" font-size="13.5" fill="#1b2330">capital, the loss itself</text>
+  <text x="330" y="394" font-size="10.5" letter-spacing="0.07em" fill="#5b6675">FUNDED BY</text>
+  <text x="330" y="414" font-size="13.5" fill="#1b2330">reinsurers, PE, strategic</text>
+  <text x="330" y="432" font-size="13.5" fill="#1b2330">carriers, sovereigns</text>
+  <text x="600" y="368" font-size="15" font-weight="700" text-anchor="end" fill="#b5502e">1–3x</text>
+
+  <rect x="648" y="20" width="15" height="432" rx="7.5" fill="url(#mgrad)"/>
+  <text x="695" y="236" font-size="10.5" letter-spacing="0.09em" fill="#5b6675" text-anchor="middle" transform="rotate(90 695 236)">REVENUE MULTIPLE FALLS</text>
+</svg>
+"""
+    mo.Html(_svg)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
     The layer determines almost everything else about the business. An MGA holds underwriting authority without holding the risk, so it lives or dies on whether a reinsurer keeps granting capacity. A carrier holds the risk and therefore holds regulatory capital, which is the constraint that governs its growth rate.
     """
     )
