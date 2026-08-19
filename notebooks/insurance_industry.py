@@ -575,7 +575,7 @@ def _(mo):
 
     Companion docs (Edison-OS repo): `context/stable/competitors/` (vendor-level), and for Edison's own insurance pitch, `dev-docs/2026-07-11-insurance-deck-design.md` and its evidence pack `dev-docs/2026-07-11-insurance-deck-slide04-research.md`.
 
-    Researched: 2026-08-18. Trigger: checking whether Evolution Equity Partners, the largest dedicated cybersecurity fund, had any cyber-insurance exposure. They have none, which turned out to be the normal case and worth explaining.
+    Researched: 2026-08-18. Trigger: checking whether large dedicated cybersecurity VCs carry any cyber-insurance exposure. The answer is essentially none, which turned out to be the normal case and worth explaining.
     """
     )
     return
@@ -885,21 +885,19 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 6. Worked case: Evolution Equity Partners
+    ## 6. Where cybersecurity VCs actually sit
 
-    The fund that prompted this entry. Roughly 60 portfolio companies, \$1.1bn Technology Fund III (2024), cheques of \$20-150M, stated mandate of cybersecurity and AI software.
-
-    Zero risk-bearing exposure. No carrier, no MGA, no insurtech, no warranty product anywhere in the portfolio. What they own instead sits one layer up, in underwriting inputs:
+    Look at a large dedicated cybersecurity / AI-software fund — the kind running a ~\$1bn vehicle, writing \$20-150M cheques into 50-plus portfolio companies — and the pattern is consistent: zero risk-bearing exposure. No carrier, no MGA, no insurtech, no warranty product anywhere in the portfolio. What these funds own instead sits one layer up, in underwriting inputs. Representative signal-layer vendors:
 
     - SecurityScorecard: dedicated insurance business (insurance.securityscorecard.com). Partnerships with Great American Insurance Group, Willis, and Measured Analytics (first premium discount tied to a security rating). Scores correlate with claims frequency per the Marsh McLennan Cyber Risk Intelligence Center. Insurers use it for risk selection, application review, subjectivity management, and pricing.
     - Panaseer: continuous controls monitoring marketed explicitly for answering cyber insurance application questionnaires with evidence, improving terms.
     - Quantexa: decision intelligence for carriers across underwriting and claims, though general commercial lines rather than cyber.
 
-    Their AI-security holdings (Cyera, Noma Security, Kai, NewCore) have no insurance partnership, premium programme, warranty, or payout guarantee.
+    The AI-security startups these funds favour (data-security and agent-security companies) typically have no insurance partnership, premium programme, warranty, or payout guarantee at all.
 
-    Caveat on interpretation: the mandate-and-multiple explanation is sufficient on its own. Do not read their absence as evidence that agentic AI risk is unpriceable. That is a separate argument requiring separate evidence, and conflating the two weakens both.
+    Caveat on interpretation: the mandate-and-multiple explanation is sufficient on its own. Do not read this absence as evidence that agentic AI risk is unpriceable. That is a separate argument requiring separate evidence, and conflating the two weakens both.
 
-    Second caveat: Evolution's LP base explicitly includes insurance companies. That is capital flowing from insurers into a software fund. It does not indicate a strategy aimed at insurers, though it does mean carriers watch this portfolio.
+    Second caveat: these funds' LP bases often include insurance companies. That is capital flowing from insurers into software funds. It does not indicate a strategy aimed at insurers, though it does mean carriers watch these portfolios.
     """
     )
     return
@@ -913,7 +911,7 @@ def _(mo):
 
     A one-way door. If Edison ever bears risk (warranty, payout guarantee, MGA arm), it moves from the 15-30x column to the 1-3x column, and its natural investor base shifts from software funds to carriers and reinsurers.
 
-    Staying at the signal layer keeps software economics while still selling into the insurance channel. SecurityScorecard is the proof of shape: insurers use it for risk selection and pricing, Marsh McLennan validated its claims correlation, and it remained a software company throughout. That is a fundable shape for a fund like Evolution. Risk-bearing is not.
+    Staying at the signal layer keeps software economics while still selling into the insurance channel. SecurityScorecard is the proof of shape: insurers use it for risk selection and pricing, Marsh McLennan validated its claims correlation, and it remained a software company throughout. That is a fundable shape for a generalist or sector software fund. Risk-bearing is not.
 
     The white space recorded in `context/stable/competitors/` still holds: no AI-runtime or agent-security vendor has claimed either an insurer partnership or an insurance-backed offering. The layer model says the reachable version of that white space is the signal layer, sold to carriers, rather than capacity.
     """
@@ -929,7 +927,6 @@ def _(mo):
 
     Portfolio and investor structure:
 
-    - https://www.prnewswire.com/news-releases/evolution-equity-partners-closes-on-1-1-billion-for-cybersecurity-investment-in-oversubscribed-fund-raise-302117459.html
     - https://forgepointcap.com/perspectives/converge-insurance-announces-15-million-series-a-funding-from-forgepoint-capital/
     - https://www.securityweek.com/forgepoint-capital-places-15m-series-a-bet-on-converge-insurance/
     - https://securityscorecard.com/company/press/securityscorecard-joins-forces-with-measured-analytics-and-insurance-to-deliver-industry-first-cyber-insurance-discounts-for-top-security-ratings/
@@ -961,7 +958,7 @@ def _(mo):
         """
     ## Caveats
 
-    - Web research only, point-in-time. Evolution's own portfolio page (evolutionequity.com/companies) was unreachable from the research environment (proxy policy blocked the domain), so their portfolio was reconstructed from funding announcements and press coverage. Announced deals are covered; unannounced or quiet positions are not.
+    - Web research only, point-in-time. Some fund portfolio pages were unreachable from the research environment (proxy policy blocked the domain), so portfolios were reconstructed from funding announcements and press coverage. Announced deals are covered; unannounced or quiet positions are not.
     - Loss ratios, rate movements, and premium totals move every quarter. Re-verify anything in section 3 before using it in a pitch.
     - The S&P 15-20% growth projection for 2026 contradicts the observed softening. Both are recorded deliberately. Do not cite either without the other.
     """
