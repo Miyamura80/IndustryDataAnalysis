@@ -573,8 +573,6 @@ def _(mo):
 
     Notebook entry. Durable structural model plus the 2024-2026 evidence that supports it. Point-in-time figures are dated inline; the layer model and the multiple gradient are the parts expected to survive.
 
-    Companion docs (Edison-OS repo): `context/stable/competitors/` (vendor-level), and for Edison's own insurance pitch, `dev-docs/2026-07-11-insurance-deck-design.md` and its evidence pack `dev-docs/2026-07-11-insurance-deck-slide04-research.md`.
-
     Researched: 2026-08-18. Trigger: checking whether large dedicated cybersecurity VCs carry any cyber-insurance exposure. The answer is essentially none, which turned out to be the normal case and worth explaining.
     """
     )
@@ -900,10 +898,10 @@ def _(mo):
 
     | Company | Backers | Note |
     |---|---|---|
-    | Corvus | Aquiline, FinTLV, .406 Ventures, SiriusPoint, Travelers | acquired by Travelers |
-    | At-Bay | Munich Re | reinsurer-backed |
-    | Cowbell | Zurich | carrier-backed |
-    | Coalition | Index Ventures | fintech thesis rather than a cyber thesis |
+    | Corvus 🇺🇸 | Aquiline, FinTLV, .406 Ventures, SiriusPoint, Travelers | acquired by Travelers |
+    | At-Bay 🇺🇸 | Munich Re | reinsurer-backed |
+    | Cowbell 🇺🇸 | Zurich | carrier-backed |
+    | Coalition 🇺🇸 | Index Ventures | fintech thesis rather than a cyber thesis |
 
     The structural logic: the natural investor in an MGA is a carrier that can also supply the paper. They are buying distribution and underwriting data, and the capacity arrives bundled with the cheque. A software fund brings money and nothing else the business needs.
 
@@ -911,7 +909,7 @@ def _(mo):
 
     Worth recording because it falsifies the simpler story that cyber funds avoid insurance on principle.
 
-    - Forgepoint Capital led Converge Insurance's \$15M Series A in August 2023, an SMB cyber MGA, with two managing directors taking board seats. It was Forgepoint's second move into the space after incubating Surefire Cyber, which sells incident response to insurers, brokers, and law firms.
+    - Forgepoint Capital 🇺🇸 led Converge Insurance 🇺🇸 (\$15M Series A, August 2023, an SMB cyber MGA), with two managing directors taking board seats. It was Forgepoint's second move into the space after incubating Surefire Cyber 🇺🇸, which sells incident response to insurers, brokers, and law firms.
 
     Note the shape: small, early-stage, sometimes incubated in-house. That is a fund buying optionality on a category thesis. It is a different instrument from a \$20-150M growth cheque, and it does not generalise to growth-stage funds.
 
@@ -919,10 +917,10 @@ def _(mo):
 
     The emerging AI-specific carriers are funded by insurance capital and generalists, with no cyber fund among them.
 
-    - Armilla AI: Lloyd's coverholder, Chaucer-backed, up to \$25M per organisation. Also sells a performance warranty that pays out against missed contractual KPIs such as accuracy or bias thresholds.
-    - Testudo: Apollo-backed, Lloyd's paper, up to \$10M, all 50 states.
-    - AIUC: MGA that secured Beazley paper for its liability product (May 2026). \$15M seed led by NFDG (Nat Friedman), with Emergence, Terrain, and Ben Mann among angels.
-    - Munich Re aiSure: incumbent reinsurer product.
+    - Armilla AI 🇨🇦: Lloyd's coverholder, Chaucer-backed, up to \$25M per organisation. Also sells a performance warranty that pays out against missed contractual KPIs such as accuracy or bias thresholds.
+    - Testudo 🇺🇸: Apollo-backed, Lloyd's paper, up to \$10M, all 50 states.
+    - AIUC 🇺🇸: MGA that secured Beazley paper for its liability product (May 2026). \$15M seed led by NFDG (Nat Friedman), with Emergence, Terrain, and Ben Mann among angels.
+    - Munich Re aiSure 🇩🇪: incumbent reinsurer product.
     """
     )
     return
@@ -954,13 +952,13 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 7. Implication for Edison
+    ## 7. Implication for a signal-layer vendor
 
-    A one-way door. If Edison ever bears risk (warranty, payout guarantee, MGA arm), it moves from the 15-30x column to the 1-3x column, and its natural investor base shifts from software funds to carriers and reinsurers.
+    A one-way door. If a software vendor ever bears risk (warranty, payout guarantee, MGA arm), it moves from the 15-30x column to the 1-3x column, and its natural investor base shifts from software funds to carriers and reinsurers.
 
     Staying at the signal layer keeps software economics while still selling into the insurance channel. SecurityScorecard is the proof of shape: insurers use it for risk selection and pricing, Marsh McLennan validated its claims correlation, and it remained a software company throughout. That is a fundable shape for a generalist or sector software fund. Risk-bearing is not.
 
-    The white space recorded in `context/stable/competitors/` still holds: no AI-runtime or agent-security vendor has claimed either an insurer partnership or an insurance-backed offering. The layer model says the reachable version of that white space is the signal layer, sold to carriers, rather than capacity.
+    One white space still holds: no AI-runtime or agent-security vendor has yet claimed either an insurer partnership or an insurance-backed offering. The layer model says the reachable version of that white space is the signal layer, sold to carriers, rather than capacity.
     """
     )
     return
