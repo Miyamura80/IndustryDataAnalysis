@@ -994,7 +994,7 @@ def _(mo):
         """
     ### Capital in versus value out
 
-    The same companies plotted as capital raised against last known valuation or exit, on log-log axes with 1x / 10x / 100x reference lines. Height above the diagonal is the return on invested capital, and it sorts by layer: Guidewire sits alone near 250x on a \$40M raise, while the carriers hug the bottom — Metromile is the one name below the 1x line, sold for less than the capital put into it. Names with undisclosed valuations (Bold Penguin, Openly, Trov) are omitted.
+    The same companies plotted as capital raised against last known valuation or exit, on log-log axes with 1x / 10x / 100x reference lines. Height above the diagonal is the return on invested capital, and it sorts by layer: Guidewire sits alone near 250x on a \$40M raise, while the carriers hug the bottom — Metromile and Hippo are the two names below the 1x line, and Metromile was sold for less than the capital put into it. Names with undisclosed valuations (Bold Penguin, Openly, Trov) are omitted.
     """
     )
     return
@@ -1191,7 +1191,7 @@ def _(mo):
         """
     ### Where the capital actually went
 
-    The chart at the top of this section counts companies; this one counts dollars. Roughly \$9B of venture capital flowed into the full-stack carrier layer — the most of any layer and the one with the worst outcomes — with more going to companies that became cautionary tales than to the single breakout. The software layer, which produced the most durable results, absorbed the least.
+    The chart at the top of this section counts companies; this one counts dollars. Roughly \$9.5B of venture capital flowed into the full-stack carrier layer — the most of any layer and the one with the worst outcomes — with more going to companies that became cautionary tales than to the single breakout. The software layer, which produced the most durable results, absorbed the least.
     """
     )
     return
