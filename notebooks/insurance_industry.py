@@ -747,7 +747,172 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 3. Cyber insurance conditions, 2024-2026
+    ## 3. The whole VC-backed insurance universe sorts the same way
+
+    The layer model is not a cyber-only pattern. Take the roughly thirty most category-defining venture-backed insurance companies since 2010 — full-stack carriers, MGAs, embedded players, core-systems software — and their outcomes sort cleanly by layer. The companies that carried balance-sheet risk absorbed the worst repricings; the capital-light distribution and software layers held up; the cyber MGAs, which pair asset-light economics with a proprietary security signal, did best of the risk-adjacent group.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _co_layers = [
+        "Software / infrastructure",
+        "Cyber MGA (signal + distribution)",
+        "Distribution — MGA / embedded",
+        "Full-stack carrier (risk transfer)",
+    ]
+    # Counts aligned to _co_layers, ordered high-multiple (top) to low (bottom).
+    _co_outcomes = [
+        (
+            "Breakout",
+            "#2e8b57",
+            [1, 2, 3, 1],
+            [
+                "Guidewire",
+                "Coalition, Corvus",
+                "Next, bolttech, Cover Genius",
+                "Alan",
+            ],
+        ),
+        (
+            "Solid",
+            "#4f83e0",
+            [3, 3, 4, 0],
+            [
+                "Duck Creek, Akur8, Ledger",
+                "At-Bay, Cowbell, Resilience",
+                "Pie, Openly, Kin, Sure",
+                "—",
+            ],
+        ),
+        (
+            "Mixed",
+            "#c98f3c",
+            [2, 0, 2, 4],
+            [
+                "Shift, Tractable",
+                "—",
+                "Bold Penguin, Vouch",
+                "Lemonade, Root, Oscar, ZhongAn",
+            ],
+        ),
+        (
+            "Cautionary",
+            "#b5502e",
+            [0, 0, 2, 4],
+            [
+                "—",
+                "—",
+                "Branch, Trov",
+                "Metromile, Hippo, Clover, Wefox",
+            ],
+        ),
+    ]
+
+    _co_fig = go.Figure()
+    for _co_name, _co_color, _co_vals, _co_examples in _co_outcomes:
+        _co_fig.add_trace(
+            go.Bar(
+                y=_co_layers,
+                x=_co_vals,
+                name=_co_name,
+                orientation="h",
+                marker_color=_co_color,
+                customdata=_co_examples,
+                hovertemplate=(
+                    "<b>%{y}</b><br>"
+                    + _co_name
+                    + ": %{x} companies<br>%{customdata}<extra></extra>"
+                ),
+            )
+        )
+    _co_fig.update_layout(
+        barmode="stack",
+        title="Where the outcomes landed: category-defining insurtechs by layer and result",
+        xaxis=dict(title="Number of companies"),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(title="Outcome", orientation="h", y=-0.24),
+        height=360,
+        margin=dict(t=70, l=220, r=30, b=80),
+    )
+    _co_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    Read the bars top to bottom, high multiple to low. Every software, infrastructure and cyber-MGA company lands in breakout, solid or mixed — none cautionary. The full-stack carriers invert it: one breakout (Alan, in Europe), the rest mixed or cautionary. The mechanism is the balance sheet. A carrier is judged on loss and combined ratios, holds regulatory capital, and carries catastrophe and reserve risk, so growth consumes capital instead of compounding it. When public markets stopped granting these companies software multiples and re-anchored them to insurance economics, the drawdowns ran 80-95% (Metromile sold for scrap; Hippo, Clover and Wefox all cautionary).
+
+    ### Signal, software and infrastructure — the durable layer
+
+    | Company | Founded | VC raised (approx) | Status | Outcome |
+    |---|---|---|---|---|
+    | Guidewire 🇺🇸 | 2001 | VC pre-IPO | IPO 2012 (GWRE), ~\$14-15B mcap | Breakout |
+    | Duck Creek 🇺🇸 | 2000 | Accenture-backed | IPO 2020 → Vista take-private \$2.6B (2023) | Solid |
+    | Shift Technology 🇫🇷 | 2014 | ~\$320M | Private, \$1B+ (2021) | Mixed |
+    | Tractable 🇬🇧 | 2014 | ~\$185M | Private, \$1B (2021); first CV unicorn | Mixed |
+    | Akur8 🇫🇷 | 2018 | ~\$180M | Private, ~\$400M | Solid |
+    | Ledger Investing 🇺🇸 | 2016 | ~\$185M | Private | Solid |
+
+    ### Cyber MGA — signal plus distribution
+
+    | Company | Founded | VC raised (approx) | Status | Outcome |
+    |---|---|---|---|---|
+    | Coalition 🇺🇸 | 2017 | ~\$755-800M | Private, \$5B (2022) | Breakout |
+    | Corvus 🇺🇸 | 2017 | ~\$150M | Acquired by Travelers \$435M (2024) | Breakout (exit) |
+    | At-Bay 🇺🇸 | 2016 | ~\$292M | Private, \$1.35B (2021) | Solid |
+    | Cowbell 🇺🇸 | 2019 | ~\$209M | Private; Zurich strategic round (2024) | Solid |
+    | Resilience 🇺🇸 | 2016 | ~\$220-325M | Private, Series D (2023) | Solid |
+
+    ### Distribution — MGA and embedded
+
+    | Company | Founded | VC raised (approx) | Status | Outcome |
+    |---|---|---|---|---|
+    | Next Insurance 🇺🇸 | 2016 | >\$1B | Acquired by Munich Re \$2.6B (2025) | Breakout |
+    | bolttech 🇸🇬 | 2020 | ~\$640M | Private, \$2.1B | Breakout |
+    | Cover Genius 🇦🇺 | 2014 | ~\$345M | Private, \$1.9B (2024) | Breakout |
+    | Pie Insurance 🇺🇸 | 2017 | ~\$615M | Private, >\$2B (2022) | Solid |
+    | Openly 🇺🇸 | 2017 | ~\$450M | Private | Solid |
+    | Kin 🇺🇸 | 2016 | ~\$286M equity | Private, \$2B (2025) | Solid |
+    | Sure 🇺🇸 | 2015 | ~\$123M | Private, \$550M (2021) | Solid |
+    | Bold Penguin 🇺🇸 | 2016 | ~\$50M | Acquired by American Family (2021) | Mixed |
+    | Vouch 🇺🇸 | 2018 | ~\$212M | Acquired by Hiscox (2025) | Mixed |
+    | Branch 🇺🇸 | 2017 | ~\$150M | Private, distressed | Cautionary |
+    | Trov 🇺🇸 | 2012 | ~\$114M | D2C shut 2019; assets absorbed | Cautionary |
+
+    ### Full-stack carriers — risk transfer, the repriced layer
+
+    | Company | Founded | VC raised (approx) | Status | Outcome |
+    |---|---|---|---|---|
+    | Alan 🇫🇷 | 2016 | ~€754M | Private, €5B (2025) | Breakout |
+    | Lemonade 🇺🇸 | 2015 | ~\$480M pre-IPO | IPO 2020 (LMND) | Mixed |
+    | Root 🇺🇸 | 2015 | ~\$520M pre-IPO | IPO 2020 (ROOT); profitable 2024 | Mixed |
+    | Oscar Health 🇺🇸 | 2012 | ~\$1.6B | IPO 2021 (OSCR); first profit 2024 | Mixed |
+    | ZhongAn 🇨🇳 | 2013 | strategic (Ant / Ping An / Tencent) | IPO 2017 (6060.HK), ~\$11B | Mixed |
+    | Metromile 🇺🇸 | 2011 | ~\$290M | SPAC 2021 → sold to Lemonade \$145M (2022) | Cautionary |
+    | Hippo 🇺🇸 | 2015 | ~\$710M | SPAC 2021 at \$5B (HIPO) | Cautionary |
+    | Clover Health 🇺🇸 | 2014 | ~\$925M | SPAC 2021 (CLOV) | Cautionary |
+    | Wefox 🇩🇪 | 2015 | ~\$1.3B | Private, distressed | Cautionary |
+
+    Two mechanisms explain the sort. First, capital: money put into a carrier funds reserves and statutory surplus, not growth, so venture dollars convert at an insurance multiple and sit exposed to loss volatility the fund cannot model. MGAs and embedded players front on someone else's paper and earn commission, so they scale without proportional capital and can be bought cleanly by incumbents hungry for distribution — Next to Munich Re at \$2.6B (~4.7x revenue), Corvus to Travelers at \$435M. Infrastructure software carries no underwriting risk at all and commands the richest multiples: Guidewire trades near 10x revenue where even a recovered carrier earns perhaps 5-7x book.
+
+    Second, the cyber MGAs are the instructive hybrid. Structurally they are MGAs, but they own a proprietary signal — continuous attack-surface scanning — that reduces adverse selection and improves loss ratios, which is why strategic reinsurers funded the whole cohort (Munich Re into At-Bay, Zurich into Cowbell) and the exits stayed clean. Asset-light economics plus a defensible data moat is exactly the shape the layer model predicts should win, and it did.
+
+    Figures are approximate: private "raised" totals are aggregator estimates (Crunchbase / PitchBook / CB Insights) and occasionally blend debt with equity; deal prices, IPO proceeds and public multiples are from filings and trade press and are firmer. Valuations are last known marks, not current.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ## 4. Cyber insurance conditions, 2024-2026
 
     Underwriting quality and growth trajectory have diverged sharply, and both facts need holding at once. Underwriting is healthy: the surplus-lines loss ratio is ~56% (2025, and surplus lines is now nearly two-thirds of all cyber premium), the admitted-carrier loss ratio is ~50.2%, and Allianz Commercial reports average claim severity down 50% with large-loss frequency down 30%. Growth, meanwhile, has stalled — Q1 2026 was the eighth consecutive quarter of US pricing cuts. The chart tracks where the market is heading.
     """
@@ -818,7 +983,7 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 4. Exit evidence
+    ## 5. Exit evidence
 
     The category's benchmark exit was a down-round: Corvus sold to Travelers for \$435M (announced Nov 2023, closed Jan 2024), against a \$750M valuation in its 2021 round — a 42% markdown. Coalition's \$175M round (Index Ventures, March 2021) set a \$1.75bn mark at the peak.
     """
@@ -892,7 +1057,7 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 5. Who actually funds cyber insurance
+    ## 6. Who actually funds cyber insurance
 
     The cap tables sort exactly along the layer model. Strategic insurance capital dominates risk transfer and distribution.
 
@@ -930,7 +1095,7 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 6. Where cybersecurity VCs actually sit
+    ## 7. Where cybersecurity VCs actually sit
 
     Look at a large dedicated cybersecurity / AI-software fund — the kind running a ~\$1bn vehicle, writing \$20-150M cheques into 50-plus portfolio companies — and the pattern is consistent: zero risk-bearing exposure. No carrier, no MGA, no insurtech, no warranty product anywhere in the portfolio. What these funds own instead sits one layer up, in underwriting inputs. Representative signal-layer vendors:
 
@@ -952,7 +1117,7 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-    ## 7. Implication for a signal-layer vendor
+    ## 8. Implication for a signal-layer vendor
 
     A one-way door. If a software vendor ever bears risk (warranty, payout guarantee, MGA arm), it moves from the 15-30x column to the 1-3x column, and its natural investor base shifts from software funds to carriers and reinsurers.
 
@@ -992,6 +1157,14 @@ def _(mo):
 
     - https://www.theinsurer.com/ti/news/exclusive-ai-insurance-mga-aiuc-secures-beazley-paper-for-liability-product-2026-05-15/
     - https://www.armilla.ai/ai-insurance
+
+    Category-defining companies and multiples (section 3):
+
+    - https://fintech.global/2025/03/25/munich-re-acquires-next-insurance-for-2-6bn-to-expand-insurtech-footprint/
+    - https://www.securityweek.com/travelers-to-acquire-cyberinsurance-firm-corvus-for-435-million/
+    - https://www.vistaequitypartners.com/news/duck-creek-agrees-to-be-acquired-by-vista-equity-partners-for-2-6-billion/
+    - https://www.gurufocus.com/term/enterprise-value-to-revenue/GWRE
+    - https://simplywall.st/stocks/us/insurance/nyse-lmnd/lemonade/valuation
     """
     )
     return
@@ -1004,7 +1177,7 @@ def _(mo):
     ## Caveats
 
     - Web research only, point-in-time. Some fund portfolio pages were unreachable from the research environment (proxy policy blocked the domain), so portfolios were reconstructed from funding announcements and press coverage. Announced deals are covered; unannounced or quiet positions are not.
-    - Loss ratios, rate movements, and premium totals move every quarter. Re-verify anything in section 3 before using it in a pitch.
+    - Loss ratios, rate movements, and premium totals move every quarter. Re-verify anything in section 4 before using it in a pitch.
     - The S&P 15-20% growth projection for 2026 contradicts the observed softening. Both are recorded deliberately. Do not cite either without the other.
     """
     )
