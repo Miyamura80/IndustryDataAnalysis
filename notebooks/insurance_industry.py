@@ -992,6 +992,256 @@ def _(go):
 def _(mo):
     mo.md(
         """
+    ### Capital in versus value out
+
+    The same companies plotted as capital raised against last known valuation or exit, on log-log axes with 1x / 10x / 100x reference lines. Height above the diagonal is the return on invested capital, and it sorts by layer: Guidewire sits alone near 250x on a \$40M raise, while the carriers hug the bottom — Metromile is the one name below the 1x line, sold for less than the capital put into it. Names with undisclosed valuations (Bold Penguin, Openly, Trov) are omitted.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _ce_color = {
+        "Software / infra": "#1f5fd6",
+        "Cyber MGA": "#17a2b8",
+        "Distribution / MGA": "#c98f3c",
+        "Full-stack carrier": "#b5502e",
+    }
+    # (company, layer, raised $M, last value $M, value basis)
+    _ce_rows = [
+        ("Guidewire", "Software / infra", 40, 10000, "public mcap"),
+        ("Akur8", "Software / infra", 185, 400, "last private mark"),
+        ("Shift", "Software / infra", 320, 1000, "2021 unicorn mark"),
+        ("Tractable", "Software / infra", 185, 1000, "2021 unicorn mark"),
+        ("Coalition", "Cyber MGA", 830, 5000, "2022 mark"),
+        ("At-Bay", "Cyber MGA", 292, 1350, "2021 mark"),
+        ("Corvus", "Cyber MGA", 150, 435, "2024 acquisition"),
+        ("Next Insurance", "Distribution / MGA", 1150, 2600, "2025 acquisition"),
+        ("bolttech", "Distribution / MGA", 665, 2100, "2025 mark"),
+        ("Cover Genius", "Distribution / MGA", 350, 1900, "2026 mark"),
+        ("Pie Insurance", "Distribution / MGA", 620, 2000, "2022 mark"),
+        ("Kin", "Distribution / MGA", 265, 1000, "unicorn mark"),
+        ("Vouch", "Distribution / MGA", 185, 550, "2021 mark"),
+        ("Sure", "Distribution / MGA", 123, 550, "2021 mark"),
+        ("Branch", "Distribution / MGA", 197, 1050, "2022 mark"),
+        ("Alan", "Full-stack carrier", 1100, 6300, "2026 mark"),
+        ("Lemonade", "Full-stack carrier", 480, 5600, "public mcap"),
+        ("Oscar Health", "Full-stack carrier", 1600, 9000, "public mcap"),
+        ("Clover Health", "Full-stack carrier", 925, 2500, "public mcap"),
+        ("Root", "Full-stack carrier", 523, 890, "public mcap"),
+        ("Hippo", "Full-stack carrier", 1200, 800, "public mcap"),
+        ("Metromile", "Full-stack carrier", 300, 145, "2022 sale"),
+    ]
+
+    _ce_fig = go.Figure()
+    # Reference lines: value = k * raised (plotly clips to the axis range).
+    for _ce_k, _ce_lab, _ce_lx, _ce_ly in [
+        (1, "1x", 1900, 1900),
+        (10, "10x", 850, 8500),
+        (100, "100x", 105, 10500),
+    ]:
+        _ce_fig.add_trace(
+            go.Scatter(
+                x=[30, 2500],
+                y=[_ce_k * 30, _ce_k * 2500],
+                mode="lines",
+                line=dict(color="#d3d8e0", width=1, dash="dot"),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+        _ce_fig.add_trace(
+            go.Scatter(
+                x=[_ce_lx],
+                y=[_ce_ly],
+                mode="text",
+                text=[_ce_lab],
+                textfont=dict(size=10, color="#9aa4b2"),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+    for _ce_layer, _ce_col in _ce_color.items():
+        _ce_pts = [_r for _r in _ce_rows if _r[1] == _ce_layer]
+        _ce_fig.add_trace(
+            go.Scatter(
+                x=[_r[2] for _r in _ce_pts],
+                y=[_r[3] for _r in _ce_pts],
+                mode="markers+text",
+                name=_ce_layer,
+                text=[_r[0] for _r in _ce_pts],
+                textposition="top center",
+                textfont=dict(size=9),
+                marker=dict(size=11, color=_ce_col, line=dict(width=0.5, color="white")),
+                customdata=[(_r[4], _r[3] / _r[2]) for _r in _ce_pts],
+                hovertemplate=(
+                    "<b>%{text}</b><br>Raised: $%{x:,.0f}M"
+                    "<br>Value: $%{y:,.0f}M (%{customdata[0]})"
+                    "<br>Return: %{customdata[1]:.1f}x invested<extra></extra>"
+                ),
+            )
+        )
+    _ce_fig.update_layout(
+        title="Capital in vs. value out: return on invested capital falls down the stack",
+        xaxis=dict(
+            title="Total capital raised ($M, log)",
+            type="log",
+            range=[1.477, 3.398],
+        ),
+        yaxis=dict(
+            title="Last valuation / exit ($M, log)",
+            type="log",
+            range=[2.0, 4.176],
+        ),
+        legend=dict(title="Layer", orientation="h", y=-0.2),
+        height=560,
+        margin=dict(t=70, l=70, r=30, b=80),
+    )
+    _ce_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ### The repricing
+
+    For the names that went public or SPAC'd, peak valuation against the current mark. Re-anchoring from software multiples to insurance economics cost 50-90% of peak value; Metromile's ended below its own cash balance. Oscar and Alan are the two that bucked it and are left out here.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    # (company, peak $M, now $M, peak basis, now basis)
+    _dd_rows = [
+        ("Hippo", 8270, 800, "post-SPAC peak", "current mcap"),
+        ("Root", 6810, 890, "IPO (2020)", "current mcap"),
+        ("Clover Health", 8000, 2500, "2021 high (est.)", "current mcap"),
+        ("Metromile", 1300, 145, "SPAC (2021)", "2022 sale"),
+        ("Lemonade", 11000, 5600, "2021 high (est.)", "current mcap"),
+    ]
+    _dd_rows = sorted(_dd_rows, key=lambda _r: _r[2] / _r[1])
+    _dd_names = [_r[0] for _r in _dd_rows]
+
+    _dd_fig = go.Figure()
+    for _r in _dd_rows:
+        _dd_fig.add_trace(
+            go.Scatter(
+                x=[_r[1], _r[2]],
+                y=[_r[0], _r[0]],
+                mode="lines",
+                line=dict(color="#e0a9a0", width=3),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+    _dd_fig.add_trace(
+        go.Scatter(
+            x=[_r[1] for _r in _dd_rows],
+            y=_dd_names,
+            mode="markers",
+            name="Peak valuation",
+            marker=dict(size=13, color="#7a8496"),
+            customdata=[_r[3] for _r in _dd_rows],
+            hovertemplate="<b>%{y}</b><br>Peak: $%{x:,.0f}M (%{customdata})<extra></extra>",
+        )
+    )
+    _dd_fig.add_trace(
+        go.Scatter(
+            x=[_r[2] for _r in _dd_rows],
+            y=_dd_names,
+            mode="markers",
+            name="Now / exit",
+            marker=dict(size=13, color="#b5502e"),
+            customdata=[_r[4] for _r in _dd_rows],
+            hovertemplate="<b>%{y}</b><br>Now: $%{x:,.0f}M (%{customdata})<extra></extra>",
+        )
+    )
+    _dd_fig.add_trace(
+        go.Scatter(
+            x=[_r[1] for _r in _dd_rows],
+            y=_dd_names,
+            mode="text",
+            text=[f"{(_r[2] / _r[1] - 1) * 100:.0f}%" for _r in _dd_rows],
+            textposition="top right",
+            textfont=dict(size=10, color="#b5502e"),
+            hoverinfo="skip",
+            showlegend=False,
+        )
+    )
+    _dd_fig.update_layout(
+        title="The repricing: peak valuation to current mark (USD millions, log)",
+        xaxis=dict(title="Valuation ($M, log)", type="log", range=[2.0, 4.146]),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(orientation="h", y=-0.18),
+        height=360,
+        margin=dict(t=70, l=120, r=40, b=60),
+    )
+    _dd_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
+    ### Where the capital actually went
+
+    The chart at the top of this section counts companies; this one counts dollars. Roughly \$9B of venture capital flowed into the full-stack carrier layer — the most of any layer and the one with the worst outcomes — with more going to companies that became cautionary tales than to the single breakout. The software layer, which produced the most durable results, absorbed the least.
+    """
+    )
+    return
+
+
+@app.cell
+def _(go):
+    _cap_layers = [
+        "Software / infra",
+        "Cyber MGA",
+        "Distribution / MGA",
+        "Full-stack carrier",
+    ]
+    # Approx VC raised ($M) by layer x outcome.
+    _cap_data = [
+        ("Breakout", "#2e8b57", [225, 830, 2215, 1100]),
+        ("Mixed", "#c98f3c", [690, 972, 1486, 4780]),
+        ("Cautionary", "#b5502e", [0, 0, 289, 3648]),
+    ]
+    _cap_fig = go.Figure()
+    for _cap_name, _cap_color, _cap_vals in _cap_data:
+        _cap_fig.add_trace(
+            go.Bar(
+                y=_cap_layers,
+                x=[_v / 1000 for _v in _cap_vals],
+                orientation="h",
+                name=_cap_name,
+                marker_color=_cap_color,
+                hovertemplate=(
+                    "<b>%{y}</b><br>" + _cap_name + ": $%{x:.2f}B<extra></extra>"
+                ),
+            )
+        )
+    _cap_fig.update_layout(
+        barmode="stack",
+        title="Capital raised by layer, shaded by outcome (approx VC in, $B)",
+        xaxis=dict(title="Capital raised ($B)"),
+        yaxis=dict(autorange="reversed"),
+        legend=dict(title="Outcome", orientation="h", y=-0.22),
+        height=340,
+        margin=dict(t=70, l=150, r=30, b=70),
+    )
+    _cap_fig
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        """
     ## 4. Cyber insurance conditions, 2024-2026
 
     Underwriting quality and growth trajectory have diverged sharply, and both facts need holding at once. Underwriting is healthy: the surplus-lines loss ratio is ~56% (2025, and surplus lines is now nearly two-thirds of all cyber premium), the admitted-carrier loss ratio is ~50.2%, and Allianz Commercial reports average claim severity down 50% with large-loss frequency down 30%. Growth, meanwhile, has stalled — Q1 2026 was the eighth consecutive quarter of US pricing cuts. The chart tracks where the market is heading.
