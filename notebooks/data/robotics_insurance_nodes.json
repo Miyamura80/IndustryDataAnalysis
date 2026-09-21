@@ -1,0 +1,158 @@
+[
+  {
+    "label": "Robotics Insurance (2025 est.)",
+    "parent": "",
+    "value": 0.505,
+    "hover": "Directional estimate of DEDICATED robotics / autonomous-systems insurance premium (~$0.5B). No regulator breaks out a robotics line; syndicated reports quote $0.19-1.4B on undisclosed methodology. Most robot risk sits silently inside product-liability, CGL, workers-comp and cyber books and is NOT counted here."
+  },
+  {
+    "label": "Specialty & emerging-risk carriers",
+    "parent": "Robotics Insurance (2025 est.)",
+    "value": 0.21,
+    "hover": "Carriers with explicit AI / autonomous / drone programs (as opposed to silent product-liability exposure)."
+  },
+  {
+    "label": "Munich Re / HSB 🇩🇪",
+    "parent": "Specialty & emerging-risk carriers",
+    "value": 0.06,
+    "hover": "HSB launched AI Liability Insurance (2026) paying AI-driven bodily injury / property damage GL often excludes. Tech Trend Radar names humanoids + autonomous mobility as top risk trends. Estimate."
+  },
+  {
+    "label": "Global Aerospace 🇺🇸",
+    "parent": "Specialty & emerging-risk carriers",
+    "value": 0.07,
+    "hover": "Aviation specialty carrier; underwriter behind SkyWatch.AI and a leading writer of commercial drone / UAS hull + liability. Estimate."
+  },
+  {
+    "label": "Tokio Marine Kiln 🇯🇵",
+    "parent": "Specialty & emerging-risk carriers",
+    "value": 0.03,
+    "hover": "Backs MGA Advanced Technology Assurance; writes drone/UAS and cyber for autonomous rail, automated factories, robotics. Estimate."
+  },
+  {
+    "label": "Zurich (YAS embedded) 🇨🇭",
+    "parent": "Specialty & emerging-risk carriers",
+    "value": 0.02,
+    "hover": "Zurich Hong Kong x YAS (2026): bespoke embedded micro-insurance sold at the point of robot sale/service (Axonex robots in logistics, malls, restaurants). First named APAC robot micro-insurance. Estimate."
+  },
+  {
+    "label": "Relm Insurance 🇧🇲",
+    "parent": "Specialty & emerging-risk carriers",
+    "value": 0.015,
+    "hover": "Bermuda emerging-risk carrier; AI liability suite (NOVAAI/PONTAAI/RESCAAI, 2025) covering AI-driven bodily injury, property damage, professional negligence. Estimate."
+  },
+  {
+    "label": "The Hartford (Y-Risk) 🇺🇸",
+    "parent": "Specialty & emerging-risk carriers",
+    "value": 0.015,
+    "hover": "Owns MGA Y-Risk, framed as underwriting the AI and autonomous economy with usage-based, data-fed underwriting. Estimate."
+  },
+  {
+    "label": "Robotics-native MGAs / insurtechs",
+    "parent": "Robotics Insurance (2025 est.)",
+    "value": 0.155,
+    "hover": "The only explicitly robot-branded offerings. Small premium, but they define the category and sit on Lloyd's + carrier capacity."
+  },
+  {
+    "label": "Optech Robotics",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.005,
+    "hover": "Up-and-coming robotics MGA out of the Lloyd's Lab accelerator, purpose-built for robot / autonomous-systems risk. Early stage; figure and status company-stated, not independently verified. Est."
+  },
+  {
+    "label": "Koop Technologies 🇺🇸",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.025,
+    "hover": "Industry-first Robotics GL + E&O (2022) with CJ Coleman + Lloyd's syndicates, for off-road AVs / robots / RaaS. API underwriting on robot telemetry. Estimate."
+  },
+  {
+    "label": "SkyWatch.AI 🇺🇸",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.03,
+    "hover": "On-demand drone insurance (up to $10M liability from ~$10/hr), underwritten by Global Aerospace. Marsh McLennan took a minority stake (2025). Estimate."
+  },
+  {
+    "label": "Flock 🇬🇧",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.045,
+    "hover": "UK on-demand commercial drone insurer (~35% of UK commercial drone market); pivoted to connected / autonomous fleets. Raised ~$38M Series B (2023). Estimate."
+  },
+  {
+    "label": "Advanced Tech Assurance 🇬🇧",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.02,
+    "hover": "London MGA backed by Tokio Marine Kiln; cyber + tech cover for unmanned/electric aircraft, AVs, autonomous rail, automated factories, robotics. Estimate."
+  },
+  {
+    "label": "Axis Insurance (robotics) 🇨🇦",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.015,
+    "hover": "Canadian specialty broker/MGA with a dedicated robotics program: BI/PD from AI navigation failure, cyber-takeover damage, downtime from bad updates, integrator liability. Estimate. (Distinct from AXIS Capital.)"
+  },
+  {
+    "label": "Vouch 🇺🇸",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.015,
+    "hover": "AI insurance for startups (AI errors, IP, regulatory defense); adjacent cover for robotics / AI startups. Estimate."
+  },
+  {
+    "label": "Reinsurance / capacity",
+    "parent": "Robotics Insurance (2025 est.)",
+    "value": 0.09,
+    "hover": "Reinsurers provide the balance sheet and emerging-risk research behind primary robotics programs; robot-branded treaties are rare."
+  },
+  {
+    "label": "Munich Re 🇩🇪",
+    "parent": "Reinsurance / capacity",
+    "value": 0.04,
+    "hover": "World's largest reinsurer; HSB is its robotics/AI front line. Publishes autonomous-vehicle and robot-liability research. Estimate of robotics-attributable capacity."
+  },
+  {
+    "label": "Swiss Re 🇨🇭",
+    "parent": "Reinsurance / capacity",
+    "value": 0.025,
+    "hover": "Warns insurers to treat autonomous-AI like silent cyber; partnered with SAS for AI risk intelligence. Estimate."
+  },
+  {
+    "label": "Hannover Re 🇩🇪",
+    "parent": "Reinsurance / capacity",
+    "value": 0.015,
+    "hover": "Third-largest reinsurer; active in specialty / technology risk. Estimate."
+  },
+  {
+    "label": "SCOR 🇫🇷",
+    "parent": "Reinsurance / capacity",
+    "value": 0.01,
+    "hover": "French reinsurer engaging autonomous / AI specialty risk. Estimate."
+  },
+  {
+    "label": "Brokers & data enablers",
+    "parent": "Robotics Insurance (2025 est.)",
+    "value": 0.05,
+    "hover": "Brokers placing autonomous/robotics risk plus the telematics and risk-scoring firms that make robot underwriting possible."
+  },
+  {
+    "label": "Marsh (drone/robotics desk) 🇺🇸",
+    "parent": "Brokers & data enablers",
+    "value": 0.015,
+    "hover": "Largest broker; took a minority stake in SkyWatch.AI (2025) to expand digital drone distribution. Estimate."
+  },
+  {
+    "label": "Aon 🇺🇸",
+    "parent": "Brokers & data enablers",
+    "value": 0.01,
+    "hover": "Global broker building autonomous-systems and AI specialty placement. Estimate."
+  },
+  {
+    "label": "Telematics / risk-scoring",
+    "parent": "Brokers & data enablers",
+    "value": 0.015,
+    "hover": "Robot black-box / telemetry underwriting: Koop API, SkyWatch telemetry + airspace mapping, Flock connected-fleet data; adjacent fleet vendors (Samsara, Nirvana). Estimate."
+  },
+  {
+    "label": "Claims / TPA specialty",
+    "parent": "Brokers & data enablers",
+    "value": 0.01,
+    "hover": "Specialty adjusters handling multi-defendant robot product-liability and bodily-injury claims across OEM / integrator / operator. Estimate."
+  }
+]
