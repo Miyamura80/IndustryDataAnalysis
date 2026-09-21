@@ -321,7 +321,7 @@ def _(mo):
     - Root anchors to a directional ~\$0.5B of DEDICATED robotics / autonomous-systems premium (2025 estimate), split into four branches: specialty and emerging-risk carriers, robotics-native MGAs / insurtechs, reinsurance / capacity, and brokers plus data enablers.
     - The node values are directional estimates only. There is no reported robotics premium by company, so these are best read as relative positioning, not precise GWP.
     - This map deliberately excludes the far larger silent robot exposure inside the product-liability books of AXA XL, Allianz, Chubb and AIG. Those carriers insure most of the world's robot makers, but not under a robotics label, so they do not appear as dedicated premium here.
-    - The robotics-native insurtechs (Koop, SkyWatch, Flock, ATA, Axis, Vouch) are small by premium but define the category and sit on Lloyd's syndicates plus carrier capacity (Global Aerospace, Tokio Marine Kiln, The Hartford).
+    - The robotics-native insurtechs (Koop, SkyWatch, Flock, ATA, Axis, Optech Robotics, Vouch) are small by premium but define the category and sit on Lloyd's syndicates plus carrier capacity (Global Aerospace, Tokio Marine Kiln, The Hartford).
     """
     )
     return
@@ -377,6 +377,9 @@ def _(go):
         {"company": "Axis Insurance", "country": "CA", "strategy": "Robotics-native insurtechs", "premium_b": 0.015,
          "focus": "specialist",
          "hover": "Canadian specialty broker/MGA with a dedicated robotics program: AI navigation failure, cyber-takeover damage, downtime, integrator liability. Est. (not AXIS Capital)."},
+        {"company": "Optech Robotics", "country": "", "strategy": "Robotics-native insurtechs", "premium_b": 0.005,
+         "focus": "specialist",
+         "hover": "Up-and-coming robotics MGA out of the Lloyd's Lab accelerator, purpose-built for robot / autonomous-systems risk. Early stage; figure and status company-stated, not independently verified. Est."},
         {"company": "Munich Re (reins.)", "country": "DE", "strategy": "Reinsurance / capacity", "premium_b": 0.04,
          "focus": "diversified",
          "hover": "World's largest reinsurer; HSB is its robotics/AI front line; publishes AV and robot-liability research. Est. robotics-attributable capacity."},
@@ -481,7 +484,7 @@ def _(mo):
 
     1. Scale product-liability writers (AXA XL, Allianz Commercial, Chubb, AIG): They already insure most of the world's robot makers through general product-liability and life-sciences books. Robots are a fraction of their premium, but in aggregate this is where most robot risk is actually held. Two of them (Chubb, plus peers like Travelers and Berkshire Hathaway) are simultaneously filing to exclude AI claims from GL.
     2. Specialty and emerging-risk carriers (Munich Re / HSB, Global Aerospace, Tokio Marine Kiln, Relm, Zurich x YAS): They write explicit AI, drone/UAS or autonomous programs. This is the layer building robot-specific wordings from scratch, including embedded micro-insurance sold at the point of robot sale.
-    3. Robotics-native insurtechs (Koop, SkyWatch.AI, Flock, Advanced Technology Assurance, Y-Risk, Axis): The only explicitly robot-branded offerings. Small premium, but they define the category and differentiate on telematics-based underwriting (robot black-box and drone telemetry data). They sit on Lloyd's syndicates and carrier capacity.
+    3. Robotics-native insurtechs (Koop, SkyWatch.AI, Flock, Advanced Technology Assurance, Y-Risk, Axis, and early-stage Lloyd's Lab entrants like Optech Robotics): The only explicitly robot-branded offerings. Small premium, but they define the category and differentiate on telematics-based underwriting (robot black-box and drone telemetry data). They sit on Lloyd's syndicates and carrier capacity.
     4. Reinsurance / capacity (Munich Re, Swiss Re, Hannover Re, SCOR): The balance sheet and emerging-risk research behind the primary programs. Robot-branded treaties are rare; capacity flows through general specialty and technology lines.
 
     Where are the robot makers themselves? RaaS providers (Starship, Serve Robotics, Nuro, and AMR / humanoid vendors) retain ownership and bundle maintenance, software updates and SLA uptime guarantees (often 99-99.9%+), which shifts liability toward the manufacturer/operator rather than reselling a named third-party policy. That structure is exactly why robot risk concentrates in OEM and operator product-liability books instead of a robotics insurance line.

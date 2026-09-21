@@ -2,7 +2,7 @@
   {
     "label": "Robotics Insurance (2025 est.)",
     "parent": "",
-    "value": 0.50,
+    "value": 0.505,
     "hover": "Directional estimate of DEDICATED robotics / autonomous-systems insurance premium (~$0.5B). No regulator breaks out a robotics line; syndicated reports quote $0.19-1.4B on undisclosed methodology. Most robot risk sits silently inside product-liability, CGL, workers-comp and cyber books and is NOT counted here."
   },
   {
@@ -50,8 +50,14 @@
   {
     "label": "Robotics-native MGAs / insurtechs",
     "parent": "Robotics Insurance (2025 est.)",
-    "value": 0.15,
+    "value": 0.155,
     "hover": "The only explicitly robot-branded offerings. Small premium, but they define the category and sit on Lloyd's + carrier capacity."
+  },
+  {
+    "label": "Optech Robotics",
+    "parent": "Robotics-native MGAs / insurtechs",
+    "value": 0.005,
+    "hover": "Up-and-coming robotics MGA out of the Lloyd's Lab accelerator, purpose-built for robot / autonomous-systems risk. Early stage; figure and status company-stated, not independently verified. Est."
   },
   {
     "label": "Koop Technologies 🇺🇸",
