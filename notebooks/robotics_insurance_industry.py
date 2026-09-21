@@ -108,7 +108,7 @@ def _(go):
     target_colors = ["#4e79a7", "#4e79a7", "#f28e2b", "#e15759"]
     target_sources = [
         "market.us / marketintelo (undisclosed method)",
-        "QYResearch-style estimate",
+        "Interpolated midpoint (13-25% CAGR band)",
         "Extrapolated ~13-25% CAGR (low)",
         "marketintelo target (~24.9% CAGR)",
     ]
@@ -913,7 +913,8 @@ def _(go, mo):
             orientation="h",
             name="Explicitly insured (est.)",
             marker_color="#2ca02c",
-            hovertemplate="<b>%{y}</b><br>Explicitly insured: $%{x:,.2f}B<extra></extra>",
+            customdata=_currently_covered,
+            hovertemplate="<b>%{y}</b><br>Explicitly insured: $%{customdata:,.2f}B<extra></extra>",
         ),
         row=1,
         col=1,
@@ -940,7 +941,7 @@ def _(go, mo):
     )
 
     _gap_fig.update_xaxes(type="log", title_text="USD billions (log scale)", row=1, col=1)
-    _gap_fig.update_xaxes(title_text="% explicitly insured", range=[0, 12], row=1, col=2)
+    _gap_fig.update_xaxes(title_text="% explicitly insured", range=[0, 25], row=1, col=2)
     _gap_fig.update_yaxes(autorange="reversed", row=1, col=1)
     _gap_fig.update_yaxes(autorange="reversed", row=1, col=2)
 
